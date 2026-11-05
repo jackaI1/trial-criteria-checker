@@ -85,4 +85,4 @@ def render_markdown(report):
             rule = json.dumps(row['rule'],ensure_ascii=False) if row['rule'] else 'Unparsed'
             parts += ['| '+esc(row['sentence'])+' | '+esc(rule)+'; '+esc(row['section'])+' '+str(row['start'])+':'+str(row['end'])+' | **'+row['status']+'**: '+esc(row['evaluation_reason'])+' |']
         parts += ['']
-    return '\n'.join(parts)+'\n'
+    return '\n'.join(parts).rstrip()+'\n'

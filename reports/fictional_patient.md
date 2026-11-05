@@ -142,4 +142,3 @@ Saved status: RECRUITING.
 | Patients with claustrophobia are eligible if the claustrophobia is managed with medication | Unparsed; inclusion 308:398 | **unknown**: No supported complete rule |
 | Patients with cognitively-impairment are eligible if the impairment is managed with medication | Unparsed; inclusion 401:495 | **unknown**: No supported complete rule |
 | Patients who are pregnant | Unparsed; inclusion 498:523 | **unknown**: No supported complete rule |
-
