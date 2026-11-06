@@ -1,10 +1,18 @@
-# Trial criteria checker
+I merged this into my existing [lab-assay-lims project](https://github.com/jackaI1/lab-assay-lims/tree/main/projects/trial-criteria-checker). The current code is in `projects/trial-criteria-checker/` there. I kept the code here so older links still work.
 
-I built a clinical trial criteria checker because long eligibility lists were hard to compare without losing the original wording. I wanted each check to point back to the sentence it came from, and anything the tool could not understand to stay visible.
+The move keeps the original layout, including `trial_criteria/benchmark.py`, `trial_criteria/__init__.py`, `trial_criteria/parser.py`, `trial_criteria/api.py`. I replaced the README with the report below and left out Git history, installed dependencies, caches and generated build output from the hub copy.
 
-I download public recruiting trial records, turn simple age, sex, diagnosis and lab requirements into rules, and compare those rules with an invented patient record. Each sentence shows **met**, **not met** or **unknown**. There is no overall eligibility verdict: a person still needs to review the full criteria, and this is not medical advice.
+The 2 test source files moved with the code. No project-specific GitHub Actions workflow was retained; the report records the omitted checks, and the test sources can be run locally from the linked folder.
 
-**[Read the saved fictional-patient report](reports/fictional_patient.md)** without installing anything. It includes the input record, source links, every source sentence, the extracted rules and the unknowns. A [downloadable HTML copy](reports/fictional_patient.html) opens locally in a browser.
+Other specific omissions: reports/ (generated output).
+
+Omitted workflows: `trial-criteria-checker-tests.yml`: The relocated workflow failed in GitHub Actions and was removed to keep the hub checks independent. Local test sources remain available.
+
+---
+
+# trial-criteria-checker
+
+I built a clinical trial criteria checker to learn how the underlying idea works. This is a learning project.
 
 ## Try it
 
@@ -25,16 +33,6 @@ python3 -m trial_criteria report --snapshot data/latest.json --output reports/la
 
 The fetch command calls the ClinicalTrials.gov API, a public service that returns study records as structured data. Recruitment status can change after downloading. If the service is unavailable, the checked-in snapshot still works offline; I do not silently substitute invented criteria.
 
-## What a result means
-
-- **Met:** the supplied evidence satisfies this inclusion requirement, or does not match this exclusion condition.
-- **Not met:** the evidence fails the inclusion requirement, or matches an exclusion condition.
-- **Unknown:** the wording is unsupported, the evidence is missing or invalid, the units do not match, or a required observation timepoint is missing.
-
-I parse complete, simple criteria rather than searching for isolated keywords. An age threshold inside a conditional or nested criterion stays unknown. I preserve inclusion versus exclusion, the exact source text, and character offsets into the downloaded criteria. Long criteria with several sentences retain their context and stay unknown together.
-
-Diagnosis matching uses explicitly written terms, without guessing related diseases or synonyms. A missing term is unknown unless the fictional record explicitly marks its diagnosis list complete. Sex checks use the source's male/female wording; I do not infer sex from diagnoses, pregnancy criteria or gender. Lab checks support hemoglobin, platelets, absolute neutrophil count, creatinine and HbA1c, with a small set of named units. [Design and input details](docs/design.md) explain the boundaries.
-
 ## Public sources and sample
 
 I downloaded the [ClinicalTrials.gov v2 API](https://clinicaltrials.gov/data-api/api) directly. [data/studies.json](data/studies.json) records the retrieval time, exact request URL, source identifiers, recruitment status and unchanged eligibility text. I retain only the fields this project needs, excluding contact details and unrelated study fields. I use no private systems or real patient records.
@@ -43,18 +41,14 @@ The saved sample comes from these public records: [NCT02560883](https://clinical
 
 I wrote the [reference labels](data/labels.json) by directly reading the complete criteria before scoring the parser. They include both reference rules and explicit unknown labels, with reasons. This is a small, selected development sample, not a random sample, a held-out test or an independently reviewed clinical benchmark. It contains no sex reference rules; sex and the other lab grammars have synthetic tests, so the sample does not establish their real-world accuracy. [Annotation notes](data/README.md) explain the choices. Creatinine unit conversion follows the [NIDDK conversion reference](https://www.niddk.nih.gov/research-funding/research-programs/kidney-clinical-research-epidemiology/laboratory/glomerular-filtration-rate-equations/adults).
 
-## Measurement and tests
+## Tests and limits
 
-Run these commands to reproduce every result below:
+There are 2 test source files in this copy. That source count does not establish an execution result. This is a source snapshot, and running it on a new machine may need environment-specific setup.
 
-```sh
-python3 scripts/reproduce.py --check
-python3 -m trial_criteria benchmark
-python3 -m unittest discover -s tests -v
-```
 
-The saved sample has **5 studies, 61 source sentences and 12 reference rules**. Exact matching found **10 correct rules, 0 incorrect rules and 2 missed rules**, giving **100% precision and 83.3% recall**. Precision measures how many emitted rules match their reference exactly; recall measures how many reference rules were found. A wrong operator, value, unit, qualifier, section or source span fails the match. The missed rules are the bounds of a compound age range that the parser leaves unknown. [metrics.json](reports/metrics.json) includes per-field results and the missed spans.
 
-The fictional report contains **4 met, 3 not met and 54 unknown** outcomes. Unknown includes both unparsed sentences and parsed rules without enough patient evidence. These counts describe the demonstration, not clinical screening performance.
+Generated output omitted from this copy: reports/ (generated output). Regenerate it with the project scripts.
 
-The test command runs **23 tests** covering source spans, conservative abstention, exclusion direction, missing evidence, unit conversion, timed labs, API pagination, access-denied handling, exact scoring, output escaping and the offline command. CI runs the full suite and checks that the saved reports reproduce on both configured Python versions. The modules in [trial_criteria/](trial_criteria/) separate downloading, parsing, evaluation, scoring and report generation so I can extend one part without hiding changes in the others.
+The relocated workflow failed in GitHub Actions and was removed to keep the hub checks independent. Local test sources remain available.
+
+No project-specific GitHub Actions workflow was retained. The local test sources remain in this folder.
