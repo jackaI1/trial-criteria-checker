@@ -80,6 +80,8 @@ It also uses the age and sex fields the registry stores apart from the text (`mi
 
 ## How far it gets
 
+Short version: on 17 Montreal studies it had never seen, it made 12 rules, 10 of them right, and found 10 of the 24 rules a person would pull out. Everything else stays unknown. The rest of this section is how I got there and what it still misses.
+
 The five saved studies have 61 criterion lines, and 11 of them become rules. Most of the other 50 are things no simple rule covers, like "Able to provide informed consent" or "Use of an insulin pump or automated insulin delivery system". For the fictional patient that comes to 4 met, 3 not met and 54 unknown.
 
 To check the rules it does make, I read the five studies myself and wrote down the rules I expected ([data/labels.json](data/labels.json)). It matches 11 of my 13 exactly and makes no wrong ones. The two it misses are both halves of "aged between more than 18 and ≤ 75 years", which it skips because a line with two different limits doesn't fit in one rule yet. I tuned the parser on these studies, so this only shows that it's careful on text it has seen.
@@ -113,7 +115,22 @@ Each group had a clear fix, so I made them, and that turned Toronto into a devel
 - A short, fixed list of abbreviations (T2DM, Type 1 DM, RA, SLE, AF, HF, MI, HFrEF and a few more), used only when the abbreviation is the whole diagnosis on the line. "Heart failure (HFpEF)" stays unknown because the bracket names a different condition.
 - Myocardial infarction and heart failure with reduced ejection fraction in the vocabulary, and "at randomization" as a timepoint.
 
-It now gets all 16 Toronto rules, still with no wrong ones, but that score doesn't count because I tuned on those studies ([reports/toronto_metrics.json](reports/toronto_metrics.json)). It also picked up one more Vancouver line and nothing changed on the original five. The next fair score needs another fresh set.
+It now gets all 16 Toronto rules, still with no wrong ones, but that score doesn't count because I tuned on those studies ([reports/toronto_metrics.json](reports/toronto_metrics.json)). It also picked up one more Vancouver line and nothing changed on the original five.
+
+So I did the same thing again with Montreal: merged the fixes, fetched the first four recruiting studies per condition with a Montreal site that I hadn't seen (17 studies, 294 lines, [data/montreal.json](data/montreal.json)), labelled them and committed the labels ([data/montreal_labels.json](data/montreal_labels.json)), and only then ran the parser. A person would pull out 24 rules. The parser made 12, and 10 of those were right, so it found 10 of the 24 ([reports/montreal_metrics.json](reports/montreal_metrics.json)). That's up from 3 of 16 on Toronto.
+
+The 2 wrong ones are the same line, ">18 years of age.", in a study split into two cohorts that each repeat it. My labels treat a line under a cohort heading as depending on which cohort you're in, and the parser didn't notice the headings because each one is followed by a normal "Inclusion Criteria:" heading. The age limit itself is right for both cohorts, but by my own rule it should have stayed unknown, so I count them as wrong. Here's what it missed:
+
+| Why it missed | Rules |
+| --- | --- |
+| Condition not in the vocabulary (permanent atrial fibrillation twice, rheumatic heart disease, infiltrative cardiomyopathy) | 4 |
+| Age with a lead-in it doesn't know ("Index participant", "Participants of any sex and gender", "Males & females (inclusive of all gender identities)") | 3 |
+| Diagnosis with extra words ("Index participant has T2D", "(documented on Holter, rhythm strip, or ECG)", "of any etiology") | 3 |
+| One age line with two different limits ("≥ 18 to < 75 years") | 2 |
+| "Women" as a sex limit | 1 |
+| "Ejection fraction" without "left ventricular" | 1 |
+
+I haven't fixed these yet. When I do, Montreal becomes practice data too, and the score after that will need a new city.
 
 ## How it works
 
@@ -129,7 +146,7 @@ It now gets all 16 Toronto rules, still with no wrong ones, but that score doesn
 
 ## Tests
 
-`python3 -m unittest discover -s tests` runs 47 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the held-out score so it can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
+`python3 -m unittest discover -s tests` runs 48 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the held-out score so it can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
 
 ## Limits
 
