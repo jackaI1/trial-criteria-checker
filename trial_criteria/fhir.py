@@ -49,7 +49,7 @@ ICD10CM_DIAGNOSES = {
     'M32': 'systemic lupus erythematosus',
 }
 
-# LOINC codes for the five lab tests the parser understands.
+# LOINC codes for the lab tests and measurements the parser understands.
 LOINC_LABS = {
     '718-7': 'hemoglobin',     # Hemoglobin [Mass/volume] in Blood
     '777-3': 'platelets',      # Platelets [#/volume] in Blood by Automated count
@@ -59,6 +59,11 @@ LOINC_LABS = {
     '14682-9': 'creatinine',   # Creatinine [Moles/volume] in Serum or Plasma
     '4548-4': 'hba1c',         # Hemoglobin A1c/Hemoglobin.total in Blood
     '17856-6': 'hba1c',        # Hemoglobin A1c/Hemoglobin.total in Blood by HPLC
+    '39156-5': 'bmi',          # Body mass index (BMI) [Ratio]
+    '33914-3': 'egfr',         # eGFR by creatinine-based formula (MDRD)
+    '62238-1': 'egfr',         # eGFR by creatinine-based formula (CKD-EPI)
+    '98979-8': 'egfr',         # eGFR by creatinine-based formula (CKD-EPI 2021)
+    '10230-1': 'lvef',         # Left ventricular ejection fraction
 }
 # UCUM unit codes and the unit names evaluate.py uses. 10*3/uL and 10*9/L are
 # the same quantity: a thousand per microlitre is a billion per litre.
@@ -68,6 +73,9 @@ UCUM_UNITS = {
     'anc': {'10*9/L': '10^9/L', '10*3/uL': '10^9/L', '/uL': 'cells/uL'},
     'creatinine': {'mg/dL': 'mg/dL', 'umol/L': 'umol/L'},
     'hba1c': {'%': '%'},
+    'bmi': {'kg/m2': 'kg/m2'},
+    'egfr': {'mL/min/{1.73_m2}': 'mL/min/1.73m2'},
+    'lvef': {'%': '%'},
 }
 USABLE_OBSERVATION = {'final', 'amended', 'corrected'}
 ACTIVE_CONDITION = {'active', 'recurrence', 'relapse'}

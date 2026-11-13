@@ -81,6 +81,498 @@
   },
   "studies": [
     {
+      "nct_id": "NCT05650658",
+      "title": "Left vs Left Randomized Clinical Trial",
+      "url": "https://clinicaltrials.gov/study/NCT05650658",
+      "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 18 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 69, which matches the rule"
+        }
+      ],
+      "criteria": [
+        {
+          "sentence": "Men and women 18 years of age or older.",
+          "start": 23,
+          "end": 62,
+          "section": "inclusion",
+          "context": "Men and women 18 years of age or older.",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "parse_reason": "Supported complete criterion",
+          "status": "met",
+          "evaluation_reason": "age 69, which matches the rule"
+        },
+        {
+          "sentence": "A LVEF ≤ 50% within 6 months prior to enrollment.",
+          "start": 65,
+          "end": 114,
+          "section": "inclusion",
+          "context": "A LVEF ≤ 50% within 6 months prior to enrollment.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Resting QRS duration ≥130 ms as evidenced by a historical 12-lead ECG prior to enrollment OR anticipated right ventricular pacing \\>40% OR device in place with right ventricular pacing \\> 40%.",
+          "start": 117,
+          "end": 309,
+          "section": "inclusion",
+          "context": "Resting QRS duration ≥130 ms as evidenced by a historical 12-lead ECG prior to enrollment OR anticipated right ventricular pacing \\>40% OR device in place with right ventricular pacing \\> 40%.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Are optimized on HF guideline directed medical therapy according to current HF published guidelines OR patient's physician will make an effort to start all guideline-directed medical therapy and titrate doses up as permitted by the participant clinical status and co-morbidities prior to implantation procedure.",
+          "start": 312,
+          "end": 623,
+          "section": "inclusion",
+          "context": "Are optimized on HF guideline directed medical therapy according to current HF published guidelines OR patient's physician will make an effort to start all guideline-directed medical therapy and titrate doses up as permitted by the participant clinical status and co-morbidities prior to implantation procedure.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Women who are pregnant, lactating, or plan to become pregnant during the course of the trial.",
+          "start": 648,
+          "end": 741,
+          "section": "exclusion",
+          "context": "Women who are pregnant, lactating, or plan to become pregnant during the course of the trial.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Participants with angiographic evidence of coronary disease who are candidates for coronary revascularization and are likely to undergo coronary artery bypass graft surgery or percutaneous coronary, intervention in the next three (3) months.",
+          "start": 744,
+          "end": 985,
+          "section": "exclusion",
+          "context": "Participants with angiographic evidence of coronary disease who are candidates for coronary revascularization and are likely to undergo coronary artery bypass graft surgery or percutaneous coronary, intervention in the next three (3) months.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Enzyme-positive myocardial infarction within the past three (3) months prior to enrollment.",
+          "start": 988,
+          "end": 1079,
+          "section": "exclusion",
+          "context": "Enzyme-positive myocardial infarction within the past three (3) months prior to enrollment.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Coronary artery bypass graft surgery or percutaneous coronary intervention (balloon and/or stent angioplasty) within the past three (3) months prior to enrollment.",
+          "start": 1082,
+          "end": 1245,
+          "section": "exclusion",
+          "context": "Coronary artery bypass graft surgery or percutaneous coronary intervention (balloon and/or stent angioplasty) within the past three (3) months prior to enrollment.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Reversible non-ischemic cardiomyopathy (e.g., acute viral myocarditis).",
+          "start": 1248,
+          "end": 1319,
+          "section": "exclusion",
+          "context": "Reversible non-ischemic cardiomyopathy (e.g., acute viral myocarditis).",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Participants with Chagas disease, cardiac sarcoidosis or amyloidosis.",
+          "start": 1322,
+          "end": 1391,
+          "section": "exclusion",
+          "context": "Participants with Chagas disease, cardiac sarcoidosis or amyloidosis.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Expected to receive left ventricular assist device or heart transplantation within 6 months.",
+          "start": 1394,
+          "end": 1486,
+          "section": "exclusion",
+          "context": "Expected to receive left ventricular assist device or heart transplantation within 6 months.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Participants with primary severe valvular disease (e.g., aortic stenosis).",
+          "start": 1489,
+          "end": 1563,
+          "section": "exclusion",
+          "context": "Participants with primary severe valvular disease (e.g., aortic stenosis).",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Have a life expectancy of less than 12 months.",
+          "start": 1566,
+          "end": 1612,
+          "section": "exclusion",
+          "context": "Have a life expectancy of less than 12 months.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Participants with irreversible brain damage from preexisting cerebral disease.",
+          "start": 1615,
+          "end": 1693,
+          "section": "exclusion",
+          "context": "Participants with irreversible brain damage from preexisting cerebral disease.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Participants with a contrast dye allergy unable or unwilling to undergo pretreatment with steroids and/or diphenhydramine.",
+          "start": 1696,
+          "end": 1818,
+          "section": "exclusion",
+          "context": "Participants with a contrast dye allergy unable or unwilling to undergo pretreatment with steroids and/or diphenhydramine.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Participants participating in any other interventional cardiovascular clinical trial.",
+          "start": 1821,
+          "end": 1906,
+          "section": "exclusion",
+          "context": "Participants participating in any other interventional cardiovascular clinical trial.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Participants who would be unable to comply with the study's follow-up visit schedule; or",
+          "start": 1909,
+          "end": 1997,
+          "section": "exclusion",
+          "context": "Participants who would be unable to comply with the study's follow-up visit schedule; or",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Participants who had any prior unsuccessful attempt at implantation of biventricular pacing (BiVP), His Bundle Pacing (HBP), or Left Bundle Branch Pacing (LBBP) device.",
+          "start": 2000,
+          "end": 2168,
+          "section": "exclusion",
+          "context": "Participants who had any prior unsuccessful attempt at implantation of biventricular pacing (BiVP), His Bundle Pacing (HBP), or Left Bundle Branch Pacing (LBBP) device.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        }
+      ],
+      "missing_criteria": false,
+      "sites": [
+        {
+          "facility": "University of British Columbia",
+          "city": "Vancouver",
+          "state": "British Columbia",
+          "country": "Canada",
+          "status": "RECRUITING"
+        }
+      ],
+      "matched_on": [
+        {
+          "diagnosis": "heart failure",
+          "mesh_id": "D006333",
+          "mesh_term": "Heart Failure"
+        }
+      ],
+      "counts": {
+        "met": 1,
+        "not met": 0,
+        "unknown": 17
+      },
+      "structured_counts": {
+        "met": 1,
+        "not met": 0,
+        "unknown": 0
+      }
+    },
+    {
+      "nct_id": "NCT05859048",
+      "title": "Multidisciplinary Approach for High Risk Patients Leading to Early Diagnosis of Canadians in Heart Failure",
+      "url": "https://clinicaltrials.gov/study/NCT05859048",
+      "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 40 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 40.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 69, which matches the rule"
+        }
+      ],
+      "criteria": [
+        {
+          "sentence": "Male or female \\> 40 years of age",
+          "start": 23,
+          "end": 56,
+          "section": "inclusion",
+          "context": "Male or female \\> 40 years of age",
+          "rule": {
+            "field": "age",
+            "op": ">",
+            "value": 40.0,
+            "unit": "years"
+          },
+          "parse_reason": "Supported complete criterion",
+          "status": "met",
+          "evaluation_reason": "age 69, which matches the rule"
+        },
+        {
+          "sentence": "Informed consent",
+          "start": 59,
+          "end": 75,
+          "section": "inclusion",
+          "context": "Informed consent",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "At least two additional risk factors for Heart Failure (HF):",
+          "start": 78,
+          "end": 138,
+          "section": "inclusion",
+          "context": "At least two additional risk factors for Heart Failure (HF):\n\n  * Coronary artery disease (either a previous documented type 1 myocardial infarction or coronary artery bypass grafting or percutaneous coronary intervention or documented stenosis or an epicardial coronary artery (50% left main stem or \\>70% left anterior descending, circumflex or right coronary artery)).\n  * Diabetes type 1 or 2.\n  * Persistent or permanent atrial fibrillation.\n  * Previous ischemic or embolic stroke.\n  * Peripheral artery disease (previous surgical or percutaneous revascularization or documented stenosis \\>50% of major peripheral arterial vessel.\n  * Chronic kidney disease (defined as an estimated glomerular filtration rate (eGFR)\\<60 milliliters per minute (mL/min)/1.73m2 or eGFR 60-90 mL/min/1.73m2 and urine albumin-creatinine ration (UACR) \\>300mg/g).\n  * Regular loop diuretic use for \\>30 days within 12 months prior to consent.\n  * Chronic obstructive pulmonary disease (COPD) evidenced by one of the following: Pulmonary Function Test (PFT) showing airway obstruction, diagnosis of respiratory physician, CT scan reporting presence of emphysema, or treatment with national guidance advocated COPD therapy.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Coronary artery disease (either a previous documented type 1 myocardial infarction or coronary artery bypass grafting or percutaneous coronary intervention or documented stenosis or an epicardial coronary artery (50% left main stem or \\>70% left anterior descending, circumflex or right coronary artery)).",
+          "start": 144,
+          "end": 449,
+          "section": "inclusion",
+          "context": "Coronary artery disease (either a previous documented type 1 myocardial infarction or coronary artery bypass grafting or percutaneous coronary intervention or documented stenosis or an epicardial coronary artery (50% left main stem or \\>70% left anterior descending, circumflex or right coronary artery)).",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Diabetes type 1 or 2.",
+          "start": 454,
+          "end": 475,
+          "section": "inclusion",
+          "context": "Diabetes type 1 or 2.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Persistent or permanent atrial fibrillation.",
+          "start": 480,
+          "end": 524,
+          "section": "inclusion",
+          "context": "Persistent or permanent atrial fibrillation.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Previous ischemic or embolic stroke.",
+          "start": 529,
+          "end": 565,
+          "section": "inclusion",
+          "context": "Previous ischemic or embolic stroke.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Peripheral artery disease (previous surgical or percutaneous revascularization or documented stenosis \\>50% of major peripheral arterial vessel.",
+          "start": 570,
+          "end": 714,
+          "section": "inclusion",
+          "context": "Peripheral artery disease (previous surgical or percutaneous revascularization or documented stenosis \\>50% of major peripheral arterial vessel.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Chronic kidney disease (defined as an estimated glomerular filtration rate (eGFR)\\<60 milliliters per minute (mL/min)/1.73m2 or eGFR 60-90 mL/min/1.73m2 and urine albumin-creatinine ration (UACR) \\>300mg/g).",
+          "start": 719,
+          "end": 926,
+          "section": "inclusion",
+          "context": "Chronic kidney disease (defined as an estimated glomerular filtration rate (eGFR)\\<60 milliliters per minute (mL/min)/1.73m2 or eGFR 60-90 mL/min/1.73m2 and urine albumin-creatinine ration (UACR) \\>300mg/g).",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Regular loop diuretic use for \\>30 days within 12 months prior to consent.",
+          "start": 931,
+          "end": 1005,
+          "section": "inclusion",
+          "context": "Regular loop diuretic use for \\>30 days within 12 months prior to consent.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Chronic obstructive pulmonary disease (COPD) evidenced by one of the following: Pulmonary Function Test (PFT) showing airway obstruction, diagnosis of respiratory physician, CT scan reporting presence of emphysema, or treatment with national guidance advocated COPD therapy.",
+          "start": 1010,
+          "end": 1284,
+          "section": "inclusion",
+          "context": "Chronic obstructive pulmonary disease (COPD) evidenced by one of the following: Pulmonary Function Test (PFT) showing airway obstruction, diagnosis of respiratory physician, CT scan reporting presence of emphysema, or treatment with national guidance advocated COPD therapy.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Inability to give informed consent (e.g. due to significant cognitive impairment).",
+          "start": 1309,
+          "end": 1391,
+          "section": "exclusion",
+          "context": "Inability to give informed consent (e.g. due to significant cognitive impairment).",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Previous diagnosis of heart failure.",
+          "start": 1394,
+          "end": 1430,
+          "section": "exclusion",
+          "context": "Previous diagnosis of heart failure. This is any diagnosis of heart failure with any ejection fraction of any cause.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "This is any diagnosis of heart failure with any ejection fraction of any cause.",
+          "start": 1431,
+          "end": 1510,
+          "section": "exclusion",
+          "context": "Previous diagnosis of heart failure. This is any diagnosis of heart failure with any ejection fraction of any cause.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Renal replacement therapy.",
+          "start": 1513,
+          "end": 1539,
+          "section": "exclusion",
+          "context": "Renal replacement therapy.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Anyone who, in the investigator's opinion, is not suitable to participate in the trial for other reasons e.g., a diagnosis which may compromise survival over the study period.",
+          "start": 1542,
+          "end": 1717,
+          "section": "exclusion",
+          "context": "Anyone who, in the investigator's opinion, is not suitable to participate in the trial for other reasons e.g., a diagnosis which may compromise survival over the study period.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        }
+      ],
+      "missing_criteria": false,
+      "sites": [
+        {
+          "facility": "Vancouver General Hospital",
+          "city": "Vancouver",
+          "state": "British Columbia",
+          "country": "Canada",
+          "status": "RECRUITING"
+        }
+      ],
+      "matched_on": [
+        {
+          "diagnosis": "heart failure",
+          "mesh_id": "D006333",
+          "mesh_term": "Heart Failure"
+        }
+      ],
+      "counts": {
+        "met": 1,
+        "not met": 0,
+        "unknown": 15
+      },
+      "structured_counts": {
+        "met": 1,
+        "not met": 0,
+        "unknown": 0
+      }
+    },
+    {
       "nct_id": "NCT05963698",
       "title": "The Fourth Left Atrial Appendage Occlusion Study",
       "url": "https://clinicaltrials.gov/study/NCT05963698",
@@ -734,6 +1226,174 @@
       },
       "structured_counts": {
         "met": 2,
+        "not met": 0,
+        "unknown": 0
+      }
+    },
+    {
+      "nct_id": "NCT06578104",
+      "title": "PULSED AF Post-Approval Study",
+      "url": "https://clinicaltrials.gov/study/NCT06578104",
+      "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 18 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 69, which matches the rule"
+        }
+      ],
+      "criteria": [
+        {
+          "sentence": "A diagnosis of recurrent symptomatic paroxysmal AF or persistent AF",
+          "start": 22,
+          "end": 89,
+          "section": "inclusion",
+          "context": "A diagnosis of recurrent symptomatic paroxysmal AF or persistent AF",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Refractory to at least one Class I or III antiarrhythmic drug (i.e., not effective, not tolerated, or not desired)",
+          "start": 92,
+          "end": 206,
+          "section": "inclusion",
+          "context": "Refractory to at least one Class I or III antiarrhythmic drug (i.e., not effective, not tolerated, or not desired)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Patient is ≥ 18 years of age",
+          "start": 209,
+          "end": 237,
+          "section": "inclusion",
+          "context": "Patient is ≥ 18 years of age",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "parse_reason": "Supported complete criterion",
+          "status": "met",
+          "evaluation_reason": "age 69, which matches the rule"
+        },
+        {
+          "sentence": "Planned pulmonary vein isolation procedure with the commercially available PulseSelect™ PFA System",
+          "start": 240,
+          "end": 338,
+          "section": "inclusion",
+          "context": "Planned pulmonary vein isolation procedure with the commercially available PulseSelect™ PFA System",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Willing and able to comply with study requirements and give informed consent (defined as legally effective, documented confirmation of a subject's voluntary agreement to participate in this clinical study) or authorization per institution and geographical requirements",
+          "start": 341,
+          "end": 609,
+          "section": "inclusion",
+          "context": "Willing and able to comply with study requirements and give informed consent (defined as legally effective, documented confirmation of a subject's voluntary agreement to participate in this clinical study) or authorization per institution and geographical requirements",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Long-standing persistent AF (continuous AF sustained \\>12 months)",
+          "start": 633,
+          "end": 698,
+          "section": "exclusion",
+          "context": "Long-standing persistent AF (continuous AF sustained \\>12 months)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Prior left atrial catheter or surgical ablation",
+          "start": 701,
+          "end": 748,
+          "section": "exclusion",
+          "context": "Prior left atrial catheter or surgical ablation",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Patient with life expectancy \\< 36 months",
+          "start": 751,
+          "end": 792,
+          "section": "exclusion",
+          "context": "Patient with life expectancy \\< 36 months",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Presence of a permanent pacemaker, biventricular pacemaker, loop recorder/insertable cardiac monitor (ICM), or any type of implantable cardiac defibrillator (with or without biventricular pacing function)",
+          "start": 795,
+          "end": 999,
+          "section": "exclusion",
+          "context": "Presence of a permanent pacemaker, biventricular pacemaker, loop recorder/insertable cardiac monitor (ICM), or any type of implantable cardiac defibrillator (with or without biventricular pacing function)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Current or anticipated participation in any other clinical trial of a drug, device, or biologic not approved by the global study manager",
+          "start": 1002,
+          "end": 1138,
+          "section": "exclusion",
+          "context": "Current or anticipated participation in any other clinical trial of a drug, device, or biologic not approved by the global study manager",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        }
+      ],
+      "missing_criteria": false,
+      "sites": [
+        {
+          "facility": "Vancouver General Hospital",
+          "city": "Vancouver",
+          "country": "Canada",
+          "status": "RECRUITING"
+        }
+      ],
+      "matched_on": [
+        {
+          "diagnosis": "atrial fibrillation",
+          "mesh_id": "D001281",
+          "mesh_term": "Atrial Fibrillation"
+        }
+      ],
+      "counts": {
+        "met": 1,
+        "not met": 0,
+        "unknown": 9
+      },
+      "structured_counts": {
+        "met": 1,
         "not met": 0,
         "unknown": 0
       }
@@ -1638,6 +2298,384 @@
       }
     },
     {
+      "nct_id": "NCT07217067",
+      "title": "A Study to Investigate the Efficacy, Safety, Tolerability and Pharmacokinetics of PKN605 in Participants With Atrial Fibrillation",
+      "url": "https://clinicaltrials.gov/study/NCT07217067",
+      "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 18 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 69, which matches the rule"
+        }
+      ],
+      "criteria": [
+        {
+          "sentence": "Inclusions at Screening",
+          "start": 22,
+          "end": 45,
+          "section": "inclusion",
+          "context": "Inclusions at Screening",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Signed informed consent must be obtained prior to participation in the study",
+          "start": 49,
+          "end": 125,
+          "section": "inclusion",
+          "context": "Signed informed consent must be obtained prior to participation in the study",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Male and female participants ≥ 18 years of age",
+          "start": 128,
+          "end": 174,
+          "section": "inclusion",
+          "context": "Male and female participants ≥ 18 years of age",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "parse_reason": "Supported complete criterion",
+          "status": "met",
+          "evaluation_reason": "age 69, which matches the rule"
+        },
+        {
+          "sentence": "History of atrial fibrillation",
+          "start": 177,
+          "end": 207,
+          "section": "inclusion",
+          "context": "History of atrial fibrillation",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "AF (atrial fibrillation or atrial flutter) within the last 12 months (or during screening) documented by 12-lead ECG, Holter, or any other ECG recording method, as confirmed by the Investigator",
+          "start": 210,
+          "end": 403,
+          "section": "inclusion",
+          "context": "AF (atrial fibrillation or atrial flutter) within the last 12 months (or during screening) documented by 12-lead ECG, Holter, or any other ECG recording method, as confirmed by the Investigator",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Meets one or more of the following criteria:",
+          "start": 406,
+          "end": 450,
+          "section": "inclusion",
+          "context": "Meets one or more of the following criteria:",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "A.",
+          "start": 452,
+          "end": 454,
+          "section": "inclusion",
+          "context": "A. Recurrent AF (≥ 2 episodes), and ≥ 1 of the following",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Recurrent AF (≥ 2 episodes), and ≥ 1 of the following",
+          "start": 455,
+          "end": 508,
+          "section": "inclusion",
+          "context": "A. Recurrent AF (≥ 2 episodes), and ≥ 1 of the following",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "AFB of 1% or higher on a local ambulatory Holter, mobile cardiac telemetry, ECG patch monitor, or other ambulatory electrocardiographic monitor within the last 12 months",
+          "start": 512,
+          "end": 681,
+          "section": "inclusion",
+          "context": "AFB of 1% or higher on a local ambulatory Holter, mobile cardiac telemetry, ECG patch monitor, or other ambulatory electrocardiographic monitor within the last 12 months",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "CHA2DS2-VASc score of 2 or higher in males, 3 or higher in females (1 point for congestive heart failure, hypertension, age 65-74 years, diabetes, vascular disease, female sex; 2 points for age 75 years or older, prior stroke or transient ischemic attack)",
+          "start": 684,
+          "end": 939,
+          "section": "inclusion",
+          "context": "CHA2DS2-VASc score of 2 or higher in males, 3 or higher in females (1 point for congestive heart failure, hypertension, age 65-74 years, diabetes, vascular disease, female sex; 2 points for age 75 years or older, prior stroke or transient ischemic attack)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Stable heart failure or with New York Heart Association class I or II symptoms",
+          "start": 942,
+          "end": 1020,
+          "section": "inclusion",
+          "context": "Stable heart failure or with New York Heart Association class I or II symptoms",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B.",
+          "start": 1023,
+          "end": 1110,
+          "section": "inclusion",
+          "context": "NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B. AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C. Persistent AF, as confirmed by the Investigator\n\n  * On guideline-directed stroke prevention treatment, as confirmed by the Investigator\n  * Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C.",
+          "start": 1111,
+          "end": 1236,
+          "section": "inclusion",
+          "context": "NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B. AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C. Persistent AF, as confirmed by the Investigator\n\n  * On guideline-directed stroke prevention treatment, as confirmed by the Investigator\n  * Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Persistent AF, as confirmed by the Investigator",
+          "start": 1237,
+          "end": 1284,
+          "section": "inclusion",
+          "context": "NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B. AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C. Persistent AF, as confirmed by the Investigator\n\n  * On guideline-directed stroke prevention treatment, as confirmed by the Investigator\n  * Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "On guideline-directed stroke prevention treatment, as confirmed by the Investigator",
+          "start": 1290,
+          "end": 1373,
+          "section": "inclusion",
+          "context": "On guideline-directed stroke prevention treatment, as confirmed by the Investigator",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Participants must have a body mass index (BMI) ≥ 18 kg/m2.",
+          "start": 1378,
+          "end": 1436,
+          "section": "inclusion",
+          "context": "Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "BMI is calculated as body weight (kg) divided by height (m) squared",
+          "start": 1437,
+          "end": 1504,
+          "section": "inclusion",
+          "context": "Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Inclusions at Day 1",
+          "start": 1507,
+          "end": 1526,
+          "section": "inclusion",
+          "context": "Inclusions at Day 1\n\n  * Sinus rhythm at Baseline documented by 12-lead ECG (participants with persistent AF should be cardioverted at least 12 hours before randomization)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Sinus rhythm at Baseline documented by 12-lead ECG (participants with persistent AF should be cardioverted at least 12 hours before randomization)",
+          "start": 1532,
+          "end": 1678,
+          "section": "inclusion",
+          "context": "Sinus rhythm at Baseline documented by 12-lead ECG (participants with persistent AF should be cardioverted at least 12 hours before randomization)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Exclusions at Screening",
+          "start": 1702,
+          "end": 1725,
+          "section": "exclusion",
+          "context": "Exclusions at Screening",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Permanent AF",
+          "start": 1729,
+          "end": 1741,
+          "section": "exclusion",
+          "context": "Permanent AF",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Ongoing reversible causes of AF (e.g., hyperthyroidism, myocarditis, acute alcohol, sepsis- or infection related AF, surgery-related AF, pulmonary embolism)",
+          "start": 1744,
+          "end": 1900,
+          "section": "exclusion",
+          "context": "Ongoing reversible causes of AF (e.g., hyperthyroidism, myocarditis, acute alcohol, sepsis- or infection related AF, surgery-related AF, pulmonary embolism)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Ongoing use of antiarrhythmic therapy (Vaughan Williams class I or III anti-arrhythmic therapy must be discontinued at least 7 days before Screening phase ECG patch monitor; amiodarone must be discontinued at least 6 weeks before Screening phase ECG patch monitor)",
+          "start": 1903,
+          "end": 2167,
+          "section": "exclusion",
+          "context": "Ongoing use of antiarrhythmic therapy (Vaughan Williams class I or III anti-arrhythmic therapy must be discontinued at least 7 days before Screening phase ECG patch monitor; amiodarone must be discontinued at least 6 weeks before Screening phase ECG patch monitor)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "History of an AF ablation procedure without a recurrence of AF at least 2 or more months after the ablation.",
+          "start": 2170,
+          "end": 2278,
+          "section": "exclusion",
+          "context": "History of an AF ablation procedure without a recurrence of AF at least 2 or more months after the ablation.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Implanted pacemaker, defibrillator, or cardiac monitor",
+          "start": 2281,
+          "end": 2335,
+          "section": "exclusion",
+          "context": "Implanted pacemaker, defibrillator, or cardiac monitor",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Infiltrative (e.g., amyloidosis, sarcoidosis) or hypertrophic cardiomyopathy",
+          "start": 2338,
+          "end": 2414,
+          "section": "exclusion",
+          "context": "Infiltrative (e.g., amyloidosis, sarcoidosis) or hypertrophic cardiomyopathy",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Left ventricular ejection fraction of 40% or less documented within the last 12 months, or during Screening.",
+          "start": 2417,
+          "end": 2525,
+          "section": "exclusion",
+          "context": "Left ventricular ejection fraction of 40% or less documented within the last 12 months, or during Screening. If multiple LVEF measurements are recorded within the last 12 months, the most recent LVEF measurement should be used",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "If multiple LVEF measurements are recorded within the last 12 months, the most recent LVEF measurement should be used",
+          "start": 2526,
+          "end": 2643,
+          "section": "exclusion",
+          "context": "Left ventricular ejection fraction of 40% or less documented within the last 12 months, or during Screening. If multiple LVEF measurements are recorded within the last 12 months, the most recent LVEF measurement should be used",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Current decompensated heart failure or hospitalization for heart failure within 3 months prior to Screening",
+          "start": 2646,
+          "end": 2753,
+          "section": "exclusion",
+          "context": "Current decompensated heart failure or hospitalization for heart failure within 3 months prior to Screening",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        }
+      ],
+      "missing_criteria": false,
+      "sites": [
+        {
+          "facility": "Novartis Investigative Site",
+          "city": "Vancouver",
+          "state": "British Columbia",
+          "country": "Canada",
+          "status": "RECRUITING"
+        }
+      ],
+      "matched_on": [
+        {
+          "diagnosis": "atrial fibrillation",
+          "mesh_id": "D001281",
+          "mesh_term": "Atrial Fibrillation"
+        }
+      ],
+      "counts": {
+        "met": 1,
+        "not met": 0,
+        "unknown": 28
+      },
+      "structured_counts": {
+        "met": 1,
+        "not met": 0,
+        "unknown": 0
+      }
+    },
+    {
       "nct_id": "NCT07369856",
       "title": "Spot Analysis of Natriuresis to Guide up- or Down-titration of Diuretic Therapy in Ambulatory Patients With Chronic Heart Failure",
       "url": "https://clinicaltrials.gov/study/NCT07369856",
@@ -1739,10 +2777,15 @@
           "end": 491,
           "section": "exclusion",
           "context": "eGFR \\<20 mL/min/1.73m²",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "rule": {
+            "field": "egfr",
+            "op": "<",
+            "value": 20.0,
+            "unit": "mL/min/1.73m2"
+          },
+          "parse_reason": "Supported complete criterion",
           "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
+          "evaluation_reason": "Missing or invalid lab observation"
         },
         {
           "sentence": "Renal replacement therapy",
@@ -2136,488 +3179,6 @@
       }
     },
     {
-      "nct_id": "NCT05650658",
-      "title": "Left vs Left Randomized Clinical Trial",
-      "url": "https://clinicaltrials.gov/study/NCT05650658",
-      "status": "RECRUITING",
-      "structured": [
-        {
-          "sentence": "minimumAge: 18 Years",
-          "start": null,
-          "end": null,
-          "section": "inclusion",
-          "context": "Structured field minimumAge",
-          "rule": {
-            "field": "age",
-            "op": ">=",
-            "value": 18.0,
-            "unit": "years"
-          },
-          "source": "structured",
-          "parse_reason": "Structured registry field",
-          "status": "met",
-          "evaluation_reason": "age 69, which matches the rule"
-        }
-      ],
-      "criteria": [
-        {
-          "sentence": "Men and women 18 years of age or older.",
-          "start": 23,
-          "end": 62,
-          "section": "inclusion",
-          "context": "Men and women 18 years of age or older.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "A LVEF ≤ 50% within 6 months prior to enrollment.",
-          "start": 65,
-          "end": 114,
-          "section": "inclusion",
-          "context": "A LVEF ≤ 50% within 6 months prior to enrollment.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Resting QRS duration ≥130 ms as evidenced by a historical 12-lead ECG prior to enrollment OR anticipated right ventricular pacing \\>40% OR device in place with right ventricular pacing \\> 40%.",
-          "start": 117,
-          "end": 309,
-          "section": "inclusion",
-          "context": "Resting QRS duration ≥130 ms as evidenced by a historical 12-lead ECG prior to enrollment OR anticipated right ventricular pacing \\>40% OR device in place with right ventricular pacing \\> 40%.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Are optimized on HF guideline directed medical therapy according to current HF published guidelines OR patient's physician will make an effort to start all guideline-directed medical therapy and titrate doses up as permitted by the participant clinical status and co-morbidities prior to implantation procedure.",
-          "start": 312,
-          "end": 623,
-          "section": "inclusion",
-          "context": "Are optimized on HF guideline directed medical therapy according to current HF published guidelines OR patient's physician will make an effort to start all guideline-directed medical therapy and titrate doses up as permitted by the participant clinical status and co-morbidities prior to implantation procedure.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Women who are pregnant, lactating, or plan to become pregnant during the course of the trial.",
-          "start": 648,
-          "end": 741,
-          "section": "exclusion",
-          "context": "Women who are pregnant, lactating, or plan to become pregnant during the course of the trial.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Participants with angiographic evidence of coronary disease who are candidates for coronary revascularization and are likely to undergo coronary artery bypass graft surgery or percutaneous coronary, intervention in the next three (3) months.",
-          "start": 744,
-          "end": 985,
-          "section": "exclusion",
-          "context": "Participants with angiographic evidence of coronary disease who are candidates for coronary revascularization and are likely to undergo coronary artery bypass graft surgery or percutaneous coronary, intervention in the next three (3) months.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Enzyme-positive myocardial infarction within the past three (3) months prior to enrollment.",
-          "start": 988,
-          "end": 1079,
-          "section": "exclusion",
-          "context": "Enzyme-positive myocardial infarction within the past three (3) months prior to enrollment.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Coronary artery bypass graft surgery or percutaneous coronary intervention (balloon and/or stent angioplasty) within the past three (3) months prior to enrollment.",
-          "start": 1082,
-          "end": 1245,
-          "section": "exclusion",
-          "context": "Coronary artery bypass graft surgery or percutaneous coronary intervention (balloon and/or stent angioplasty) within the past three (3) months prior to enrollment.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Reversible non-ischemic cardiomyopathy (e.g., acute viral myocarditis).",
-          "start": 1248,
-          "end": 1319,
-          "section": "exclusion",
-          "context": "Reversible non-ischemic cardiomyopathy (e.g., acute viral myocarditis).",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Participants with Chagas disease, cardiac sarcoidosis or amyloidosis.",
-          "start": 1322,
-          "end": 1391,
-          "section": "exclusion",
-          "context": "Participants with Chagas disease, cardiac sarcoidosis or amyloidosis.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Expected to receive left ventricular assist device or heart transplantation within 6 months.",
-          "start": 1394,
-          "end": 1486,
-          "section": "exclusion",
-          "context": "Expected to receive left ventricular assist device or heart transplantation within 6 months.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Participants with primary severe valvular disease (e.g., aortic stenosis).",
-          "start": 1489,
-          "end": 1563,
-          "section": "exclusion",
-          "context": "Participants with primary severe valvular disease (e.g., aortic stenosis).",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Have a life expectancy of less than 12 months.",
-          "start": 1566,
-          "end": 1612,
-          "section": "exclusion",
-          "context": "Have a life expectancy of less than 12 months.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Participants with irreversible brain damage from preexisting cerebral disease.",
-          "start": 1615,
-          "end": 1693,
-          "section": "exclusion",
-          "context": "Participants with irreversible brain damage from preexisting cerebral disease.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Participants with a contrast dye allergy unable or unwilling to undergo pretreatment with steroids and/or diphenhydramine.",
-          "start": 1696,
-          "end": 1818,
-          "section": "exclusion",
-          "context": "Participants with a contrast dye allergy unable or unwilling to undergo pretreatment with steroids and/or diphenhydramine.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Participants participating in any other interventional cardiovascular clinical trial.",
-          "start": 1821,
-          "end": 1906,
-          "section": "exclusion",
-          "context": "Participants participating in any other interventional cardiovascular clinical trial.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Participants who would be unable to comply with the study's follow-up visit schedule; or",
-          "start": 1909,
-          "end": 1997,
-          "section": "exclusion",
-          "context": "Participants who would be unable to comply with the study's follow-up visit schedule; or",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Participants who had any prior unsuccessful attempt at implantation of biventricular pacing (BiVP), His Bundle Pacing (HBP), or Left Bundle Branch Pacing (LBBP) device.",
-          "start": 2000,
-          "end": 2168,
-          "section": "exclusion",
-          "context": "Participants who had any prior unsuccessful attempt at implantation of biventricular pacing (BiVP), His Bundle Pacing (HBP), or Left Bundle Branch Pacing (LBBP) device.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        }
-      ],
-      "missing_criteria": false,
-      "sites": [
-        {
-          "facility": "University of British Columbia",
-          "city": "Vancouver",
-          "state": "British Columbia",
-          "country": "Canada",
-          "status": "RECRUITING"
-        }
-      ],
-      "matched_on": [
-        {
-          "diagnosis": "heart failure",
-          "mesh_id": "D006333",
-          "mesh_term": "Heart Failure"
-        }
-      ],
-      "counts": {
-        "met": 0,
-        "not met": 0,
-        "unknown": 18
-      },
-      "structured_counts": {
-        "met": 1,
-        "not met": 0,
-        "unknown": 0
-      }
-    },
-    {
-      "nct_id": "NCT05859048",
-      "title": "Multidisciplinary Approach for High Risk Patients Leading to Early Diagnosis of Canadians in Heart Failure",
-      "url": "https://clinicaltrials.gov/study/NCT05859048",
-      "status": "RECRUITING",
-      "structured": [
-        {
-          "sentence": "minimumAge: 40 Years",
-          "start": null,
-          "end": null,
-          "section": "inclusion",
-          "context": "Structured field minimumAge",
-          "rule": {
-            "field": "age",
-            "op": ">=",
-            "value": 40.0,
-            "unit": "years"
-          },
-          "source": "structured",
-          "parse_reason": "Structured registry field",
-          "status": "met",
-          "evaluation_reason": "age 69, which matches the rule"
-        }
-      ],
-      "criteria": [
-        {
-          "sentence": "Male or female \\> 40 years of age",
-          "start": 23,
-          "end": 56,
-          "section": "inclusion",
-          "context": "Male or female \\> 40 years of age",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Informed consent",
-          "start": 59,
-          "end": 75,
-          "section": "inclusion",
-          "context": "Informed consent",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "At least two additional risk factors for Heart Failure (HF):",
-          "start": 78,
-          "end": 138,
-          "section": "inclusion",
-          "context": "At least two additional risk factors for Heart Failure (HF):\n\n  * Coronary artery disease (either a previous documented type 1 myocardial infarction or coronary artery bypass grafting or percutaneous coronary intervention or documented stenosis or an epicardial coronary artery (50% left main stem or \\>70% left anterior descending, circumflex or right coronary artery)).\n  * Diabetes type 1 or 2.\n  * Persistent or permanent atrial fibrillation.\n  * Previous ischemic or embolic stroke.\n  * Peripheral artery disease (previous surgical or percutaneous revascularization or documented stenosis \\>50% of major peripheral arterial vessel.\n  * Chronic kidney disease (defined as an estimated glomerular filtration rate (eGFR)\\<60 milliliters per minute (mL/min)/1.73m2 or eGFR 60-90 mL/min/1.73m2 and urine albumin-creatinine ration (UACR) \\>300mg/g).\n  * Regular loop diuretic use for \\>30 days within 12 months prior to consent.\n  * Chronic obstructive pulmonary disease (COPD) evidenced by one of the following: Pulmonary Function Test (PFT) showing airway obstruction, diagnosis of respiratory physician, CT scan reporting presence of emphysema, or treatment with national guidance advocated COPD therapy.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Coronary artery disease (either a previous documented type 1 myocardial infarction or coronary artery bypass grafting or percutaneous coronary intervention or documented stenosis or an epicardial coronary artery (50% left main stem or \\>70% left anterior descending, circumflex or right coronary artery)).",
-          "start": 144,
-          "end": 449,
-          "section": "inclusion",
-          "context": "Coronary artery disease (either a previous documented type 1 myocardial infarction or coronary artery bypass grafting or percutaneous coronary intervention or documented stenosis or an epicardial coronary artery (50% left main stem or \\>70% left anterior descending, circumflex or right coronary artery)).",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Diabetes type 1 or 2.",
-          "start": 454,
-          "end": 475,
-          "section": "inclusion",
-          "context": "Diabetes type 1 or 2.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Persistent or permanent atrial fibrillation.",
-          "start": 480,
-          "end": 524,
-          "section": "inclusion",
-          "context": "Persistent or permanent atrial fibrillation.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Previous ischemic or embolic stroke.",
-          "start": 529,
-          "end": 565,
-          "section": "inclusion",
-          "context": "Previous ischemic or embolic stroke.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Peripheral artery disease (previous surgical or percutaneous revascularization or documented stenosis \\>50% of major peripheral arterial vessel.",
-          "start": 570,
-          "end": 714,
-          "section": "inclusion",
-          "context": "Peripheral artery disease (previous surgical or percutaneous revascularization or documented stenosis \\>50% of major peripheral arterial vessel.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Chronic kidney disease (defined as an estimated glomerular filtration rate (eGFR)\\<60 milliliters per minute (mL/min)/1.73m2 or eGFR 60-90 mL/min/1.73m2 and urine albumin-creatinine ration (UACR) \\>300mg/g).",
-          "start": 719,
-          "end": 926,
-          "section": "inclusion",
-          "context": "Chronic kidney disease (defined as an estimated glomerular filtration rate (eGFR)\\<60 milliliters per minute (mL/min)/1.73m2 or eGFR 60-90 mL/min/1.73m2 and urine albumin-creatinine ration (UACR) \\>300mg/g).",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Regular loop diuretic use for \\>30 days within 12 months prior to consent.",
-          "start": 931,
-          "end": 1005,
-          "section": "inclusion",
-          "context": "Regular loop diuretic use for \\>30 days within 12 months prior to consent.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Chronic obstructive pulmonary disease (COPD) evidenced by one of the following: Pulmonary Function Test (PFT) showing airway obstruction, diagnosis of respiratory physician, CT scan reporting presence of emphysema, or treatment with national guidance advocated COPD therapy.",
-          "start": 1010,
-          "end": 1284,
-          "section": "inclusion",
-          "context": "Chronic obstructive pulmonary disease (COPD) evidenced by one of the following: Pulmonary Function Test (PFT) showing airway obstruction, diagnosis of respiratory physician, CT scan reporting presence of emphysema, or treatment with national guidance advocated COPD therapy.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Inability to give informed consent (e.g. due to significant cognitive impairment).",
-          "start": 1309,
-          "end": 1391,
-          "section": "exclusion",
-          "context": "Inability to give informed consent (e.g. due to significant cognitive impairment).",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Previous diagnosis of heart failure.",
-          "start": 1394,
-          "end": 1430,
-          "section": "exclusion",
-          "context": "Previous diagnosis of heart failure. This is any diagnosis of heart failure with any ejection fraction of any cause.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "This is any diagnosis of heart failure with any ejection fraction of any cause.",
-          "start": 1431,
-          "end": 1510,
-          "section": "exclusion",
-          "context": "Previous diagnosis of heart failure. This is any diagnosis of heart failure with any ejection fraction of any cause.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Renal replacement therapy.",
-          "start": 1513,
-          "end": 1539,
-          "section": "exclusion",
-          "context": "Renal replacement therapy.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Anyone who, in the investigator's opinion, is not suitable to participate in the trial for other reasons e.g., a diagnosis which may compromise survival over the study period.",
-          "start": 1542,
-          "end": 1717,
-          "section": "exclusion",
-          "context": "Anyone who, in the investigator's opinion, is not suitable to participate in the trial for other reasons e.g., a diagnosis which may compromise survival over the study period.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        }
-      ],
-      "missing_criteria": false,
-      "sites": [
-        {
-          "facility": "Vancouver General Hospital",
-          "city": "Vancouver",
-          "state": "British Columbia",
-          "country": "Canada",
-          "status": "RECRUITING"
-        }
-      ],
-      "matched_on": [
-        {
-          "diagnosis": "heart failure",
-          "mesh_id": "D006333",
-          "mesh_term": "Heart Failure"
-        }
-      ],
-      "counts": {
-        "met": 0,
-        "not met": 0,
-        "unknown": 16
-      },
-      "structured_counts": {
-        "met": 1,
-        "not met": 0,
-        "unknown": 0
-      }
-    },
-    {
       "nct_id": "NCT06008197",
       "title": "A Study to Determine the Efficacy and Safety of Finerenone on Morbidity and Mortality Among Hospitalized Heart Failure Patients",
       "url": "https://clinicaltrials.gov/study/NCT06008197",
@@ -2835,555 +3396,24 @@
         "not met": 0,
         "unknown": 0
       }
-    },
-    {
-      "nct_id": "NCT06578104",
-      "title": "PULSED AF Post-Approval Study",
-      "url": "https://clinicaltrials.gov/study/NCT06578104",
-      "status": "RECRUITING",
-      "structured": [
-        {
-          "sentence": "minimumAge: 18 Years",
-          "start": null,
-          "end": null,
-          "section": "inclusion",
-          "context": "Structured field minimumAge",
-          "rule": {
-            "field": "age",
-            "op": ">=",
-            "value": 18.0,
-            "unit": "years"
-          },
-          "source": "structured",
-          "parse_reason": "Structured registry field",
-          "status": "met",
-          "evaluation_reason": "age 69, which matches the rule"
-        }
-      ],
-      "criteria": [
-        {
-          "sentence": "A diagnosis of recurrent symptomatic paroxysmal AF or persistent AF",
-          "start": 22,
-          "end": 89,
-          "section": "inclusion",
-          "context": "A diagnosis of recurrent symptomatic paroxysmal AF or persistent AF",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Refractory to at least one Class I or III antiarrhythmic drug (i.e., not effective, not tolerated, or not desired)",
-          "start": 92,
-          "end": 206,
-          "section": "inclusion",
-          "context": "Refractory to at least one Class I or III antiarrhythmic drug (i.e., not effective, not tolerated, or not desired)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Patient is ≥ 18 years of age",
-          "start": 209,
-          "end": 237,
-          "section": "inclusion",
-          "context": "Patient is ≥ 18 years of age",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Planned pulmonary vein isolation procedure with the commercially available PulseSelect™ PFA System",
-          "start": 240,
-          "end": 338,
-          "section": "inclusion",
-          "context": "Planned pulmonary vein isolation procedure with the commercially available PulseSelect™ PFA System",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Willing and able to comply with study requirements and give informed consent (defined as legally effective, documented confirmation of a subject's voluntary agreement to participate in this clinical study) or authorization per institution and geographical requirements",
-          "start": 341,
-          "end": 609,
-          "section": "inclusion",
-          "context": "Willing and able to comply with study requirements and give informed consent (defined as legally effective, documented confirmation of a subject's voluntary agreement to participate in this clinical study) or authorization per institution and geographical requirements",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Long-standing persistent AF (continuous AF sustained \\>12 months)",
-          "start": 633,
-          "end": 698,
-          "section": "exclusion",
-          "context": "Long-standing persistent AF (continuous AF sustained \\>12 months)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Prior left atrial catheter or surgical ablation",
-          "start": 701,
-          "end": 748,
-          "section": "exclusion",
-          "context": "Prior left atrial catheter or surgical ablation",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Patient with life expectancy \\< 36 months",
-          "start": 751,
-          "end": 792,
-          "section": "exclusion",
-          "context": "Patient with life expectancy \\< 36 months",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Presence of a permanent pacemaker, biventricular pacemaker, loop recorder/insertable cardiac monitor (ICM), or any type of implantable cardiac defibrillator (with or without biventricular pacing function)",
-          "start": 795,
-          "end": 999,
-          "section": "exclusion",
-          "context": "Presence of a permanent pacemaker, biventricular pacemaker, loop recorder/insertable cardiac monitor (ICM), or any type of implantable cardiac defibrillator (with or without biventricular pacing function)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Current or anticipated participation in any other clinical trial of a drug, device, or biologic not approved by the global study manager",
-          "start": 1002,
-          "end": 1138,
-          "section": "exclusion",
-          "context": "Current or anticipated participation in any other clinical trial of a drug, device, or biologic not approved by the global study manager",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        }
-      ],
-      "missing_criteria": false,
-      "sites": [
-        {
-          "facility": "Vancouver General Hospital",
-          "city": "Vancouver",
-          "country": "Canada",
-          "status": "RECRUITING"
-        }
-      ],
-      "matched_on": [
-        {
-          "diagnosis": "atrial fibrillation",
-          "mesh_id": "D001281",
-          "mesh_term": "Atrial Fibrillation"
-        }
-      ],
-      "counts": {
-        "met": 0,
-        "not met": 0,
-        "unknown": 10
-      },
-      "structured_counts": {
-        "met": 1,
-        "not met": 0,
-        "unknown": 0
-      }
-    },
-    {
-      "nct_id": "NCT07217067",
-      "title": "A Study to Investigate the Efficacy, Safety, Tolerability and Pharmacokinetics of PKN605 in Participants With Atrial Fibrillation",
-      "url": "https://clinicaltrials.gov/study/NCT07217067",
-      "status": "RECRUITING",
-      "structured": [
-        {
-          "sentence": "minimumAge: 18 Years",
-          "start": null,
-          "end": null,
-          "section": "inclusion",
-          "context": "Structured field minimumAge",
-          "rule": {
-            "field": "age",
-            "op": ">=",
-            "value": 18.0,
-            "unit": "years"
-          },
-          "source": "structured",
-          "parse_reason": "Structured registry field",
-          "status": "met",
-          "evaluation_reason": "age 69, which matches the rule"
-        }
-      ],
-      "criteria": [
-        {
-          "sentence": "Inclusions at Screening",
-          "start": 22,
-          "end": 45,
-          "section": "inclusion",
-          "context": "Inclusions at Screening",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Signed informed consent must be obtained prior to participation in the study",
-          "start": 49,
-          "end": 125,
-          "section": "inclusion",
-          "context": "Signed informed consent must be obtained prior to participation in the study",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Male and female participants ≥ 18 years of age",
-          "start": 128,
-          "end": 174,
-          "section": "inclusion",
-          "context": "Male and female participants ≥ 18 years of age",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "History of atrial fibrillation",
-          "start": 177,
-          "end": 207,
-          "section": "inclusion",
-          "context": "History of atrial fibrillation",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "AF (atrial fibrillation or atrial flutter) within the last 12 months (or during screening) documented by 12-lead ECG, Holter, or any other ECG recording method, as confirmed by the Investigator",
-          "start": 210,
-          "end": 403,
-          "section": "inclusion",
-          "context": "AF (atrial fibrillation or atrial flutter) within the last 12 months (or during screening) documented by 12-lead ECG, Holter, or any other ECG recording method, as confirmed by the Investigator",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Meets one or more of the following criteria:",
-          "start": 406,
-          "end": 450,
-          "section": "inclusion",
-          "context": "Meets one or more of the following criteria:",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "A.",
-          "start": 452,
-          "end": 454,
-          "section": "inclusion",
-          "context": "A. Recurrent AF (≥ 2 episodes), and ≥ 1 of the following",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Recurrent AF (≥ 2 episodes), and ≥ 1 of the following",
-          "start": 455,
-          "end": 508,
-          "section": "inclusion",
-          "context": "A. Recurrent AF (≥ 2 episodes), and ≥ 1 of the following",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "AFB of 1% or higher on a local ambulatory Holter, mobile cardiac telemetry, ECG patch monitor, or other ambulatory electrocardiographic monitor within the last 12 months",
-          "start": 512,
-          "end": 681,
-          "section": "inclusion",
-          "context": "AFB of 1% or higher on a local ambulatory Holter, mobile cardiac telemetry, ECG patch monitor, or other ambulatory electrocardiographic monitor within the last 12 months",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "CHA2DS2-VASc score of 2 or higher in males, 3 or higher in females (1 point for congestive heart failure, hypertension, age 65-74 years, diabetes, vascular disease, female sex; 2 points for age 75 years or older, prior stroke or transient ischemic attack)",
-          "start": 684,
-          "end": 939,
-          "section": "inclusion",
-          "context": "CHA2DS2-VASc score of 2 or higher in males, 3 or higher in females (1 point for congestive heart failure, hypertension, age 65-74 years, diabetes, vascular disease, female sex; 2 points for age 75 years or older, prior stroke or transient ischemic attack)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Stable heart failure or with New York Heart Association class I or II symptoms",
-          "start": 942,
-          "end": 1020,
-          "section": "inclusion",
-          "context": "Stable heart failure or with New York Heart Association class I or II symptoms",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B.",
-          "start": 1023,
-          "end": 1110,
-          "section": "inclusion",
-          "context": "NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B. AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C. Persistent AF, as confirmed by the Investigator\n\n  * On guideline-directed stroke prevention treatment, as confirmed by the Investigator\n  * Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C.",
-          "start": 1111,
-          "end": 1236,
-          "section": "inclusion",
-          "context": "NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B. AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C. Persistent AF, as confirmed by the Investigator\n\n  * On guideline-directed stroke prevention treatment, as confirmed by the Investigator\n  * Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Persistent AF, as confirmed by the Investigator",
-          "start": 1237,
-          "end": 1284,
-          "section": "inclusion",
-          "context": "NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B. AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C. Persistent AF, as confirmed by the Investigator\n\n  * On guideline-directed stroke prevention treatment, as confirmed by the Investigator\n  * Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "On guideline-directed stroke prevention treatment, as confirmed by the Investigator",
-          "start": 1290,
-          "end": 1373,
-          "section": "inclusion",
-          "context": "On guideline-directed stroke prevention treatment, as confirmed by the Investigator",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Participants must have a body mass index (BMI) ≥ 18 kg/m2.",
-          "start": 1378,
-          "end": 1436,
-          "section": "inclusion",
-          "context": "Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "BMI is calculated as body weight (kg) divided by height (m) squared",
-          "start": 1437,
-          "end": 1504,
-          "section": "inclusion",
-          "context": "Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Inclusions at Day 1",
-          "start": 1507,
-          "end": 1526,
-          "section": "inclusion",
-          "context": "Inclusions at Day 1\n\n  * Sinus rhythm at Baseline documented by 12-lead ECG (participants with persistent AF should be cardioverted at least 12 hours before randomization)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Sinus rhythm at Baseline documented by 12-lead ECG (participants with persistent AF should be cardioverted at least 12 hours before randomization)",
-          "start": 1532,
-          "end": 1678,
-          "section": "inclusion",
-          "context": "Sinus rhythm at Baseline documented by 12-lead ECG (participants with persistent AF should be cardioverted at least 12 hours before randomization)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Exclusions at Screening",
-          "start": 1702,
-          "end": 1725,
-          "section": "exclusion",
-          "context": "Exclusions at Screening",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Permanent AF",
-          "start": 1729,
-          "end": 1741,
-          "section": "exclusion",
-          "context": "Permanent AF",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Ongoing reversible causes of AF (e.g., hyperthyroidism, myocarditis, acute alcohol, sepsis- or infection related AF, surgery-related AF, pulmonary embolism)",
-          "start": 1744,
-          "end": 1900,
-          "section": "exclusion",
-          "context": "Ongoing reversible causes of AF (e.g., hyperthyroidism, myocarditis, acute alcohol, sepsis- or infection related AF, surgery-related AF, pulmonary embolism)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Ongoing use of antiarrhythmic therapy (Vaughan Williams class I or III anti-arrhythmic therapy must be discontinued at least 7 days before Screening phase ECG patch monitor; amiodarone must be discontinued at least 6 weeks before Screening phase ECG patch monitor)",
-          "start": 1903,
-          "end": 2167,
-          "section": "exclusion",
-          "context": "Ongoing use of antiarrhythmic therapy (Vaughan Williams class I or III anti-arrhythmic therapy must be discontinued at least 7 days before Screening phase ECG patch monitor; amiodarone must be discontinued at least 6 weeks before Screening phase ECG patch monitor)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "History of an AF ablation procedure without a recurrence of AF at least 2 or more months after the ablation.",
-          "start": 2170,
-          "end": 2278,
-          "section": "exclusion",
-          "context": "History of an AF ablation procedure without a recurrence of AF at least 2 or more months after the ablation.",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Implanted pacemaker, defibrillator, or cardiac monitor",
-          "start": 2281,
-          "end": 2335,
-          "section": "exclusion",
-          "context": "Implanted pacemaker, defibrillator, or cardiac monitor",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Infiltrative (e.g., amyloidosis, sarcoidosis) or hypertrophic cardiomyopathy",
-          "start": 2338,
-          "end": 2414,
-          "section": "exclusion",
-          "context": "Infiltrative (e.g., amyloidosis, sarcoidosis) or hypertrophic cardiomyopathy",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Left ventricular ejection fraction of 40% or less documented within the last 12 months, or during Screening.",
-          "start": 2417,
-          "end": 2525,
-          "section": "exclusion",
-          "context": "Left ventricular ejection fraction of 40% or less documented within the last 12 months, or during Screening. If multiple LVEF measurements are recorded within the last 12 months, the most recent LVEF measurement should be used",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "If multiple LVEF measurements are recorded within the last 12 months, the most recent LVEF measurement should be used",
-          "start": 2526,
-          "end": 2643,
-          "section": "exclusion",
-          "context": "Left ventricular ejection fraction of 40% or less documented within the last 12 months, or during Screening. If multiple LVEF measurements are recorded within the last 12 months, the most recent LVEF measurement should be used",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Current decompensated heart failure or hospitalization for heart failure within 3 months prior to Screening",
-          "start": 2646,
-          "end": 2753,
-          "section": "exclusion",
-          "context": "Current decompensated heart failure or hospitalization for heart failure within 3 months prior to Screening",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        }
-      ],
-      "missing_criteria": false,
-      "sites": [
-        {
-          "facility": "Novartis Investigative Site",
-          "city": "Vancouver",
-          "state": "British Columbia",
-          "country": "Canada",
-          "status": "RECRUITING"
-        }
-      ],
-      "matched_on": [
-        {
-          "diagnosis": "atrial fibrillation",
-          "mesh_id": "D001281",
-          "mesh_term": "Atrial Fibrillation"
-        }
-      ],
-      "counts": {
-        "met": 0,
-        "not met": 0,
-        "unknown": 29
-      },
-      "structured_counts": {
-        "met": 1,
-        "not met": 0,
-        "unknown": 0
-      }
     }
   ],
   "counts": {
-    "met": 3,
+    "met": 7,
     "not met": 0,
-    "unknown": 238
+    "unknown": 234
   },
   "structured_counts": {
     "met": 13,
     "not met": 0,
     "unknown": 0
   },
-  "open_questions": [],
+  "open_questions": [
+    {
+      "question": "egfr result with a unit",
+      "lines": 1
+    }
+  ],
   "retrieved_at": "2026-11-13T07:47:33.686939+00:00",
   "requests": [
     "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=type+2+diabetes&query.locn=Vancouver",

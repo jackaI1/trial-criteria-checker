@@ -3,11 +3,12 @@ import math
 from decimal import Decimal
 from .parser import LAB_UNITS
 
-# Factors convert to g/L, cells/uL, umol/L or percent respectively.
+# Factors convert to g/L, cells/uL, umol/L or the one unit each other test uses.
 SCALES = {'hemoglobin': {'g/dL': 10, 'g/L': 1},
           'anc': {'10^9/L': 1000, 'cells/uL': 1},
           'platelets': {'10^9/L': 1000, 'cells/uL': 1},
-          'creatinine': {'mg/dL': 88.4, 'umol/L': 1}, 'hba1c': {'%': 1}}
+          'creatinine': {'mg/dL': 88.4, 'umol/L': 1}, 'hba1c': {'%': 1},
+          'bmi': {'kg/m2': 1}, 'egfr': {'mL/min/1.73m2': 1}, 'lvef': {'%': 1}}
 
 
 def valid_number(value):
@@ -49,7 +50,9 @@ def evaluate(row, patient):
                 return result('unknown', 'Missing or incompatible unit')
             # Decimal arithmetic preserves equality at converted threshold boundaries.
             value = Decimal(str(lab['value'])) * Decimal(str(scale))
-            threshold = Decimal(str(threshold)) * Decimal(str(SCALES[field][rule['unit']]))
+            factor = Decimal(str(SCALES[field][rule['unit']]))
+            threshold = ([Decimal(str(t)) * factor for t in threshold] if isinstance(threshold, list)
+                         else Decimal(str(threshold)) * factor)
         if field not in LAB_UNITS and not valid_number(value):
             return result('unknown', 'Missing or invalid numeric value')
         op = rule['op']

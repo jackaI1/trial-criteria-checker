@@ -102,7 +102,7 @@ class ReportTests(unittest.TestCase):
         snapshot = json.loads(Path('data/studies.json').read_text())
         labels = json.loads(Path('data/labels.json').read_text())
         result = benchmark(snapshot, labels)
-        self.assertEqual((result['true_positives'], result['false_positives'], result['false_negatives']), (10, 0, 2))
+        self.assertEqual((result['true_positives'], result['false_positives'], result['false_negatives']), (11, 0, 2))
         self.assertEqual(result['source_sentence_count'], 61)
         for study in snapshot['studies']:
             text = study['protocolSection']['eligibilityModule']['eligibilityCriteria']

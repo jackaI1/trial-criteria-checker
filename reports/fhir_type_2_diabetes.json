@@ -8,6 +8,11 @@
     ],
     "diagnoses_complete": false,
     "labs": {
+      "bmi": {
+        "value": 31.4,
+        "unit": "kg/m2",
+        "effective": "2026-10-02T08:40:00-07:00"
+      },
       "creatinine": {
         "value": 88,
         "unit": "umol/L",
@@ -40,6 +45,10 @@
       {
         "resource": "Condition/fict-t2d-condition-1",
         "note": "diagnosis type 2 diabetes"
+      },
+      {
+        "resource": "Observation/fict-t2d-observation-7",
+        "note": "bmi 31.4 kg/m2 on 2026-10-02"
       },
       {
         "resource": "Observation/fict-t2d-observation-3",
@@ -598,10 +607,18 @@
           "end": 226,
           "section": "inclusion",
           "context": "Body mass index (BMI) of 25 - 35 kg/m2",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
+          "rule": {
+            "field": "bmi",
+            "op": "between",
+            "value": [
+              25.0,
+              35.0
+            ],
+            "unit": "kg/m2"
+          },
+          "parse_reason": "Supported complete criterion",
+          "status": "met",
+          "evaluation_reason": "bmi 31.4 kg/m2, which matches the rule"
         },
         {
           "sentence": "Stable weight (no weight loss or gain \\> 3 kg in the past 3 months)",
@@ -959,9 +976,9 @@
     }
   ],
   "counts": {
-    "met": 4,
+    "met": 5,
     "not met": 1,
-    "unknown": 56
+    "unknown": 55
   },
   "structured_counts": {
     "met": 6,

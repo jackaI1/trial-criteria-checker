@@ -8,7 +8,7 @@ Saved snapshot: 27 recruiting studies with a recruiting site in this city (16 mo
 
 Structured age and sex fields: 13 met, 0 not met, 0 unknown.
 
-Eligibility text lines: 3 met, 0 not met, 238 unknown. These are not a trial eligibility decision.
+Eligibility text lines: 7 met, 0 not met, 234 unknown. These are not a trial eligibility decision.
 
 ## Fictional input
 
@@ -62,17 +62,73 @@ Skipped:
 
 | Study | Matched on | Recruiting sites here | Structured fields | Text lines |
 | --- | --- | --- | --- | --- |
+| [NCT05650658](https://clinicaltrials.gov/study/NCT05650658): Left vs Left Randomized Clinical Trial | Heart Failure | University of British Columbia, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 17 unknown |
+| [NCT05859048](https://clinicaltrials.gov/study/NCT05859048): Multidisciplinary Approach for High Risk Patients Leading to Early Diagnosis of Canadians in Heart Failure | Heart Failure | Vancouver General Hospital, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 15 unknown |
 | [NCT05963698](https://clinicaltrials.gov/study/NCT05963698): The Fourth Left Atrial Appendage Occlusion Study | Atrial Fibrillation | Vancouver Coastal Health Authority, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 12 unknown |
 | [NCT06217302](https://clinicaltrials.gov/study/NCT06217302): Sotagliflozin to Slow Kidney Function Decline in Persons With Type 1 Diabetes and Diabetic Kidney Disease | Heart Failure | St. Paul's Hospital, Vancouver | 2 met, 0 not met, 0 unknown | 0 met, 0 not met, 35 unknown |
+| [NCT06578104](https://clinicaltrials.gov/study/NCT06578104): PULSED AF Post-Approval Study | Atrial Fibrillation | Vancouver General Hospital, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 9 unknown |
 | [NCT06678841](https://clinicaltrials.gov/study/NCT06678841): ELEVATE-HFpEF Clinical Study | Heart Failure | Saint Pauls Hospital, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 37 unknown |
 | [NCT06736574](https://clinicaltrials.gov/study/NCT06736574): Study With Omecamtiv Mecarbil (CK-1827452) to Treat Chronic Heart Failure With Severely Reduced Ejection Fraction | Heart Failure | St. Paul's Hospital, Vancouver | 2 met, 0 not met, 0 unknown | 0 met, 0 not met, 32 unknown |
+| [NCT07217067](https://clinicaltrials.gov/study/NCT07217067): A Study to Investigate the Efficacy, Safety, Tolerability and Pharmacokinetics of PKN605 in Participants With Atrial Fibrillation | Atrial Fibrillation | Novartis Investigative Site, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 28 unknown |
 | [NCT07369856](https://clinicaltrials.gov/study/NCT07369856): Spot Analysis of Natriuresis to Guide up- or Down-titration of Diuretic Therapy in Ambulatory Patients With Chronic Heart Failure | Heart Failure | Vancouver General Hospital, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 9 unknown |
 | [NCT03968393](https://clinicaltrials.gov/study/NCT03968393): Anticoagulation for Stroke Prevention In Patients With Recent Episodes of Atrial Fibrillation Occurring Transiently With Stress | Atrial Fibrillation | Vancouver General Hospital, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 25 unknown |
-| [NCT05650658](https://clinicaltrials.gov/study/NCT05650658): Left vs Left Randomized Clinical Trial | Heart Failure | University of British Columbia, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 18 unknown |
-| [NCT05859048](https://clinicaltrials.gov/study/NCT05859048): Multidisciplinary Approach for High Risk Patients Leading to Early Diagnosis of Canadians in Heart Failure | Heart Failure | Vancouver General Hospital, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 16 unknown |
 | [NCT06008197](https://clinicaltrials.gov/study/NCT06008197): A Study to Determine the Efficacy and Safety of Finerenone on Morbidity and Mortality Among Hospitalized Heart Failure Patients | Heart Failure | Vancouver, BC Investigative Site 11017, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 15 unknown |
-| [NCT06578104](https://clinicaltrials.gov/study/NCT06578104): PULSED AF Post-Approval Study | Atrial Fibrillation | Vancouver General Hospital, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 10 unknown |
-| [NCT07217067](https://clinicaltrials.gov/study/NCT07217067): A Study to Investigate the Efficacy, Safety, Tolerability and Pharmacokinetics of PKN605 in Participants With Atrial Fibrillation | Atrial Fibrillation | Novartis Investigative Site, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 29 unknown |
+
+## What would settle more lines
+
+These parsed lines are unknown only because the record is missing something:
+
+- egfr result with a unit (1 line)
+
+## [NCT05650658](https://clinicaltrials.gov/study/NCT05650658): Left vs Left Randomized Clinical Trial
+
+Saved status: RECRUITING.
+
+| Source | Rule | Result |
+| --- | --- | --- |
+| minimumAge: 18 Years <br><sub>structured registry field</sub> | age &gt;= 18 years | **met**: age 69, which matches the rule |
+| Men and women 18 years of age or older. <br><sub>inclusion, characters 23:62</sub> | age &gt;= 18 years | **met**: age 69, which matches the rule |
+| A LVEF ≤ 50% within 6 months prior to enrollment. <br><sub>inclusion, characters 65:114</sub> | no rule | **unknown**: No supported complete rule |
+| Resting QRS duration ≥130 ms as evidenced by a historical 12-lead ECG prior to enrollment OR anticipated right ventricular pacing \&gt;40% OR device in place with right ventricular pacing \&gt; 40%. <br><sub>inclusion, characters 117:309</sub> | no rule | **unknown**: No supported complete rule |
+| Are optimized on HF guideline directed medical therapy according to current HF published guidelines OR patient's physician will make an effort to start all guideline-directed medical therapy and titrate doses up as permitted by the participant clinical status and co-morbidities prior to implantation procedure. <br><sub>inclusion, characters 312:623</sub> | no rule | **unknown**: No supported complete rule |
+| Women who are pregnant, lactating, or plan to become pregnant during the course of the trial. <br><sub>exclusion, characters 648:741</sub> | no rule | **unknown**: No supported complete rule |
+| Participants with angiographic evidence of coronary disease who are candidates for coronary revascularization and are likely to undergo coronary artery bypass graft surgery or percutaneous coronary, intervention in the next three (3) months. <br><sub>exclusion, characters 744:985</sub> | no rule | **unknown**: No supported complete rule |
+| Enzyme-positive myocardial infarction within the past three (3) months prior to enrollment. <br><sub>exclusion, characters 988:1079</sub> | no rule | **unknown**: No supported complete rule |
+| Coronary artery bypass graft surgery or percutaneous coronary intervention (balloon and/or stent angioplasty) within the past three (3) months prior to enrollment. <br><sub>exclusion, characters 1082:1245</sub> | no rule | **unknown**: No supported complete rule |
+| Reversible non-ischemic cardiomyopathy (e.g., acute viral myocarditis). <br><sub>exclusion, characters 1248:1319</sub> | no rule | **unknown**: No supported complete rule |
+| Participants with Chagas disease, cardiac sarcoidosis or amyloidosis. <br><sub>exclusion, characters 1322:1391</sub> | no rule | **unknown**: No supported complete rule |
+| Expected to receive left ventricular assist device or heart transplantation within 6 months. <br><sub>exclusion, characters 1394:1486</sub> | no rule | **unknown**: No supported complete rule |
+| Participants with primary severe valvular disease (e.g., aortic stenosis). <br><sub>exclusion, characters 1489:1563</sub> | no rule | **unknown**: No supported complete rule |
+| Have a life expectancy of less than 12 months. <br><sub>exclusion, characters 1566:1612</sub> | no rule | **unknown**: No supported complete rule |
+| Participants with irreversible brain damage from preexisting cerebral disease. <br><sub>exclusion, characters 1615:1693</sub> | no rule | **unknown**: No supported complete rule |
+| Participants with a contrast dye allergy unable or unwilling to undergo pretreatment with steroids and/or diphenhydramine. <br><sub>exclusion, characters 1696:1818</sub> | no rule | **unknown**: No supported complete rule |
+| Participants participating in any other interventional cardiovascular clinical trial. <br><sub>exclusion, characters 1821:1906</sub> | no rule | **unknown**: No supported complete rule |
+| Participants who would be unable to comply with the study's follow-up visit schedule; or <br><sub>exclusion, characters 1909:1997</sub> | no rule | **unknown**: No supported complete rule |
+| Participants who had any prior unsuccessful attempt at implantation of biventricular pacing (BiVP), His Bundle Pacing (HBP), or Left Bundle Branch Pacing (LBBP) device. <br><sub>exclusion, characters 2000:2168</sub> | no rule | **unknown**: No supported complete rule |
+
+## [NCT05859048](https://clinicaltrials.gov/study/NCT05859048): Multidisciplinary Approach for High Risk Patients Leading to Early Diagnosis of Canadians in Heart Failure
+
+Saved status: RECRUITING.
+
+| Source | Rule | Result |
+| --- | --- | --- |
+| minimumAge: 40 Years <br><sub>structured registry field</sub> | age &gt;= 40 years | **met**: age 69, which matches the rule |
+| Male or female \&gt; 40 years of age <br><sub>inclusion, characters 23:56</sub> | age &gt; 40 years | **met**: age 69, which matches the rule |
+| Informed consent <br><sub>inclusion, characters 59:75</sub> | no rule | **unknown**: No supported complete rule |
+| At least two additional risk factors for Heart Failure (HF): <br><sub>inclusion, characters 78:138</sub> | no rule | **unknown**: No supported complete rule |
+| Coronary artery disease (either a previous documented type 1 myocardial infarction or coronary artery bypass grafting or percutaneous coronary intervention or documented stenosis or an epicardial coronary artery (50% left main stem or \&gt;70% left anterior descending, circumflex or right coronary artery)). <br><sub>inclusion, characters 144:449</sub> | no rule | **unknown**: No supported complete rule |
+| Diabetes type 1 or 2. <br><sub>inclusion, characters 454:475</sub> | no rule | **unknown**: No supported complete rule |
+| Persistent or permanent atrial fibrillation. <br><sub>inclusion, characters 480:524</sub> | no rule | **unknown**: No supported complete rule |
+| Previous ischemic or embolic stroke. <br><sub>inclusion, characters 529:565</sub> | no rule | **unknown**: No supported complete rule |
+| Peripheral artery disease (previous surgical or percutaneous revascularization or documented stenosis \&gt;50% of major peripheral arterial vessel. <br><sub>inclusion, characters 570:714</sub> | no rule | **unknown**: No supported complete rule |
+| Chronic kidney disease (defined as an estimated glomerular filtration rate (eGFR)\&lt;60 milliliters per minute (mL/min)/1.73m2 or eGFR 60-90 mL/min/1.73m2 and urine albumin-creatinine ration (UACR) \&gt;300mg/g). <br><sub>inclusion, characters 719:926</sub> | no rule | **unknown**: No supported complete rule |
+| Regular loop diuretic use for \&gt;30 days within 12 months prior to consent. <br><sub>inclusion, characters 931:1005</sub> | no rule | **unknown**: No supported complete rule |
+| Chronic obstructive pulmonary disease (COPD) evidenced by one of the following: Pulmonary Function Test (PFT) showing airway obstruction, diagnosis of respiratory physician, CT scan reporting presence of emphysema, or treatment with national guidance advocated COPD therapy. <br><sub>inclusion, characters 1010:1284</sub> | no rule | **unknown**: No supported complete rule |
+| Inability to give informed consent (e.g. due to significant cognitive impairment). <br><sub>exclusion, characters 1309:1391</sub> | no rule | **unknown**: No supported complete rule |
+| Previous diagnosis of heart failure. <br><sub>exclusion, characters 1394:1430</sub> | no rule | **unknown**: No supported complete rule |
+| This is any diagnosis of heart failure with any ejection fraction of any cause. <br><sub>exclusion, characters 1431:1510</sub> | no rule | **unknown**: No supported complete rule |
+| Renal replacement therapy. <br><sub>exclusion, characters 1513:1539</sub> | no rule | **unknown**: No supported complete rule |
+| Anyone who, in the investigator's opinion, is not suitable to participate in the trial for other reasons e.g., a diagnosis which may compromise survival over the study period. <br><sub>exclusion, characters 1542:1717</sub> | no rule | **unknown**: No supported complete rule |
 
 ## [NCT05963698](https://clinicaltrials.gov/study/NCT05963698): The Fourth Left Atrial Appendage Occlusion Study
 
@@ -138,6 +194,24 @@ Saved status: RECRUITING.
 | Breastfeeding, pregnancy, or unwillingness to be on contraception during the trial; <br><sub>exclusion, characters 4132:4215</sub> | no rule | **unknown**: No supported complete rule |
 | Presence of a clinically significant medical history, physical examination, or laboratory finding that may interfere with any aspect of study conduct or interpretation of results; <br><sub>exclusion, characters 4218:4397</sub> | no rule | **unknown**: No supported complete rule |
 | Any condition that may render the patient unable to comply with study requirements and/or complete the study. <br><sub>exclusion, characters 4400:4509</sub> | no rule | **unknown**: No supported complete rule |
+
+## [NCT06578104](https://clinicaltrials.gov/study/NCT06578104): PULSED AF Post-Approval Study
+
+Saved status: RECRUITING.
+
+| Source | Rule | Result |
+| --- | --- | --- |
+| minimumAge: 18 Years <br><sub>structured registry field</sub> | age &gt;= 18 years | **met**: age 69, which matches the rule |
+| A diagnosis of recurrent symptomatic paroxysmal AF or persistent AF <br><sub>inclusion, characters 22:89</sub> | no rule | **unknown**: No supported complete rule |
+| Refractory to at least one Class I or III antiarrhythmic drug (i.e., not effective, not tolerated, or not desired) <br><sub>inclusion, characters 92:206</sub> | no rule | **unknown**: No supported complete rule |
+| Patient is ≥ 18 years of age <br><sub>inclusion, characters 209:237</sub> | age &gt;= 18 years | **met**: age 69, which matches the rule |
+| Planned pulmonary vein isolation procedure with the commercially available PulseSelect™ PFA System <br><sub>inclusion, characters 240:338</sub> | no rule | **unknown**: No supported complete rule |
+| Willing and able to comply with study requirements and give informed consent (defined as legally effective, documented confirmation of a subject's voluntary agreement to participate in this clinical study) or authorization per institution and geographical requirements <br><sub>inclusion, characters 341:609</sub> | no rule | **unknown**: No supported complete rule |
+| Long-standing persistent AF (continuous AF sustained \&gt;12 months) <br><sub>exclusion, characters 633:698</sub> | no rule | **unknown**: No supported complete rule |
+| Prior left atrial catheter or surgical ablation <br><sub>exclusion, characters 701:748</sub> | no rule | **unknown**: No supported complete rule |
+| Patient with life expectancy \&lt; 36 months <br><sub>exclusion, characters 751:792</sub> | no rule | **unknown**: No supported complete rule |
+| Presence of a permanent pacemaker, biventricular pacemaker, loop recorder/insertable cardiac monitor (ICM), or any type of implantable cardiac defibrillator (with or without biventricular pacing function) <br><sub>exclusion, characters 795:999</sub> | no rule | **unknown**: No supported complete rule |
+| Current or anticipated participation in any other clinical trial of a drug, device, or biologic not approved by the global study manager <br><sub>exclusion, characters 1002:1138</sub> | no rule | **unknown**: No supported complete rule |
 
 ## [NCT06678841](https://clinicaltrials.gov/study/NCT06678841): ELEVATE-HFpEF Clinical Study
 
@@ -226,6 +300,43 @@ Saved status: RECRUITING.
 | Are pregnant or planning pregnancy during the study period, or planning to breastfeed during treatment with IP or within 5 days after the end of treatment with IP <br><sub>exclusion, characters 3023:3185</sub> | no rule | **unknown**: No supported complete rule |
 | Have primary infiltrative cardiomyopathy (e.g. cardiac amyloidosis) or severe stenotic valvular disease <br><sub>exclusion, characters 3188:3291</sub> | no rule | **unknown**: No supported complete rule |
 
+## [NCT07217067](https://clinicaltrials.gov/study/NCT07217067): A Study to Investigate the Efficacy, Safety, Tolerability and Pharmacokinetics of PKN605 in Participants With Atrial Fibrillation
+
+Saved status: RECRUITING.
+
+| Source | Rule | Result |
+| --- | --- | --- |
+| minimumAge: 18 Years <br><sub>structured registry field</sub> | age &gt;= 18 years | **met**: age 69, which matches the rule |
+| Inclusions at Screening <br><sub>inclusion, characters 22:45</sub> | no rule | **unknown**: No supported complete rule |
+| Signed informed consent must be obtained prior to participation in the study <br><sub>inclusion, characters 49:125</sub> | no rule | **unknown**: No supported complete rule |
+| Male and female participants ≥ 18 years of age <br><sub>inclusion, characters 128:174</sub> | age &gt;= 18 years | **met**: age 69, which matches the rule |
+| History of atrial fibrillation <br><sub>inclusion, characters 177:207</sub> | no rule | **unknown**: No supported complete rule |
+| AF (atrial fibrillation or atrial flutter) within the last 12 months (or during screening) documented by 12-lead ECG, Holter, or any other ECG recording method, as confirmed by the Investigator <br><sub>inclusion, characters 210:403</sub> | no rule | **unknown**: No supported complete rule |
+| Meets one or more of the following criteria: <br><sub>inclusion, characters 406:450</sub> | no rule | **unknown**: No supported complete rule |
+| A. <br><sub>inclusion, characters 452:454</sub> | no rule | **unknown**: No supported complete rule |
+| Recurrent AF (≥ 2 episodes), and ≥ 1 of the following <br><sub>inclusion, characters 455:508</sub> | no rule | **unknown**: No supported complete rule |
+| AFB of 1% or higher on a local ambulatory Holter, mobile cardiac telemetry, ECG patch monitor, or other ambulatory electrocardiographic monitor within the last 12 months <br><sub>inclusion, characters 512:681</sub> | no rule | **unknown**: No supported complete rule |
+| CHA2DS2-VASc score of 2 or higher in males, 3 or higher in females (1 point for congestive heart failure, hypertension, age 65-74 years, diabetes, vascular disease, female sex; 2 points for age 75 years or older, prior stroke or transient ischemic attack) <br><sub>inclusion, characters 684:939</sub> | no rule | **unknown**: No supported complete rule |
+| Stable heart failure or with New York Heart Association class I or II symptoms <br><sub>inclusion, characters 942:1020</sub> | no rule | **unknown**: No supported complete rule |
+| NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B. <br><sub>inclusion, characters 1023:1110</sub> | no rule | **unknown**: No supported complete rule |
+| AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C. <br><sub>inclusion, characters 1111:1236</sub> | no rule | **unknown**: No supported complete rule |
+| Persistent AF, as confirmed by the Investigator <br><sub>inclusion, characters 1237:1284</sub> | no rule | **unknown**: No supported complete rule |
+| On guideline-directed stroke prevention treatment, as confirmed by the Investigator <br><sub>inclusion, characters 1290:1373</sub> | no rule | **unknown**: No supported complete rule |
+| Participants must have a body mass index (BMI) ≥ 18 kg/m2. <br><sub>inclusion, characters 1378:1436</sub> | no rule | **unknown**: No supported complete rule |
+| BMI is calculated as body weight (kg) divided by height (m) squared <br><sub>inclusion, characters 1437:1504</sub> | no rule | **unknown**: No supported complete rule |
+| Inclusions at Day 1 <br><sub>inclusion, characters 1507:1526</sub> | no rule | **unknown**: No supported complete rule |
+| Sinus rhythm at Baseline documented by 12-lead ECG (participants with persistent AF should be cardioverted at least 12 hours before randomization) <br><sub>inclusion, characters 1532:1678</sub> | no rule | **unknown**: No supported complete rule |
+| Exclusions at Screening <br><sub>exclusion, characters 1702:1725</sub> | no rule | **unknown**: No supported complete rule |
+| Permanent AF <br><sub>exclusion, characters 1729:1741</sub> | no rule | **unknown**: No supported complete rule |
+| Ongoing reversible causes of AF (e.g., hyperthyroidism, myocarditis, acute alcohol, sepsis- or infection related AF, surgery-related AF, pulmonary embolism) <br><sub>exclusion, characters 1744:1900</sub> | no rule | **unknown**: No supported complete rule |
+| Ongoing use of antiarrhythmic therapy (Vaughan Williams class I or III anti-arrhythmic therapy must be discontinued at least 7 days before Screening phase ECG patch monitor; amiodarone must be discontinued at least 6 weeks before Screening phase ECG patch monitor) <br><sub>exclusion, characters 1903:2167</sub> | no rule | **unknown**: No supported complete rule |
+| History of an AF ablation procedure without a recurrence of AF at least 2 or more months after the ablation. <br><sub>exclusion, characters 2170:2278</sub> | no rule | **unknown**: No supported complete rule |
+| Implanted pacemaker, defibrillator, or cardiac monitor <br><sub>exclusion, characters 2281:2335</sub> | no rule | **unknown**: No supported complete rule |
+| Infiltrative (e.g., amyloidosis, sarcoidosis) or hypertrophic cardiomyopathy <br><sub>exclusion, characters 2338:2414</sub> | no rule | **unknown**: No supported complete rule |
+| Left ventricular ejection fraction of 40% or less documented within the last 12 months, or during Screening. <br><sub>exclusion, characters 2417:2525</sub> | no rule | **unknown**: No supported complete rule |
+| If multiple LVEF measurements are recorded within the last 12 months, the most recent LVEF measurement should be used <br><sub>exclusion, characters 2526:2643</sub> | no rule | **unknown**: No supported complete rule |
+| Current decompensated heart failure or hospitalization for heart failure within 3 months prior to Screening <br><sub>exclusion, characters 2646:2753</sub> | no rule | **unknown**: No supported complete rule |
+
 ## [NCT07369856](https://clinicaltrials.gov/study/NCT07369856): Spot Analysis of Natriuresis to Guide up- or Down-titration of Diuretic Therapy in Ambulatory Patients With Chronic Heart Failure
 
 Saved status: RECRUITING.
@@ -239,7 +350,7 @@ Saved status: RECRUITING.
 | Residing in VCH or PHC regions <br><sub>inclusion, characters 130:160</sub> | no rule | **unknown**: No supported complete rule |
 | Group-specific inclusion: <br><sub>inclusion, characters 162:187</sub> | no rule | **unknown**: No supported complete rule |
 | Group 1: Congestion score ≥5 OR objective congestion; stable furosemide ≥1 week Group 2: NYHA I-II; congestion score \&lt;5; no recent HF hospitalization; stable furosemide ≥1 month Group 3: First 100 eligible patients not meeting criteria for Groups 1 or 2 <br><sub>inclusion, characters 189:443</sub> | no rule | **unknown**: No supported complete rule |
-| eGFR \&lt;20 mL/min/1.73m² <br><sub>exclusion, characters 468:491</sub> | no rule | **unknown**: No supported complete rule |
+| eGFR \&lt;20 mL/min/1.73m² <br><sub>exclusion, characters 468:491</sub> | egfr &lt; 20 mL/min/1.73m2 | **unknown**: Missing or invalid lab observation |
 | Renal replacement therapy <br><sub>exclusion, characters 494:519</sub> | no rule | **unknown**: No supported complete rule |
 | High-risk clinical status requiring hospitalization <br><sub>exclusion, characters 522:573</sub> | no rule | **unknown**: No supported complete rule |
 | Inability to consent or perform required urine sampling <br><sub>exclusion, characters 576:631</sub> | no rule | **unknown**: No supported complete rule |
@@ -277,56 +388,6 @@ Saved status: RECRUITING.
 | women who are pregnant, breastfeeding, or of childbearing potential who are not taking effective contraception; OR <br><sub>exclusion, characters 1822:1936</sub> | no rule | **unknown**: No supported complete rule |
 | previously enrolled in the trial <br><sub>exclusion, characters 1941:1973</sub> | no rule | **unknown**: No supported complete rule |
 
-## [NCT05650658](https://clinicaltrials.gov/study/NCT05650658): Left vs Left Randomized Clinical Trial
-
-Saved status: RECRUITING.
-
-| Source | Rule | Result |
-| --- | --- | --- |
-| minimumAge: 18 Years <br><sub>structured registry field</sub> | age &gt;= 18 years | **met**: age 69, which matches the rule |
-| Men and women 18 years of age or older. <br><sub>inclusion, characters 23:62</sub> | no rule | **unknown**: No supported complete rule |
-| A LVEF ≤ 50% within 6 months prior to enrollment. <br><sub>inclusion, characters 65:114</sub> | no rule | **unknown**: No supported complete rule |
-| Resting QRS duration ≥130 ms as evidenced by a historical 12-lead ECG prior to enrollment OR anticipated right ventricular pacing \&gt;40% OR device in place with right ventricular pacing \&gt; 40%. <br><sub>inclusion, characters 117:309</sub> | no rule | **unknown**: No supported complete rule |
-| Are optimized on HF guideline directed medical therapy according to current HF published guidelines OR patient's physician will make an effort to start all guideline-directed medical therapy and titrate doses up as permitted by the participant clinical status and co-morbidities prior to implantation procedure. <br><sub>inclusion, characters 312:623</sub> | no rule | **unknown**: No supported complete rule |
-| Women who are pregnant, lactating, or plan to become pregnant during the course of the trial. <br><sub>exclusion, characters 648:741</sub> | no rule | **unknown**: No supported complete rule |
-| Participants with angiographic evidence of coronary disease who are candidates for coronary revascularization and are likely to undergo coronary artery bypass graft surgery or percutaneous coronary, intervention in the next three (3) months. <br><sub>exclusion, characters 744:985</sub> | no rule | **unknown**: No supported complete rule |
-| Enzyme-positive myocardial infarction within the past three (3) months prior to enrollment. <br><sub>exclusion, characters 988:1079</sub> | no rule | **unknown**: No supported complete rule |
-| Coronary artery bypass graft surgery or percutaneous coronary intervention (balloon and/or stent angioplasty) within the past three (3) months prior to enrollment. <br><sub>exclusion, characters 1082:1245</sub> | no rule | **unknown**: No supported complete rule |
-| Reversible non-ischemic cardiomyopathy (e.g., acute viral myocarditis). <br><sub>exclusion, characters 1248:1319</sub> | no rule | **unknown**: No supported complete rule |
-| Participants with Chagas disease, cardiac sarcoidosis or amyloidosis. <br><sub>exclusion, characters 1322:1391</sub> | no rule | **unknown**: No supported complete rule |
-| Expected to receive left ventricular assist device or heart transplantation within 6 months. <br><sub>exclusion, characters 1394:1486</sub> | no rule | **unknown**: No supported complete rule |
-| Participants with primary severe valvular disease (e.g., aortic stenosis). <br><sub>exclusion, characters 1489:1563</sub> | no rule | **unknown**: No supported complete rule |
-| Have a life expectancy of less than 12 months. <br><sub>exclusion, characters 1566:1612</sub> | no rule | **unknown**: No supported complete rule |
-| Participants with irreversible brain damage from preexisting cerebral disease. <br><sub>exclusion, characters 1615:1693</sub> | no rule | **unknown**: No supported complete rule |
-| Participants with a contrast dye allergy unable or unwilling to undergo pretreatment with steroids and/or diphenhydramine. <br><sub>exclusion, characters 1696:1818</sub> | no rule | **unknown**: No supported complete rule |
-| Participants participating in any other interventional cardiovascular clinical trial. <br><sub>exclusion, characters 1821:1906</sub> | no rule | **unknown**: No supported complete rule |
-| Participants who would be unable to comply with the study's follow-up visit schedule; or <br><sub>exclusion, characters 1909:1997</sub> | no rule | **unknown**: No supported complete rule |
-| Participants who had any prior unsuccessful attempt at implantation of biventricular pacing (BiVP), His Bundle Pacing (HBP), or Left Bundle Branch Pacing (LBBP) device. <br><sub>exclusion, characters 2000:2168</sub> | no rule | **unknown**: No supported complete rule |
-
-## [NCT05859048](https://clinicaltrials.gov/study/NCT05859048): Multidisciplinary Approach for High Risk Patients Leading to Early Diagnosis of Canadians in Heart Failure
-
-Saved status: RECRUITING.
-
-| Source | Rule | Result |
-| --- | --- | --- |
-| minimumAge: 40 Years <br><sub>structured registry field</sub> | age &gt;= 40 years | **met**: age 69, which matches the rule |
-| Male or female \&gt; 40 years of age <br><sub>inclusion, characters 23:56</sub> | no rule | **unknown**: No supported complete rule |
-| Informed consent <br><sub>inclusion, characters 59:75</sub> | no rule | **unknown**: No supported complete rule |
-| At least two additional risk factors for Heart Failure (HF): <br><sub>inclusion, characters 78:138</sub> | no rule | **unknown**: No supported complete rule |
-| Coronary artery disease (either a previous documented type 1 myocardial infarction or coronary artery bypass grafting or percutaneous coronary intervention or documented stenosis or an epicardial coronary artery (50% left main stem or \&gt;70% left anterior descending, circumflex or right coronary artery)). <br><sub>inclusion, characters 144:449</sub> | no rule | **unknown**: No supported complete rule |
-| Diabetes type 1 or 2. <br><sub>inclusion, characters 454:475</sub> | no rule | **unknown**: No supported complete rule |
-| Persistent or permanent atrial fibrillation. <br><sub>inclusion, characters 480:524</sub> | no rule | **unknown**: No supported complete rule |
-| Previous ischemic or embolic stroke. <br><sub>inclusion, characters 529:565</sub> | no rule | **unknown**: No supported complete rule |
-| Peripheral artery disease (previous surgical or percutaneous revascularization or documented stenosis \&gt;50% of major peripheral arterial vessel. <br><sub>inclusion, characters 570:714</sub> | no rule | **unknown**: No supported complete rule |
-| Chronic kidney disease (defined as an estimated glomerular filtration rate (eGFR)\&lt;60 milliliters per minute (mL/min)/1.73m2 or eGFR 60-90 mL/min/1.73m2 and urine albumin-creatinine ration (UACR) \&gt;300mg/g). <br><sub>inclusion, characters 719:926</sub> | no rule | **unknown**: No supported complete rule |
-| Regular loop diuretic use for \&gt;30 days within 12 months prior to consent. <br><sub>inclusion, characters 931:1005</sub> | no rule | **unknown**: No supported complete rule |
-| Chronic obstructive pulmonary disease (COPD) evidenced by one of the following: Pulmonary Function Test (PFT) showing airway obstruction, diagnosis of respiratory physician, CT scan reporting presence of emphysema, or treatment with national guidance advocated COPD therapy. <br><sub>inclusion, characters 1010:1284</sub> | no rule | **unknown**: No supported complete rule |
-| Inability to give informed consent (e.g. due to significant cognitive impairment). <br><sub>exclusion, characters 1309:1391</sub> | no rule | **unknown**: No supported complete rule |
-| Previous diagnosis of heart failure. <br><sub>exclusion, characters 1394:1430</sub> | no rule | **unknown**: No supported complete rule |
-| This is any diagnosis of heart failure with any ejection fraction of any cause. <br><sub>exclusion, characters 1431:1510</sub> | no rule | **unknown**: No supported complete rule |
-| Renal replacement therapy. <br><sub>exclusion, characters 1513:1539</sub> | no rule | **unknown**: No supported complete rule |
-| Anyone who, in the investigator's opinion, is not suitable to participate in the trial for other reasons e.g., a diagnosis which may compromise survival over the study period. <br><sub>exclusion, characters 1542:1717</sub> | no rule | **unknown**: No supported complete rule |
-
 ## [NCT06008197](https://clinicaltrials.gov/study/NCT06008197): A Study to Determine the Efficacy and Safety of Finerenone on Morbidity and Mortality Among Hospitalized Heart Failure Patients
 
 Saved status: RECRUITING.
@@ -349,58 +410,3 @@ Saved status: RECRUITING.
 | Probable alternative cause of participant's heart failure symptoms <br><sub>exclusion, characters 1544:1610</sub> | no rule | **unknown**: No supported complete rule |
 | Concomitant systemic therapy with potent cytochrome P450 isoenzyme 3A4 (CYP3A4) inhibitors or moderate CYP3A4 inducers, or potent CYP3A4 inducers <br><sub>exclusion, characters 1613:1758</sub> | no rule | **unknown**: No supported complete rule |
 | Known hypersensitivity to the IP (active substance or excipients) <br><sub>exclusion, characters 1761:1826</sub> | no rule | **unknown**: No supported complete rule |
-
-## [NCT06578104](https://clinicaltrials.gov/study/NCT06578104): PULSED AF Post-Approval Study
-
-Saved status: RECRUITING.
-
-| Source | Rule | Result |
-| --- | --- | --- |
-| minimumAge: 18 Years <br><sub>structured registry field</sub> | age &gt;= 18 years | **met**: age 69, which matches the rule |
-| A diagnosis of recurrent symptomatic paroxysmal AF or persistent AF <br><sub>inclusion, characters 22:89</sub> | no rule | **unknown**: No supported complete rule |
-| Refractory to at least one Class I or III antiarrhythmic drug (i.e., not effective, not tolerated, or not desired) <br><sub>inclusion, characters 92:206</sub> | no rule | **unknown**: No supported complete rule |
-| Patient is ≥ 18 years of age <br><sub>inclusion, characters 209:237</sub> | no rule | **unknown**: No supported complete rule |
-| Planned pulmonary vein isolation procedure with the commercially available PulseSelect™ PFA System <br><sub>inclusion, characters 240:338</sub> | no rule | **unknown**: No supported complete rule |
-| Willing and able to comply with study requirements and give informed consent (defined as legally effective, documented confirmation of a subject's voluntary agreement to participate in this clinical study) or authorization per institution and geographical requirements <br><sub>inclusion, characters 341:609</sub> | no rule | **unknown**: No supported complete rule |
-| Long-standing persistent AF (continuous AF sustained \&gt;12 months) <br><sub>exclusion, characters 633:698</sub> | no rule | **unknown**: No supported complete rule |
-| Prior left atrial catheter or surgical ablation <br><sub>exclusion, characters 701:748</sub> | no rule | **unknown**: No supported complete rule |
-| Patient with life expectancy \&lt; 36 months <br><sub>exclusion, characters 751:792</sub> | no rule | **unknown**: No supported complete rule |
-| Presence of a permanent pacemaker, biventricular pacemaker, loop recorder/insertable cardiac monitor (ICM), or any type of implantable cardiac defibrillator (with or without biventricular pacing function) <br><sub>exclusion, characters 795:999</sub> | no rule | **unknown**: No supported complete rule |
-| Current or anticipated participation in any other clinical trial of a drug, device, or biologic not approved by the global study manager <br><sub>exclusion, characters 1002:1138</sub> | no rule | **unknown**: No supported complete rule |
-
-## [NCT07217067](https://clinicaltrials.gov/study/NCT07217067): A Study to Investigate the Efficacy, Safety, Tolerability and Pharmacokinetics of PKN605 in Participants With Atrial Fibrillation
-
-Saved status: RECRUITING.
-
-| Source | Rule | Result |
-| --- | --- | --- |
-| minimumAge: 18 Years <br><sub>structured registry field</sub> | age &gt;= 18 years | **met**: age 69, which matches the rule |
-| Inclusions at Screening <br><sub>inclusion, characters 22:45</sub> | no rule | **unknown**: No supported complete rule |
-| Signed informed consent must be obtained prior to participation in the study <br><sub>inclusion, characters 49:125</sub> | no rule | **unknown**: No supported complete rule |
-| Male and female participants ≥ 18 years of age <br><sub>inclusion, characters 128:174</sub> | no rule | **unknown**: No supported complete rule |
-| History of atrial fibrillation <br><sub>inclusion, characters 177:207</sub> | no rule | **unknown**: No supported complete rule |
-| AF (atrial fibrillation or atrial flutter) within the last 12 months (or during screening) documented by 12-lead ECG, Holter, or any other ECG recording method, as confirmed by the Investigator <br><sub>inclusion, characters 210:403</sub> | no rule | **unknown**: No supported complete rule |
-| Meets one or more of the following criteria: <br><sub>inclusion, characters 406:450</sub> | no rule | **unknown**: No supported complete rule |
-| A. <br><sub>inclusion, characters 452:454</sub> | no rule | **unknown**: No supported complete rule |
-| Recurrent AF (≥ 2 episodes), and ≥ 1 of the following <br><sub>inclusion, characters 455:508</sub> | no rule | **unknown**: No supported complete rule |
-| AFB of 1% or higher on a local ambulatory Holter, mobile cardiac telemetry, ECG patch monitor, or other ambulatory electrocardiographic monitor within the last 12 months <br><sub>inclusion, characters 512:681</sub> | no rule | **unknown**: No supported complete rule |
-| CHA2DS2-VASc score of 2 or higher in males, 3 or higher in females (1 point for congestive heart failure, hypertension, age 65-74 years, diabetes, vascular disease, female sex; 2 points for age 75 years or older, prior stroke or transient ischemic attack) <br><sub>inclusion, characters 684:939</sub> | no rule | **unknown**: No supported complete rule |
-| Stable heart failure or with New York Heart Association class I or II symptoms <br><sub>inclusion, characters 942:1020</sub> | no rule | **unknown**: No supported complete rule |
-| NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B. <br><sub>inclusion, characters 1023:1110</sub> | no rule | **unknown**: No supported complete rule |
-| AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C. <br><sub>inclusion, characters 1111:1236</sub> | no rule | **unknown**: No supported complete rule |
-| Persistent AF, as confirmed by the Investigator <br><sub>inclusion, characters 1237:1284</sub> | no rule | **unknown**: No supported complete rule |
-| On guideline-directed stroke prevention treatment, as confirmed by the Investigator <br><sub>inclusion, characters 1290:1373</sub> | no rule | **unknown**: No supported complete rule |
-| Participants must have a body mass index (BMI) ≥ 18 kg/m2. <br><sub>inclusion, characters 1378:1436</sub> | no rule | **unknown**: No supported complete rule |
-| BMI is calculated as body weight (kg) divided by height (m) squared <br><sub>inclusion, characters 1437:1504</sub> | no rule | **unknown**: No supported complete rule |
-| Inclusions at Day 1 <br><sub>inclusion, characters 1507:1526</sub> | no rule | **unknown**: No supported complete rule |
-| Sinus rhythm at Baseline documented by 12-lead ECG (participants with persistent AF should be cardioverted at least 12 hours before randomization) <br><sub>inclusion, characters 1532:1678</sub> | no rule | **unknown**: No supported complete rule |
-| Exclusions at Screening <br><sub>exclusion, characters 1702:1725</sub> | no rule | **unknown**: No supported complete rule |
-| Permanent AF <br><sub>exclusion, characters 1729:1741</sub> | no rule | **unknown**: No supported complete rule |
-| Ongoing reversible causes of AF (e.g., hyperthyroidism, myocarditis, acute alcohol, sepsis- or infection related AF, surgery-related AF, pulmonary embolism) <br><sub>exclusion, characters 1744:1900</sub> | no rule | **unknown**: No supported complete rule |
-| Ongoing use of antiarrhythmic therapy (Vaughan Williams class I or III anti-arrhythmic therapy must be discontinued at least 7 days before Screening phase ECG patch monitor; amiodarone must be discontinued at least 6 weeks before Screening phase ECG patch monitor) <br><sub>exclusion, characters 1903:2167</sub> | no rule | **unknown**: No supported complete rule |
-| History of an AF ablation procedure without a recurrence of AF at least 2 or more months after the ablation. <br><sub>exclusion, characters 2170:2278</sub> | no rule | **unknown**: No supported complete rule |
-| Implanted pacemaker, defibrillator, or cardiac monitor <br><sub>exclusion, characters 2281:2335</sub> | no rule | **unknown**: No supported complete rule |
-| Infiltrative (e.g., amyloidosis, sarcoidosis) or hypertrophic cardiomyopathy <br><sub>exclusion, characters 2338:2414</sub> | no rule | **unknown**: No supported complete rule |
-| Left ventricular ejection fraction of 40% or less documented within the last 12 months, or during Screening. <br><sub>exclusion, characters 2417:2525</sub> | no rule | **unknown**: No supported complete rule |
-| If multiple LVEF measurements are recorded within the last 12 months, the most recent LVEF measurement should be used <br><sub>exclusion, characters 2526:2643</sub> | no rule | **unknown**: No supported complete rule |
-| Current decompensated heart failure or hospitalization for heart failure within 3 months prior to Screening <br><sub>exclusion, characters 2646:2753</sub> | no rule | **unknown**: No supported complete rule |

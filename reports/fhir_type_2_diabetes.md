@@ -6,7 +6,7 @@ Public records retrieved: 2026-11-05T06:18:19.437645+00:00
 
 Structured age and sex fields: 6 met, 0 not met, 0 unknown.
 
-Eligibility text lines: 4 met, 1 not met, 56 unknown. These are not a trial eligibility decision.
+Eligibility text lines: 5 met, 1 not met, 55 unknown. These are not a trial eligibility decision.
 
 ## Fictional input
 
@@ -20,6 +20,11 @@ Eligibility text lines: 4 met, 1 not met, 56 unknown. These are not a trial elig
   ],
   "diagnoses_complete": false,
   "labs": {
+    "bmi": {
+      "value": 31.4,
+      "unit": "kg/m2",
+      "effective": "2026-10-02T08:40:00-07:00"
+    },
     "creatinine": {
       "value": 88,
       "unit": "umol/L",
@@ -46,6 +51,7 @@ Eligibility text lines: 4 met, 1 not met, 56 unknown. These are not a trial elig
 - Patient/fict-t2d: age 58 from birthDate 1968-04-22
 - Patient/fict-t2d: sex female
 - Condition/fict-t2d-condition-1: diagnosis type 2 diabetes
+- Observation/fict-t2d-observation-7: bmi 31.4 kg/m2 on 2026-10-02
 - Observation/fict-t2d-observation-3: creatinine 88 umol/L on 2026-10-02
 - Observation/fict-t2d-observation-2: hba1c 8.1 % on 2026-10-02
 - Observation/fict-t2d-observation-4: hemoglobin 128 g/L on 2026-10-02
@@ -122,7 +128,7 @@ Saved status: RECRUITING.
 | maximumAge: 75 Years <br><sub>structured registry field</sub> | age &lt;= 75 years | **met**: age 58, which matches the rule |
 | Able to provide signed and dated written informed consent prior to any study specific procedures <br><sub>inclusion, characters 24:120</sub> | no rule | **unknown**: No supported complete rule |
 | Adult men and women aged between more than 18 and ≤ 75 years <br><sub>inclusion, characters 124:184</sub> | no rule | **unknown**: No supported complete rule |
-| Body mass index (BMI) of 25 - 35 kg/m2 <br><sub>inclusion, characters 188:226</sub> | no rule | **unknown**: No supported complete rule |
+| Body mass index (BMI) of 25 - 35 kg/m2 <br><sub>inclusion, characters 188:226</sub> | bmi 25 to 35 kg/m2 | **met**: bmi 31.4 kg/m2, which matches the rule |
 | Stable weight (no weight loss or gain \&gt; 3 kg in the past 3 months) <br><sub>inclusion, characters 230:297</sub> | no rule | **unknown**: No supported complete rule |
 | Pre-diabetes defined as an isolated impaired glucose tolerance or a combination of impaired glucose tolerance and impaired fasting glucose (values are based on the American Diabetes Association (ADA): <br><sub>inclusion, characters 301:501</sub> | no rule | **unknown**: No supported complete rule |
 | impaired glucose tolerance (plasma glucose 140 mg/dL to 199 mg/dL, 120 minutes after consumption of 75g of glucose) <br><sub>inclusion, characters 509:624</sub> | no rule | **unknown**: No supported complete rule |

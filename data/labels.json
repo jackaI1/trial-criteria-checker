@@ -1,7 +1,7 @@
 {
   "annotation_method": "Reference rules written by direct reading of full public criteria before scoring, independently of parser predictions. Development sample, not held out and not clinically reviewed.",
   "selection": "Five complete recruiting records selected from leukemia and diabetes searches to include short and long criteria, age, diagnosis, a timed HbA1c threshold, a source hemoglobin unit, nested lists and unsupported conditions. Not random or representative. No sex reference rule occurs.",
-  "scope": "Only self-contained age, sex, diagnosis and supported lab comparisons. Temporal diagnoses, alternatives and clinical judgments remain unknown. A clear compound age range has two reference rules even though the conservative parser abstains.",
+  "scope": "Only self-contained age, sex, diagnosis and supported lab or measurement comparisons (hemoglobin, platelets, ANC, creatinine, HbA1c, BMI, eGFR, LVEF). Temporal diagnoses, alternatives and clinical judgments remain unknown. A clear compound age range has two reference rules even though the conservative parser abstains. The BMI rule was added when BMI became a supported field.",
   "studies": [
     {
       "nct_id": "NCT07807280",
@@ -345,8 +345,18 @@
           "start": 188,
           "end": 226,
           "section": "inclusion",
-          "rules": [],
-          "note": "Outside the selected fields or requires additional clinical/contextual interpretation; unknown."
+          "rules": [
+            {
+              "field": "bmi",
+              "op": "between",
+              "value": [
+                25.0,
+                35.0
+              ],
+              "unit": "kg/m2"
+            }
+          ],
+          "note": "Added when BMI became a supported field. Inclusive range, read directly from the source."
         },
         {
           "text": "Stable weight (no weight loss or gain \\> 3 kg in the past 3 months)",
