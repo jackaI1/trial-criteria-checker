@@ -2,10 +2,12 @@
 import argparse
 import json
 import sys
+from datetime import date
 from pathlib import Path
 from urllib.error import URLError
 from .api import fetch_studies
 from .benchmark import benchmark
+from .fhir import bundle_to_patient
 from .report import build_report, render_html, render_markdown
 
 
@@ -17,6 +19,14 @@ def write(path, obj):
     path = Path(path)
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(obj,indent=2,ensure_ascii=False,allow_nan=False)+'\n',encoding='utf-8')
+
+
+def load_patient(path, as_of):
+    """Read a plain fictional record, or convert a FHIR R4 Bundle into one."""
+    data = read(path)
+    if isinstance(data, dict) and data.get('resourceType') == 'Bundle':
+        return bundle_to_patient(data, as_of)
+    return data, None
 
 
 def main():
@@ -36,6 +46,11 @@ def main():
     report.add_argument('--patient',default='examples/fictional_patient.json')
     report.add_argument('--labels',help='Optionally include benchmark on the same snapshot')
     report.add_argument('--output',default='reports/fictional_patient')
+    report.add_argument('--as-of',type=date.fromisoformat,default=date.today(),
+                        help='Date for calculating age from a FHIR birthDate (YYYY-MM-DD, default today)')
+    convert = sub.add_parser('patient',help='Show the record read from a FHIR R4 Bundle, and what was skipped')
+    convert.add_argument('bundle')
+    convert.add_argument('--as-of',type=date.fromisoformat,default=date.today())
     args = parser.parse_args()
     try:
         if args.command == 'fetch':
@@ -46,8 +61,12 @@ def main():
             result = benchmark(read(args.snapshot),read(args.labels))
             write(args.output,result)
             print(json.dumps({k:v for k,v in result.items() if k not in ('missed','incorrect')},indent=2))
+        elif args.command == 'patient':
+            record, notes = bundle_to_patient(read(args.bundle),args.as_of)
+            print(json.dumps(dict(patient=record,**notes),indent=2,ensure_ascii=False))
         else:
-            result = build_report(read(args.snapshot),read(args.patient))
+            patient, provenance = load_patient(args.patient,args.as_of)
+            result = build_report(read(args.snapshot),patient,provenance)
             if args.labels:
                 result['benchmark'] = benchmark(read(args.snapshot),read(args.labels))
             base = Path(args.output)

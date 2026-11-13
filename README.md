@@ -41,6 +41,24 @@ python3 -m trial_criteria report --snapshot data/latest.json --output reports/la
 
 To try your own patient, copy the example file, change the values and pass it with `--patient`. The program refuses any record that isn't marked `"fictional": true`. I only use invented people.
 
+## Reading a patient from a FHIR record
+
+Health record systems usually share data as FHIR (Fast Healthcare Interoperability Resources), a standard JSON format. I wanted the checker to take that directly instead of a hand-typed record, so `--patient` also accepts a FHIR R4 Bundle: one Patient, plus Conditions (diagnoses) and Observations (lab results). I'd used FHIR before in my [fhir-emr-bridge](https://github.com/jackaI1/fhir-emr-bridge) project, where I send a fictional patient's visit to a test server and read it back.
+
+```sh
+python3 -m trial_criteria patient examples/fhir/type-2-diabetes.json --as-of 2026-11-13
+python3 -m trial_criteria report --patient examples/fhir/type-2-diabetes.json --as-of 2026-11-13 --output reports/mine
+```
+
+The first command prints the record it built and every resource it used or skipped, with the reason. [`fhir.py`](trial_criteria/fhir.py) is strict on purpose:
+
+- Age comes from `birthDate` on the `--as-of` date. A birth year alone gives no age.
+- A diagnosis counts only if the Condition is active and confirmed and its SNOMED CT or ICD-10-CM code is in a short table I checked by hand. Atrial flutter isn't mapped to atrial fibrillation, and vascular dementia isn't mapped to dementia.
+- Lab results are matched by LOINC code (the standard code for a lab test) and need a UCUM unit code, so platelets in `10*3/uL` become `10^9/L`. Only final, amended or corrected results are used and the newest one wins. Two results at the same time that disagree leave the value unknown.
+- The bundle has to carry the HL7 test-data label (`HTEST`), which is the FHIR version of `"fictional": true`.
+
+The three bundles in [examples/fhir](examples/fhir) are invented: a 58-year-old with type 2 diabetes, a 69-year-old with atrial fibrillation and heart failure, and a 34-year-old with lupus. Some results use the units Canadian labs report, like hemoglobin in g/L and creatinine in µmol/L, and some use US units. Each one also has something that should be skipped, like a provisional diagnosis or a result entered in error. [reports/fhir_type_2_diabetes.md](reports/fhir_type_2_diabetes.md) is the first one checked against the saved studies. Her HbA1c of 8.1% is in the record, but the study asks for it "at screening/baseline", which a health record can't show, so that line stays unknown.
+
 ## How far it gets
 
 The five saved studies have 61 criterion lines, and 10 of them became rules. Most of the other 51 are things no simple rule covers, like "Able to provide informed consent" or "Use of an insulin pump or automated insulin delivery system". Some, like "Body mass index (BMI) of 25 - 35 kg/m2", the parser just doesn't handle yet. For the fictional patient that comes to 4 met, 3 not met and 54 unknown.
@@ -52,15 +70,16 @@ To check the rules it does make, I read the five studies myself and wrote down t
 1. **Fetch.** [`api.py`](trial_criteria/api.py) asks the [ClinicalTrials.gov v2 API](https://clinicaltrials.gov/data-api/api) (the public service behind the website) for recruiting studies. It saves the IDs, titles, status and eligibility fields with the exact request URL and the time, and drops contact details.
 2. **Split.** [`parser.py`](trial_criteria/parser.py) splits the eligibility text into inclusion and exclusion sections, bullets and sentences, and records where each sentence starts and ends in the original text.
 3. **Parse.** A sentence can only become a rule if it is a whole top-level bullet in a known section, has no sub-bullets, and fully matches one of a few narrow patterns. Anything else stays unknown.
-4. **Check.** [`evaluate.py`](trial_criteria/evaluate.py) compares each rule with the patient and returns met, not met or unknown. Lab values are converted between units with fixed factors, like g/dL to g/L, or mg/dL to µmol/L for creatinine. A missing value, an unfamiliar unit or a diagnosis that isn't confirmed stays unknown. Exclusions are flipped.
-5. **Report.** [`report.py`](trial_criteria/report.py) writes the same result as JSON, an HTML page and a Markdown page that GitHub can show.
+4. **Read the patient.** A plain JSON record is used as is. A FHIR Bundle goes through [`fhir.py`](trial_criteria/fhir.py) first (see above).
+5. **Check.** [`evaluate.py`](trial_criteria/evaluate.py) compares each rule with the patient and returns met, not met or unknown. Lab values are converted between units with fixed factors, like g/dL to g/L, or mg/dL to µmol/L for creatinine. A missing value, an unfamiliar unit or a diagnosis that isn't confirmed stays unknown. Exclusions are flipped.
+6. **Report.** [`report.py`](trial_criteria/report.py) writes the same result as JSON, an HTML page and a Markdown page that GitHub can show.
 
 [docs/design.md](docs/design.md) explains the choices in more detail, and [data/README.md](data/README.md) explains how I labelled the sample.
 
 ## Tests
 
-`python3 -m unittest discover -s tests` runs 23 tests. They cover the parser patterns and the cases where it has to refuse, unit conversions and boundary values, the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
+`python3 -m unittest discover -s tests` runs 31 tests. They cover the parser patterns and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
 
 ## Limits
 
-The diagnosis list is eight exact terms with no synonyms, so "T2D" doesn't match "type 2 diabetes". Only five lab tests are understood. Inclusion lines are checked one at a time, so a study that means "A or B" shows up as two separate rows. It works on English text from one registry, with made-up patients, and it is not a screening tool.
+The diagnosis list is twelve exact terms with no synonyms, so "T2D" doesn't match "type 2 diabetes". Only five lab tests are understood. Inclusion lines are checked one at a time, so a study that means "A or B" shows up as two separate rows. It works on English text from one registry, with made-up patients, and it is not a screening tool.

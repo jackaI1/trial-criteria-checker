@@ -5,7 +5,8 @@ import re
 DIAGNOSES = {
     'classic hairy cell leukemia', 'the variant of hairy cell leukemia',
     'acute promyelocytic leukemia', 'type 1 diabetes', 'type 2 diabetes',
-    'diabetes', 'breast cancer', 'dementia',
+    'diabetes', 'breast cancer', 'dementia', 'atrial fibrillation',
+    'heart failure', 'rheumatoid arthritis', 'systemic lupus erythematosus',
 }
 LAB_NAMES = {
     'hemoglobin': 'hemoglobin', 'platelets': 'platelets',

@@ -7,7 +7,7 @@ from .parser import parse_criteria
 from .evaluate import evaluate
 
 
-def build_report(snapshot, patient):
+def build_report(snapshot, patient, provenance=None):
     if not isinstance(patient, dict) or patient.get('fictional') is not True:
         raise ValueError('Only explicitly fictional records are accepted; set fictional: true')
     studies = []
@@ -25,7 +25,8 @@ def build_report(snapshot, patient):
                             url='https://clinicaltrials.gov/study/'+nct_id,
                             status=p.get('statusModule',{}).get('overallStatus','unknown'),
                             criteria=rows,missing_criteria=not bool(text.strip())))
-    return dict(patient=patient,studies=studies,counts=dict(counts),
+    extra = {'provenance': provenance} if provenance else {}
+    return dict(patient=patient,**extra,studies=studies,counts=dict(counts),
                 retrieved_at=snapshot['retrieved_at'],requests=snapshot.get('requests',[]),
                 warning='Fictional patient demonstration. No overall eligibility decision. Unparsed criteria require human review.')
 
@@ -45,6 +46,12 @@ def render_html(report):
              '<p>Saved public records retrieved '+esc(report['retrieved_at'])+'. Recruitment status can change.</p>',
              '<p>Outcomes describe individual criteria: '+esc(describe_counts(report['counts']))+'. A “met” row never establishes trial eligibility.</p>',
              '<details><summary>Fictional input record</summary><pre>'+esc(json.dumps(report['patient'],indent=2))+'</pre></details>']
+    if report.get('provenance'):
+        parts += ['<h2>Where the patient values came from</h2><ul>']
+        parts += ['<li>'+esc(n['resource'])+': '+esc(n['note'])+'</li>' for n in report['provenance']['used']]
+        parts += ['</ul><p>Skipped:</p><ul>']
+        parts += ['<li>'+esc(n['resource'])+': '+esc(n['note'])+'</li>' for n in report['provenance']['skipped']]
+        parts += ['</ul>']
     if 'benchmark' in report:
         b = report['benchmark']
         pct = lambda v: 'undefined' if v is None else f'{v:.1%}'
@@ -74,6 +81,12 @@ def render_markdown(report):
              'Public records retrieved: '+report['retrieved_at'], '',
              'Individual criterion outcomes: '+esc(describe_counts(report['counts']))+'. These are not a trial eligibility decision.', '',
              '## Fictional input', '', '```json', json.dumps(report['patient'],indent=2), '```', '']
+    if report.get('provenance'):
+        parts += ['## Where the patient values came from', '']
+        parts += ['- '+esc(n['resource'])+': '+esc(n['note']) for n in report['provenance']['used']]
+        parts += ['', 'Skipped:', '']
+        parts += ['- '+esc(n['resource'])+': '+esc(n['note']) for n in report['provenance']['skipped']]
+        parts += ['']
     if 'benchmark' in report:
         b = report['benchmark']
         pct = lambda v: 'undefined' if v is None else f'{v:.1%}'
