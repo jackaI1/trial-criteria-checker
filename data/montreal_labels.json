@@ -1,0 +1,445 @@
+{
+  "annotation_method": "Second held-out set. Written by reading the full criteria of each study after the Toronto fixes were merged and before the parser was run on these studies. Only lines with a reference rule are listed; every other line is expected to stay unknown. Not clinically reviewed.",
+  "selection": "Second held-out set. For each condition, the first 4 studies in API order with a recruiting site in Montreal, Canada, skipping any study in studies.json, vancouver.json or toronto.json (kept or dropped). Fetched after the Toronto fixes were merged, and labelled before the parser was run on them.",
+  "scope": "A line gets a reference rule only if the whole line is one of: an age limit (wording that covers everyone, with age at consent or enrollment treated as current age); a sex limit; a named condition with no duration, severity, history, timing, treatment or alternative attached; or a single limit or inclusive range on hemoglobin, platelets, ANC, creatinine, HbA1c, BMI, eGFR or LVEF with no time window, method or other measurement attached. Lines nested under another line, in an unknown section, or next to an \"or\" get no rule. Conditions outside the parser vocabulary and abbreviations still count, so they show up as misses. Cohort-specific lines count as context-dependent.",
+  "method": "Held-out set: exact match on study, source offsets, section, field, operator, value, unit and qualifiers. The parser was not changed after these studies were fetched.",
+  "studies": [
+    {
+      "nct_id": "NCT07142512",
+      "annotations": [
+        {
+          "text": "(i) Index participant has T2D;",
+          "start": 23,
+          "end": 53,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "type 2 diabetes",
+              "unit": null
+            }
+          ],
+          "note": "Abbreviated diagnosis after a list marker."
+        },
+        {
+          "text": "(ii) Index participant 45 years of age or older;",
+          "start": 56,
+          "end": 104,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 45.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Age limit after a list marker."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT05269589",
+      "annotations": [
+        {
+          "text": "Age 45-75 years",
+          "start": 23,
+          "end": 38,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": "between",
+              "value": [
+                45.0,
+                75.0
+              ],
+              "unit": "years"
+            }
+          ],
+          "note": "Inclusive age range."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT07784725",
+      "annotations": [
+        {
+          "text": "Males \\& females (inclusive of all gender identities) age ≥18 years",
+          "start": 23,
+          "end": 90,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Wording covers everyone; the bracket does not limit sex."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT05633810",
+      "annotations": [
+        {
+          "text": "Men and women aged 55 to 80 years",
+          "start": 24,
+          "end": 57,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": "between",
+              "value": [
+                55.0,
+                80.0
+              ],
+              "unit": "years"
+            }
+          ],
+          "note": "Inclusive age range."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT07175428",
+      "annotations": []
+    },
+    {
+      "nct_id": "NCT04088071",
+      "annotations": []
+    },
+    {
+      "nct_id": "NCT07272902",
+      "annotations": [
+        {
+          "text": "Age ≥18 years",
+          "start": 23,
+          "end": 36,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Plain age limit."
+        },
+        {
+          "text": "Diagnosis of atrial fibrillation (documented on Holter, rhythm strip, or ECG)",
+          "start": 39,
+          "end": 116,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "atrial fibrillation",
+              "unit": null
+            }
+          ],
+          "note": "Named condition; the bracket only says how it was documented."
+        },
+        {
+          "text": "Left ventricular ejection fraction (LVEF) \\>40%",
+          "start": 182,
+          "end": 229,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "lvef",
+              "op": ">",
+              "value": 40.0,
+              "unit": "%"
+            }
+          ],
+          "note": "Single LVEF limit."
+        },
+        {
+          "text": "Permanent atrial fibrillation diagnosis",
+          "start": 717,
+          "end": 756,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "permanent atrial fibrillation",
+              "unit": null
+            }
+          ],
+          "note": "Named condition."
+        },
+        {
+          "text": "Rheumatic heart disease",
+          "start": 839,
+          "end": 862,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "rheumatic heart disease",
+              "unit": null
+            }
+          ],
+          "note": "Named condition."
+        },
+        {
+          "text": "Infiltrative cardiomyopathies",
+          "start": 1069,
+          "end": 1098,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "infiltrative cardiomyopathy",
+              "unit": null
+            }
+          ],
+          "note": "Named condition."
+        },
+        {
+          "text": "Age \\<18 years",
+          "start": 1396,
+          "end": 1410,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": "<",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Exclusion age limit."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT04642430",
+      "annotations": [
+        {
+          "text": "Age ≥ 18 years old",
+          "start": 23,
+          "end": 41,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Plain age limit."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT05015660",
+      "annotations": [
+        {
+          "text": "Age ≥ 18 years",
+          "start": 24,
+          "end": 38,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Plain age limit."
+        },
+        {
+          "text": "Patients with an ejection fraction of \\>35%",
+          "start": 42,
+          "end": 85,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "lvef",
+              "op": ">",
+              "value": 35.0,
+              "unit": "%"
+            }
+          ],
+          "note": "\"Ejection fraction\" here is the left ventricular ejection fraction."
+        },
+        {
+          "text": "Patients with permanent atrial fibrillation",
+          "start": 935,
+          "end": 978,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "permanent atrial fibrillation",
+              "unit": null
+            }
+          ],
+          "note": "Named condition."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT06677060",
+      "annotations": [
+        {
+          "text": "Participants of any sex and gender must be ≥ 40 years old at the time of signing the informed consent.",
+          "start": 23,
+          "end": 125,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 40.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Age at consent is treated as current age; wording covers everyone."
+        },
+        {
+          "text": "An eGFR \\< 30 mL/min/1.73 m2 at screening",
+          "start": 792,
+          "end": 833,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "egfr",
+              "op": "<",
+              "value": 30.0,
+              "unit": "mL/min/1.73m2",
+              "timepoint": "screening"
+            }
+          ],
+          "note": "eGFR limit at screening."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT06024746",
+      "annotations": []
+    },
+    {
+      "nct_id": "NCT06628973",
+      "annotations": [
+        {
+          "text": "Women",
+          "start": 23,
+          "end": 28,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "sex",
+              "op": "==",
+              "value": "female",
+              "unit": null
+            }
+          ],
+          "note": "Sex limit written as \"Women\"."
+        },
+        {
+          "text": "18 years of age or older",
+          "start": 31,
+          "end": 55,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Age limit with no lead-in."
+        },
+        {
+          "text": "Documented HF of any etiology",
+          "start": 58,
+          "end": 87,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "heart failure",
+              "unit": null
+            }
+          ],
+          "note": "\"Of any etiology\" does not narrow it."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT06121297",
+      "annotations": []
+    },
+    {
+      "nct_id": "NCT07085104",
+      "annotations": [
+        {
+          "text": "Adults ≥ 18 to \\< 75 years of age.",
+          "start": 24,
+          "end": 58,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            },
+            {
+              "field": "age",
+              "op": "<",
+              "value": 75.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Two different limits, so two rules."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT05039619",
+      "annotations": []
+    },
+    {
+      "nct_id": "NCT05305066",
+      "annotations": [
+        {
+          "text": "Age ≥ 18 years;",
+          "start": 23,
+          "end": 38,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Plain age limit with list punctuation."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT06599658",
+      "annotations": []
+    }
+  ]
+}

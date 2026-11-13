@@ -1,0 +1,990 @@
+{
+  "retrieved_at": "2026-11-13T08:05:50.188706+00:00",
+  "requests": [
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=15&query.cond=type+2+diabetes&query.locn=Montreal",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=1&query.cond=type+2+diabetes&query.locn=Montreal&pageToken=ZVNj7o2Elu8o3lpyWN2mp7LumpOQJJxtbPeg2P0SkA",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=15&query.cond=atrial+fibrillation&query.locn=Montreal",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=4&query.cond=atrial+fibrillation&query.locn=Montreal&pageToken=ZVNj7o2Elu8o3lpyWN2mp7LumpOQJJxsZvKi3_YZkA",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=15&query.cond=heart+failure&query.locn=Montreal",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=3&query.cond=heart+failure&query.locn=Montreal&pageToken=ZVNj7o2Elu8o3lpyWN2mp7LumpOQJJxuYfei3PYckA",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=1&query.cond=heart+failure&query.locn=Montreal&pageToken=ZVNj7o2Elu8o3lpyWN2mp7LumpOQJJxuYPSm3_YdkA",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=15&query.cond=systemic+lupus+erythematosus&query.locn=Montreal",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=15&query.cond=rheumatoid+arthritis&query.locn=Montreal"
+  ],
+  "studies": [
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07142512",
+          "briefTitle": "Helping Couples Communicate Better: Does This Help Persons With Type 2 Diabetes Respond Better to a Step Count Prescription?"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-05-07",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Type 2 Diabetes"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* (i) Index participant has T2D;\n* (ii) Index participant 45 years of age or older;\n* (iii) Index participant and partner: Co-habiting with a partner (same or different sex) for two or more years;\n* (iv) Index participant and partner: Absence of gait difficulties or other co-morbid conditions that impede walking in the index participant;\n* (v) Willingness to complete an audiovisual recording of a conversation between the couple members to capture couple communication styles\n* (vi) Index participant and partner Smartphone and Internet access.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "45 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "McGill University Health Centre",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05269589",
+          "briefTitle": "Home-based Heat Therapy for Type 2 Diabetes"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-05-12",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Diabetes Mellitus, Type 2",
+            "Heat Exposure"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Age 45-75 years\n* Diagnosis of type 2 diabetes mellitus ≥1 year\n* Stable medication ≥12 weeks\n\nExclusion Criteria:\n\n* Class 3 obesity\n* Hypertension not controled by medication\n* Diagnosis of cardiac, renal and/or pulmonary disease\n* Diagnosis of severe neuropathy and/or retinopathy\n* Insulin therapy\n* Fasting plasma triglycerides \\>5.0 mmol/L\n* Fasting total cholesterol \\>7 mmol/l",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "45 Years",
+          "maximumAge": "75 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Centre ÉPIC, Montreal Heart Institute",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07784725",
+          "briefTitle": "A Study to Evaluate Effect of AZD6234 in Adult Participants With Obesity or Overweight With Weight-related Comorbidity Without Type 2 Diabetes Mellitus"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-30",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Obesity or Overweight"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Males \\& females (inclusive of all gender identities) age ≥18 years\n* BMI ≥30 kg/m2 OR BMI ≥27 kg/m2 with at least one of the following weight related comorbidities (treated or untreated): hypertension, dyslipidaemia, obstructive sleep apnoea, cardiovascular disease, heart failure, chronic kidney disease, metabolic dysfunction-associated steatotic liver disease, osteoarthritis of the knee, or stress urinary incontinence\n* Stable body weight (≤5% body weight change) for at least 3 months prior to Randomisation\n* History of at least one self-reported unsuccessful attempt to lose body weight in their lifetime\n\nExclusion Criteria:\n\n* Obesity primarily caused by other endocrine disorders\n* History of Type 1 or Type 2 Diabetes Mellitus, HbA1c ≥6.5% (48 mmol/mol), and/or treatment with glucose-lowering agent(s) within 3 months prior to Screening\n* Significant hepatobiliary disease and/or any of the following results at Screening:\n\n  * ALT ≥ 3.0 × ULN\n  * AST ≥ 3.0 × ULN\n  * TBL \\> 1.5 × ULN (except for cases of known Gilbert's Syndrome)\n* Has received treatment with a GLP-1 receptor agonist or GLP-1 containing medication for any indication within 3 months before Randomisation.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Research Site",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D009765",
+              "term": "Obesity"
+            },
+            {
+              "id": "D050177",
+              "term": "Overweight"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05633810",
+          "briefTitle": "COLchicine and Non-enteric Coated Aspirin in the Cardiovascular Outcomes Trial of Patients With Type 2 Diabetes"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-06",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Diabete Type 2",
+            "Cardiovascular Diseases"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. Men and women aged 55 to 80 years\n2. Type 2 diabetes treated as per national guidelines\n3. No previous history of coronary artery disease-related clinical event\n4. And at least one of the following:\n\n   1. Duration of diabetes of 5 years or more,\n   2. HbA1c ≥ 8.0% or more in the last 2 years\n   3. Active cigarette smoking,\n   4. High hs-CRP (\\> 2.0 mg/L),\n   5. High coronary calcium score (Agatston score \\>100),\n   6. High TG-levels (≥1.7 mmol/L) despite lipid lowering therapy administered as per guidelines,\n   7. High LDL-C levels (≥3.5 mmol/L) or high non-HDL-C levels (≥4.2 mmol/L) despite lipid lowering therapy administered as per guidelines\n   8. High Apo-B (≥1.05 g/L)\n   9. Reduced HDL-C (\\<1.05 mmol/L in men, \\<1.3 mmol/L in women),\n   10. Lp(a) \\>50 mg/dL,\n   11. Peripheral artery disease with stenosis ≥50% or prior revascularization,\n   12. Cerebrovascular disease with stenosis ≥50% or prior revascularization,\n   13. Diabetic retinopathy or diabetic neuropathy,\n   14. Mild or moderate proteinuria (dipstick analysis) or micro-albuminuria\n5. Women of childbearing potential must have a negative urine pregnancy test at screening/randomization visit 1 and must agree to use an effective method of birth control throughout the study. Acceptable means of birth control include: oral contraceptives, implantable contraceptives, injectable contraceptives, transdermal contraceptives, intrauterine devices, male or female condoms with spermicide, abstinence, or a sterile sexual partner.\n\n   Women are considered not of childbearing potential if they either:\n   1. Have had a hysterectomy or tubal ligation prior to baseline visit or\n   2. Are postmenopausal defined as no menses for 12 months or a FSH level (if available) in the menopausal range.\n6. Patients with the capacity to provide informed consent.\n\nExclusion Criteria:\n\n1. Any prior history of myocardial infarction, angina, coronary revascularization, coronary stenosis \\>30%, stroke, transient ischemic attack, or known heart failure\n2. Known chronic renal insufficiency defined as an estimated glomerular filtration rate (eGFR), using the MDRD equation, of \\< 35 mL/min/1.73m2\n3. History of cancer or lymphoproliferative disease within the last 3 years other than a successfully treated non-metastatic cutaneous squamous cell or basal cell carcinoma and/or localized carcinoma in situ of the cervix and/or low-grade prostate cancer\n4. Inflammatory bowel disease (Crohn's disease or ulcerative colitis) or chronic diarrhea\n5. Peptic ulcer diagnosed within the last 24 months or previous gastro-intestinal bleeding, except for mild hemorrhoidal bleeding more than 5 years ago which is permitted (patients meeting this exclusion criterion will not be randomized to receive aspirin or placebo but can be randomized to receive colchicine or placebo)\n6. Pre-existent progressive neuromuscular disease or known CPK level \\> 3 times the upper limit of normal as measured within the past 30 days and determined to be non-transient through repeat testing\n7. Any of the following known parameters as measured within the past 90 days, and determined to be non-transient through repeat testing:\n\n   1. hemoglobin \\< 100 g/L\n   2. 2\\. white blood cell count \\< 3.0 X 10⁹/L\n   3. platelet count \\<110 X 10⁹/L\n   4. ALT \\> 3 times the upper limit of normal (ULN)\n   5. total bilirubin \\> 2 times ULN (unless due to Gilbert syndrome, which is allowed)\n8. History of cirrhosis, chronic active hepatitis or severe hepatic disease\n9. Female patient who is pregnant, or breast-feeding or is considering becoming pregnant during the study or for 6 months after the last dose of study medication\n10. History of clinically significant drug or alcohol abuse in the last year\n11. Patient is currently using or plans to begin chronic systemic steroid therapy (oral or intravenous) during the study (topical or inhaled steroids are allowed, as well as replacement corticosteroids for adrenal insufficiency)\n12. Current chronic treatment with aspirin or another antiplatelet agent (patients meeting this exclusion criterion will not be randomized to receive aspirin or placebo but can be randomized to receive colchicine or placebo)\n13. Chronic treatment with an anticoagulant agent (patients meeting this exclusion criterion will not be randomized to receive aspirin or placebo but can be randomized to receive colchicine or placebo)\n14. Current use of colchicine for other indications (mainly chronic indications consisting of Familial Mediterranean Fever or gout); there is no wash-out period required for patients who have been treated with colchicine and stopped treatment prior to enrolment\n15. History of an allergic reaction or significant sensitivity to colchicine\n16. History of an allergic reaction or significant sensitivity to aspirin (patients meeting this exclusion criterion will not be randomized to receive aspirin or placebo but can be randomized to receive colchicine or placebo)\n17. Chronic treatment with an anti-inflammatory agent (for example, anti-TNF-alpha or nonsteroidal anti-inflammatory drug (NSAID))\n18. Use of an investigational chemical agent less than 30 days or 5 half-lives prior to the screening visit (whichever is longer)\n19. Patient is considered by the investigator, for any reason, to be an unsuitable candidate for the study.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "55 Years",
+          "maximumAge": "80 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Montreal Heart Institute",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            },
+            {
+              "id": "D002318",
+              "term": "Cardiovascular Diseases"
+            },
+            {
+              "id": "D006331",
+              "term": "Heart Diseases"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07175428",
+          "briefTitle": "Safety in Adult Participants With Atrial Fibrillation Who Are Treated With Anticoagulation"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-05",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Atrial Fibrillation (AF)"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Key Inclusion Criteria:\n\n1. Has AF or flutter (paroxysmal or persistent), not felt to be secondary to a reversible cause, and an indication for indefinite anticoagulation treatment as described in the protocol\n2. Meets one of the following:\n\n   1. CHA2DS2-VA \\[C: Congestive heart failure; H: Hypertension; A2: Age ≥75 years (double points); D: Diabetes mellitus; S2: Stroke or TIA or Thromboembolism (double points); V: Vascular disease; A: Age 65-74 years\\] score ≥2 and Oral Anticoagulant (OAC) naïve or\n   2. CHA2DS2-VA score ≥3 or\n   3. CHA2DS2-VA score of 2 and at least 1 enrichment criteria as described in the protocol\n3. Must have an International Normalization Ratio (INR) \\<2.5 at the time of randomization if taking warfarin or another Vitamin K Antagonist (VKA)\n\nKey Exclusion Criteria:\n\n1. Has a mechanical heart valve prosthesis (Note: transcatheter aortic valve replacement is not an exclusion)\n2. Has known moderate-to-severe mitral stenosis\n3. Has had successful ablation therapy or Left Atrial Appendage (LAA) occlusion/exclusion, or planned ablation or LAA occlusion/exclusion as described in the protocol\n4. Had an ischemic stroke within 2 days prior to randomization\n5. Has estimated Glomerular Filtration Rate (eGFR) \\<15 mL/min/1.73m\\^2 within 30 days prior to randomization or on dialysis or expected to be started as described in the protocol\n6. Has a history of central nervous system bleeding within 30 days prior to randomization\n\nNote: Other protocol-defined Inclusion/ Exclusion criteria apply",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Montreal Heart Institute",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            },
+            {
+              "id": "D006470",
+              "term": "Hemorrhage"
+            },
+            {
+              "id": "D020521",
+              "term": "Stroke"
+            },
+            {
+              "id": "D013927",
+              "term": "Thrombosis"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT04088071",
+          "briefTitle": "Real-world Experience of Catheter Ablation for the Treatment of Arrhythmias"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-22",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Paroxysmal Atrial Fibrillation",
+            "Persistent Atrial Fibrillation",
+            "Ventricular Arrhythmia"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "REAL AF Cohort\n\nInclusion Criteria:\n\n* Symptomatic PAF (AF episode terminate spontaneously within 7 days) or PsAF (AF sustained beyond 7 days, but less than 365 days) subjects who, in the opinion of the investigator, are candidates for catheter ablation.\n* \\>18 years of age.\n* Will be treated with Biosense Webster Inc. ablation technologies\n* All AF ablations performed with BWI catheters are included. This includes repeat ablations where the index procedure was performed with a non-BWI catheter.\n* Able and willing to participate in baseline and follow up evaluations\n* Willing and able to provide informed consent, if applicable.\n\nExclusion Criteria:\n\n* Enrolled in an investigational drug or device clinical trial, or any trial that dictates the treatment plan\n* Long-standing persistent AF (AF greater than one year)\n* In the opinion of the investigator, any known contraindication to an ablation procedure\n\nCORE VA Cohort\n\nInclusion Criteria:\n\n* Documented ventricular arrhythmia appropriate for catheter ablation.\n* \\>18 years of age.\n* Will be treated with Biosense Webster Inc. ablation technologies\n* Able and willing to participate in baseline and follow up evaluations\n* Willing and able to provide informed consent, if applicable.\n\nExclusion Criteria:\n\n* Enrolled in an investigational drug or device clinical trial, or any trial that dictates the treatment plan.\n* In the opinion of the investigator, any known contraindication to an ablation procedure.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Montreal Heart Institute",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07272902",
+          "briefTitle": "Treating Atrial Fibrillation in Heart Failure With Preserved Ejection Fraction: Ablation or Medication"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-20",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Atrial Fibrillation (AF)",
+            "Heart Failure With Mildly Reduced Ejection Fraction",
+            "Heart Failure With Preserved Ejection Fraction (HFPEF)",
+            "Rate Control",
+            "Rhythm Control"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Age ≥18 years\n* Diagnosis of atrial fibrillation (documented on Holter, rhythm strip, or ECG)\n* New York Heart Association (NYHA) class II-III heart failure\n* Left ventricular ejection fraction (LVEF) \\>40%\n* Meet specific NT-proBNP criteria:\n* If HF hospitalization within 6 months prior to screening: NT-proBNP \\>200 pg/ml (if not in AF at screening) or \\>600 pg/ml (if in AF at screening)\n* Otherwise: NT-proBNP \\>300 pg/ml (if not in AF at screening) or \\>900 pg/ml (if in AF at screening)\n* On stable guideline-directed medical therapy for ≥1 month\n* On stable diuretic dose for ≥2 weeks\n* Suitable for either ablation-based rhythm control or rate control strategy\n\nExclusion Criteria:\n\n* Permanent atrial fibrillation diagnosis\n* Prior catheter ablation for atrial fibrillation\n* NYHA class IV heart failure\n* Rheumatic heart disease\n* Moderate or severe mitral stenosis\n* Mechanical mitral valve\n* Severe aortic stenosis or severe aortic/mitral regurgitation\n* Renal failure requiring dialysis\n* Contraindication to oral anticoagulation\n* Infiltrative cardiomyopathies\n* Complex congenital heart disease\n* Untreated thyroid disease\n* Acute coronary syndrome or coronary artery bypass surgery within 12 weeks\n* Participation in another clinical trial\n* Inability to provide informed consent\n* Other serious non-cardiovascular condition with life expectancy ≤1 year\n* Age \\<18 years",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Montreal Heart Institute",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT04642430",
+          "briefTitle": "COmparison of Bleeding Risk Between Rivaroxaban and Apixaban in Patients With Atrial Fibrillation"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-01",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Atrial Fibrillation"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Age ≥ 18 years old\n* Confirmed new diagnosis of AF on ECG with an indication to start anticoagulation according to Canadian Cardiovascular Society guidelines\n\nExclusion Criteria:\n\n* Creatinine clearance =\\<15 ml/min calculated using the Cockcroft-Gault formula\n* Any contraindication for anticoagulation with apixaban or rivaroxaban as determined by the treating physician such as, but not limited to:\n\n  * active bleeding\n  * history of mechanical valve\n  * other indication for anticoagulation (e.g. mechanical valves, venous thrombosis)\n  * dual antiplatelet agent use\n  * known liver disease with coagulopathy\n  * use of contraindicated medications (strong inducers/inhibitors of CYP 3A4/5, P-glycoprotein)\n  * pregnancy or breastfeeding",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Ciusss Nim",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            },
+            {
+              "id": "D006470",
+              "term": "Hemorrhage"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05015660",
+          "briefTitle": "Conduction System Pacing With Left Bundle Branch Pacing as Compared to Standard Right Ventricular Pacing"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-03-11",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Pacemaker DDD",
+            "Heart Block"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. Age ≥ 18 years\n2. Patients with an ejection fraction of \\>35%\n3. Patients with an indication for ventricular pacing and high-degree atrioventricular block where the degree of anticipated RV pacing is \\>90% including:\n\n   1. Third degree AV block\n   2. Symptomatic or asymptomatic second-degree AV block\n   3. First degree AV block ≥ 280ms with a narrow QRS, or ≥ 240ms with an intraventricular delay (QRS duration ≥120ms)\n4. Echocardiogram within the last 3 months, with ability to have DICOM images\n\nExclusion Criteria:\n\n1. Indication for an implantable cardioverter defibrillator\n2. Presence of a mechanical tricuspid valve\n3. Any prior attempt at implantation of an ICD, CRT, HBP, or LBBP\n4. Lack of capacity to consent\n5. Other serious medical condition with life expectancy of \\<2 years\n6. Pregnancy\n7. Patients in whom the conduction system abnormality is expected to be transient or recover over time\n8. Patients with permanent atrial fibrillation",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "McGill University Health Centre-Research Institute",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006327",
+              "term": "Heart Block"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06677060",
+          "briefTitle": "Phase III Study Investigating Heart Failure and Cardiovascular Death With Baxdrostat in Combination With Dapagliflozin"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-21",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Participants of any sex and gender must be ≥ 40 years old at the time of signing the informed consent.\n* Diagnosed with T2DM and requiring treatment\n* Established CV disease (ischaemic heart disease, cerebrovascular disease, peripheral arterial disease)\n* History of HTN and an SBP ≥ 130 mmHg at screening and ≥ 120 mmHg at the Randomisation Visit.\n* At least one additional risk factor for HF:\n\n  * Age ≥ 70 years\n  * UACR \\> 20 mg/g\n  * eGFR \\< 60 mL/min/1.73 m2\n  * History of polyvascular disease (at least two of: ischaemic heart disease, cerebrovascular disease, and peripheral arterial disease)\n  * History of atrial fibrillation or atrial flutter\n  * NT-proBNP \\> 125 ng/L\n\nExclusion Criteria:\n\n* Previously confirmed diagnosis and treatment of heart failure\n* An eGFR \\< 30 mL/min/1.73 m2 at screening\n* Known hyperkalaemia, defined as potassium ≥ 5.5 mmol/L within 3 months prior to screening\n* Type 1 diabetes mellitus or uncontrolled T2DM with HbA1c \\> 10.5% (\\> 91 mmol/mol) at screening\n* Serum sodium \\< 135 mmol/L at screening, determined as per central laboratory assessment\n* Stroke, transient ischaemic cerebral attack, valve implantation or valve replacement, carotid surgery, carotid angioplasty, or cardiac surgery, within 3 months prior to randomisation\n* Myocardial infarction within 3 months prior to randomisation, or within 1 month prior to randomisation when there is no further planned revascularisation\n* Percutaneous coronary intervention within 1 month prior to randomisation\n* Known severe hepatic impairment, defined as Child-Pugh Class C, based on records that confirm documented medical history\n* Documented history of adrenal insufficiency\n* Any dialysis (including for acute kidney injury) within 3 months prior to screening\n* Any acute kidney injury within 3 months prior to screening\n* Prohibited concomitant medications",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "40 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Research Site",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            },
+            {
+              "facility": "Research Site",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06024746",
+          "briefTitle": "A Study to Determine the Efficacy and Safety of Finerenone and SGLT2i in Combination in Hospitalized Patients With Heart Failure (CONFIRMATION-HF)"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-10",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Provide electronic or written informed consent, either personally or through a legally authorized representative, as permitted by local regulations\n* Age ≥18 years or legal age of majority if \\>18 years in the participant's country of residence\n* Current hospitalization or recently discharged with the primary diagnosis of heart failure\n* Heart failure signs and symptoms at the time of hospital admission\n* Elevated N-terminal pro B-type natriuretic peptide (NTproBNP) ≥500 pg/mL or B-type natriuretic peptide (BNP) ≥125 pg/mL according to the local lab for patients in sinus rhythm; or elevated NTproBNP ≥1500 pg/mL or BNP ≥375 pg/mL for patients with atrial fibrillation (AF), measured during the current hospitalization or in the 72 hours prior to hospital admission\n* Fulfillment of protocol defined stabilization criteria (if randomized during hospitalization)\n* Treatment during the index hospitalization with at least 1 intravenous dose of a loop diuretic (e.g., furosemide, torsemide, bumetanide).\n* Negative pregnancy test and agreement to use adequate contraception during trial (female participants only)\n\nExclusion Criteria:\n\n* Diagnosis of type 1 diabetes or prior history of diabetic ketoacidosis\n* Documented prior history of severe hyperkalemia in the setting of MRA use\n* Treatment with non-steroidal mineralocorticoid receptor antagonist (MRA) or SGLT2i\n* Estimated glomerular filtration rate (eGFR) \\<30 mL/min/1.73m² and/or potassium \\>5.0 mmol/L\n* Acute myocardial infarction, coronary revascularization, valve replacement/repair, or implantation of a cardiac resynchronization therapy device within 30 days\n* Prior or planned heart transplant\n* Hemodynamically significant uncorrected primary cardiac valvular disease as primary cause of heart failure\n* Cardiomyopathy due to acute inflammatory heart disease, infiltrative diseases, accumulation diseases, muscular dystrophies, cardiomyopathy with reversible causes, known hypertrophic obstructive cardiomyopathy, complex congenital heart disease, or pericardial constriction\n* Probable alternative cause of participant's heart failure symptoms\n* Concomitant systemic therapy with potent cytochrome P450 isoenzyme 3A4 (CYP3A4) inhibitors or moderate CYP3A4 inducers, or potent CYP3A4 inducers\n* Known hypersensitivity to the IP (active substance or excipients)\n* Any other condition or therapy which would make the patient unsuitable for this study",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "CON-11026, Montreal, Quebec",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06628973",
+          "briefTitle": "Social Prescribing to Improve Adherence and Outcomes in Women With Heart Failure"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-02-20",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure",
+            "Cardiac Failure",
+            "Heart Decompensation",
+            "Congestive Heart Failure(CHF)",
+            "Myocardial Failure"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Women\n* 18 years of age or older\n* Documented HF of any etiology\n* Valid personal health identifier\n* Two or more points on the weighted SPARK questionnaire\n\nExclusion Criteria:\n\n* Patients not meeting inclusion criteria\n* Do not take HF medications\n* Not residents of the province where they are being followed or who have opted out from their provincial health registry\n* Patients with severe cognitive impairment or other conditions that significantly impact the ability to participate in SP will also be excluded.",
+          "healthyVolunteers": false,
+          "sex": "FEMALE",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Royal Victoria Hospital",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            },
+            {
+              "id": "D003075",
+              "term": "Coitus"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06121297",
+          "briefTitle": "RESET-SLE: A Phase 1/2 Open-Label Study to Evaluate the Safety and Efficacy of CABA-201 in Subjects With Active Systemic Lupus Erythematosus"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-06",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Systemic Lupus Erythematosus",
+            "Lupus Nephritis"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Age ≥18 and ≤65 (Adults) or Age ≥12 to \\<18 years (Adolescents)\n* A clinical diagnosis of SLE, based on the 2019 European League Against Rheumatism (EULAR)/American College of Rheumatology (ACR) classification criteria for SLE.\n* Positive antinuclear antibody (ANA) titer or anti-dsDNA antibody at screening.\n* For LN subjects only, active, biopsy-proven LN class III or IV, with or without the presence of class V, according to 2018 Revised International Society of Nephrology/Renal Pathology Society (ISN/RPS) criteria\n* For non-renal SLE subjects only: Active, moderate to severe SLE\n\nExclusion Criteria:\n\n* Contraindication to leukapheresis\n* History of anaphylactic or severe systemic reaction to fludarabine, cyclophosphamide or any of their metabolites\n* Active infection requiring medical intervention at screening\n* Current symptoms of severe, progressive, or uncontrolled renal, hepatic, hematological, gastrointestinal, pulmonary, psychiatric, cardiac, neurological, or cerebral disease, including severe and uncontrolled infections, such as sepsis and opportunistic infections.\n* Concomitant medical conditions that, in the opinion of the investigator, might place the subject at unacceptable risk for participation in this study, interfere with the assessment of the effects or safety of the investigational product or with the study procedures\n* For LN subjects only: The presence of kidney disease other than active lupus nephritis\n* Previous CAR T cell therapy\n* Prior solid organ (heart, liver, kidney, lung) transplant or hematopoietic cell transplant.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "12 Years",
+          "maximumAge": "65 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Maisonneuve-Rosemont Hospital",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D008180",
+              "term": "Lupus Erythematosus, Systemic"
+            },
+            {
+              "id": "D008181",
+              "term": "Lupus Nephritis"
+            },
+            {
+              "id": "D001327",
+              "term": "Autoimmune Diseases"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "systemic lupus erythematosus"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07085104",
+          "briefTitle": "A Study to Investigate the Safety and Preliminary Efficacy of ALLO-329, an Allogeneic CAR T-cell Therapy, in Adults With Autoimmune Disease"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-02",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Systemic Lupus Erythematosus (With and Without Nephritis)",
+            "Idiopathic Inflammatory Myopathy",
+            "Systemic Sclerosis"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. Adults ≥ 18 to \\< 75 years of age.\n2. Adequate hematological function and liver, cardiac, and pulmonary function.\n3. A highly sensitive urine pregnancy test or serum pregnancy test (for females of childbearing potential) negative at screening. All participants of childbearing potential must be willing to use a highly effective method of contraception for at least 12 months for females (6 months for males) after LD chemotherapy or ALLO-329 administration, whichever is later.\n4. Signed and dated informed consent form.\n5. Willing and able to comply with scheduled visits, treatment plan, laboratory tests, and other procedures.\n6. Confirmed active disease (SLE, IIM, or SSc) as defined by the appropriate classification criteria for each respective disease, clinical evidence, and/or laboratory testing.\n7. Disease activity as above despite prior treatment with standard of care therapy including at least one immunosuppressive agent for at least 3 months.\n\nExclusion Criteria:\n\n1. Participants with active systemic bacterial, fungal, or viral infection requiring systemic treatment or a clinically significant active, opportunistic, chronic or recurrent infection.\n2. Any active malignancy within 5 years prior to enrollment, except for adequately treated localized basal cell or squamous cell skin cancer, carcinoma in situ or low risk prostate cancer (Gleason score ≤ 6) under observation. Prior treatment of cancer with curative intent which in the opinion of the treating oncologist has less than a 10% chance of recurrence in the next 10 years can be allowed after discussion with the sponsor.\n3. Prior treatment with CD19 or CD70 targeted therapy or any prior engineered cell therapy (e.g., CAR T therapy), except prior treatment with ALLO-329 in this study.\n4. Clinically significant or unstable or uncontrolled acute or chronic disease (e.g., hypothyroidism and diabetes).\n5. Symptomatic cardiac or vascular disease requiring medical intervention within 6 months prior to screening, hemodynamically symptomatic pericardial effusion, or symptomatic electrocardiogram abnormality requiring medical intervention.\n6. Child-Pugh Class B or C cirrhosis.\n7. Symptomatic airway disease requiring medical intervention, pleural effusion ≥ Grade 2, or history of pulmonary embolism requiring anticoagulant therapy within 6 months of ALLO-329 dosing.\n8. Participants known to be refractory to platelet or red blood cell transfusions or who will refuse indicated transfusion support to manage cell counts following treatment.\n9. Any form of primary, inherited immunodeficiency.\n10. Unwilling to participate in an extended safety monitoring period.\n11. For participants with SLE: History or active disease involving CNS within the last 6 months or SLE that is drug-induced. For those with lupus nephritis, history of dialysis within 12 months prior to signing the informed consent form or expected need for renal replacement therapy within the next 12 months after dosing, or National Institutes of Health (NIH) chronicity score of 3+ in any of the following domains: glomerular sclerosis, glomerular fibrous crescents, tubular atrophy, and/or interstitial fibrosis.\n12. Participants with IIM: A myositis other than specified classification per exclusion criteria, non-reversible, unrelated or weakness not amenable to assessment, or dermatomyositis with presence of anti-TIF1 gamma antibody.\n13. Participants with SSc: Pulmonary arterial hypertension requiring treatment, rapidly progressive or severe SSc gastrointestinal involvement, or prior scleroderma renal crisis.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "74 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Hôpital Maisonneuve Rosemont",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D008180",
+              "term": "Lupus Erythematosus, Systemic"
+            },
+            {
+              "id": "D009220",
+              "term": "Myositis"
+            },
+            {
+              "id": "D012595",
+              "term": "Scleroderma, Systemic"
+            },
+            {
+              "id": "D008181",
+              "term": "Lupus Nephritis"
+            },
+            {
+              "id": "D003882",
+              "term": "Dermatomyositis"
+            },
+            {
+              "id": "D045743",
+              "term": "Scleroderma, Diffuse"
+            },
+            {
+              "id": "D001327",
+              "term": "Autoimmune Diseases"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "systemic lupus erythematosus"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05039619",
+          "briefTitle": "A Study to Evaluate the Efficacy, Safety, and Pharmacokinetics of Obinutuzumab in Adolescents With Active Class III or IV Lupus Nephritis and the Safety and PK of Obinutuzumab in Pediatric Participants"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-03",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Lupus Nephritis"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Participants who are age 12 to \\<18 years at the time of randomization\n* Participants who are age 5 to \\<12 years (younger participant cohort) at the time of randomization once recruitment is open. (Investigators will be notified by the Sponsor when recruitment is open to this younger population)\n* International Society of Nephrology and the Renal Pathology Society (ISN/RPS) 2003 Class III or IV active LN demonstrated on renal biopsy performed in the 12 months prior to or during screening\n* Class V disease may be present in addition to Class III or IV LN, but participants with isolated Class V disease are not eligible\n* Diagnosis of SLE according to the Systemic Lupus International Collaborating Clinics (SLICC) 2012 criteria\n* Significant proteinuria defined by a UPCR above \\> 0.5 based on a first-morning void (FMV) collection at screening\n* During the 12 months prior to or during screening, all participants must have received at least one dose of pulse-range IV methylprednisolone (typically 30 mg/kg, maximum of 1000 mg per dose) or equivalent for the treatment of the current episode of active LN.\n\nExclusion Criteria:\n\n* Severe, active central nervous system (CNS) SLE, including retinitis, poorly controlled seizure disorder, acute confusional state, myelitis, stroke, cerebellar ataxia, or dementia\n* Sclerosis in \\>50% of glomeruli on renal biopsy\n* Purely chronic Class III(c) or Class IV(c) disease on renal biopsy, defined as the absence of any active lesions\n* Presence of rapidly progressive glomerulonephritis\n* Pure Class V LN\n* Intolerance or contraindication to study therapies\n* Active infection of any kind (excluding fungal infection of nail beds) or any major episode of infection requiring hospitalization or treatment with IV anti-infective medications within 4 weeks prior to screening, or completion of oral anti-infectives within 2 weeks prior to randomization\n* History of or currently active primary or secondary immunodeficiency, including known history of HIV infection and other severe Immunodeficiency blood disorders\n* History of serious recurrent or chronic infection\n* History of or current cancer, including solid tumors, hematological malignancies, and carcinoma in situ (except basal cell carcinoma and squamous cell carcinoma of the skin that have been excised and cured) within the past 5 years\n* Significant or uncontrolled concomitant medical disease which, in the investigator's opinion, would preclude participant participation\n* Currently active alcohol or drug abuse or history of alcohol or drug abuse",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "5 Years",
+          "maximumAge": "17 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Hospital Sainte-Justine",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D008181",
+              "term": "Lupus Nephritis"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "systemic lupus erythematosus"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05305066",
+          "briefTitle": "Stand UP to Rheumatoid Arthritis (SUPRA)"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-02-03",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Rheumatoid Arthritis"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Age ≥ 18 years;\n* Arthritis that fulfills the 2010 ACR/EULAR classification criteria for RA;\n* Failure to standard conventional synthetic DMARDs and eligible for second-line b/tsDMARDs (Sub-study 1) or failure to at least one TNF inhibitor and eligible for third-line b/tsDMARDs (Sub-study 2).\n\nExclusion Criteria:\n\n* Prior b/tsDMARDs for Sub-study 1 or prior b/tsDMARDs other than TNF inhibitors for Sub-study 2;\n* Contraindication to b/tsDMARD therapy, such as active infection or untreated latent TB, current malignancy, severe organ dysfunction, history of VTE (unless anticoagulated), high risk of cardiovascular disease, pregnancy/lactation;\n* Overlap with another inflammatory disease requiring specific immunosuppressive therapy, such as lupus nephritis;\n* Unable to provide consent or complete forms (alone or with assistance) in English or French",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Sir Mortimer B. Davis Jewish General Hospital",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001172",
+              "term": "Arthritis, Rheumatoid"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "rheumatoid arthritis"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06599658",
+          "briefTitle": "COVID-19 Booster and IIV Schedule in Immunocompromised Hosts"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-26",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "COVID 19",
+            "Influenza",
+            "Rheumatoid Arthritis (RA)",
+            "Systemic Lupus Erthematosus",
+            "Inflammatory Bowel Disease",
+            "Solid Organ Transplant Recipients",
+            "Immunocompromised Host",
+            "People Living With HIV"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n\\- All participants must meet ALL the following inclusion criteria: i. Adults (≥18 years) ii. Received the primary mRNA COVID-19 vaccine series (i.e., ≥3 doses) iii. Have at least one of the following immunocompromising conditions:\n\na) Received a solid organ transplant (SOT) ≥3-months ago, and treated with a conventional maintenance immunosuppression regimen; b) People living with HIV (PLWH) receiving ART for ≥6 months who meet at least one of the following conditions: i) AIDS-defining illness in the last 6 months, ii) TB diagnosis in the last 6-months, iii) CD4\\&lt;200 cells/µL in the last 6 months, iv) CD4%\\&lt;15% in the last 6 months, or v) absence of HIV viral suppression in the last 6 months; c) Inflammatory bowel disease (IBD) treated with a conventional or biologic immunosuppressive agent for ≥3 months; d) Rheumatoid arthritis or systemic lupus erythematosus (herein referred to as rheumatological disease (RD)) treated with a conventional or biologic immunosuppressive agent for ≥3 months.\n\nExclusion Criteria:\n\n* Potential participants who meet ANY of the following criteria will be excluded:\n\n  i. Received any of the following:\n  1. Annual vaccination against influenza \\&lt; 6 months ago\n  2. COVID-19 booster \\&lt; 3 months ago ii. History of any of the following:\n\n  <!-- -->\n\n  1. life-threatening reaction any component of the IIV or COVID-19 vaccines\n  2. Guillain-Barre syndrome or myocarditis within 6 weeks of a previous influenza or COVID-19 vaccination\n  3. Contraindication to intramuscular vaccines such as bleeding disorder, severe thrombocytopenia, etc; iii. Receiving intravenous immunoglobulins; iv. Have underlying primary inborn errors of immunity; v. Receiving chemotherapy such as cyclophosphamide \\&lt; 6-months ago; vi. Unable to provide informed consent",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Centre hospitalier de l'Université de Montréal (CHUM)",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            },
+            {
+              "facility": "Research Institute of McGill University Health Centre",
+              "city": "Montreal",
+              "state": "Quebec",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D000086382",
+              "term": "COVID-19"
+            },
+            {
+              "id": "D007251",
+              "term": "Influenza, Human"
+            },
+            {
+              "id": "D001172",
+              "term": "Arthritis, Rheumatoid"
+            },
+            {
+              "id": "D015212",
+              "term": "Inflammatory Bowel Diseases"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "rheumatoid arthritis"
+      ]
+    }
+  ],
+  "source": "ClinicalTrials.gov v2 API",
+  "location": {
+    "city": "Montreal",
+    "country": "Canada"
+  },
+  "selection": "Second held-out set. For each condition, the first 4 studies in API order with a recruiting site in Montreal, Canada, skipping any study in studies.json, vancouver.json or toronto.json (kept or dropped). Fetched after the Toronto fixes were merged, and labelled before the parser was run on them."
+}
