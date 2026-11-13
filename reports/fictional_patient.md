@@ -4,7 +4,7 @@ Fictional patient demonstration. No overall eligibility decision. Unparsed crite
 
 Public records retrieved: 2026-11-05T06:18:19.437645+00:00
 
-Individual criterion outcomes: {&#x27;met&#x27;: 4, &#x27;not met&#x27;: 3, &#x27;unknown&#x27;: 54}. These are not a trial eligibility decision.
+Individual criterion outcomes: 4 met, 3 not met, 54 unknown. These are not a trial eligibility decision.
 
 ## Fictional input
 
