@@ -7,6 +7,16 @@ DIAGNOSES = {
     'acute promyelocytic leukemia', 'type 1 diabetes', 'type 2 diabetes',
     'diabetes', 'breast cancer', 'dementia', 'atrial fibrillation',
     'heart failure', 'rheumatoid arthritis', 'systemic lupus erythematosus',
+    'myocardial infarction', 'heart failure with reduced ejection fraction',
+}
+# Abbreviations are only expanded from this fixed list, and only when the
+# abbreviation is the whole diagnosis on the line.
+ABBREVIATIONS = {
+    't2dm': 'type 2 diabetes', 't2d': 'type 2 diabetes', 'dm2': 'type 2 diabetes', 'type 2 dm': 'type 2 diabetes',
+    't1dm': 'type 1 diabetes', 't1d': 'type 1 diabetes', 'dm1': 'type 1 diabetes', 'type 1 dm': 'type 1 diabetes',
+    'ra': 'rheumatoid arthritis', 'sle': 'systemic lupus erythematosus', 'af': 'atrial fibrillation',
+    'afib': 'atrial fibrillation', 'hf': 'heart failure', 'mi': 'myocardial infarction',
+    'hfref': 'heart failure with reduced ejection fraction',
 }
 LAB_NAMES = {
     'hemoglobin': 'hemoglobin', 'platelets': 'platelets',
@@ -36,9 +46,15 @@ EVERYONE = r'(?:(?:males?|females?|men|women) (?:and|or|&) (?:males?|females?|me
 PERSON = r'(?:(?:patients?|participants?|subjects?|adults?|individuals?) ?)'
 AGE_PREFIX = (r'(?:adult )?' + EVERYONE + r'?' + PERSON + r'?(?:(?:is|are|must be) )?'
               r'(?:age[d]?:? ?)?')
-YEARS = r'years?(?: of age| old)?'
+YEARS = r'(?:years?|yrs?)(?: of age| old)?'
+# When the age is counted. For checking a record these all mean the person's age now.
+AGE_WHEN = (r'(?: at the time of (?:signing (?:of )?)?(?:the )?(?:informed consent(?: form)?|ICF|consent|'
+            r'enrol?lment|screening|randomi[sz]ation)| at (?:screening|enrol?lment|consent|randomi[sz]ation))?')
+AGE_WORD_OPS = {'greater than or equal to': '>=', 'less than or equal to': '<=', 'at least': '>=',
+                'greater than': '>', 'older than': '>', 'more than': '>', 'less than': '<', 'younger than': '<'}
 TIMEPOINTS = {'at screening/baseline': 'screening/baseline', 'at screening': 'screening',
-              'at the screening visit': 'screening', 'at baseline': 'baseline'}
+              'at the screening visit': 'screening', 'at baseline': 'baseline',
+              'at randomization': 'randomization', 'at randomisation': 'randomization'}
 TIMEPOINT = r'(?: (' + '|'.join(re.escape(t) for t in TIMEPOINTS) + r'))?'
 LAB_PREFIX = r'(?:(?:participants?|patients?|subjects?) (?:must have|with|has|have) )?(?:an? )?'
 LAB_NAME = r'(' + '|'.join(re.escape(n) for n in sorted(LAB_NAMES, key=len, reverse=True)) + r')(?: value| level)?(?: of)?'
@@ -79,17 +95,26 @@ def _strip_hba1c_equivalent(text, low, high=None):
 
 
 def _parse_age(text):
-    m = re.fullmatch(AGE_PREFIX + OP + r' ?(' + NUM + r') ?' + YEARS, text, re.I)
+    # "Adult (≥ 18 to ≤ 75yrs)": the limit is inside the brackets.
+    m = re.fullmatch(r'(?:adults?|age[d]?) \((.+)\)', text, re.I)
+    if m:
+        text = 'Age ' + m[1]
+    m = re.fullmatch(AGE_PREFIX + OP + r' ?(' + NUM + r') ?' + YEARS + AGE_WHEN, text, re.I)
     if m:
         return _rule('age', OPS.get(m[1], m[1]), float(m[2]), 'years')
-    m = re.fullmatch(AGE_PREFIX + r'(?:at least|older than) (' + NUM + r') ?' + YEARS, text, re.I)
+    # "Age ≥ 18" with no unit is read as years, but only when the line starts with "Age".
+    m = re.fullmatch(r'age[d]?:? ?' + OP + r' ?(' + NUM + r')' + AGE_WHEN, text, re.I)
     if m:
-        op = '>=' if re.search(r'at least', text, re.I) else '>'
-        return _rule('age', op, float(m[1]), 'years')
-    m = re.fullmatch(AGE_PREFIX + r'(' + NUM + r') ?' + YEARS + r' (?:or|and) (?:older|above|over)', text, re.I)
+        return _rule('age', OPS.get(m[1], m[1]), float(m[2]), 'years')
+    words = '|'.join(sorted(AGE_WORD_OPS, key=len, reverse=True))
+    m = re.fullmatch(AGE_PREFIX + r'(' + words + r') (' + NUM + r') ?' + YEARS + AGE_WHEN, text, re.I)
+    if m:
+        return _rule('age', AGE_WORD_OPS[m[1].lower()], float(m[2]), 'years')
+    m = re.fullmatch(AGE_PREFIX + r'(' + NUM + r') ?' + YEARS + r' (?:or|and) (?:older|above|over)' + AGE_WHEN, text, re.I)
     if m:
         return _rule('age', '>=', float(m[1]), 'years')
-    m = re.fullmatch(AGE_PREFIX + r'(?:between )?(' + NUM + r') ?(?:to|-|and) ?(' + NUM + r') ?' + YEARS + r'(?: inclusive)?', text, re.I)
+    m = re.fullmatch(AGE_PREFIX + r'(?:between )?(?:≥|>=)? ?(' + NUM + r') ?(?:years?|yrs?)? ?(?:to|-|and) ?(?:≤|<=)? ?(' + NUM + r') ?'
+                     + YEARS + r'(?: inclusive)?' + AGE_WHEN, text, re.I)
     if m and float(m[1]) <= float(m[2]) and not (re.search(r'between', text, re.I) and ' and ' not in text):
         return _rule('age', 'between', [float(m[1]), float(m[2])], 'years')
     return None
@@ -143,6 +168,31 @@ def _parse_lab(text):
     return None
 
 
+def _diagnosis_term(text):
+    """The diagnosis a whole line names, or None. Lead-ins like "Known" don't change it."""
+    term = re.sub(r'^(?:Patients with |Diagnosis of |A definite diagnosis of |Previously diagnosed with |Known |'
+                  r'Confirmed diagnosis of |Established diagnosis of |Documented diagnosis of )', '', text, flags=re.I)
+    m = re.fullmatch(r'(?:(?:physician|rheumatologist|cardiologist|endocrinologist)[- ]verified |confirmed |documented )?(.+) diagnosis',
+                     term, re.I)
+    if m:
+        term = m[1]
+    term = term.lower()
+    # "Heart failure with reduced ejection fraction (HFrEF)": the bracket must be the same term's abbreviation.
+    m = re.fullmatch(r'(.+?) \(([a-z0-9-]{2,10})\)', term)
+    if m:
+        name = _full_name(m[1])
+        return name if name in DIAGNOSES and ABBREVIATIONS.get(m[2]) == name else None
+    name = _full_name(term)
+    if name in DIAGNOSES:
+        return name
+    return ABBREVIATIONS.get(term)
+
+
+def _full_name(term):
+    # "Type 1 diabetes mellitus" is the full name of the same term, not a synonym.
+    return re.sub(r'^((?:type [12] )?diabetes) mellitus$', r'\1', term)
+
+
 def _parse(sentence):
     text = normalize(sentence)
     rule = _parse_age(text)
@@ -151,10 +201,8 @@ def _parse(sentence):
     m = re.fullmatch(r'(female|male)(?: participants?| subjects?| patients?)?(?: only)?', text, re.I)
     if m:
         return _rule('sex', '==', m[1].lower())
-    term = re.sub(r'^(?:Patients with |Diagnosis of |A definite diagnosis of |Previously diagnosed with )', '', text, flags=re.I).lower()
-    # "Type 1 diabetes mellitus" is the full name of the same term, not a synonym.
-    term = re.sub(r'^((?:type [12] )?diabetes) mellitus$', r'\1', term)
-    if term in DIAGNOSES:
+    term = _diagnosis_term(text)
+    if term:
         return _rule('diagnosis', 'contains', term)
     return _parse_lab(text)
 

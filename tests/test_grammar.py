@@ -18,15 +18,21 @@ class AgeWordingTests(unittest.TestCase):
             ('Age \\>18 years;', '>', 18.0),
             ('Adult ≥ 18 years old', '>=', 18.0),
             ('Age ≥ 40 years', '>=', 40.0),
+            ('Age ≥ 18', '>=', 18.0),
+            ('Patients greater than or equal to 18 years of age', '>=', 18.0),
+            ('Greater than 21 years of age at the time of enrollment.', '>', 21.0),
+            ('Participants must be ≥16 years of age at the time of signing the ICF', '>=', 16.0),
+            ('Age 18 years or above at the time of signing the informed consent', '>=', 18.0),
         ]
         for text, op, value in cases:
             with self.subTest(text=text):
                 self.assertEqual(rule(text), dict(field='age', op=op, value=value, unit='years'))
         self.assertEqual(rule('Aged between 18 and 75 years')['value'], [18.0, 75.0])
+        self.assertEqual(rule('Adult (≥ 18 to ≤ 75yrs)')['value'], [18.0, 75.0])
 
     def test_wording_that_carries_more_than_age_stays_unknown(self):
         for text in ['Women aged 18 years or older', 'Male participants ≥ 18 years of age',
-                     'Age 18 years or above at the time of signing the informed consent',
+                     'Age ≥ 18 unless approved by the investigator', 'Height ≥ 150',
                      'Adult men and women aged between more than 18 and ≤ 75 years',
                      'Legal age of consent and at least 18 years old', 'Age at diagnosis ≥ 18 years']:
             with self.subTest(text=text):
@@ -51,6 +57,7 @@ class MeasurementTests(unittest.TestCase):
     def test_timepoints_are_kept(self):
         self.assertEqual(rule('Body mass index (BMI) of ≥ 23 kg/m2 at screening')['timepoint'], 'screening')
         self.assertEqual(rule('HbA1c ≥ 10% (86 mmol/mol) at the screening visit')['timepoint'], 'screening')
+        self.assertEqual(rule('BMI ≥ 30.0 kg/m\\^2 at randomization.')['timepoint'], 'randomization')
 
     def test_hba1c_mmol_note_must_agree_with_the_percent(self):
         self.assertIsNotNone(rule('HbA1c ≥ 10% (86 mmol/mol)'))
@@ -73,11 +80,19 @@ class MeasurementTests(unittest.TestCase):
 
 
 class DiagnosisTests(unittest.TestCase):
-    def test_full_diabetes_name_but_no_abbreviations(self):
-        self.assertEqual(rule('Type 1 diabetes mellitus')['value'], 'type 1 diabetes')
-        self.assertEqual(rule('Diagnosis of type 2 diabetes mellitus')['value'], 'type 2 diabetes')
-        for text in ['T1DM', 'T2D', 'Type 1 diabetes mellitus (T1DM) for at least 1 year']:
-            self.assertIsNone(rule(text))
+    def test_full_names_and_a_fixed_list_of_abbreviations(self):
+        cases = [('Type 1 diabetes mellitus', 'type 1 diabetes'), ('Diagnosis of type 2 diabetes mellitus', 'type 2 diabetes'),
+                 ('T2DM', 'type 2 diabetes'), ('Type 1 DM', 'type 1 diabetes'),
+                 ('Rheumatologist verified RA diagnosis.', 'rheumatoid arthritis'),
+                 ('Known Heart Failure with Reduced Ejection Fraction (HFrEF)', 'heart failure with reduced ejection fraction')]
+        for text, term in cases:
+            with self.subTest(text=text):
+                self.assertEqual(rule(text)['value'], term)
+        # Unknown abbreviations, a bracket that names something else, and qualified lines stay unknown.
+        for text in ['DKD', 'Heart failure (HFpEF)', 'Type 2 diabetes (T1DM)',
+                     'Type 1 diabetes mellitus (T1DM) for at least 1 year', 'History of MI']:
+            with self.subTest(text=text):
+                self.assertIsNone(rule(text))
 
 
 class AlternativeTests(unittest.TestCase):

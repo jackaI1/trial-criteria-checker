@@ -1,0 +1,38 @@
+{
+  "true_positives": 16,
+  "false_positives": 0,
+  "false_negatives": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "by_field": {
+    "age": {
+      "gold": 9,
+      "predicted": 9,
+      "correct": 9,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "bmi": {
+      "gold": 1,
+      "predicted": 1,
+      "correct": 1,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "diagnosis": {
+      "gold": 6,
+      "predicted": 6,
+      "correct": 6,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "missed": [],
+  "incorrect": [],
+  "study_count": 19,
+  "source_sentence_count": 290,
+  "unparsed_sentence_count": 274,
+  "gold_rule_count": 16,
+  "predicted_rule_count": 16,
+  "method": "Toronto set. Held out for the first score, then used to fix the parser, so it is now a development set. Exact match on study, source offsets, section, field, operator, value, unit and qualifiers."
+}

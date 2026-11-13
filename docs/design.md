@@ -27,3 +27,7 @@ I widened the grammar by reading the lines it missed in the Vancouver studies, s
 An HbA1c line sometimes repeats the value in mmol/mol. I only drop that note when it agrees with the percentage under the IFCC conversion (mmol/mol = 10.929 × (% − 2.15)) to within 1 mmol/mol. Otherwise the line stays unknown, since one of the two numbers is wrong and I can't tell which.
 
 A bullet that ends in "or" makes the next bullet an alternative. Neither becomes a rule, because checking them separately would treat "A or B" as "A and B".
+
+## Fixes after the first held-out score
+
+The Toronto set was held out for the first score, and I used its misses to make these changes, so it's a development set now. Age "at the time of informed consent", "of signing the ICF", "of enrollment" or "at screening" is read as the person's current age, because a record can only show age now and the difference is at most the time between consent and the check. "Age ≥ 18" with no unit is read as years only when the line starts with "Age". Abbreviations come from a fixed list in `parser.py` and only count when the abbreviation is the entire diagnosis on the line, or when it sits in brackets after the full name it abbreviates.

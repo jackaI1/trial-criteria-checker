@@ -33,6 +33,7 @@ SNOMED_DIAGNOSES = {
     '84114007': 'heart failure',
     '69896004': 'rheumatoid arthritis',
     '55464009': 'systemic lupus erythematosus',
+    '22298006': 'myocardial infarction',
 }
 # ICD-10-CM codes match a listed code exactly or any code below it
 # (E11 covers E11.9 and E11.65; I48.1 covers I48.11 and I48.19).

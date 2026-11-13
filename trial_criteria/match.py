@@ -21,6 +21,7 @@ DIAGNOSIS_MESH = {
     'rheumatoid arthritis': 'D001172',          # Arthritis, Rheumatoid
     'dementia': 'D003704',                      # Dementia
     'breast cancer': 'D001943',                 # Breast Neoplasms
+    'myocardial infarction': 'D009203',         # Myocardial Infarction
 }
 
 

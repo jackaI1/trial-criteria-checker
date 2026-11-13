@@ -24,9 +24,9 @@ def main():
     report = build_report(snapshot,read('examples/fictional_patient.json'))
     report['benchmark'] = metrics
     dump = lambda obj: json.dumps(obj,indent=2,ensure_ascii=False,allow_nan=False)+'\n'
-    heldout = benchmark(read('data/heldout_toronto.json'),read('data/heldout_labels.json'))
+    heldout = benchmark(read('data/toronto.json'),read('data/toronto_labels.json'))
     outputs = {'reports/metrics.json':dump(metrics),
-               'reports/heldout_metrics.json':dump(heldout),
+               'reports/toronto_metrics.json':dump(heldout),
                'reports/fictional_patient.json':dump(report),
                'reports/fictional_patient.html':render_html(report),
                'reports/fictional_patient.md':render_markdown(report)}
@@ -51,7 +51,7 @@ def main():
             Path(name).write_text(content,encoding='utf-8')
     print(json.dumps({k:metrics[k] for k in ('study_count','source_sentence_count','gold_rule_count',
           'true_positives','false_positives','false_negatives','precision','recall')},indent=2))
-    print('Held-out: '+json.dumps({k:heldout[k] for k in ('study_count','gold_rule_count','true_positives','false_positives','false_negatives')}))
+    print('Toronto: '+json.dumps({k:heldout[k] for k in ('study_count','gold_rule_count','true_positives','false_positives','false_negatives')}))
     print('Fictional outcomes: '+json.dumps(report['counts']))
     print('Saved outputs '+('match' if args.check else 'rebuilt'))
 
