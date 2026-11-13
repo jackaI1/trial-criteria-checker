@@ -14,7 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from demo_questions import AREAS, CONDITIONS, FILES, PHRASES, PRIORITY, QUESTIONS  # noqa: E402
-from demo_spec import FACILITIES, TRIALS, VANCOUVER  # noqa: E402
+from demo_spec import FACILITIES, TRIALS  # noqa: E402
 
 SOURCE = Path('data/demo_trials_source.json')
 OUTPUT = Path('web/trial-finder/data.js')
@@ -153,7 +153,8 @@ def build():
                 raise ValueError(f'{nct_id}: no sentence for {req["text"]}')
             reqs.append(dict(kind=req['kind'], text=req['text'], quote=quote, test=req['test'], rule=rule))
         site = study['vancouverSites'][0]['facility'] if study['vancouverSites'] else 'Vancouver'
-        at = FACILITIES.get(site, VANCOUVER)
+        # Distance is only shown when the listing names the site.
+        at = FACILITIES.get(site)
         trials.append(dict(
             id=nct_id, title=spec['short'], officialTitle=study['briefTitle'], groups=spec['groups'],
             summary=spec['summary'], kind=spec['kind'], phase=phase_text(study), comparison=comparison_text(study),

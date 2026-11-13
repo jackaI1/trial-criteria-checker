@@ -33,6 +33,7 @@ export const DATA = {
   {
    "id": "downtown",
    "label": "Downtown or West End Vancouver",
+   "place": "downtown Vancouver",
    "at": [
     49.2827,
     -123.1207
@@ -41,6 +42,7 @@ export const DATA = {
   {
    "id": "west_van_side",
    "label": "Kitsilano, Point Grey or Kerrisdale",
+   "place": "Kitsilano",
    "at": [
     49.256,
     -123.169
@@ -49,6 +51,7 @@ export const DATA = {
   {
    "id": "east_van",
    "label": "East Vancouver",
+   "place": "East Vancouver",
    "at": [
     49.262,
     -123.069
@@ -57,6 +60,7 @@ export const DATA = {
   {
    "id": "north_shore",
    "label": "North Shore",
+   "place": "the North Shore",
    "at": [
     49.321,
     -123.073
@@ -65,6 +69,7 @@ export const DATA = {
   {
    "id": "richmond",
    "label": "Richmond",
+   "place": "Richmond",
    "at": [
     49.1666,
     -123.1336
@@ -73,6 +78,7 @@ export const DATA = {
   {
    "id": "burnaby",
    "label": "Burnaby or New Westminster",
+   "place": "Burnaby",
    "at": [
     49.235,
     -122.97
@@ -81,6 +87,7 @@ export const DATA = {
   {
    "id": "tricities",
    "label": "Coquitlam or the Tri-Cities",
+   "place": "the Tri-Cities",
    "at": [
     49.2838,
     -122.7932
@@ -89,6 +96,7 @@ export const DATA = {
   {
    "id": "surrey",
    "label": "Surrey or Delta",
+   "place": "Surrey",
    "at": [
     49.13,
     -122.85
@@ -97,6 +105,7 @@ export const DATA = {
   {
    "id": "fraser_valley",
    "label": "Fraser Valley",
+   "place": "the Fraser Valley",
    "at": [
     49.0504,
     -122.3045
@@ -193,8 +202,13 @@ export const DATA = {
    "type": "range",
    "options": [
     {
-     "label": "Under 18",
+     "label": "Under 5",
      "lo": 0,
+     "hi": 4.99
+    },
+    {
+     "label": "5 to 17",
+     "lo": 5,
      "hi": 17.99
     },
     {
@@ -241,32 +255,32 @@ export const DATA = {
      "hi": 6.49
     },
     {
-     "label": "6.5 to 7%",
+     "label": "6.5 to 6.9%",
      "lo": 6.5,
      "hi": 6.99
     },
     {
-     "label": "7 to 7.5%",
+     "label": "7.0 to 7.4%",
      "lo": 7,
      "hi": 7.49
     },
     {
-     "label": "7.5 to 8%",
+     "label": "7.5 to 7.9%",
      "lo": 7.5,
      "hi": 7.99
     },
     {
-     "label": "8 to 9%",
+     "label": "8.0 to 8.9%",
      "lo": 8,
      "hi": 8.99
     },
     {
-     "label": "9 to 10%",
+     "label": "9.0 to 9.9%",
      "lo": 9,
      "hi": 9.99
     },
     {
-     "label": "10 to 10.5%",
+     "label": "10.0 to 10.5%",
      "lo": 10,
      "hi": 10.5
     },
@@ -289,22 +303,22 @@ export const DATA = {
      "hi": 22.99
     },
     {
-     "label": "23 to 25",
+     "label": "23 to 24.9",
      "lo": 23,
      "hi": 24.99
     },
     {
-     "label": "25 to 27",
+     "label": "25 to 26.9",
      "lo": 25,
      "hi": 26.99
     },
     {
-     "label": "27 to 30",
+     "label": "27 to 29.9",
      "lo": 27,
      "hi": 29.99
     },
     {
-     "label": "30 to 35",
+     "label": "30 to 34.9",
      "lo": 30,
      "hi": 34.99
     },
@@ -333,22 +347,22 @@ export const DATA = {
      "hi": 24.99
     },
     {
-     "label": "25 to 30%",
+     "label": "25 to 29%",
      "lo": 25,
      "hi": 29.99
     },
     {
-     "label": "30 to 35%",
+     "label": "30 to 34%",
      "lo": 30,
      "hi": 34.99
     },
     {
-     "label": "35 to 40%",
+     "label": "35 to 39%",
      "lo": 35,
      "hi": 39.99
     },
     {
-     "label": "40 to 50%",
+     "label": "40 to 49%",
      "lo": 40,
      "hi": 49.99
     },
@@ -371,22 +385,22 @@ export const DATA = {
      "hi": 14.99
     },
     {
-     "label": "15 to 20",
+     "label": "15 to 19",
      "lo": 15,
      "hi": 19.99
     },
     {
-     "label": "20 to 25",
+     "label": "20 to 24",
      "lo": 20,
      "hi": 24.99
     },
     {
-     "label": "25 to 30",
+     "label": "25 to 29",
      "lo": 25,
      "hi": 29.99
     },
     {
-     "label": "30 to 60",
+     "label": "30 to 59",
      "lo": 30,
      "hi": 59.99
     },
@@ -447,15 +461,19 @@ export const DATA = {
    "type": "choice",
    "options": [
     {
-     "label": "Yes",
-     "value": "yes"
+     "label": "Yes, I use it now",
+     "value": "now"
     },
     {
-     "label": "No",
+     "label": "I stopped in the last 3 months",
+     "value": "recent"
+    },
+    {
+     "label": "No, not in the last 3 months",
      "value": "no"
     }
    ],
-   "label": "Uses insulin"
+   "label": "Insulin"
   },
   "metformin_1500": {
    "ask": "Do you take metformin, at least 1,500 mg a day?",
@@ -493,7 +511,7 @@ export const DATA = {
    "label": "GLP-1 medicine"
   },
   "t1d_dka": {
-   "ask": "Have you been told you have type 1 or another kind of diabetes, or had diabetic ketoacidosis (DKA)?",
+   "ask": "Apart from type 2, have you been told you have another kind of diabetes (not counting diabetes during pregnancy), or had diabetic ketoacidosis (DKA)?",
    "type": "choice",
    "options": [
     {
@@ -687,7 +705,7 @@ export const DATA = {
    "label": "Type of AF"
   },
   "af_stress": {
-   "ask": "Did your AF first appear during a recent operation, or a hospital stay for another illness?",
+   "ask": "Did your AF first appear in the last 5 weeks, during an operation or a hospital stay for another illness?",
    "type": "choice",
    "options": [
     {
@@ -785,7 +803,7 @@ export const DATA = {
    "label": "Last heart failure hospital stay"
   },
   "loop_diuretic": {
-   "ask": "Do you take a water pill like furosemide (Lasix) or bumetanide every day?",
+   "ask": "Do you take a water pill like furosemide (Lasix) or bumetanide on a regular schedule?",
    "type": "choice",
    "options": [
     {
@@ -797,7 +815,7 @@ export const DATA = {
      "value": "no"
     }
    ],
-   "label": "Daily water pill"
+   "label": "Regular water pill"
   },
   "mra": {
    "ask": "Do you take spironolactone or eplerenone?",
@@ -867,7 +885,16 @@ export const DATA = {
   },
   "area": {
    "topic": "where you live",
-   "v": "you live in {v}"
+   "downtown": "you live downtown or in the West End",
+   "west_van_side": "you live in Kitsilano, Point Grey or Kerrisdale",
+   "east_van": "you live in East Vancouver",
+   "north_shore": "you live on the North Shore",
+   "richmond": "you live in Richmond",
+   "burnaby": "you live in Burnaby or New Westminster",
+   "tricities": "you live in Coquitlam or the Tri-Cities",
+   "surrey": "you live in Surrey or Delta",
+   "fraser_valley": "you live in the Fraser Valley",
+   "elsewhere": "you live somewhere else in BC"
   },
   "age": {
    "topic": "your age",
@@ -905,8 +932,9 @@ export const DATA = {
   },
   "insulin": {
    "topic": "whether you use insulin",
-   "yes": "you use insulin",
-   "no": "you don't use insulin"
+   "now": "you use insulin now",
+   "recent": "you stopped insulin in the last 3 months",
+   "no": "you haven't used insulin in the last 3 months"
   },
   "metformin_1500": {
    "topic": "your metformin dose",
@@ -920,9 +948,9 @@ export const DATA = {
    "no": "you haven't taken a GLP-1 medicine in the last 6 months"
   },
   "t1d_dka": {
-   "topic": "whether you've had type 1 diabetes, another kind of diabetes or DKA",
-   "yes": "you've had type 1 diabetes, another kind of diabetes or DKA",
-   "no": "you haven't had type 1 diabetes, another kind of diabetes or DKA"
+   "topic": "whether you've had another kind of diabetes or DKA",
+   "yes": "you've had another kind of diabetes besides type 2, or DKA",
+   "no": "you haven't had any other kind of diabetes or DKA"
   },
   "pancreatitis": {
    "topic": "whether you've had pancreatitis",
@@ -984,8 +1012,8 @@ export const DATA = {
   },
   "af_stress": {
    "topic": "how your AF started",
-   "yes": "your AF started during a recent operation or hospital stay",
-   "no": "your AF didn't start during a recent operation or hospital stay"
+   "yes": "your AF first appeared in the last 5 weeks, during an operation or hospital stay",
+   "no": "your AF didn't first appear during an operation or hospital stay in the last 5 weeks"
   },
   "anticoag": {
    "topic": "whether you take a blood thinner",
@@ -1015,9 +1043,9 @@ export const DATA = {
    "none": "you haven't been in hospital for heart failure in the last year"
   },
   "loop_diuretic": {
-   "topic": "whether you take a daily water pill",
-   "yes": "you take a water pill every day",
-   "no": "you don't take a daily water pill"
+   "topic": "whether you take a water pill regularly",
+   "yes": "you take a water pill on a regular schedule",
+   "no": "you don't take a water pill on a regular schedule"
   },
   "mra": {
    "topic": "whether you take spironolactone or eplerenone",
@@ -1169,7 +1197,8 @@ export const DATA = {
     "anticoag": "yes",
     "loop_diuretic": "yes",
     "prior_ablation": "no",
-    "device": "no"
+    "device": "no",
+    "pregnant": "no"
    }
   },
   {
@@ -1181,18 +1210,18 @@ export const DATA = {
    "file": "rheumatology-note.pdf",
    "says": "Your rheumatology note says",
    "lines": [
-    "34-year-old woman with systemic lupus erythematosus since 2019.",
-    "Joint pain and rash this year. Hydroxychloroquine 200 mg twice daily.",
+    "15-year-old girl with systemic lupus erythematosus, diagnosed in 2024.",
+    "Joint pain and rash this year. Hydroxychloroquine 200 mg daily.",
     "No kidney involvement."
    ],
    "facts": {
     "age": {
-     "lo": 34,
-     "hi": 34
+     "lo": 15,
+     "hi": 15
     },
     "years_dx": {
-     "lo": 6.5,
-     "hi": 7.5
+     "lo": 2,
+     "hi": 2.9
     }
    }
   }
@@ -1212,10 +1241,7 @@ export const DATA = {
    "blinding": "You and your doctors know which treatment you get.",
    "enrollment": 1200,
    "site": "Research Site",
-   "at": [
-    49.2827,
-    -123.1207
-   ],
+   "at": null,
    "named_site": false,
    "url": "https://clinicaltrials.gov/study/NCT07662213",
    "reqs": [
@@ -1247,10 +1273,12 @@ export const DATA = {
      "quote": "T2DM inadequately managed with lifestyle management alone or on stable treatment with other background glucose-lowering medication(s)",
      "test": [
       "treatment_stable",
-      "is",
-      "yes"
+      "map",
+      {
+       "yes": true
+      }
      ],
-     "rule": "You can only take part if your diabetes treatment hasn't changed in 3 months."
+     "rule": "Your diabetes treatment needs to be steady. If it changed recently, the study team decides whether that counts."
     },
     {
      "kind": "need",
@@ -1303,10 +1331,12 @@ export const DATA = {
      "quote": "Type 1 Diabetes Mellitus (T1DM), secondary forms of diabetes (including congenital forms), or history of ketoacidosis or hyperosmolar coma",
      "test": [
       "t1d_dka",
-      "is",
-      "no"
+      "map",
+      {
+       "no": true
+      }
      ],
-     "rule": "You can't take part if you've had type 1 diabetes, another kind of diabetes or DKA."
+     "rule": "You can't take part if you have type 1 or a secondary form of diabetes, or have had ketoacidosis or a hyperosmolar coma."
     },
     {
      "kind": "cant",
@@ -1398,10 +1428,7 @@ export const DATA = {
    "blinding": "Neither you nor your study doctors know which group you're in.",
    "enrollment": 600,
    "site": "Research Site",
-   "at": [
-    49.2827,
-    -123.1207
-   ],
+   "at": null,
    "named_site": false,
    "url": "https://clinicaltrials.gov/study/NCT07664553",
    "reqs": [
@@ -1436,17 +1463,23 @@ export const DATA = {
       [
        [
         "insulin",
-        "is",
-        "yes"
+        "map",
+        {
+         "now": true,
+         "recent": false,
+         "no": false
+        }
        ],
        [
         "treatment_stable",
-        "is",
-        "yes"
+        "map",
+        {
+         "yes": true
+        }
        ]
       ]
      ],
-     "rule": "You can only take part if you already use insulin and your diabetes treatment hasn't changed in 3 months."
+     "rule": "You can only take part if you already use insulin, at a steady dose, along with other diabetes medicine."
     },
     {
      "kind": "need",
@@ -1492,10 +1525,12 @@ export const DATA = {
      "quote": "T1DM, secondary forms of diabetes (including congenital forms), or history of ketoacidosis or hyperosmolar coma",
      "test": [
       "t1d_dka",
-      "is",
-      "no"
+      "map",
+      {
+       "no": true
+      }
      ],
-     "rule": "You can't take part if you've had type 1 diabetes, another kind of diabetes or DKA."
+     "rule": "You can't take part if you have type 1 or a secondary form of diabetes, or have had ketoacidosis or a hyperosmolar coma."
     },
     {
      "kind": "cant",
@@ -1587,10 +1622,7 @@ export const DATA = {
    "blinding": "You and your doctors know which treatment you get.",
    "enrollment": 1300,
    "site": "Dr T G Elliott Incorporated - BC Diabetes",
-   "at": [
-    49.2827,
-    -123.1207
-   ],
+   "at": null,
    "named_site": false,
    "url": "https://clinicaltrials.gov/study/NCT07866066",
    "reqs": [
@@ -1659,10 +1691,12 @@ export const DATA = {
      "quote": "Type 1 diabetes mellitus (T1DM), history of ketoacidosis or hyperosmolar state/coma, or any other type of diabetes mellitus except T2D or past history of gestational diabetes.",
      "test": [
       "t1d_dka",
-      "is",
-      "no"
+      "map",
+      {
+       "no": true
+      }
      ],
-     "rule": "You can't take part if you've had type 1 diabetes, another kind of diabetes or DKA."
+     "rule": "You can't take part if you have any type of diabetes besides type 2 (past diabetes during pregnancy is fine), or have had ketoacidosis."
     },
     {
      "kind": "cant",
@@ -1746,10 +1780,7 @@ export const DATA = {
    "blinding": "Neither you nor your study doctors know which group you're in.",
    "enrollment": 1500,
    "site": "Research Site",
-   "at": [
-    49.2827,
-    -123.1207
-   ],
+   "at": null,
    "named_site": false,
    "url": "https://clinicaltrials.gov/study/NCT07784270",
    "reqs": [
@@ -1803,12 +1834,14 @@ export const DATA = {
        ],
        [
         "treatment_stable",
-        "is",
-        "yes"
+        "map",
+        {
+         "yes": true
+        }
        ]
       ]
      ],
-     "rule": "Your HbA1c needs to be between 6% and 10%, and your diabetes treatment can't have changed in 3 months."
+     "rule": "Your HbA1c needs to be between 6% and 10%, on diet alone or a steady dose of diabetes pills."
     },
     {
      "kind": "need",
@@ -1881,8 +1914,12 @@ export const DATA = {
      "quote": "Use of insulin therapy for T2DM within 3 months prior to screening",
      "test": [
       "insulin",
-      "is",
-      "no"
+      "map",
+      {
+       "no": true,
+       "now": false,
+       "recent": false
+      }
      ],
      "rule": "You can't take part if you've used insulin in the last 3 months."
     }
@@ -1902,10 +1939,7 @@ export const DATA = {
    "blinding": "Neither you nor your study doctors know which group you're in.",
    "enrollment": 1600,
    "site": "TGElliott Inc. dba BC Diabetes",
-   "at": [
-    49.2827,
-    -123.1207
-   ],
+   "at": null,
    "named_site": false,
    "url": "https://clinicaltrials.gov/study/NCT07351058",
    "reqs": [
@@ -1929,7 +1963,7 @@ export const DATA = {
     },
     {
      "kind": "need",
-     "text": "Type 2 diabetes with HbA1c between 6.5% and 10%, on diet alone or diabetes pills unchanged for 3 months",
+     "text": "Type 2 diabetes with HbA1c between 6.5% and 10%, on diet alone or diabetes pills (not DPP-4 pills like Januvia) unchanged for 3 months",
      "quote": "Diagnosis of type 2 diabetes mellitus (T2DM) according to WHO classification or other locally applicable standards with HbA1c ≥6.5% to ≤10% determined by laboratory test at screening, and on stable oral therapy for at least 3 months prior to screening (if applicable). T2DM may be treated with diet/exercise alone or any oral anti-hyperglycemic medication (as per local labeling) EXCEPT dipeptidyl peptidase 4 (DPP-4) inhibitors or GLP-1 RA-based therapy.",
      "test": [
       "all",
@@ -1954,7 +1988,7 @@ export const DATA = {
        ]
       ]
      ],
-     "rule": "Your HbA1c needs to be between 6.5% and 10%, you can't be on insulin, and your diabetes treatment can't have changed in 3 months."
+     "rule": "Your HbA1c needs to be between 6.5% and 10%, you can't be on insulin, and your diabetes treatment can't have changed in 3 months. DPP-4 pills such as Januvia aren't allowed."
     },
     {
      "kind": "need",
@@ -2037,10 +2071,12 @@ export const DATA = {
      "quote": "Prior or planned surgical treatment for obesity. Liposuction or abdominoplasty if performed more than 1 year prior to screening is allowed.",
      "test": [
       "obesity_surgery",
-      "is",
-      "no"
+      "map",
+      {
+       "no": true
+      }
      ],
-     "rule": "You can't take part if you've had, or plan, weight-loss surgery."
+     "rule": "You can't take part if you've had or plan weight-loss surgery. Liposuction more than a year ago is fine."
     },
     {
      "kind": "cant",
@@ -2094,10 +2130,7 @@ export const DATA = {
    "blinding": "Neither you nor your study doctors know which group you're in.",
    "enrollment": 500,
    "site": "Research Site",
-   "at": [
-    49.2827,
-    -123.1207
-   ],
+   "at": null,
    "named_site": false,
    "url": "https://clinicaltrials.gov/study/NCT07776509",
    "reqs": [
@@ -2232,8 +2265,12 @@ export const DATA = {
      "quote": "Use of insulin therapy for T2DM within 3 months prior to screening",
      "test": [
       "insulin",
-      "is",
-      "no"
+      "map",
+      {
+       "no": true,
+       "now": false,
+       "recent": false
+      }
      ],
      "rule": "You can't take part if you've used insulin in the last 3 months."
     }
@@ -2324,10 +2361,7 @@ export const DATA = {
    "blinding": "Neither you nor your study doctors know which group you're in.",
    "enrollment": 165,
    "site": "Novartis Investigative Site",
-   "at": [
-    49.2827,
-    -123.1207
-   ],
+   "at": null,
    "named_site": false,
    "url": "https://clinicaltrials.gov/study/NCT07217067",
    "reqs": [
@@ -2414,10 +2448,12 @@ export const DATA = {
      "quote": "Ongoing use of antiarrhythmic therapy (Vaughan Williams class I or III anti-arrhythmic therapy must be discontinued at least 7 days before Screening phase ECG patch monitor; amiodarone must be discontinued at least 6 weeks before Screening phase ECG patch monitor)",
      "test": [
       "antiarrhythmic",
-      "is",
-      "no"
+      "map",
+      {
+       "no": true
+      }
      ],
-     "rule": "You can't take part if you take a heart rhythm medicine."
+     "rule": "Heart rhythm medicines have to be stopped before the study starts (amiodarone 6 weeks before), so the study team would talk with you about this."
     },
     {
      "kind": "cant",
@@ -2747,7 +2783,7 @@ export const DATA = {
       "is",
       "yes"
      ],
-     "rule": "You can only take part if your AF started during a recent operation or hospital stay."
+     "rule": "You can only take part if your AF first appeared in the last 5 weeks, during an operation or hospital stay."
     },
     {
      "kind": "need",
@@ -2791,10 +2827,12 @@ export const DATA = {
      "quote": "history of documented chronic AF prior to noncardiac surgery;",
      "test": [
       "af_stress",
-      "is",
-      "yes"
+      "map",
+      {
+       "yes": true
+      }
      ],
-     "rule": "You can only take part if your AF started during a recent operation or hospital stay."
+     "rule": "You can't take part if you had long-term AF before the operation or illness."
     },
     {
      "kind": "cant",
@@ -2802,8 +2840,10 @@ export const DATA = {
      "quote": "need for long-term systemic anticoagulation;",
      "test": [
       "anticoag",
-      "is",
-      "no"
+      "map",
+      {
+       "no": true
+      }
      ],
      "rule": "You can't take part if you already need long-term blood thinners."
     },
@@ -2930,7 +2970,7 @@ export const DATA = {
       "is",
       "yes"
      ],
-     "rule": "You can only take part if you take a water pill every day."
+     "rule": "You can only take part if you take a water pill on a regular schedule."
     },
     {
      "kind": "need",
@@ -2954,14 +2994,16 @@ export const DATA = {
          ],
          [
           "has_af",
-          "is",
-          "no"
+          "map",
+          {
+           "no": true
+          }
          ]
         ]
        ]
       ]
      ],
-     "rule": "Your ejection fraction needs to be under 30%, or under 25% if you have AF."
+     "rule": "Your ejection fraction needs to be under 30%, or under 25% if you're in AF on your screening ECG."
     },
     {
      "kind": "need",
@@ -3093,10 +3135,7 @@ export const DATA = {
    "blinding": "Neither you nor your study doctors know which group you're in.",
    "enrollment": 5200,
    "site": "Vancouver, BC Investigative Site 11017",
-   "at": [
-    49.2827,
-    -123.1207
-   ],
+   "at": null,
    "named_site": false,
    "url": "https://clinicaltrials.gov/study/NCT06008197",
    "reqs": [
@@ -3296,10 +3335,12 @@ export const DATA = {
      "quote": "Patient has a previously implanted, currently implanted, or is intended to have implanted a cardiac implantable electronic device capable of delivering pacing (e.g., pacemaker, implantable cardioverter defibrillator (ICD), cardiac resynchronization therapy (CRT))",
      "test": [
       "device",
-      "is",
-      "no"
+      "map",
+      {
+       "no": true
+      }
      ],
-     "rule": "You can't take part if you have a pacemaker, defibrillator or implanted heart monitor."
+     "rule": "You can't take part if you have, had or plan a pacemaker, defibrillator or other device that paces the heart."
     },
     {
      "kind": "cant",
@@ -3444,10 +3485,12 @@ export const DATA = {
      "quote": "Use of loop diuretics",
      "test": [
       "loop_diuretic",
-      "is",
-      "yes"
+      "map",
+      {
+       "yes": true
+      }
      ],
-     "rule": "You can only take part if you take a water pill every day."
+     "rule": "You need to be taking a loop water pill like furosemide."
     },
     {
      "kind": "need",
@@ -3465,11 +3508,10 @@ export const DATA = {
        "burnaby": false,
        "surrey": false,
        "tricities": false,
-       "fraser_valley": false,
-       "elsewhere": false
+       "fraser_valley": false
       }
      ],
-     "rule": "You need to live in the Vancouver Coastal Health or Providence area, which covers Vancouver, Richmond and the North Shore."
+     "rule": "You need to live in the Vancouver Coastal Health or Providence area, which includes Vancouver, Richmond, the North Shore, the Sea-to-Sky and the Sunshine Coast."
     },
     {
      "kind": "need",
@@ -3510,8 +3552,7 @@ export const DATA = {
       {
        "none": true,
        "3-12m": true,
-       "1-3m": true,
-       "now": false
+       "1-3m": true
       }
      ],
      "rule": "You can't take part if you're unwell enough to need a hospital stay."
@@ -3651,10 +3692,7 @@ export const DATA = {
    "blinding": "Neither you nor your study doctors know which group you're in.",
    "enrollment": 100,
    "site": "Research Site",
-   "at": [
-    49.2827,
-    -123.1207
-   ],
+   "at": null,
    "named_site": false,
    "url": "https://clinicaltrials.gov/study/NCT05835310",
    "reqs": [

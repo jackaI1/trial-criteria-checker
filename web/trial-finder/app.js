@@ -1,5 +1,5 @@
 import { DATA } from './data.js';
-import { assess, evalTest, factsIn, isKnown, nextQuestion, rank, trialsFor } from './engine.js';
+import { assess, evalTest, factsIn, isKnown, nextQuestion, rank, reqStatus, trialsFor } from './engine.js';
 
 // Typing is off unless an AI endpoint is configured (see ai/README.md).
 // Set window.TRIAL_FINDER_AI = 'https://your-worker.example/understand' before this script loads.
@@ -252,7 +252,7 @@ async function askNext() {
   if (!next || adaptive >= MAX_QUESTIONS) return finish();
   if (ready.length && !state.offered) {
     state.offered = true;
-    await say(`You already look like a strong match for ${ready.length} ${ready.length === 1 ? 'trial' : 'trials'}. I can show you now, or ask a few more questions to check the others.`);
+    await say(`Everything you could check already matches for ${ready.length} ${ready.length === 1 ? 'trial' : 'trials'}. I can show you now, or ask a few more questions to check the others.`);
     offer([{ label: 'Show my matches', run: async () => { you('Show my matches'); await finish(); } },
       { label: 'Ask more questions', quiet: true, run: async () => { you('Ask more questions'); await ask(next.fact); } }]);
     return;
@@ -270,7 +270,9 @@ async function finish() {
 
 // Questions for one trial's open lines, asked from its match card.
 async function askOpen(trial, first) {
-  let open = [...new Set(trial.reqs.flatMap(r => [...factsIn(r.test)]).filter(f => !state.facts[f] && DATA.questions[f]))];
+  // Only lines still waiting on an answer, so settled lines don't bring up extra questions.
+  const waiting = trial.reqs.filter(r => reqStatus(r, state.facts) === 'ask');
+  let open = [...new Set(waiting.flatMap(r => [...factsIn(r.test)]).filter(f => !state.facts[f] && DATA.questions[f]))];
   if (first && open.includes(first)) open = [first, ...open.filter(f => f !== first)];
   if (!open.length) { state.index = 0; return showResults(trial.id); }
   await ask(open[0], { forTrial: trial });
@@ -285,9 +287,10 @@ const isClause = topic => /^(whether|how|what|where)\b/.test(topic);
 function phrase(key, fact) {
   const p = DATA.phrases[key];
   if (!p || !isKnown(fact)) return null;
-  if (key === 'area' || (fact.value === undefined && typeof p.v === 'string')) {
+  if (fact.value === undefined && typeof p.v === 'string') {
+    // Tile labels start with a capital ("Under 18"), which reads wrong mid-sentence.
     const value = display(key, fact);
-    return p.v.replace('{v}', key === 'years_dx' ? value.charAt(0).toLowerCase() + value.slice(1) : value);
+    return p.v.replace('{v}', /^[A-Z][a-z]/.test(value) ? value.charAt(0).toLowerCase() + value.slice(1) : value);
   }
   if (fact.value === undefined) return p.v[String(fact.lo)] ?? null;
   return p[fact.value] ?? null;
@@ -386,9 +389,10 @@ function showResults(focusId) {
 }
 
 function card({ trial, result: r, km }, i, n) {
-  const fitText = { strong: 'Strong match', worth: 'Worth asking about', notfit: 'Not a fit right now' }[r.fit];
+  const fitText = { strong: 'Everything you could check is met', worth: 'Worth asking about', notfit: 'Not a fit right now' }[r.fit];
   const area = DATA.areas.find(a => a.id === state.facts.area?.value);
-  const where = km != null && area ? `, about ${Math.max(1, Math.round(km))} km from ${area.label}` : '';
+  const where = !trial.named_site ? `${trial.site}, Vancouver. The listing doesn't name the exact site.`
+    : km != null && area?.place ? `${trial.site}, about ${Math.max(1, Math.round(km))} km from ${area.place}` : trial.site;
   const pct = v => `${(100 * v) / r.total}%`;
   const fill = el('div', { class: 'fill grow', role: 'img', 'aria-label': `${r.met} confirmed, ${r.ask} you could answer, ${r.team} checked by the study team, ${r.notmet} not met` },
     el('span', { class: 'met', style: `width:${pct(r.met)}` }), el('span', { class: 'ask', style: `width:${pct(r.ask)}` }),
@@ -402,10 +406,10 @@ function card({ trial, result: r, km }, i, n) {
         `${i + 1} of ${n}`,
         el('button', { type: 'button', 'aria-label': 'Next closest match', disabled: i === n - 1, onclick: () => { state.index++; showResults(); }, text: '›' }))),
     el('h3', {}, el('a', { href: trial.url, target: '_blank', rel: 'noopener', text: trial.title })),
-    el('p', { class: 'site', text: `${trial.named_site ? trial.site : trial.site + ', Vancouver'}${where}` }),
+    el('p', { class: 'site', text: where }),
     el('div', { class: 'score' },
       el('div', { class: 'big' }, String(r.percent), el('small', { text: '%' })),
-      el('p', { class: 'score-say', text: `of this trial's ${r.total} requirements confirmed. ${r.team ? `${r.team} can only be checked by the study team at screening.` : ''}` }),
+      el('p', { class: 'score-say', text: `of the ${r.total} requirements listed below confirmed. ${r.team ? `${r.team} can only be checked by the study team at screening.` : ''}` }),
       fill,
       el('ul', { class: 'legend' },
         el('li', { class: 'met' }, el('i'), `${r.met} confirmed`),

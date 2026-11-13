@@ -9,7 +9,8 @@ test('the schema has one nullable field per question and nothing else', () => {
   const schema = factSchema(DATA);
   assert.equal(schema.additionalProperties, false);
   assert.deepEqual(new Set(schema.required), new Set(['condition', ...Object.keys(DATA.questions)]));
-  assert.deepEqual(schema.properties.insulin.anyOf[0].enum, ['yes', 'no']);
+  assert.deepEqual(schema.properties.insulin.anyOf[0].enum, ['now', 'recent', 'no']);
+  assert.deepEqual(schema.properties.dialysis.anyOf[0].enum, ['yes', 'no']);
 });
 
 test('the request uses structured output, low effort and a refusal fallback only where supported', () => {
