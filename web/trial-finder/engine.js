@@ -73,9 +73,11 @@ export function assess(trial, facts) {
   // count as not confirmed yet, so a trial that checks a lot at screening
   // can't look like a sure thing.
   const percent = trial.reqs.length ? Math.round((100 * met) / trial.reqs.length) : 0;
+  // "strong" means everything a person could settle is confirmed. The percent
+  // still shows how much of the whole list that is.
   let fit = 'worth';
   if (notmet) fit = 'notfit';
-  else if (percent >= 70) fit = 'strong';
+  else if (canCheck > 0 && met === canCheck) fit = 'strong';
   return {
     rows, met, notmet, ask: count('ask'), team: count('team'), canCheck, total: trial.reqs.length,
     percent, fit, sureness: canCheck / trial.reqs.length,
@@ -123,8 +125,10 @@ export function rank(data, facts, condition, sort = 'fit') {
   const list = trialsFor(data, condition).map(trial => ({
     trial, result: assess(trial, facts), km: distanceKm(area?.at, trial.at),
   }));
-  const byFit = (a, b) => b.result.percent - a.result.percent || a.result.ask - b.result.ask || (a.km ?? 0) - (b.km ?? 0);
-  const byDistance = (a, b) => (a.km ?? 0) - (b.km ?? 0) || byFit(a, b);
+  // Trials whose listing doesn't name a site have no distance and sort after the rest.
+  const dist = x => (x.km == null ? Number.MAX_VALUE : x.km);
+  const byFit = (a, b) => b.result.percent - a.result.percent || a.result.ask - b.result.ask || dist(a) - dist(b);
+  const byDistance = (a, b) => dist(a) - dist(b) || byFit(a, b);
   const fits = list.filter(x => x.result.fit !== 'notfit').sort(sort === 'distance' ? byDistance : byFit);
   const notFits = list.filter(x => x.result.fit === 'notfit').sort(byFit);
   return { fits, notFits };

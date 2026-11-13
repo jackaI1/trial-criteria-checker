@@ -66,8 +66,10 @@ test('a failed line moves a trial to not a fit, and distance sorting works', () 
   assert.ok(notFits.some(x => x.trial.id === 'NCT07664553'));
   assert.ok(notFits.some(x => x.trial.id === 'NCT07776509'));
   const byDistance = rank(DATA, facts, 't2d', 'distance').fits.map(x => x.km);
-  assert.deepEqual([...byDistance].sort((a, b) => a - b), byDistance);
-  assert.ok(fits.every(x => x.km > 40));
+  const known = byDistance.filter(k => k != null);
+  assert.deepEqual([...known].sort((a, b) => a - b), known);
+  assert.deepEqual(byDistance.slice(known.length).filter(k => k != null), []);
+  assert.ok(fits.every(x => (x.trial.named_site ? x.km > 40 : x.km === null)));
 });
 
 test('location can rule a trial out: the urine salt study is only for the VCH and Providence area', () => {
@@ -95,4 +97,14 @@ test('every requirement a person can check has a plain sentence, and every answe
     assert.ok(p && p.topic, key);
     if (q.type === 'choice' && key !== 'area') for (const o of q.options) assert.ok(p[o.value], `${key}: ${o.value}`);
   }
+});
+
+test('a match is labelled strong only when everything a person could check is confirmed', () => {
+  const trial = DATA.trials.find(t => t.id === 'NCT05963698');
+  const facts = { af_type: fact('persistent'), anticoag: fact('yes'), age: { lo: 69, hi: 69 }, prior_ablation: fact('no') };
+  const r = assess(trial, facts);
+  assert.equal(r.met, r.canCheck);
+  assert.equal(r.fit, 'strong');
+  assert.ok(r.percent < 50);
+  assert.equal(assess(trial, { ...facts, prior_ablation: fact('yes') }).fit, 'worth');
 });
