@@ -30,6 +30,11 @@ def build_report(snapshot, patient):
                 warning='Fictional patient demonstration. No overall eligibility decision. Unparsed criteria require human review.')
 
 
+def describe_counts(counts):
+    """Plain sentence form, for example '4 met, 3 not met, 54 unknown'."""
+    return ', '.join(f"{counts.get(k, 0)} {k}" for k in ('met', 'not met', 'unknown'))
+
+
 def render_html(report):
     esc = lambda x: html.escape(str(x),quote=True)
     parts = ['<!doctype html><html lang="en"><meta charset="utf-8">',
@@ -38,7 +43,7 @@ def render_html(report):
              '<style>body{font:17px/1.6 system-ui,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;color:#162a32;background:#fafbf9}h1,h2{line-height:1.2}table{border-collapse:collapse;width:100%;margin:1rem 0}td,th{border:1px solid #bcc9ce;padding:.65rem;text-align:left;vertical-align:top}th{background:#e6eeec}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf1f0;padding:1rem}code{white-space:pre-wrap}a{color:#075985}.unknown{color:#755200}.met{color:#11603a}.not-met{color:#9c2626}.scroll{overflow-x:auto}small{display:block}</style>',
              '<h1>Trial criteria checker</h1><p><strong>'+esc(report['warning'])+'</strong></p>',
              '<p>Saved public records retrieved '+esc(report['retrieved_at'])+'. Recruitment status can change.</p>',
-             '<p>Outcomes describe individual criteria: '+esc(report['counts'])+'. A “met” row never establishes trial eligibility.</p>',
+             '<p>Outcomes describe individual criteria: '+esc(describe_counts(report['counts']))+'. A “met” row never establishes trial eligibility.</p>',
              '<details><summary>Fictional input record</summary><pre>'+esc(json.dumps(report['patient'],indent=2))+'</pre></details>']
     if 'benchmark' in report:
         b = report['benchmark']
@@ -67,7 +72,7 @@ def render_markdown(report):
     esc = lambda x: html.escape(str(x),quote=True).replace('|','&#124;').replace('\n',' ')
     parts = ['# Fictional patient report', '', report['warning'], '',
              'Public records retrieved: '+report['retrieved_at'], '',
-             'Individual criterion outcomes: '+esc(report['counts'])+'. These are not a trial eligibility decision.', '',
+             'Individual criterion outcomes: '+esc(describe_counts(report['counts']))+'. These are not a trial eligibility decision.', '',
              '## Fictional input', '', '```json', json.dumps(report['patient'],indent=2), '```', '']
     if 'benchmark' in report:
         b = report['benchmark']
