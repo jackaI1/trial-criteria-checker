@@ -35,6 +35,25 @@
       "title": "C-Carbs: A CGM-guided Approach to Teaching Carb Awareness",
       "url": "https://clinicaltrials.gov/study/NCT07807280",
       "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 18 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 42, which matches the rule"
+        }
+      ],
       "criteria": [
         {
           "sentence": "Adults 18 years of age or older.",
@@ -50,7 +69,7 @@
           },
           "parse_reason": "Supported complete criterion",
           "status": "met",
-          "evaluation_reason": "Compared supplied evidence; exclusion conditions are inverted"
+          "evaluation_reason": "age 42, which matches the rule"
         },
         {
           "sentence": "Diagnosis of diabetes for at least 1 year.",
@@ -100,7 +119,7 @@
           },
           "parse_reason": "Supported complete criterion",
           "status": "not met",
-          "evaluation_reason": "Compared supplied evidence; exclusion conditions are inverted"
+          "evaluation_reason": "hba1c 7.5 %, which does not match the rule"
         },
         {
           "sentence": "Does not routinely use carbohydrate counting or demonstrates poor/inconsistent carbohydrate counting for mealtime insulin dosing.",
@@ -220,6 +239,25 @@
       "title": "Hairy Cell Leukemia Patient Data Registry",
       "url": "https://clinicaltrials.gov/study/NCT02560883",
       "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 18 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 42, which matches the rule"
+        }
+      ],
       "criteria": [
         {
           "sentence": "Patients with classic hairy cell leukemia",
@@ -235,7 +273,7 @@
           },
           "parse_reason": "Supported complete criterion",
           "status": "met",
-          "evaluation_reason": "Compared supplied evidence; exclusion conditions are inverted"
+          "evaluation_reason": "diagnosis listed, which matches the rule"
         },
         {
           "sentence": "Patients with the variant of hairy cell leukemia.",
@@ -272,6 +310,25 @@
       "title": "Glucose and Activity Tracking for Sedentary Behavior Interventions in Older People With Type 2 Diabetes (TRACK T2D)",
       "url": "https://clinicaltrials.gov/study/NCT07524205",
       "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 55 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 55.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "not met",
+          "evaluation_reason": "age 42, which does not match the rule"
+        }
+      ],
       "criteria": [
         {
           "sentence": "Aged 55 years and older",
@@ -287,7 +344,7 @@
           },
           "parse_reason": "Supported complete criterion",
           "status": "not met",
-          "evaluation_reason": "Compared supplied evidence; exclusion conditions are inverted"
+          "evaluation_reason": "age 42, which does not match the rule"
         },
         {
           "sentence": "Self-reported T2D for ≥5 years",
@@ -428,6 +485,42 @@
       "title": "Exercise, Chronotype, and Prediabetes",
       "url": "https://clinicaltrials.gov/study/NCT07389005",
       "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 19 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 19.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 42, which matches the rule"
+        },
+        {
+          "sentence": "maximumAge: 75 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field maximumAge",
+          "rule": {
+            "field": "age",
+            "op": "<=",
+            "value": 75.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 42, which matches the rule"
+        }
+      ],
       "criteria": [
         {
           "sentence": "Able to provide signed and dated written informed consent prior to any study specific procedures",
@@ -531,7 +624,7 @@
           },
           "parse_reason": "Supported complete criterion",
           "status": "not met",
-          "evaluation_reason": "Compared supplied evidence; exclusion conditions are inverted"
+          "evaluation_reason": "diagnosis listed, which matches the rule. This is an exclusion, so the result is flipped"
         },
         {
           "sentence": "Moderate to severe anemia (hemoglobin \\< 10 g/L)",
@@ -547,7 +640,7 @@
           },
           "parse_reason": "Supported complete criterion",
           "status": "met",
-          "evaluation_reason": "Compared supplied evidence; exclusion conditions are inverted"
+          "evaluation_reason": "hemoglobin 12 g/dL, which does not match the rule. This is an exclusion, so the result is flipped"
         },
         {
           "sentence": "Uncontrolled hypertension",
@@ -722,6 +815,25 @@
       "title": "Neurocognitive Outcomes After Whole Brain Radiation Therapy for Hematologic Malignancies",
       "url": "https://clinicaltrials.gov/study/NCT05011045",
       "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 18 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 42, which matches the rule"
+        }
+      ],
       "criteria": [
         {
           "sentence": "Age 18 years or older",
@@ -737,7 +849,7 @@
           },
           "parse_reason": "Supported complete criterion",
           "status": "met",
-          "evaluation_reason": "Compared supplied evidence; exclusion conditions are inverted"
+          "evaluation_reason": "age 42, which matches the rule"
         },
         {
           "sentence": "Treatment with radiation therapy to the brain for a hematologic malignancy (ex. primary central nervous system lymphoma \\[PCNSL\\], secondary central nervous system lymphoma \\[SCNSL\\], leukemia, myeloma)",
@@ -802,6 +914,11 @@
     "met": 4,
     "not met": 3,
     "unknown": 54
+  },
+  "structured_counts": {
+    "met": 5,
+    "not met": 1,
+    "unknown": 0
   },
   "retrieved_at": "2026-11-05T06:18:19.437645+00:00",
   "requests": [

@@ -1,0 +1,1570 @@
+{
+  "retrieved_at": "2026-11-13T07:47:33.686939+00:00",
+  "requests": [
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=type+2+diabetes&query.locn=Vancouver",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=atrial+fibrillation&query.locn=Vancouver",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=heart+failure&query.locn=Vancouver",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=systemic+lupus+erythematosus&query.locn=Vancouver",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=rheumatoid+arthritis&query.locn=Vancouver"
+  ],
+  "studies": [
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07784270",
+          "briefTitle": "A Study to Evaluate Effect of AZD6234 in Adult Participants With Type 2 Diabetes Mellitus and Obesity or Overweight"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-28",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Obesity or Overweight",
+            "Diabetes Mellitus, Type 2"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Males \\& females (inclusive of all gender identities) age ≥18 years\n* BMI ≥27 kg/m2\n* Diagnosed with T2DM ≥90 days prior to Screening\n* HbA1c value at Screening of ≥6.0% (42 mmol/mol) and ≤10% (86 mmol/mol) managed with diet and exercise alone or with a stable dose of any oral glycaemic-lowering agent (as per local labelling)\n* Stable body weight (≤5% body weight change) for at least 3 months prior to Randomisation\n* History of at least one self-reported unsuccessful attempt to lose body weight in lifetime\n\nExclusion Criteria:\n\n* Obesity primarily caused by other endocrine disorders\n* Type 1 diabetes mellitus (or any other diabetes mellitus that is not clearly Type 2 diabetes), OR have history of ketoacidosis or hyperosmolar coma/state within 3 months prior to Screening\n* Significant hepatobiliary disease and/or any of the following results at Screening:\n\n  * ALT ≥ 3.0 X ULN\n  * AST ≥ 3.0 X ULN\n  * TBL \\> 1.5 X ULN (except for cases of known Gilbert's Syndrome)\n* Has received treatment with a GLP-1 receptor agonist or GLP-1 containing medication for any indication within 3 months before Randomisation\n* Use of insulin therapy for T2DM within 3 months prior to screening",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Research Site",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D009765",
+              "term": "Obesity"
+            },
+            {
+              "id": "D050177",
+              "term": "Overweight"
+            },
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07662213",
+          "briefTitle": "A Study to Find Out if the Study Drug Elecoglipron Helps Adults With Type 2 Diabetes Mellitus by Comparing it With Semaglutide, a Medicine Already Used to Treat Type 2 Diabetes Mellitus"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-22",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Type 2 Diabetes Mellitus"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Diagnosed with Type 2 Diabetes Mellitus (T2DM) for at least 90 days prior to screening\n* T2DM inadequately managed with lifestyle management alone or on stable treatment with other background glucose-lowering medication(s)\n* HbA1c value of ≥ 7% to ≤ 10.5% (53 to 91.3 mmol/mol)\n* Increased risk of cardiovascular (CV) events defined by ≥1 of: documented coronary heart disease, peripheral arterial disease, ischemic cerebrovascular disease, or heart failure (NYHA II-III); or ≥2 CV risk factors\n* Body mass index (BMI) of ≥ 23 kg/m2 at screening\n* Stable body weight (self-reported or documented) for 90 days prior to screening\n\nExclusion Criteria:\n\n* Type 1 Diabetes Mellitus (T1DM), secondary forms of diabetes (including congenital forms), or history of ketoacidosis or hyperosmolar coma\n* Currently receiving or anticipated to receive, therapeutic intervention for diabetic retinopathy and/or macular edema\n* Have had more than one episode of severe hypoglycemia within 180 days prior to screening or has a history of hypoglycemia unawareness or poor recognition of hypoglycemic symptoms\n* Clinically significant condition affecting the upper Gastrointestinal (GI) tract or chronic use of any medication that affects gastric motility or gastric emptying\n* History of acute or chronic pancreatitis\n* Severe congestive heart failure (NYHA IV)\n* History/family history of medullary thyroid cancer or multiple endocrine neoplasia type 2",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Research Site",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT04786262",
+          "briefTitle": "A Safety, Tolerability, and Efficacy Study of VX-880 and VX-017 in Participants With Type 1 Diabetes"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-01",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Diabetes Mellitus, Type 1",
+            "Impaired Hypoglycemic Awareness",
+            "Severe Hypoglycemia"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Key Inclusion Criteria:\n\n* Clinical history of T1D with \\>=5 years of duration of insulin dependence\n* At least two episodes of documented severe hypoglycemia in the 12 months prior to enrollment\n* Stable diabetic treatment\n* Consistent use of continuous glucose monitor (CGM) for at least 3 months before Screening and willingness to use CGM for the duration of the study\n\nKey Exclusion Criteria:\n\n-Prior islet cell transplant, organ transplant, or cell therapy\n\nOther protocol-defined Inclusion/Exclusion criteria may apply",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "65 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Vancouver General Hospital",
+              "city": "Vancouver",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003922",
+              "term": "Diabetes Mellitus, Type 1"
+            },
+            {
+              "id": "D007003",
+              "term": "Hypoglycemia"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07664553",
+          "briefTitle": "A Phase III Study to Investigate the Efficacy and Safety of Elecoglipron Compared With Placebo in Adults With Type 2 Diabetes Mellitus on Background Insulin"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-08-04",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Type 2 Diabetes Mellitus"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Diagnosed with T2DM for at least 90 days prior to screening\n* Stable treatment with background insulin and other background glucose-lowering medication(s)\n* HbA1c value of ≥ 7% to ≤ 10.5%\n* Body mass index (BMI) of ≥ 23 kg/m2 at screening\n* Stable body weight (self-reported or documented) for 90 days prior to screening\n\nExclusion Criteria:\n\n* T1DM, secondary forms of diabetes (including congenital forms), or history of ketoacidosis or hyperosmolar coma\n* Currently receiving or anticipated to receive, therapeutic intervention for diabetic retinopathy and/or macular edema\n* Have had more than one episode of severe hypoglycemia within 180 days prior to screening or has a history of hypoglycemia unawareness or poor recognition of hypoglycemic symptoms\n* Clinically significant condition affecting the upper GI tract or chronic use of any medication that affects gastric motility or gastric emptying\n* History of acute or chronic pancreatitis.\n* Severe congestive heart failure (NYHA IV)\n* History/family history of medullary thyroid cancer or multiple endocrine neoplasia type 2",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Research Site",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07351058",
+          "briefTitle": "A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight and Type 2 Diabetes"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-09",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Obesity or Overweight",
+            "Type 2 Diabetes Mellitus"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Ability and willingness to self-administer the study drug (or receive an injection from a trained individual if visually impaired or with physical limitations)\n* Diagnosis of type 2 diabetes mellitus (T2DM) according to WHO classification or other locally applicable standards with HbA1c ≥6.5% to ≤10% determined by laboratory test at screening, and on stable oral therapy for at least 3 months prior to screening (if applicable). T2DM may be treated with diet/exercise alone or any oral anti-hyperglycemic medication (as per local labeling) EXCEPT dipeptidyl peptidase 4 (DPP-4) inhibitors or GLP-1 RA-based therapy.\n* Body mass index (BMI) ≥27.0 kg/m\\^2\n* History of ≥1 self-reported unsuccessful diet/exercise effort to lose body weight\n\nExclusion Criteria:\n\n* History of type 1 diabetes mellitus (T1DM) or any lifetime history of ketoacidosis or history of hyperosmolar state/coma within 12 months prior to screening\n* Have had 1 or more episodes of severe hypoglycemia and/or has hypoglycemia unawareness within the 6 months prior to screening\n* At least 2 confirmed fasting blood glucose values \\>270 mg/dL (15.0 mmol/L) (on 2 non-consecutive days) during screening\n* Self-reported change in body weight \\>5 kg within 3 months prior to screening\n* Obesity induced by other endocrinologic disorders (e.g., Cushing's syndrome) or diagnosed monogenetic or syndromic forms of obesity (e.g., melanocortin 4 receptor deficiency or Prader-Willi syndrome)\n* Prior or planned surgical treatment for obesity. Liposuction or abdominoplasty if performed more than 1 year prior to screening is allowed.\n* Known clinically significant gastric emptying abnormality (e.g., severe gastroparesis or gastric outlet obstruction)\n* Poorly controlled hypertension at screening\n* Have any of the following cardiovascular conditions within 3 months prior to screening: Acute myocardial infarction; Cerebrovascular accident (stroke)/transient ischemic attack; Unstable angina; Hospitalization due to congestive heart failure\n* Treatment with any approved or investigational GLP-1-RA-based therapy (e.g., GLP-1 receptor mono agonist, GLP-1/GIP receptor dual agonist, GLP-1/GIP/Gluc receptor triple agonist) within 6 months prior to randomization",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "TGElliott Inc. dba BC Diabetes",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D009765",
+              "term": "Obesity"
+            },
+            {
+              "id": "D050177",
+              "term": "Overweight"
+            },
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07667803",
+          "briefTitle": "A Master Protocol to Investigate Efficacy and Safety of Elecoglipron in Participants With Obesity or Overweight With or Without T2DM"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-13",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Weight Management"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria\n\n* Legal age of consent and at least 18 years old\n* Study 1 -\n\n  * BMI ≥ 30 kg/m2 or\n  * 25 kg/m2 ≤ BMI \\< 30 kg/m2 with at least one of the following weight-related comorbidities:\n  * Hypertension\n  * Prediabetes\n  * Dyslipidemia\n  * Cardiovascular disease\n  * Obstructive sleep apnea.\n* Study 2 - BMI ≥ 25 kg/m2 and T2DM defined as below:\n\n  * Established diagnosis of T2DM\n  * Without established diagnosis of T2DM and HbA1c ≥ 6.5% (48 mmol/mol) at the screening visit\n* Stable body weight (self-reported or documented) for 90 days prior to the screening visit (± 5% body weight change)\n* History of at least one self-reported unsuccessful dietary effort to lose body weight.\n\nExclusion Criteria\n\n* Study 1 - Established diagnosis of T1DM or T2DM.\n* Study 2 - Any of the following medical history, laboratory values, or complications related to diabetes:\n\n  * T1DM\n  * HbA1c ≥ 10% (86 mmol/mol) at the screening visit\n  * Currently receiving, or anticipated to receive, therapeutic intervention for diabetic retinopathy and/or macular edema.\n  * Have had more than one episode of severe hypoglycemia within 180 days prior to the screening visit, or has a history of hypoglycemia unawareness or poor recognition of hypoglycemic symptoms\n* History of acute (unless due to previously resolved gallstone pancreatitis and post-cholecystectomy) or chronic pancreatitis\n* History/family history (first degree biologic relatives) of medullary thyroid cancer or multiple endocrine neoplasia type 2",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Research Site",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07776509",
+          "briefTitle": "A Study to Evaluate Effect of AZD6234 as an Adjunct to Incretin-based Therapies in Adult Participants With Obesity or Overweight With Weight-related Comorbidity With or Without Type 2 Diabetes Mellitus"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-09",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Obesity or Overweight",
+            "Weight-Related Comorbidity",
+            "With/Without Diabetes Mellitus, Type 2"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Males \\& females (inclusive of all gender identities) age ≥18 years\n* BMI ≥ 30 kg/m2 OR BMI ≥ 27 kg/m2 with at least one of the following weight-related comorbidities (treated or untreated): hypertension, dyslipidaemia, obstructive sleep apnoea, cardiovascular disease, heart failure, chronic kidney disease, metabolic dysfunction associated steatotic liver disease, osteoarthritis of the knee, or stress urinary incontinence\n* For participants with T2DM only:\n\n  * Diagnosed with T2DM ≥ 90 days prior to Screening\n  * HbA1c value at Screening of ≥6.0% (42 mmol/mol) and ≤9.0% (75 mmol/mol) managed with diet and exercise alone or with a stable dose of any oral glycaemic-lowering agent and/or incretin-based medication\n* Receiving a stable dose of incretin- based medications at a dose level that is sufficient for chronic weight management for at least 3 months prior to Screening and Randomisation.\n* Stable body weight (≤ 3% body weight change) for at least 3 months prior to Randomisation\n* History of at least one self-reported unsuccessful attempt to lose body weight in their lifetime\n\nExclusion Criteria:\n\n* Obesity primarily caused by other endocrine disorders\n* Type 1 diabetes mellitus\n* Significant hepatobiliary disease and/or any of the following results at Screening:\n\n  * ALT ≥ 3.0 × ULN\n  * AST ≥ 3.0 × ULN\n  * TBL \\> 1.5 × ULN (except for cases of known Gilbert's Syndrome)\n* Use of insulin therapy for T2DM within 3 months prior to screening",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Research Site",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D009765",
+              "term": "Obesity"
+            },
+            {
+              "id": "D050177",
+              "term": "Overweight"
+            },
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07866066",
+          "briefTitle": "Maridebart Cafraglutide Versus Semaglutide in Participants With Type 2 Diabetes"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-05",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Diabetes Mellitus, Type 2"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* HbA1c of ≥ 7.5% (58.0 millimoles per mole (mmol/mol)) and ≤ 10.5% (91.0 mmol/mol) at screening.\n* Treatment of Type 2 diabetes (T2D) with metformin (≥ 1500 milligrams per day (mg/day), or maximum tolerated dose as per investigator judgment) with or without an sodium-glucose cotransporter-2 (SGLT-2) inhibitor on a stable total daily dose for at least 90 days prior to randomization.\n* Body mass index (BMI) ≥ 25 kilograms per meter squared (kg/m\\^2) at screening.\n\nExclusion Criteria:\n\n* Type 1 diabetes mellitus (T1DM), history of ketoacidosis or hyperosmolar state/coma, or any other type of diabetes mellitus except T2D or past history of gestational diabetes.\n* Participants who are currently receiving or planning to receive treatment for diabetic retinopathy and/or macular edema.\n* Participants who have a diagnosis of proliferative diabetic retinopathy, diabetic maculopathy, or severe non-proliferative diabetic retinopathy.\n* One or more episode of severe hypoglycemia (Level 3 hypoglycemia) within 180 days before screening, as defined by the occurrence of neuroglycopenic symptoms requiring the assistance of another person for recovery.\n* History of hypoglycemia unawareness or poor recognition of hypoglycemic symptoms.\n* Self-reported change in body weight \\> 5% within 90 days before screening. Participants must also agree to not initiate an intensive diet or exercise program during the trial with the intent of reducing body weight, other than the lifestyle and/or dietary measures for diabetes treatment.\n* Previous or planned (during the trial) surgical, endoscopic, or device-based treatment for obesity. The following are allowed:\n\n  * liposuction and/or abdominoplasty that was performed \\> 1 year before screening.\n  * laparoscopic adjustable gastric banding, intragastric balloon, and/or duodenal-jejunal bypass liner or gastric sleeve if removed \\> 1 year before screening.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Dr T G Elliott Incorporated - BC Diabetes",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            },
+            {
+              "id": "D001835",
+              "term": "Body Weight"
+            },
+            {
+              "id": "D009765",
+              "term": "Obesity"
+            },
+            {
+              "id": "D050177",
+              "term": "Overweight"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07217067",
+          "briefTitle": "A Study to Investigate the Efficacy, Safety, Tolerability and Pharmacokinetics of PKN605 in Participants With Atrial Fibrillation"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-28",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Atrial Fibrillation"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n-Inclusions at Screening\n\n* Signed informed consent must be obtained prior to participation in the study\n* Male and female participants ≥ 18 years of age\n* History of atrial fibrillation\n* AF (atrial fibrillation or atrial flutter) within the last 12 months (or during screening) documented by 12-lead ECG, Holter, or any other ECG recording method, as confirmed by the Investigator\n* Meets one or more of the following criteria:\n\nA. Recurrent AF (≥ 2 episodes), and ≥ 1 of the following\n\n* AFB of 1% or higher on a local ambulatory Holter, mobile cardiac telemetry, ECG patch monitor, or other ambulatory electrocardiographic monitor within the last 12 months\n* CHA2DS2-VASc score of 2 or higher in males, 3 or higher in females (1 point for congestive heart failure, hypertension, age 65-74 years, diabetes, vascular disease, female sex; 2 points for age 75 years or older, prior stroke or transient ischemic attack)\n* Stable heart failure or with New York Heart Association class I or II symptoms\n* NT-proBNP level of 300 pg/mL or higher on a local lab test within the last 12 months B. AFB ≥ 1% or an AF episode lasting ≥ 2 h during Screening, including when detected using a study provided ECG patch monitor C. Persistent AF, as confirmed by the Investigator\n\n  * On guideline-directed stroke prevention treatment, as confirmed by the Investigator\n  * Participants must have a body mass index (BMI) ≥ 18 kg/m2. BMI is calculated as body weight (kg) divided by height (m) squared\n* Inclusions at Day 1\n\n  * Sinus rhythm at Baseline documented by 12-lead ECG (participants with persistent AF should be cardioverted at least 12 hours before randomization)\n\nExclusion Criteria:\n\n-Exclusions at Screening\n\n* Permanent AF\n* Ongoing reversible causes of AF (e.g., hyperthyroidism, myocarditis, acute alcohol, sepsis- or infection related AF, surgery-related AF, pulmonary embolism)\n* Ongoing use of antiarrhythmic therapy (Vaughan Williams class I or III anti-arrhythmic therapy must be discontinued at least 7 days before Screening phase ECG patch monitor; amiodarone must be discontinued at least 6 weeks before Screening phase ECG patch monitor)\n* History of an AF ablation procedure without a recurrence of AF at least 2 or more months after the ablation.\n* Implanted pacemaker, defibrillator, or cardiac monitor\n* Infiltrative (e.g., amyloidosis, sarcoidosis) or hypertrophic cardiomyopathy\n* Left ventricular ejection fraction of 40% or less documented within the last 12 months, or during Screening. If multiple LVEF measurements are recorded within the last 12 months, the most recent LVEF measurement should be used\n* Current decompensated heart failure or hospitalization for heart failure within 3 months prior to Screening",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Novartis Investigative Site",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            },
+            {
+              "id": "D001145",
+              "term": "Arrhythmias, Cardiac"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05963698",
+          "briefTitle": "The Fourth Left Atrial Appendage Occlusion Study"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-18",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Atrial Fibrillation",
+            "Stroke, Ischemic",
+            "Systemic Embolism"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. (a) Persistent or permanent atrial fibrillation OR (b) Paroxysmal atrial fibrillation in participants with a history of ischemic stroke or systemic embolism\n2. Increased risk of stroke, defined as a CHA2DS2-VASc stroke risk score of ≥ 4. \\[Note: the acronym CHA2DS2-VASc stands for congestive heart failure, hypertension, age ≥75 (doubled), diabetes, stroke (doubled), vascular disease, age 65 to 74 and sex category (female).\\]\n3. Treatment with oral anticoagulants (Vitamin K agonist or factor Xa inhibitor) for at least 90 days prior to enrollment, AND no documented plan to discontinue treatment with oral anticoagulants for the expected duration of the trial.\n\nExclusion Criteria:\n\n1. Age \\< 18 years\n2. Current left atrial appendage thrombus\n3. Prior left atrial appendage occlusion or removal (surgical or percutaneous)\n4. Prior percutaneous atrial septal defect or patent foramen ovale closure\n5. Prior atrial fibrillation ablation unless evidence of recurrent qualifying atrial fibrillation present at least 30 days following ablation\n6. Planned atrial fibrillation ablation within 90 days of enrollment\n7. Individuals being treated with direct thrombin inhibitors\n8. Women of childbearing potential unless they agree to employ effective birth control methods throughout the study\n9. Anticipated life-expectancy of \\< 2 years\n10. Patient unable or willing to give informed consent",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Vancouver Coastal Health Authority",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            },
+            {
+              "id": "D000083242",
+              "term": "Ischemic Stroke"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06578104",
+          "briefTitle": "PULSED AF Post-Approval Study"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-12",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Atrial Fibrillation"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria\n\n* A diagnosis of recurrent symptomatic paroxysmal AF or persistent AF\n* Refractory to at least one Class I or III antiarrhythmic drug (i.e., not effective, not tolerated, or not desired)\n* Patient is ≥ 18 years of age\n* Planned pulmonary vein isolation procedure with the commercially available PulseSelect™ PFA System\n* Willing and able to comply with study requirements and give informed consent (defined as legally effective, documented confirmation of a subject's voluntary agreement to participate in this clinical study) or authorization per institution and geographical requirements\n\nExclusion Criteria\n\n* Long-standing persistent AF (continuous AF sustained \\>12 months)\n* Prior left atrial catheter or surgical ablation\n* Patient with life expectancy \\< 36 months\n* Presence of a permanent pacemaker, biventricular pacemaker, loop recorder/insertable cardiac monitor (ICM), or any type of implantable cardiac defibrillator (with or without biventricular pacing function)\n* Current or anticipated participation in any other clinical trial of a drug, device, or biologic not approved by the global study manager",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Vancouver General Hospital",
+              "city": "Vancouver",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT03968393",
+          "briefTitle": "Anticoagulation for Stroke Prevention In Patients With Recent Episodes of Atrial Fibrillation Occurring Transiently With Stress"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-01-12",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Stroke",
+            "Atrial Fibrillation"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. have ≥1 episode of clinically important AFOTS during any of the following conditions:\n\n   1. noncardiac surgery in the past 35 days, with at least an overnight hospital admission aftersurgery;\n   2. noncardiac day surgery resulting in a large enough physiological insult to be able to cause AFOTS, as judged by the local investigator; or\n   3. acute medical illness requiring hospital admission in the past 35 days and resulting in a large enough physiological insult to be able to cause AFOTS, as judged by the local investigator;\n2. sinus rhythm at the time of randomization;\n3. any of the following high-risk criteria:\n\n   1. age 55-64 years, and having either known cardiovascular disease, recent major vascular surgery, a CHA2DS2VASc score ≥3, or an elevated postoperative troponin level;\n   2. age 65-74 years, and having either known cardiovascular disease, recent major vascular surgery, a CHA2DS2VASc score ≥2, or an elevated postoperative troponin level; OR\n   3. age ≥75 years.;\n4. provide written informed consent\n\nExclusion Criteria:\n\n1. any cardiac diagnosis as the primary reason for hospital admission;\n2. history of documented chronic AF prior to noncardiac surgery;\n3. need for long-term systemic anticoagulation;\n4. ongoing need for long-term dual antiplatelet treatment;\n5. contraindication to oral anticoagulation;\n6. severe renal insufficiency (CrCl \\<20 ml/min);\n7. severe liver cirrhosis (i.e., Child-Pugh Class C)\n8. acute stroke in the past 14 days;\n9. underwent cardiac surgery in the past 35 days;\n10. history of nontraumatic intracranial, intraocular, or spinal bleeding;\n11. hemorrhagic disorder or bleeding diathesis;\n12. expected to be non-compliant with follow-up and/or study medications;\n13. known life expectancy less than 1 year due to concomitant disease;\n14. women who are pregnant, breastfeeding, or of childbearing potential who are not taking effective contraception; OR\n15. previously enrolled in the trial",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "55 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Vancouver General Hospital",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D020521",
+              "term": "Stroke"
+            },
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06736574",
+          "briefTitle": "Study With Omecamtiv Mecarbil (CK-1827452) to Treat Chronic Heart Failure With Severely Reduced Ejection Fraction"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-04",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure",
+            "Heart Failure With Reduced Ejection Fraction"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\nAdult patients who meet all the following criteria at screening may be included in the study:\n\n* Are between ≥ 18 years and ≤ 85 years at the signing of informed consent\n* Have a history of chronic HFrEF, defined as requiring treatment for HF for a minimum of 3 months prior to screening\n* Are receiving oral loop diuretics on a regular schedule\n* Patients without AFF on screening ECG:\n\n  * LVEF \\< 30% within 6 months of screening\n  * Elevated N-terminal prohormone of B-type natriuretic peptide (NT-proBNP) ≥ 1000 pg/mL (BNP ≥ 300 pg/mL)\n* Patients with AFF on screening ECG:\n\n  * LVEF \\< 25% within 6 months of screening\n  * Elevated N-terminal prohormone of B-type natriuretic peptide (NT-proBNP) ≥ 3000 pg/mL (BNP ≥ 900 pg/mL)\n  * Not currently taking digoxin\n* Meet one of the following criteria for a recent HF event:\n\n  * Are currently hospitalized with the primary reason of HF\n  * Had an HF event (as defined in the primary endpoint) within 12 months prior to screening. For the purposes of a qualifying HF event, subcutaneous furosemide will be treated as equivalent to intravenous furosemide Or\n  * Had outpatient escalation of oral diuretics due to worsening signs and symptoms of heart failure plus one of two additional criteria sustained for at least 1 week: (1) at least 50% or 1.5-fold increase in daily loop-diuretic-equivalent dose; (2) the addition of a new diuretic class to a loop diuretic.\n* Are established on regional standard-of-care HF therapies for at least 30 days prior to screening\n* Systolic blood pressure ≤ 140 mmHg\n\nExclusion Criteria:\n\nAny of the following criteria will exclude potential patients from the study:\n\n* Have AFF on the screening ECG and are currently taking digoxin\n* Have had any event or procedure that may have resulted in a change in ejection fraction, including, but not limited to, acute coronary syndrome and/or any coronary revascularization, cardiac surgery, valve surgery, any coronary revascularization, and/or cardiac resynchronization, or cardiac contractility modulation therapy within 3 months of screening\n* Are admitted to a long-term care facility or hospice\n* Have a projected survival of \\< 12 months due to non-cardiovascular causes based on clinical judgment\n* Are receiving intravenous inotropes or intravenous vasopressors ≤ 3 days prior to screening\n* Are receiving mechanical hemodynamic support or mechanical ventilation ≤ 7 days prior to screening\n* Are receiving intravenous diuretics, intravenous vasodilators, or supplemental oxygen therapy ≤ 12 hours prior to screening (except for nocturnal supplemental oxygen for sleep apnea or heart failure)\n* Have an estimated glomerular filtration rate (eGFR) \\< 20 mL/min/1.73m2 or receiving dialysis at screening\n* Have previously had a solid organ transplant\n* Are receiving treatment in another investigational device or drug study or are within 30 days of ending such investigational treatment at screening\n* Have received omecamtiv mecarbil in a previous clinical trial\n* Are pregnant or planning pregnancy during the study period, or planning to breastfeed during treatment with IP or within 5 days after the end of treatment with IP\n* Have primary infiltrative cardiomyopathy (e.g. cardiac amyloidosis) or severe stenotic valvular disease",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "85 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "St. Paul's Hospital",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06008197",
+          "briefTitle": "A Study to Determine the Efficacy and Safety of Finerenone on Morbidity and Mortality Among Hospitalized Heart Failure Patients"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-10",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure",
+            "Acute Heart Failure"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Provide written informed consent\n* Age ≥18 years or legal age of majority if \\>18 years in the participant's country of residence\n* Current hospitalization or recently discharged (during or within 30 days of discharge) with the primary diagnosis of heart failure\n* Heart failure signs and symptoms at the time of hospital admission\n* Imaging evidence of mildly reduced or preserved left ventricular ejection fraction (EF) (40% or higher)\n* Elevated N-terminal pro B-type natriuretic peptide (NTproBNP) ≥500 pg/mL or B-type natriuretic peptide (BNP) ≥125 pg/mL for patients without atrial fibrillation (AF); or elevated NTproBNP ≥1500 pg/mL or BNP ≥375 pg/mL for patients with AF\n\nExclusion Criteria:\n\n* Current or planned long-term treatment with a mineralocorticoid receptor antagonist (MRA)\n* Documented prior history of severe hyperkalemia in the setting of MRA use\n* Estimated glomerular filtration rate (eGFR) \\<25 mL/min/1.73m² or potassium \\>5.0 mmol/L at screening\n* Acute myocardial infarction due to plaque rupture, coronary revascularization, valve replacement/repair, or implantation of a cardiac resynchronization therapy device within 30 days\n* Hemodynamically significant (severe) uncorrected primary cardiac valvular disease\n* Cardiomyopathy due to known acute inflammatory heart, infiltrative diseases, accumulation diseases, muscular dystrophies, cardiomyopathy with reversible causes, known hypertrophic obstructive cardiomyopathy, complex congenital heart disease, or known pericardial constriction\n* Probable alternative cause of participant's heart failure symptoms\n* Concomitant systemic therapy with potent cytochrome P450 isoenzyme 3A4 (CYP3A4) inhibitors or moderate CYP3A4 inducers, or potent CYP3A4 inducers\n* Known hypersensitivity to the IP (active substance or excipients)",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Vancouver, BC Investigative Site 11017",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06217302",
+          "briefTitle": "Sotagliflozin to Slow Kidney Function Decline in Persons With Type 1 Diabetes and Diabetic Kidney Disease"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-03-24",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Diabetic Nephropathies",
+            "Kidney Failure, Chronic",
+            "Diabetes Mellitus Type 1",
+            "Heart Failure"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Type1 diabetes (T1D) continuously treated with insulin within one year from diagnosis.\n* Duration of T1D ≥ 8 years;\n* eGFR based on serum creatinine and cystatin c (2021 serum creatinine-cystatin C CKD-EPI equation) between 20 and 60 ml/min/1.73 m2 at screening (with the option of a second eGFR measurement within 4 weeks from the first one if the eGFR was in the range of \\>60 to ≤65 or ≥16 to \\<20 ml/min/1.73 m2);\n* a. First morning void urinary albumin creatinine ratio (UACR) ≥200 mg/g at Screening or on repeat measurement within 4 weeks from the first one, or b. First morning void urinary UACR ≥100 mg/g at Screening or on repeat measurement within 4 weeks and at least one uACR \\>=30 in the previous 2 years while treated with RASB at a stable dose;\n* HbA1c at screening \\<10% (with the option of a second HbA1c measurement within 4 weeks from the first one if the HbA1c was ≤10.2%);\n* Receiving standard of care, including renin angiotensin system blockers (RASB) at a clinically appropriate dose, unless contraindicated or not tolerated.\n* Willing and able to comply with schedule of events and protocol requirements, including written informed consent, and willing to wear a continuous glucose monitoring (CGM) device for the entire duration of the study.\n* a. Blood pressure ≤155/95 mmHg at screening, or b. BP ≤155/95 mmHg at the end of the run-in period, or c. consistent BP ≤155/95 mmHg on home monitoring during the run-in period, as determined by study site investigator, despite BP values \\>155/95 mmHg in clinic.\n\nExclusion Criteria:\n\n* Type 2 diabetes or monogenic forms of diabetes or diabetes secondary to pancreatic disease;\n* Use of automated insulin delivery devices that are not approved by health regulatory agencies, or used in ways that do not align with manufacturer recommendations;\n* Use of any SGLT inhibitor in the previous 2 months;\n* Use of dual medication RASB therapy (spironolactone, eplerenone, finerenone are allowed in combination with RASB therapy);\n* Use of GLP-1 receptor agonists and other non-insulin glucose-lowering agents if not on stable dose for \\> 2 months at screening (patients can be rescreened after being on stable dose for \\> 2 months);\n* Use of anti tumor necrosis factor (TNF) alpha biologic medications at screening;\n* Known allergies, hypersensitivity, or intolerance to SOTA;\n* History of ≥3 severe hypoglycemic events (requiring third-party assistance for correction) within 3 months of screening;\n* History of diabetic ketoacidosis (DKA) or non-ketotic hyperosmolar state within 3 months of screening OR \\>1 episode of DKA or non-ketotic hyperosmolar state within 12 months of screening;\n* Blood beta-hydroxybutyrate (BHB) \\>0.6 mmol/L for \\>2 hours on \\>2 occasions during the Run-in period;\n* Inadequate beta hydroxybutyrate (BHB) testing (\\<50% of the prescribed measurements) during Run-in;\n* History of primary renal glycosuria;\n* History of biopsy-proven non-diabetic chronic kidney disease (CKD);\n* History of kidney transplant or currently on chronic dialysis;\n* Current or past history of decompensated cirrhosis (defined as variceal bleeding, ascites or hepatic encephalopathy), and/or known diagnosis of cirrhosis based on liver biopsy, imaging, or elastography, and/or aspartate aminotransferase (AST) or alanine transaminase (ALT) at screening \\>2 times upper limit of normal, and/or total bilirubin at screening \\>1.3 times upper limit of normal).\n* History of severe acquired immune deficiency syndrome or human immunodeficiency virus (HIV) infection or severely immunocompromised status;\n* Cancer treatment (excluding non-melanoma skin cancer treated by excision, carcinoma in situ of the cervix or uterus, ductal breast cancer in situ, resected non-metastatic breast or prostate cancer) within one year of screening.\n* Illicit drug abuse within 6 months of screening;\n* Heavy alcohol use (for men, 5 drinks or more on any day or 15 drinks or more per week; for women, 4 drinks or more on any day or 8 drinks or more per week);\n* Participation in another interventional clinical research study within 30 days of screening;\n* Breastfeeding, pregnancy, or unwillingness to be on contraception during the trial;\n* Presence of a clinically significant medical history, physical examination, or laboratory finding that may interfere with any aspect of study conduct or interpretation of results;\n* Any condition that may render the patient unable to comply with study requirements and/or complete the study.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "75 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "St. Paul's Hospital",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003928",
+              "term": "Diabetic Nephropathies"
+            },
+            {
+              "id": "D007676",
+              "term": "Kidney Failure, Chronic"
+            },
+            {
+              "id": "D003922",
+              "term": "Diabetes Mellitus, Type 1"
+            },
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            },
+            {
+              "id": "D002318",
+              "term": "Cardiovascular Diseases"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06678841",
+          "briefTitle": "ELEVATE-HFpEF Clinical Study"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-03",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure With Preserved Ejection Fraction (HFpEF)"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. Age ≥ 40 years\n2. Documented EF ≥50% within the preceding 12 months\n3. HFpEF defined as:\n\n   1. Documented worsening HF episode (either HF hospitalization or documented urgent clinic visit for HF with intravenous diuretics) within 12-months prior to baseline visit OR\n   2. Dyspnea on exertion and New York Heart Association (NYHA) ≥ class II symptoms AND AT LEAST ONE OF THE FOLLOWING CRITERIA:\n\n      * Interstitial / pulmonary edema on prior chest imaging in the last year AND current loop diuretic use for heart failure\n      * Elevated NT-proBNP in the last year defined as \\>400 pg/m for patients with no AF or paroxysmal AF, or \\>900 pg/ml for patients with ≥persistent AF\n      * Mean pulmonary capillary wedge pressure (PCWP) ≥15 mm Hg or LVEDP ≥16 mm Hg at rest on cardiac catheterization OR pulmonary artery diastolic and wedge pressure (PADP) ≥15 mm Hg at rest on implantable monitor (e.g., CardioMEMs)\n      * Echo criteria defined by ≥2 of:\n\n        * LV wall thickness ≥ 12 mm\n        * LV mass index (BSA indexed LVH): sex at birth male \\>115 g/m2, sex at birth female \\>95 g/m2\n        * Relative wall thickness ≥0.42\n        * E/e' ≥15 in sinus rhythm (or \\> 11 in the setting of atrial fibrillation) OR septal \\<7 cm/s or lateral e' \\<10cm/s\n        * Tricuspid regurgitation (TR) velocity \\>2.8 m/s\n        * Left atrial (LA) enlargement, defined by LA volume index \\>34 ml/m2\n4. Patient is on stable guideline indicated HF medical therapy (Class I recommendations) for at least 30 days\n5. Patient's average heart rate on baseline ambulatory electrocardiographic monitor is at least 5 bpm lower than their calculated personalized cardiac pacing rate (e.g. if a patient's personalized cardiac pacing rate is 70 bpm and their average heart rate on the ambulatory electrocardiographic monitor is less than or equal to 65 bpm the patient is eligible)\n6. Patient is willing and able to adhere to the protocol (e.g., patient is able to ambulate independently at baseline).\n\nExclusion Criteria:\n\n1. Improved or recovered EF (i.e., prior LVEF\\<50%)\n2. Patient has a previously implanted, currently implanted, or is intended to have implanted a cardiac implantable electronic device capable of delivering pacing (e.g., pacemaker, implantable cardioverter defibrillator (ICD), cardiac resynchronization therapy (CRT))\n3. Current pregnancy (requirement for negative pregnancy test may vary by jurisdiction)\n4. Average heart rate \\<50 bpm or symptomatic bradycardia\n5. Acute coronary syndrome (including MI), cardiovascular surgery, or urgent percutaneous coronary intervention (PCI) within the 3 months prior to baseline visit or an elective PCI within 30 days prior to baseline visit.\n6. Current acute decompensated HF requiring intravenous diuretics, vasodilators and/or inotropic drugs.\n7. Severe obesity defined as BMI \\>45.\n8. Persistent, long-standing persistent, or permanent atrial fibrillation (AF) with an average heart rate \\<50 bpm or evidence of ventricular pauses exceeding 6 seconds\n9. Planned AF ablation\n10. Infiltrative cardiomyopathies (e.g., amyloidosis, sarcoidosis)\n11. Hypertrophic cardiomyopathies\n12. Uncontrolled hypertension as defined by BP \\>160/100 mmHg on two measurements ≥15 minutes apart\n13. End Stage Renal Disease (CKD 4 or greater)\n14. More than moderate valvular disease (e.g. exclude patients with moderate severe or severe valvular disease)\n15. Significant primary pulmonary disease on home oxygen\n16. Known contraindication for a pacemaker implant\n17. Advanced co-morbidity with life expectancy \\< 1 year\n18. Patients who are currently enrolled in a potentially confounding drug or device trial during the course of the study. Co-enrollment in concurrent trials is only allowed when documented pre-approval is obtained from the Medtronic Study Manager.\n19. Patient is a vulnerable adult (e.g. patient mentally incapable of giving consent).",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "40 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Saint Pauls Hospital",
+              "city": "Vancouver",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            },
+            {
+              "id": "D006331",
+              "term": "Heart Diseases"
+            },
+            {
+              "id": "D002318",
+              "term": "Cardiovascular Diseases"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05859048",
+          "briefTitle": "Multidisciplinary Approach for High Risk Patients Leading to Early Diagnosis of Canadians in Heart Failure"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-05",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Male or female \\> 40 years of age\n* Informed consent\n* At least two additional risk factors for Heart Failure (HF):\n\n  * Coronary artery disease (either a previous documented type 1 myocardial infarction or coronary artery bypass grafting or percutaneous coronary intervention or documented stenosis or an epicardial coronary artery (50% left main stem or \\>70% left anterior descending, circumflex or right coronary artery)).\n  * Diabetes type 1 or 2.\n  * Persistent or permanent atrial fibrillation.\n  * Previous ischemic or embolic stroke.\n  * Peripheral artery disease (previous surgical or percutaneous revascularization or documented stenosis \\>50% of major peripheral arterial vessel.\n  * Chronic kidney disease (defined as an estimated glomerular filtration rate (eGFR)\\<60 milliliters per minute (mL/min)/1.73m2 or eGFR 60-90 mL/min/1.73m2 and urine albumin-creatinine ration (UACR) \\>300mg/g).\n  * Regular loop diuretic use for \\>30 days within 12 months prior to consent.\n  * Chronic obstructive pulmonary disease (COPD) evidenced by one of the following: Pulmonary Function Test (PFT) showing airway obstruction, diagnosis of respiratory physician, CT scan reporting presence of emphysema, or treatment with national guidance advocated COPD therapy.\n\nExclusion Criteria:\n\n* Inability to give informed consent (e.g. due to significant cognitive impairment).\n* Previous diagnosis of heart failure. This is any diagnosis of heart failure with any ejection fraction of any cause.\n* Renal replacement therapy.\n* Anyone who, in the investigator's opinion, is not suitable to participate in the trial for other reasons e.g., a diagnosis which may compromise survival over the study period.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "40 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Vancouver General Hospital",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05485961",
+          "briefTitle": "Combined Dose-Finding and CV Outcomes Study With CSL300 (Clazakizumab) in Adult Subjects With ESKD Undergoing Dialysis (POSIBIL6ESKD)"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-21",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "End Stage Kidney Disease"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Male or female at least 18 years of age.\n* A diagnosis of ESKD undergoing maintenance dialysis for at least 12 weeks.\n* Serum hs-CRP ≥ 2.0 mg/L.\n* A diagnosis of diabetes mellitus OR ASCVD.\n\nExclusion Criteria:\n\n* Subjects who participated in Part 1 (phase 2b) are not eligible to participate in Part 2 (phase 3).\n* Concomitant use of systemic immunosuppressant drugs.\n* Part 1 (Phase 2b) excludes subjects with a positive TB or a history of latent TB, whereas Part 2 (Phase 3) excludes active TB but allows inclusion of subjects with a latent TB and at least 4 weeks of prophylactic TB treatment.\n* Abnormal LFTs.\n* Any life-threatening disease expected to result in death within 12 months.\n* A history of GI perforation, inflammatory bowel disease (except fully excised. ulcerative colitis), or peptic ulcer disease.\n* Clinically significant active infection or history of opportunistic or invasive fungal infection.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "St Paul Hospital",
+              "city": "Vancouver",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D007676",
+              "term": "Kidney Failure, Chronic"
+            },
+            {
+              "id": "D009203",
+              "term": "Myocardial Infarction"
+            },
+            {
+              "id": "D050197",
+              "term": "Atherosclerosis"
+            },
+            {
+              "id": "D003324",
+              "term": "Coronary Artery Disease"
+            },
+            {
+              "id": "D058729",
+              "term": "Peripheral Arterial Disease"
+            },
+            {
+              "id": "D003920",
+              "term": "Diabetes Mellitus"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07369856",
+          "briefTitle": "Spot Analysis of Natriuresis to Guide up- or Down-titration of Diuretic Therapy in Ambulatory Patients With Chronic Heart Failure"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-03-27",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure",
+            "Diuretics"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Age ≥18 years\n* Diagnosis of heart failure according to the Universal Definition\n* Use of loop diuretics\n* Residing in VCH or PHC regions\n\nGroup-specific inclusion:\n\nGroup 1: Congestion score ≥5 OR objective congestion; stable furosemide ≥1 week Group 2: NYHA I-II; congestion score \\<5; no recent HF hospitalization; stable furosemide ≥1 month Group 3: First 100 eligible patients not meeting criteria for Groups 1 or 2\n\nExclusion Criteria:\n\n* eGFR \\<20 mL/min/1.73m²\n* Renal replacement therapy\n* High-risk clinical status requiring hospitalization\n* Inability to consent or perform required urine sampling",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Vancouver General Hospital",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06056297",
+          "briefTitle": "A Study of Mavorixafor in Participants With Congenital and Acquired Primary Autoimmune and Idiopathic Chronic Neutropenic Disorders Who Are Experiencing Recurrent and/or Serious Infections"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-12",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Neutropenia"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Key Inclusion Criteria:\n\n* Diagnosis of congenital or acquired primary autoimmune and idiopathic chronic neutropenic disorder ≥6 months prior to the screening visit that is not attributable to medications, active or recent infections or malignancy.\n* Congenital Neutropenia, including but not limited to these classifications:\n\n  1. Isolated with a permanent (non-cyclic) presentation, for example, elastase, neutrophil expressed (ELANE), colony stimulating factor 3 receptor (CSF3R), C-X-C chemokine receptor 2 (CXCR2), Wiskott-Aldrich syndrome (WAS)\n  2. Associated with extra-hematologic manifestations, for example, Barth syndrome, Cohen syndrome, glucose-6-phosphatase catalytic subunit 3 (G6PC3), Kostmann disease\n  3. Associated with metabolic disorders, for example, glycogen storage disease 1b (GSD1b)\n  4. Shwachman-Diamond syndrome\n* Acquired Primary Neutropenia\n\n  1. Chronic idiopathic neutropenia\n  2. Primary autoimmune neutropenia. Other chronic neutropenia (CN) disorders that may be eligible for enrollment can be clarified and approved upon discussion with study Medical Monitor.\n* Have an ANC \\<1000 cells/µL during screening (single ANC value from hematology) and confirmed trough mean ANC (mean value of multiple ANC measurements over 6 hours) at baseline visit, with no clinical evidence of systemic infection.\n* Prior history of recurrent and/or serious infections during the 12 months preceding the screening visit (that is, suffering sequelae of chronic neutropenia), as defined by having at least 2 infections in the last 12 months that meet the following criteria:\n* Infection requiring the use of antibiotics (intravenous \\[IV\\]/oral); OR\n* Infection requiring a visit to healthcare facility (including but not limited to emergency room visit, urgent care facility, primary care physician's office, or in-patient hospitalization);\n\nAND for all potential participants:\n\n* Infections considered by the Investigator to be likely related to the potential participant's CN disorder.\n* Participants who are on G-CSF or other active background therapy must have been receiving these therapies during the previous 12 months while continuing to suffer from infections, be on a stable dose and dosing schedule for ≥4 weeks prior to screening visit and remain on this dose and dosing schedule throughout the study (unless ANC \\>10,000 cells/µL for ≥4 weeks).\n* Participants must be willing to keep their G-CSF or other background therapy doses/regimens stable (other than for safety reasons) for the duration of the study.\n\nKey Exclusion Criteria:\n\n* A diagnosis of secondary neutropenia including those due to:\n\n  1. Hypersplenism\n  2. Infection\n  3. Malignancy\n  4. Autoimmune disease, for example, systemic lupus erythematosus, rheumatoid arthritis, inflammatory bowel disease, graft-versus-host disease, thyroid disease\n  5. Nutritional deficiency, for example, vitamin B12, folic acid, copper, caloric malnutrition\n  6. Drug-induced cause, for example, chemotherapy, clozapine, antiretrovirals, antibiotics, monoclonal antibodies.\n* A diagnosis of any of the following:\n\n  1. Aplastic anemia\n  2. Warts, hypogammaglobulinemia, infections, and myelokathexis (WHIM) syndrome\n  3. Certain CNs, including but not limited to these classifications are excluded:\n\n     1. Isolated with a cyclic presentation, for example, elastase, neutrophil expressed (ELANE)\n     2. Associated with immune dysregulation, for example, common variable immunodeficiency (CVID), autoimmune lymphoproliferative syndrome (ALPS), familial hemophagocytic lymphohistiocytosis, Chédiak-Higashi syndrome, GATA-binding protein 2 (GATA2) deficiency syndrome\n     3. Associated with bone marrow failure, for example, Fanconi anemia, Diamond-Blackfan anemia\n  4. Neutropenia associated with a Duffy-null phenotype (formerly known as benign ethnic neutropenia). However, a participant with an autosomal dominant pathogenic variant in a gene associated with CN on a Duffy-null background may be eligible for inclusion\n* A medical or personal condition that may potentially compromise the safety of the participant, may preclude the participant's successful completion of the clinical study, or could, in the opinion of the Investigator or the Medical Monitor, interfere with the objectives of the study.\n* Received more than 1 dose of mavorixafor in the past.\n* Received C-X-C chemokine receptor 4 (CXCR4) antagonist (other than mavorixafor) in the past 6 months.\n* Participants taking pegylated-G-CSF unless they have a diagnosis of congenital neutropenia confirmed at screening.\n* Participant is currently taking or has taken other investigational drug \\<30 days prior to the screening visit or 5 half-lives, whichever is longer.\n\nNote: Other protocol-defined inclusion and exclusion criteria may apply.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "12 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "BC Children's Hospital",
+              "city": "Vancouver",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D009503",
+              "term": "Neutropenia"
+            },
+            {
+              "id": "C537592",
+              "term": "Neutropenia, Severe Congenital, Autosomal Recessive 3"
+            },
+            {
+              "id": "D001327",
+              "term": "Autoimmune Diseases"
+            },
+            {
+              "id": "C536438",
+              "term": "Cohen syndrome"
+            },
+            {
+              "id": "D056889",
+              "term": "Barth Syndrome"
+            },
+            {
+              "id": "D000081003",
+              "term": "Shwachman-Diamond Syndrome"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06955260",
+          "briefTitle": "SGLT2 Inhibition With Empagliflozin in Fontan Circulatory Failure"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-02",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Congenital Heart Disease"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Adults (≥18 years of age) with FCF, defined by dysfunction of the Fontan physiology that causes limitation to the individual's ability to carry out daily life activities, on standard of care therapy\n\nExclusion Criteria:\n\n* Diuretic initiation or dose change ≤2 weeks prior to enrollment On a SGLT2 inhibitor currently or within 12-weeks prior to enrollment in the trial\n* Allergic to or has a known intolerance to any of the ingredients in empagliflozin or other SGLT2 inhibitors\n* Pregnant or planning a pregnancy during the duration of the trial or breast feeding\n* Living with type 1 diabetes mellitus\n* Has an unresolved acute illness (e.g., acute appendicitis, COVID-19, gastroenteritis)\n* History of ketoacidosis\n* Has an estimated glomerular filtration rate (eGFR) that is \\<30 mL/min/1.73 m2 Total bilirubin, alanine aminotransferase (ALT) or aspartate aminotransferase (AST) ≥2-fold upper limit of normal (ULN) at screening\n* Has a baseline systolic BP that is \\<80 mmHg or ≥200 mmHg\n* Planned hospital intervention during trial period for management of FCF defined as one of the following:\n* Admission for intravenous diuretics\n* Admission for intravenous inotropes\n* Admission for ascites drainage\n* Admission for new or worsening ascites of clinical significance\n* Admission for management of arrhythmia\n* Admission for management of lymphatic dysfunction\n* Admission for interventional cardiological or cardiac surgical procedure within 30-days prior to screening, or consideration for any cardiac surgical or interventional cardiological procedure during trial participation\n* Admission for cardiac resynchronization therapy within 90-days prior to screening, or consideration of cardiac resynchronization therapy during trial participation\n* Is unable to provide written informed consent, complete the trial or comply with the requirements of the trial protocol\n* Participation in other interventional studies within 30-days of the screening visit that could influence any of the trial outcomes (exclusive of observational registries)\n* Received intravenous diuretic within the previous 14-days\n* On a heart transplant waiting list\n* Current or imminent hospitalization for management of FCF",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "St. Paul's Hospital",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006330",
+              "term": "Heart Defects, Congenital"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07695363",
+          "briefTitle": "Restrictive Fluid Management In Liver Transplantation (REFIL)"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-12",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Liver Transplantation (LT)",
+            "End-stage Liver Disease (ESLD)"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. Adult ≥ 18 years old\n2. Undergoing liver transplantation (LT)\n3. End-stage liver disease (ESLD) (with or without hepatocellular carcinoma) as the indication for transplantation.\n\nExclusion Criteria:\n\n1. Undergoing LT for an indication other than ESLD (e.g., acute liver failure, primary liver cancer without ESLD, retransplantation, amyloid neuropathy, polycystic liver disease, or any other indication not associated with ESLD)\n2. Undergoing combined solid organ transplantations\n3. Any of the following conditions:\n\n   * severe chronic renal failure (GFR \\< 15 ml/minute/1.73 m2 \\[CKD-EPI equation\\] or already on renal replacement therapy (RRT))\n   * severe anemia (hemoglobin level \\< 80 g/L)\n   * hemodynamic instability (norepinephrine equivalent \\> 10 ug/min)\n4. Physician refusal to enroll the patient.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Vancouver General Hospital (VGH)",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D058625",
+              "term": "End Stage Liver Disease"
+            },
+            {
+              "id": "D008107",
+              "term": "Liver Diseases"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07207811",
+          "briefTitle": "CLEOPATTRA: A Research Study to Look at the Effects of Treatment With a Medicine Called Coramitug (NNC6019-0001) in People With Heart Failure Due to Transthyretin Amyloid (ATTR) Amyloidosis"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-21",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Transthyretin Amyloid Cardiomyopathy (ATTR CM)"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. Male or female.\n2. Age 18 years or above at the time of signing the informed consent.\n3. Have an established diagnosis of ATTR-CM (wild-type ATTR \\[ATTRwt\\] or variant ATTR \\[ATTRv\\]), with cardiac amyloid infiltration, increased left ventricular (LV) wall thickness, and HF.\n\n   Note: Target ATTRv recruitment is approximately 15 percent of the study population.\n\n   a. Cardiac amyloid infiltration demonstrated by: i. Cardiac biopsy positive for TTR amyloid, OR ii. Grade 2 or 3 cardiac uptake at pyrophosphate (PYP)/diphosphono-1,2-propanodicarboxylic acid (DPD)/ hydroxymethylene diphosphonate (HMDP) nuclear medicine imaging with single-photon emission computed tomography (SPECT) or SPECT/CT (preferably) combined with an extracardiac biopsy positive for TTR amyloid, OR iii. Grade 2 or 3 cardiac uptake at PYP/DPD/HMDP nuclear medicine imaging with SPECT or SPECT/CT (preferably) combined with normal serum free light chain ratio, and negative serum and urine protein electrophoresis with immunofixation (SPIE \\& UPIE)/or mass spectrometry based methods including mass fixation).\n\n   Notes:\n   * Non-invasive diagnostic pathway will be confirmed by a centralised expert review.\n   * Bone tracer nuclear medicine imaging with SPECT or SPECT/CT (preferably) will be conducted using 99m-technetium (Tc)-labelled pyrophosphate (99mTc-PYP), 99mTc-labelled 3,3-diphosphono-1,2-propanodicarboxylic acid (99mTc-DPD), or 99mTc-labeled hydroxymethylene diphosphonate (99mTc-HMDP).\n   * The eGFR adjusted acceptable serum free light chain ratio.\n   * Patients with Grade 2 or 3 cardiac uptake at PYP/DPD/HDMP nuclear imaging with SPECT or SPECT/CT (preferably) and evidence of monoclonal gammopathy of undetermined significance (MGUS; based on serum and urine protein electrophoresis and serum free light chains) will require endomyocardial biopsy with typing using mass spectrometry or immunohistochemistry to confirm presence of TTR protein in tissue.\n   * Timing of serum free light chain ratio, SPIE, UPIE and mass spectrometry-based methods including mass fixation should be within 12 months of SPECT or SPECT/CT nuclear imaging.\n\n     b. Increased LV wall thickness, as assessed by centralised review of echocardiography, showing interventricular septal wall thickness greater than or equal to 12 millimeter (mm).\n\n     c. Chronic HF (New York Heart Association \\[NYHA\\] Class I-IV): i. At least 1 documented hospitalisation for HF, OR ii. History of HF manifested by signs or symptoms of volume overload or elevated intracardiac pressures (e.g., elevated jugular venous pressure, shortness of breath, signs of pulmonary congestion on x-ray or auscultation, or peripheral oedema that required or requires ongoing treatment with a diuretic).\n4. Expected to be on stable cardiovascular medical therapy (defined as no greater than 50 percent dose adjustment and no categorical changes of medications), with the exception of diuretics, 4 weeks prior to the randomisation visit.\n5. Completed more than 50 meters on the 6MWT at screening.\n\nExclusion Criteria:\n\n1. Known or suspected hypersensitivity to study intervention(s) or related products.\n2. Current or previous participation (dosing with active treatment) in a study for an investigational ATTR depleting drug or ATTR gene editing therapy.\n3. Total bilirubin greater than 3 times the upper limit of normal (ULN) at screening.\n4. Current diagnosis or history of amyloid light chain, other non-ATTR amyloidosis, known leptomeningeal amyloidosis, or multiple myeloma.\n5. HF not primarily caused by ATTR-CM (e.g., due to hypertension, valvular heart disease, or ischemic heart disease in the opinion of the investigator).\n6. Currently hospitalised or hospitalised within 14 days prior to screening.\n7. Currently treated with positive inotropic medication.\n8. Uncorrected, severe, haemodynamically significant, left-sided heart valve disease.\n9. Acute coronary syndrome, unstable angina, stroke, transient ischemic attack, coronary revascularisation, cardiac device implantation, cardiac valve repair, or major surgery within 60 days of screening.\n10. Prior solid organ transplant or planned solid organ transplant during the study.\n11. Left ventricular ejection fraction (LVEF) less than 30 percent as assessed by centralised review of echocardiography.\n12. Presence or history of malignant neoplasm (other than basal or squamous cell skin cancer, in situ carcinomas of the cervix, carcinoma in situ/high-grade prostatic intraepithelial neoplasia \\[PIN\\], low-risk prostate cancer, or on stable therapy for prostate cancer) within 3 years before screening.\n13. End-stage renal disease (estimated glomerular filtration rate \\[eGFR\\] less than 15 mL/min/1.73 m\\^2 at screening, or chronic/intermittent haemodialysis or peritoneal dialysis).",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Vancouver General Hospital",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05650658",
+          "briefTitle": "Left vs Left Randomized Clinical Trial"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-12",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure",
+            "Heart Failure With Reduced Ejection Fraction",
+            "AV Block",
+            "LBBB",
+            "RBBB",
+            "Intraventricular Conduction Delay",
+            "Pacing-Induced Cardiomyopathy"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Men and women 18 years of age or older.\n* A LVEF ≤ 50% within 6 months prior to enrollment.\n* Resting QRS duration ≥130 ms as evidenced by a historical 12-lead ECG prior to enrollment OR anticipated right ventricular pacing \\>40% OR device in place with right ventricular pacing \\> 40%.\n* Are optimized on HF guideline directed medical therapy according to current HF published guidelines OR patient's physician will make an effort to start all guideline-directed medical therapy and titrate doses up as permitted by the participant clinical status and co-morbidities prior to implantation procedure.\n\nExclusion Criteria:\n\n* Women who are pregnant, lactating, or plan to become pregnant during the course of the trial.\n* Participants with angiographic evidence of coronary disease who are candidates for coronary revascularization and are likely to undergo coronary artery bypass graft surgery or percutaneous coronary, intervention in the next three (3) months.\n* Enzyme-positive myocardial infarction within the past three (3) months prior to enrollment.\n* Coronary artery bypass graft surgery or percutaneous coronary intervention (balloon and/or stent angioplasty) within the past three (3) months prior to enrollment.\n* Reversible non-ischemic cardiomyopathy (e.g., acute viral myocarditis).\n* Participants with Chagas disease, cardiac sarcoidosis or amyloidosis.\n* Expected to receive left ventricular assist device or heart transplantation within 6 months.\n* Participants with primary severe valvular disease (e.g., aortic stenosis).\n* Have a life expectancy of less than 12 months.\n* Participants with irreversible brain damage from preexisting cerebral disease.\n* Participants with a contrast dye allergy unable or unwilling to undergo pretreatment with steroids and/or diphenhydramine.\n* Participants participating in any other interventional cardiovascular clinical trial.\n* Participants who would be unable to comply with the study's follow-up visit schedule; or\n* Participants who had any prior unsuccessful attempt at implantation of biventricular pacing (BiVP), His Bundle Pacing (HBP), or Left Bundle Branch Pacing (LBBP) device.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "University of British Columbia",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            },
+            {
+              "id": "D054537",
+              "term": "Atrioventricular Block"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05601453",
+          "briefTitle": "The ReTAVI Prospective Observational Registry"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-16",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Structural Valve Deterioration",
+            "Structural Valve Degeneration",
+            "Symptomatic Patients Who Have Had Transcatheter Heart Valve (THV) Failure",
+            "Prosthetic Valve Malfunction",
+            "Prosthesis Failure"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\nConsecutive patients fulfilling the following criteria:\n\n1. Consenting adult patient (≥18 years)\n2. Procedural success of the first TAVI\n3. TAVI device failure of the index THV, irrespective of SVD severity\n4. Intention to treat the patient with a redo-TAVI procedure (SAPIEN family THV)\n5. The Local Heart Team and the Case Review Board consider the patient suitable and indicated for elective redo-TAVI\n6. Patient is scheduled to undergo a 30 Day and 12 Months follow-up (both visits taking place in the hospital)\n\nExclusion Criteria:\n\n1. Patients without signed informed consent / data protection statement (according to requirements of local IRB/IEC)\n2. Life expectancy below 12 months\n3. Patients with largely incomplete data with respect to the aims of the project\n4. Pregnant women at the time of the redo-TAVI\n\nNote: For all patients included a defined core data set will be collected prospectively. All patients being in accordance with above stated inclusion and exclusion criteria and receiving a balloon-expandable transcatheter aortic valve will be included in the extended documentation.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "St. Paul's Hospital, Vancouver",
+              "city": "Vancouver",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D011475",
+              "term": "Prosthesis Failure"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05427370",
+          "briefTitle": "The Canadian CABG or PCI in Patients With Ischemic Cardiomyopathy Trial (STICH3C)"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-10-19",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Coronary Artery Disease",
+            "Heart Failure Systolic"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. Age \\>18 years;\n2. LVEF ≤40% quantified by either echocardiography, SPECT ventriculography, or magnetic resonance within 2 months of randomization;\n3. Prognostically important multivessel CAD (triple vessel CAD or double vessel disease including the left anterior descending (LAD) or LM). Significant coronary stenosis is defined as ≥ 70% based on coronary angiography, and/or fractional flow reserve (FFR) ≤0.80 or instantaneous wave-free ratio (iFR) ≤0.89. For LM disease, significant coronary stenosis is defined as \\>50% based on coronary angiography, intravascular ultrasound (IVUS) minimal luminal area (MLA) ≤6.0 mm2 (\\<4.5 mm2 Asian descent), or equivalent optical coherence tomography (OCT) measurements;\n4. The institutional Heart Team agrees that guideline-directed medical therapy (GDMT) has been initiated for ≥1 month in prevalent and newly diagnosed cases. In patients hospitalized with newly diagnosed iLVSD (with or without acute coronary syndrome (ACS)) requiring revascularization before discharge, GDMT needs to be initiated, when possible in-hospital before randomization, with the expectation that it will be titrated to maximally tolerated doses after revascularization;\n5. Signed informed consent.\n\nExclusion Criteria:\n\n1. Decompensated HF requiring inotropic/adrenergic support, invasive or non-invasive ventilation or intra-aortic balloon pump/ventricular assist device therapy less than 48 hours prior to randomization;\n2. Recent (\\<4 weeks) ST-elevation MI;\n3. Concomitant severe valvular disease or other condition such as left ventricular aneurysm requiring surgical repair or replacement;\n4. Planned major concomitant surgical procedures (LAAO and AF ablation surgical procedures permitted);\n5. Prior PCI within the past 12 months (to reduce restenosis events from prior PCIs contributing to the primary outcome);\n6. Prior cardiac surgery;\n7. Prohibitive bleeding risk mandating avoidance of dual antiplatelet therapy;\n8. Circumstances likely to lead to poor treatment adherence;\n9. Severe end-organ dysfunction (such as dialysis, liver failure, respiratory failure, cancer) that reduces life expectancy to less than 5 years;\n10. Current pregnancy;\n11. Patient not amenable to both CABG or PCI according to the Heart Team;\n12. Takotsubo/Takotsubo Cardiomyopathy/Broken Heart Syndrome.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Providence Health",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003324",
+              "term": "Coronary Artery Disease"
+            },
+            {
+              "id": "D054143",
+              "term": "Heart Failure, Systolic"
+            },
+            {
+              "id": "D018487",
+              "term": "Ventricular Dysfunction, Left"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05835310",
+          "briefTitle": "An Efficacy and Safety Study of Intravenous Anifrolumab to Treat Systemic Lupus Erythematosus in Pediatric Participants"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-30",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Systemic Lupus Erythematosus"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Participant's parent/caregiver/legally authorized representative and participant (if required per local country regulation) capable of giving signed informed consent, which includes compliance with the requirements and restrictions listed in the ICF and in this protocol. Informed assent is to be provided by the participant per local country regulation.\n* Diagnosis of SLE according to the 2019 European League Against Rheumatism/American College of Rheumatology (EULAR/ACR) criteria for at least 3 months prior to signing the ICF.\n* At Screening, participant must have moderate to severe active SLE disease, as adjudicated by the Central Adjudication Committee, defined as:\n\n  (a) SLEDAI-2K activity of: (i) ≥ 6 points with at least 4 points (≥ 4 points) coming from the following clinical components ('Clinical' SLEDAI-2K score): arthritis, myositis, rash, alopecia, mucosal ulcers, pleurisy, pericarditis, or vasculitis and excluding points attributed to a fever, SLE headache, and organic brain syndrome (ii) Clinical SLEDAI score of ≥ 4 points verified at Day 1 (b) BILAG-2004 activity of: (i) ≥ 1 BILAG A score; or (ii) ≥ 2 BILAG B scores (c) PGA score ≥ 1.0 on a 0 to 3 VAS\n* Participant should meet all of following tuberculosis (TB) criteria:\n\nA. No signs or symptoms of active TB B. No medical history or past physical examinations suggestive of active TB C. No recent contact with a person with active TB or if there has been such contact, referral to a TB specialist for evaluation and initiation of treatment for latent TB, if warranted, prior to the first administration of study intervention in accordance with local SoC D. No history of latent TB without documented completion of treatment prior to initial screening visit\n\n* Female participants of childbearing potential must have a negative serum pregnancy test at screening and negative urine pregnancy test at randomization.\n* Female participants of childbearing and male participants must adhere to the contraception methods.\n\nExclusion Criteria:\n\n* Known diagnosis of an IFN-mediated autoinflammatory interferonopathy.\n* History of, or current diagnosis of, clinically significant non-SLE-related vasculitides.\n* In participants aged 11 years and above: history or evidence of suicidal ideation.\n* History of any non-SLE disease that has required treatment with oral or parenteral corticosteroids for more than a total of 2 weeks within the last 24 weeks prior to signing the ICF.\n* Any positive result on screening for human immunodeficiency virus.\n* Active hepatitis B surface antigen OR hepatitis B core antibody (HBcAb), hepatitis C virus (HCV) antibody and detectable HCV ribonucleic acid (RNA) or any active or recent case of Herpes Zoster infection.\n* Any clinical cytomegalovirus or Epstein-Barr virus infection that has not completely resolved within 12 weeks prior to signing the ICF.\n* History of severe COVID-19 infection requiring hospitalization, intensive care unit care, or assisted ventilation or any prior COVID-19 infection with unresolved sequelae. Any mild/asymptomatic COVID-19 infection (laboratory confirmed or suspected based on clinical symptoms).\n* Prior use of anifrolumab.\n* Prior treatment with directly acting cytotoxic B-cell depleting therapeutics (eg, rituximab) \\< 26 weeks prior to ICF signature.\n* Blood transfusion or receipt of blood products except albumin within 4 weeks prior to signing the ICF.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "5 Years",
+          "maximumAge": "17 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "Research Site",
+              "city": "Vancouver",
+              "state": "British Columbia",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D008180",
+              "term": "Lupus Erythematosus, Systemic"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "systemic lupus erythematosus"
+      ]
+    }
+  ],
+  "source": "ClinicalTrials.gov v2 API",
+  "location": {
+    "city": "Vancouver",
+    "country": "Canada"
+  },
+  "dropped": [
+    {
+      "nct_id": "NCT07064473",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT07668388",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT05794789",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT06393920",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT05919342",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT06570473",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT07188805",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT06307652",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT06033950",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT07192952",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT07112924",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT05064709",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT07567001",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT06969560",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT06979362",
+      "reason": "no recruiting site in Vancouver, Canada"
+    },
+    {
+      "nct_id": "NCT06133972",
+      "reason": "no recruiting site in Vancouver, Canada"
+    }
+  ]
+}

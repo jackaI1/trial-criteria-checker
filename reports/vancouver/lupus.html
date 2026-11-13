@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trial criteria checker: recruiting studies in vancouver, canada for a fictional patient</title>
+<style>body{font:17px/1.6 system-ui,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;color:#162a32;background:#fafbf9}h1,h2{line-height:1.2}table{border-collapse:collapse;width:100%;margin:1rem 0}td,th{border:1px solid #bcc9ce;padding:.65rem;text-align:left;vertical-align:top}th{background:#e6eeec}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf1f0;padding:1rem}code{white-space:pre-wrap}a{color:#075985}.unknown{color:#755200}.met{color:#11603a}.not-met{color:#9c2626}.scroll{overflow-x:auto}small{display:block}</style>
+<h1>Recruiting studies in Vancouver, Canada for a fictional patient</h1><p><strong>Fictional patient demonstration. No overall eligibility decision. Unparsed criteria require human review.</strong></p>
+<p>Saved public records retrieved 2026-11-13T07:47:33.686939+00:00. Recruitment status can change.</p>
+<p>Saved snapshot: 27 recruiting studies with a recruiting site in this city (16 more were returned by the search but had no such site). 1 list one of the patient&#x27;s diagnoses (systemic lupus erythematosus) in their MeSH conditions.</p>
+<p>Structured age and sex fields: 1 met, 1 not met, 0 unknown.</p>
+<p>Eligibility text lines: 0 met, 0 not met, 25 unknown. These are not a trial eligibility decision.</p>
+<details><summary>Fictional input record</summary><pre>{
+  &quot;fictional&quot;: true,
+  &quot;source&quot;: &quot;FHIR R4 Bundle lupus&quot;,
+  &quot;as_of&quot;: &quot;2026-11-13&quot;,
+  &quot;diagnoses&quot;: [
+    &quot;systemic lupus erythematosus&quot;
+  ],
+  &quot;diagnoses_complete&quot;: false,
+  &quot;labs&quot;: {
+    &quot;anc&quot;: {
+      &quot;value&quot;: 1.6,
+      &quot;unit&quot;: &quot;10^9/L&quot;,
+      &quot;effective&quot;: &quot;2026-10-21T13:30:00-07:00&quot;
+    },
+    &quot;hemoglobin&quot;: {
+      &quot;value&quot;: 112,
+      &quot;unit&quot;: &quot;g/L&quot;,
+      &quot;effective&quot;: &quot;2026-10-21T13:30:00-07:00&quot;
+    },
+    &quot;platelets&quot;: {
+      &quot;value&quot;: 142,
+      &quot;unit&quot;: &quot;10^9/L&quot;,
+      &quot;effective&quot;: &quot;2026-10-21T13:30:00-07:00&quot;
+    }
+  },
+  &quot;age&quot;: 34,
+  &quot;sex&quot;: &quot;female&quot;
+}</pre></details>
+<h2>Where the patient values came from</h2><ul>
+<li>Patient/fict-sle: age 34 from birthDate 1992-01-30</li>
+<li>Patient/fict-sle: sex female</li>
+<li>Condition/fict-sle-condition-1: diagnosis systemic lupus erythematosus</li>
+<li>Observation/fict-sle-observation-3: anc 1.6 10^9/L on 2026-10-21</li>
+<li>Observation/fict-sle-observation-1: hemoglobin 112 g/L on 2026-10-21</li>
+<li>Observation/fict-sle-observation-2: platelets 142 10^9/L on 2026-10-21</li>
+</ul><p>Skipped:</p><ul>
+<li>Condition/fict-sle-condition-2: verification status is refuted, not confirmed</li>
+<li>Observation/fict-sle-observation-4: status is preliminary, not final</li>
+</ul>
+<h2>Studies</h2><div class="scroll"><table><thead><tr><th>Study</th><th>Matched on</th><th>Recruiting sites here</th><th>Structured fields</th><th>Text lines</th></tr></thead><tbody>
+<tr><td><a href="#NCT05835310">NCT05835310</a>: An Efficacy and Safety Study of Intravenous Anifrolumab to Treat Systemic Lupus Erythematosus in Pediatric Participants</td><td>Lupus Erythematosus, Systemic</td><td>Research Site, Vancouver</td><td>1 met, 1 not met, 0 unknown</td><td>0 met, 0 not met, 25 unknown</td></tr>
+</tbody></table></div>
+<h2 id="NCT05835310"><a href="https://clinicaltrials.gov/study/NCT05835310">NCT05835310</a>: An Efficacy and Safety Study of Intravenous Anifrolumab to Treat Systemic Lupus Erythematosus in Pediatric Participants</h2>
+<p>Saved recruitment status: RECRUITING</p>
+<div class="scroll"><table><thead><tr><th>Source</th><th>Rule</th><th>Fictional result</th></tr></thead><tbody>
+<tr><td>minimumAge: 5 Years<small>structured registry field</small></td><td><code>age &gt;= 5 years</code><small>Structured registry field</small></td><td class="met"><strong>met</strong><small>age 34, which matches the rule</small></td></tr>
+<tr><td>maximumAge: 17 Years<small>structured registry field</small></td><td><code>age &lt;= 17 years</code><small>Structured registry field</small></td><td class="not-met"><strong>not met</strong><small>age 34, which does not match the rule</small></td></tr>
+<tr><td>Participant&#x27;s parent/caregiver/legally authorized representative and participant (if required per local country regulation) capable of giving signed informed consent, which includes compliance with the requirements and restrictions listed in the ICF and in this protocol.<small>inclusion, characters 23:294</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Informed assent is to be provided by the participant per local country regulation.<small>inclusion, characters 295:377</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Diagnosis of SLE according to the 2019 European League Against Rheumatism/American College of Rheumatology (EULAR/ACR) criteria for at least 3 months prior to signing the ICF.<small>inclusion, characters 380:555</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>At Screening, participant must have moderate to severe active SLE disease, as adjudicated by the Central Adjudication Committee, defined as:<small>inclusion, characters 558:698</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>(a) SLEDAI-2K activity of: (i) ≥ 6 points with at least 4 points (≥ 4 points) coming from the following clinical components (&#x27;Clinical&#x27; SLEDAI-2K score): arthritis, myositis, rash, alopecia, mucosal ulcers, pleurisy, pericarditis, or vasculitis and excluding points attributed to a fever, SLE headache, and organic brain syndrome (ii) Clinical SLEDAI score of ≥ 4 points verified at Day 1 (b) BILAG-2004 activity of: (i) ≥ 1 BILAG A score; or (ii) ≥ 2 BILAG B scores (c) PGA score ≥ 1.0 on a 0 to 3 VAS<small>inclusion, characters 702:1204</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Participant should meet all of following tuberculosis (TB) criteria:<small>inclusion, characters 1207:1275</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>A.<small>inclusion, characters 1277:1279</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>No signs or symptoms of active TB B.<small>inclusion, characters 1280:1316</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>No medical history or past physical examinations suggestive of active TB C.<small>inclusion, characters 1317:1392</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>No recent contact with a person with active TB or if there has been such contact, referral to a TB specialist for evaluation and initiation of treatment for latent TB, if warranted, prior to the first administration of study intervention in accordance with local SoC D.<small>inclusion, characters 1393:1662</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>No history of latent TB without documented completion of treatment prior to initial screening visit<small>inclusion, characters 1663:1762</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Female participants of childbearing potential must have a negative serum pregnancy test at screening and negative urine pregnancy test at randomization.<small>inclusion, characters 1766:1918</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Female participants of childbearing and male participants must adhere to the contraception methods.<small>inclusion, characters 1921:2020</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Known diagnosis of an IFN-mediated autoinflammatory interferonopathy.<small>exclusion, characters 2045:2114</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>History of, or current diagnosis of, clinically significant non-SLE-related vasculitides.<small>exclusion, characters 2117:2206</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>In participants aged 11 years and above: history or evidence of suicidal ideation.<small>exclusion, characters 2209:2291</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>History of any non-SLE disease that has required treatment with oral or parenteral corticosteroids for more than a total of 2 weeks within the last 24 weeks prior to signing the ICF.<small>exclusion, characters 2294:2476</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Any positive result on screening for human immunodeficiency virus.<small>exclusion, characters 2479:2545</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Active hepatitis B surface antigen OR hepatitis B core antibody (HBcAb), hepatitis C virus (HCV) antibody and detectable HCV ribonucleic acid (RNA) or any active or recent case of Herpes Zoster infection.<small>exclusion, characters 2548:2752</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Any clinical cytomegalovirus or Epstein-Barr virus infection that has not completely resolved within 12 weeks prior to signing the ICF.<small>exclusion, characters 2755:2890</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>History of severe COVID-19 infection requiring hospitalization, intensive care unit care, or assisted ventilation or any prior COVID-19 infection with unresolved sequelae.<small>exclusion, characters 2893:3064</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Any mild/asymptomatic COVID-19 infection (laboratory confirmed or suspected based on clinical symptoms).<small>exclusion, characters 3065:3169</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Prior use of anifrolumab.<small>exclusion, characters 3172:3197</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Prior treatment with directly acting cytotoxic B-cell depleting therapeutics (eg, rituximab) \&lt; 26 weeks prior to ICF signature.<small>exclusion, characters 3200:3328</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Blood transfusion or receipt of blood products except albumin within 4 weeks prior to signing the ICF.<small>exclusion, characters 3331:3433</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+</tbody></table></div>
+<h2>Source requests</h2><ul>
+<li>https://clinicaltrials.gov/api/v2/studies?format=json&amp;filter.overallStatus=RECRUITING&amp;pageSize=100&amp;query.cond=type+2+diabetes&amp;query.locn=Vancouver</li>
+<li>https://clinicaltrials.gov/api/v2/studies?format=json&amp;filter.overallStatus=RECRUITING&amp;pageSize=100&amp;query.cond=atrial+fibrillation&amp;query.locn=Vancouver</li>
+<li>https://clinicaltrials.gov/api/v2/studies?format=json&amp;filter.overallStatus=RECRUITING&amp;pageSize=100&amp;query.cond=heart+failure&amp;query.locn=Vancouver</li>
+<li>https://clinicaltrials.gov/api/v2/studies?format=json&amp;filter.overallStatus=RECRUITING&amp;pageSize=100&amp;query.cond=systemic+lupus+erythematosus&amp;query.locn=Vancouver</li>
+<li>https://clinicaltrials.gov/api/v2/studies?format=json&amp;filter.overallStatus=RECRUITING&amp;pageSize=100&amp;query.cond=rheumatoid+arthritis&amp;query.locn=Vancouver</li>
+</ul></html>
