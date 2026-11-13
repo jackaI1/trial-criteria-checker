@@ -8,7 +8,10 @@ DIAGNOSES = {
     'diabetes', 'breast cancer', 'dementia', 'atrial fibrillation',
     'heart failure', 'rheumatoid arthritis', 'systemic lupus erythematosus',
     'myocardial infarction', 'heart failure with reduced ejection fraction',
+    'permanent atrial fibrillation', 'rheumatic heart disease', 'infiltrative cardiomyopathy',
 }
+# Other written forms of a vocabulary term that mean exactly the same thing.
+FULL_NAMES = {'infiltrative cardiomyopathies': 'infiltrative cardiomyopathy'}
 # Abbreviations are only expanded from this fixed list, and only when the
 # abbreviation is the whole diagnosis on the line.
 ABBREVIATIONS = {
@@ -27,6 +30,8 @@ LAB_NAMES = {
     'estimated glomerular filtration rate (egfr)': 'egfr',
     'lvef': 'lvef', 'left ventricular ejection fraction': 'lvef',
     'left ventricular ejection fraction (lvef)': 'lvef',
+    # In criteria, an unqualified "ejection fraction" is the left ventricle's.
+    'ejection fraction': 'lvef',
 }
 LAB_UNITS = {
     'hemoglobin': {'g/dL', 'g/L'},
@@ -42,8 +47,10 @@ BULLET = re.compile(r'^(\s*)(?:[*•-]\s*|\d+\\?\.\s+)(.*)$')
 
 # Who a line is about. Only wording that covers everyone is skipped over, so
 # "Women aged 18 years or older" stays unknown instead of losing the sex limit.
-EVERYONE = r'(?:(?:males?|females?|men|women) (?:and|or|&) (?:males?|females?|men|women) ?)'
-PERSON = r'(?:(?:patients?|participants?|subjects?|adults?|individuals?) ?)'
+EVERYONE = (r'(?:(?:males?|females?|men|women) (?:and|or|&) (?:males?|females?|men|women) ?'
+            r'(?:\(inclusive of all gender identities\) )?)')
+PERSON = (r'(?:(?:index )?(?:patients?|participants?|subjects?|adults?|individuals?) ?'
+          r'(?:of any (?:sex|gender)(?: (?:and|or) (?:sex|gender))? )?)')
 AGE_PREFIX = (r'(?:adult )?' + EVERYONE + r'?' + PERSON + r'?(?:(?:is|are|must be) )?'
               r'(?:age[d]?:? ?)?')
 YEARS = r'(?:years?|yrs?)(?: of age| old)?'
@@ -62,6 +69,8 @@ LAB_NAME = r'(' + '|'.join(re.escape(n) for n in sorted(LAB_NAMES, key=len, reve
 
 def normalize(text):
     text = re.sub(r'\s+', ' ', html.unescape(text).replace('\\', '')).strip()
+    # A list marker like "(ii)" or "(b)" at the start isn't part of the criterion.
+    text = re.sub(r'^\((?:[ivx]{1,4}|[a-h]|\d{1,2})\) ', '', text)
     return re.sub(r'[.;]+$', '', text).strip()
 
 
@@ -170,8 +179,12 @@ def _parse_lab(text):
 
 def _diagnosis_term(text):
     """The diagnosis a whole line names, or None. Lead-ins like "Known" don't change it."""
+    term = re.sub(r'^(?:(?:index )?(?:participant|patient)s? (?:has|have) )', '', text, flags=re.I)
     term = re.sub(r'^(?:Patients with |Diagnosis of |A definite diagnosis of |Previously diagnosed with |Known |'
-                  r'Confirmed diagnosis of |Established diagnosis of |Documented diagnosis of )', '', text, flags=re.I)
+                  r'Confirmed diagnosis of |Established diagnosis of |Documented diagnosis of |Documented )', '', term, flags=re.I)
+    # Words that say how a diagnosis was made, or that don't narrow it, are dropped.
+    term = re.sub(r' \((?:documented|confirmed|diagnosed) (?:on|by|with) [^()]*\)$', '', term, flags=re.I)
+    term = re.sub(r' of any (?:etiology|cause|type)$', '', term, flags=re.I)
     m = re.fullmatch(r'(?:(?:physician|rheumatologist|cardiologist|endocrinologist)[- ]verified |confirmed |documented )?(.+) diagnosis',
                      term, re.I)
     if m:
@@ -190,7 +203,8 @@ def _diagnosis_term(text):
 
 def _full_name(term):
     # "Type 1 diabetes mellitus" is the full name of the same term, not a synonym.
-    return re.sub(r'^((?:type [12] )?diabetes) mellitus$', r'\1', term)
+    term = re.sub(r'^((?:type [12] )?diabetes) mellitus$', r'\1', term)
+    return FULL_NAMES.get(term, term)
 
 
 def _parse(sentence):
@@ -198,9 +212,9 @@ def _parse(sentence):
     rule = _parse_age(text)
     if rule:
         return rule
-    m = re.fullmatch(r'(female|male)(?: participants?| subjects?| patients?)?(?: only)?', text, re.I)
+    m = re.fullmatch(r'(female|male|women|men)(?: participants?| subjects?| patients?)?(?: only)?', text, re.I)
     if m:
-        return _rule('sex', '==', m[1].lower())
+        return _rule('sex', '==', {'women': 'female', 'men': 'male'}.get(m[1].lower(), m[1].lower()))
     term = _diagnosis_term(text)
     if term:
         return _rule('diagnosis', 'contains', term)
@@ -217,6 +231,7 @@ def parse_criteria(text):
     current = None
     section = 'unknown'
     scoped = False
+    cohort = False
     offset = 0
     for line in text.splitlines(keepends=True):
         content = line.rstrip('\r\n')
@@ -226,12 +241,15 @@ def parse_criteria(text):
         if heading:
             section = heading[1].lower()
             current = None
-            scoped = bool(bullet and bullet[1])
+            # After a cohort heading, every later section belongs to some cohort, so nothing is a rule on its own.
+            scoped = bool(bullet and bullet[1]) or cohort
         elif not content.strip():
             current = None
         else:
             if heading_text.rstrip().endswith(':') or re.fullmatch(r'(?:Cohort .+|.*\b(?:part|criteria))', heading_text.strip(), re.I) or content.lstrip().startswith(('**','__','#')):
                 scoped = True
+            if not bullet and re.search(r'\bcohorts?\b|\bsub-?stud(?:y|ies)\b|\b(?:treatment|study) arms?\b', heading_text, re.I):
+                cohort = scoped = True
             if bullet:
                 start = offset + bullet.start(2)
                 indent = len(bullet[1].expandtabs(4))
