@@ -19,3 +19,11 @@ Hemoglobin accepts `g/dL` and `g/L`. Platelets and absolute neutrophil count (`a
 The parser accepts only a small diagnosis term vocabulary, defined in `parser.py`. This avoids turning arbitrary medical prose, negation or suspected conditions into diagnoses. It deliberately does not map abbreviations or broaden a subtype to a parent disease. Separate inclusion bullets are reported individually; the tool does not assume a trial-wide AND/OR structure or combine them into an eligibility verdict.
 
 API requests have bounded download sizes, timeouts and retries for temporary network/server failures. Access-denied responses fail immediately. A repeated pagination token fails rather than looping indefinitely. Offline reproduction never calls the network. A report with absent criteria text displays an explicit unknown notice rather than a successful check.
+
+## Wording added after the Vancouver snapshot
+
+I widened the grammar by reading the lines it missed in the Vancouver studies, so those studies are now a development set too. Age lines may start with words that cover everyone ("Male and female participants", "Men and women", "Patient is"). A line that names only one sex is left alone so its sex limit isn't dropped. Ranges ("≥ 7% to ≤ 10.5%", "25 - 35 kg/m2", "between 18 and 75 years") are read as inclusive at both ends. A line with two different kinds of limit, like "between more than 18 and ≤ 75 years", still stays unknown because one rule can't hold it.
+
+An HbA1c line sometimes repeats the value in mmol/mol. I only drop that note when it agrees with the percentage under the IFCC conversion (mmol/mol = 10.929 × (% − 2.15)) to within 1 mmol/mol. Otherwise the line stays unknown, since one of the two numbers is wrong and I can't tell which.
+
+A bullet that ends in "or" makes the next bullet an alternative. Neither becomes a rule, because checking them separately would treat "A or B" as "A and B".

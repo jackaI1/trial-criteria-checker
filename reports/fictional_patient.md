@@ -45,7 +45,7 @@ Eligibility text lines: 4 met, 3 not met, 54 unknown. These are not a trial elig
 
 ## Parsing measurement
 
-10 exact rules; 0 incorrect rules; 2 missed reference rules. Precision: 100.0%; recall: 83.3%.
+11 exact rules; 0 incorrect rules; 2 missed reference rules. Precision: 100.0%; recall: 84.6%.
 
 This small development sample is not held out or clinically reviewed. It has no sex reference rules. See [metrics.json](metrics.json) for per-field counts and misses.
 
@@ -113,7 +113,7 @@ Saved status: RECRUITING.
 | maximumAge: 75 Years <br><sub>structured registry field</sub> | age &lt;= 75 years | **met**: age 42, which matches the rule |
 | Able to provide signed and dated written informed consent prior to any study specific procedures <br><sub>inclusion, characters 24:120</sub> | no rule | **unknown**: No supported complete rule |
 | Adult men and women aged between more than 18 and ≤ 75 years <br><sub>inclusion, characters 124:184</sub> | no rule | **unknown**: No supported complete rule |
-| Body mass index (BMI) of 25 - 35 kg/m2 <br><sub>inclusion, characters 188:226</sub> | no rule | **unknown**: No supported complete rule |
+| Body mass index (BMI) of 25 - 35 kg/m2 <br><sub>inclusion, characters 188:226</sub> | bmi 25 to 35 kg/m2 | **unknown**: Missing or invalid lab observation |
 | Stable weight (no weight loss or gain \&gt; 3 kg in the past 3 months) <br><sub>inclusion, characters 230:297</sub> | no rule | **unknown**: No supported complete rule |
 | Pre-diabetes defined as an isolated impaired glucose tolerance or a combination of impaired glucose tolerance and impaired fasting glucose (values are based on the American Diabetes Association (ADA): <br><sub>inclusion, characters 301:501</sub> | no rule | **unknown**: No supported complete rule |
 | impaired glucose tolerance (plasma glucose 140 mg/dL to 199 mg/dL, 120 minutes after consumption of 75g of glucose) <br><sub>inclusion, characters 509:624</sub> | no rule | **unknown**: No supported complete rule |

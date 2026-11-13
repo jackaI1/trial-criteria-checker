@@ -2,7 +2,7 @@
 
 [![Tests and saved reports](https://github.com/jackaI1/trial-criteria-checker/actions/workflows/tests.yml/badge.svg)](https://github.com/jackaI1/trial-criteria-checker/actions/workflows/tests.yml)
 
-I built this because I wanted to understand how software can tell whether a person might fit a clinical trial. Every study on ClinicalTrials.gov lists who can join, but the list is written for people to read: "Adults 18 years of age or older", "HbA1c ≥8% at screening/baseline", "Pregnancy or breastfeeding". This program downloads that text, turns the plain, self-contained lines into rules a computer can check (age, sex, diagnosis and a few lab values), and checks a made-up patient against them. Each rule keeps the exact sentence it came from, so you can always see why it decided what it did.
+I built this because I wanted to understand how software can tell whether a person might fit a clinical trial. Every study on ClinicalTrials.gov lists who can join, but the list is written for people to read: "Adults 18 years of age or older", "HbA1c ≥8% at screening/baseline", "Pregnancy or breastfeeding". This program downloads that text, turns the plain, self-contained lines into rules a computer can check (age, sex, diagnosis and a few lab values and measurements), and checks a made-up patient against them. Each rule keeps the exact sentence it came from, so you can always see why it decided what it did.
 
 The part I cared about most was not guessing. If a line has an exception ("unless approved by the investigator"), a time window, a sub-list or wording the parser doesn't know, it stays unknown and the sentence is shown as is. The program also never says someone is eligible for a whole trial. It answers line by line and leaves the rest for a person to read.
 
@@ -80,11 +80,18 @@ It also uses the age and sex fields the registry stores apart from the text (`mi
 
 ## How far it gets
 
-The five saved studies have 61 criterion lines, and 10 of them became rules. Most of the other 51 are things no simple rule covers, like "Able to provide informed consent" or "Use of an insulin pump or automated insulin delivery system". Some, like "Body mass index (BMI) of 25 - 35 kg/m2", the parser just doesn't handle yet. For the fictional patient that comes to 4 met, 3 not met and 54 unknown.
+The five saved studies have 61 criterion lines, and 11 of them become rules. Most of the other 50 are things no simple rule covers, like "Able to provide informed consent" or "Use of an insulin pump or automated insulin delivery system". For the fictional patient that comes to 4 met, 3 not met and 54 unknown.
 
-To check the rules it does make, I read the five studies myself and wrote down the rules I expected before scoring ([data/labels.json](data/labels.json)). It matched 10 of my 12 exactly and made no wrong ones. The two it missed are both halves of "aged between more than 18 and ≤ 75 years", which it skips because that wording is easy to get wrong. I picked this sample myself and it is small, so it shows that the parser is careful. It doesn't show that it handles most trials.
+To check the rules it does make, I read the five studies myself and wrote down the rules I expected ([data/labels.json](data/labels.json)). It matches 11 of my 13 exactly and makes no wrong ones. The two it misses are both halves of "aged between more than 18 and ≤ 75 years", which it skips because a line with two different limits doesn't fit in one rule yet. I tuned the parser on these studies, so this only shows that it's careful on text it has seen.
 
-The Vancouver studies show how far there is to go. They're mostly large drug and device trials, and their 531 text lines gave only 4 rules. A lot of what's missed is checkable: ranges like "HbA1c value of ≥ 7% to ≤ 10.5%", BMI and ejection fraction limits, kidney function (eGFR), and age lines worded differently, like "Patient is ≥ 18 years of age". The structured fields still give age and sex for every study. Closing that gap without losing the "never guess" part is what I'm working on next.
+The Vancouver studies were much harder. They're mostly large drug and device trials, and at first their 531 text lines gave only 4 rules. I went through the lines it missed and added the checkable ones that kept coming up:
+
+- age written other ways, like "Patient is ≥ 18 years of age" or "Male or female at least 18 years of age", but only when the wording covers everyone ("Women aged 18 years or older" stays unknown, so the sex limit isn't lost)
+- ranges, like "HbA1c value of ≥ 7% to ≤ 10.5%". If a line also gives HbA1c in mmol/mol, the two numbers have to agree before the line is used.
+- BMI, eGFR (kidney function) and left ventricular ejection fraction, with timepoints like "at screening" kept on the rule
+- "Type 1 diabetes mellitus" as the full name of type 1 diabetes, but still no abbreviations like T1DM
+
+I also found a way it could be wrong. When a line ends in "or", the next line is an alternative to it, not a separate requirement, so now neither one becomes a rule. The Vancouver lines give 18 rules now. That's still only 3%, but most of the rest are about treatments, history and the investigator's judgement, which a rule can't check from a record. Because I tuned on these studies too, the real test is studies it has never seen, and that's what I'm measuring next.
 
 ## How it works
 
@@ -100,8 +107,8 @@ The Vancouver studies show how far there is to go. They're mostly large drug and
 
 ## Tests
 
-`python3 -m unittest discover -s tests` runs 37 tests. They cover the parser patterns and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
+`python3 -m unittest discover -s tests` runs 46 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
 
 ## Limits
 
-The diagnosis list is twelve exact terms with no synonyms, so "T2D" doesn't match "type 2 diabetes". Only five lab tests are understood. Inclusion lines are checked one at a time, so a study that means "A or B" shows up as two separate rows. It works on English text from one registry, with made-up patients, and it is not a screening tool.
+The diagnosis list is twelve exact terms with no synonyms, so "T2D" doesn't match "type 2 diabetes". Only eight lab tests and measurements are understood, and limits written relative to a lab's normal range ("ALT ≥ 3.0 × ULN") stay unknown. Time windows like "within 6 months of screening" stay unknown too. Inclusion lines are checked one at a time, so a study that means "A or B" shows up as two separate rows. It works on English text from one registry, with made-up patients, and it is not a screening tool.

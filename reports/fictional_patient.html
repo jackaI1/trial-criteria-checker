@@ -36,14 +36,14 @@
     }
   }
 }</pre></details>
-<h2>Parsing measurement</h2><p>On 5 selected studies: 10 correct rules, 0 incorrect rules, 2 missed reference rules. Precision 100.0%; recall 83.3%.</p>
+<h2>Parsing measurement</h2><p>On 5 selected studies: 11 correct rules, 0 incorrect rules, 2 missed reference rules. Precision 100.0%; recall 84.6%.</p>
 <p>Precision asks how many emitted rules were exact. Recall asks how many labelled rules were found. These measure parsing, not clinical decisions. The sample was labelled by direct reading during development and has no independent clinical review. No sex reference rules occur in this sample.</p>
 <details><summary>Full measurement and misses</summary><pre>{
-  &quot;true_positives&quot;: 10,
+  &quot;true_positives&quot;: 11,
   &quot;false_positives&quot;: 0,
   &quot;false_negatives&quot;: 2,
   &quot;precision&quot;: 1.0,
-  &quot;recall&quot;: 0.8333333333333334,
+  &quot;recall&quot;: 0.8461538461538461,
   &quot;by_field&quot;: {
     &quot;age&quot;: {
       &quot;gold&quot;: 5,
@@ -51,6 +51,13 @@
       &quot;correct&quot;: 3,
       &quot;precision&quot;: 1.0,
       &quot;recall&quot;: 0.6
+    },
+    &quot;bmi&quot;: {
+      &quot;gold&quot;: 1,
+      &quot;predicted&quot;: 1,
+      &quot;correct&quot;: 1,
+      &quot;precision&quot;: 1.0,
+      &quot;recall&quot;: 1.0
     },
     &quot;diagnosis&quot;: {
       &quot;gold&quot;: 5,
@@ -103,9 +110,9 @@
   &quot;incorrect&quot;: [],
   &quot;study_count&quot;: 5,
   &quot;source_sentence_count&quot;: 61,
-  &quot;unparsed_sentence_count&quot;: 51,
-  &quot;gold_rule_count&quot;: 12,
-  &quot;predicted_rule_count&quot;: 10,
+  &quot;unparsed_sentence_count&quot;: 50,
+  &quot;gold_rule_count&quot;: 13,
+  &quot;predicted_rule_count&quot;: 11,
   &quot;method&quot;: &quot;Exact match on study, source offsets, section, field, operator, value, unit and qualifiers. Development sample, not held-out validation.&quot;
 }</pre></details>
 <h2 id="NCT07807280"><a href="https://clinicaltrials.gov/study/NCT07807280">NCT07807280</a>: C-Carbs: A CGM-guided Approach to Teaching Carb Awareness</h2>
@@ -160,7 +167,7 @@
 <tr><td>maximumAge: 75 Years<small>structured registry field</small></td><td><code>age &lt;= 75 years</code><small>Structured registry field</small></td><td class="met"><strong>met</strong><small>age 42, which matches the rule</small></td></tr>
 <tr><td>Able to provide signed and dated written informed consent prior to any study specific procedures<small>inclusion, characters 24:120</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
 <tr><td>Adult men and women aged between more than 18 and ≤ 75 years<small>inclusion, characters 124:184</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
-<tr><td>Body mass index (BMI) of 25 - 35 kg/m2<small>inclusion, characters 188:226</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Body mass index (BMI) of 25 - 35 kg/m2<small>inclusion, characters 188:226</small></td><td><code>bmi 25 to 35 kg/m2</code><small>Supported complete criterion</small></td><td class="unknown"><strong>unknown</strong><small>Missing or invalid lab observation</small></td></tr>
 <tr><td>Stable weight (no weight loss or gain \&gt; 3 kg in the past 3 months)<small>inclusion, characters 230:297</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
 <tr><td>Pre-diabetes defined as an isolated impaired glucose tolerance or a combination of impaired glucose tolerance and impaired fasting glucose (values are based on the American Diabetes Association (ADA):<small>inclusion, characters 301:501</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
 <tr><td>impaired glucose tolerance (plasma glucose 140 mg/dL to 199 mg/dL, 120 minutes after consumption of 75g of glucose)<small>inclusion, characters 509:624</small></td><td><code>no rule</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
