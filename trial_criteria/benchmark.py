@@ -33,6 +33,11 @@ def score(predicted, gold):
 def benchmark(snapshot, labels):
     gold, predicted = [], []
     studies = {s['protocolSection']['identificationModule']['nctId']:s for s in snapshot['studies']}
+    # Every study in the snapshot must be listed, even with no reference rules,
+    # so a wrong rule in an unlabelled study still counts against precision.
+    missing = set(studies) - {sample['nct_id'] for sample in labels['studies']}
+    if missing:
+        raise ValueError('Labels do not cover every study in the snapshot: ' + ', '.join(sorted(missing)))
     sentence_count = unknown_count = 0
     for sample in labels['studies']:
         nct_id = sample['nct_id']
@@ -52,4 +57,4 @@ def benchmark(snapshot, labels):
     return dict(score(predicted,gold),study_count=len(labels['studies']),
                 source_sentence_count=sentence_count,unparsed_sentence_count=unknown_count,
                 gold_rule_count=len(gold),predicted_rule_count=len(predicted),
-                method='Exact match on study, source offsets, section, field, operator, value, unit and qualifiers. Development sample, not held-out validation.')
+                method=labels.get('method', 'Exact match on study, source offsets, section, field, operator, value, unit and qualifiers. Development sample, not held-out validation.'))
