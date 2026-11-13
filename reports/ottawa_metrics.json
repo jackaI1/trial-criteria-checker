@@ -1,0 +1,243 @@
+{
+  "true_positives": 2,
+  "false_positives": 0,
+  "false_negatives": 17,
+  "precision": 1.0,
+  "recall": 0.10526315789473684,
+  "by_field": {
+    "age": {
+      "gold": 8,
+      "predicted": 2,
+      "correct": 2,
+      "precision": 1.0,
+      "recall": 0.25
+    },
+    "diagnosis": {
+      "gold": 10,
+      "predicted": 0,
+      "correct": 0,
+      "precision": null,
+      "recall": 0.0
+    },
+    "lvef": {
+      "gold": 1,
+      "predicted": 0,
+      "correct": 0,
+      "precision": null,
+      "recall": 0.0
+    }
+  },
+  "missed": [
+    {
+      "end": 95,
+      "nct_id": "NCT05427084",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "diabetes"
+      },
+      "section": "inclusion",
+      "start": 83
+    },
+    {
+      "end": 183,
+      "nct_id": "NCT05427084",
+      "rule": {
+        "field": "lvef",
+        "op": "<",
+        "unit": "%",
+        "value": 50.0
+      },
+      "section": "exclusion",
+      "start": 151
+    },
+    {
+      "end": 103,
+      "nct_id": "NCT06462170",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "type 2 diabetes"
+      },
+      "section": "inclusion",
+      "start": 65
+    },
+    {
+      "end": 70,
+      "nct_id": "NCT07059377",
+      "rule": {
+        "field": "age",
+        "op": ">=",
+        "unit": "years",
+        "value": 18.0
+      },
+      "section": "inclusion",
+      "start": 23
+    },
+    {
+      "end": 70,
+      "nct_id": "NCT07059377",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "type 2 diabetes"
+      },
+      "section": "inclusion",
+      "start": 23
+    },
+    {
+      "end": 986,
+      "nct_id": "NCT07059377",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "diabetic ketoacidosis"
+      },
+      "section": "exclusion",
+      "start": 965
+    },
+    {
+      "end": 1004,
+      "nct_id": "NCT07059377",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "type 1 diabetes"
+      },
+      "section": "exclusion",
+      "start": 989
+    },
+    {
+      "end": 1109,
+      "nct_id": "NCT07059377",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "tachyarrhythmia"
+      },
+      "section": "exclusion",
+      "start": 1093
+    },
+    {
+      "end": 131,
+      "nct_id": "NCT06844227",
+      "rule": {
+        "field": "age",
+        "op": ">=",
+        "unit": "years",
+        "value": 18.0
+      },
+      "section": "inclusion",
+      "start": 23
+    },
+    {
+      "end": 219,
+      "nct_id": "NCT02808260",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "atrial fibrillation"
+      },
+      "section": "exclusion",
+      "start": 132
+    },
+    {
+      "end": 460,
+      "nct_id": "NCT02808260",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "congenital heart disease"
+      },
+      "section": "exclusion",
+      "start": 436
+    },
+    {
+      "end": 280,
+      "nct_id": "NCT03397602",
+      "rule": {
+        "field": "age",
+        "op": ">=",
+        "unit": "years",
+        "value": 40.0
+      },
+      "section": "inclusion",
+      "start": 209
+    },
+    {
+      "end": 410,
+      "nct_id": "NCT03397602",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "unstable angina"
+      },
+      "section": "exclusion",
+      "start": 394
+    },
+    {
+      "end": 46,
+      "nct_id": "NCT07002450",
+      "rule": {
+        "field": "age",
+        "op": ">=",
+        "unit": "years",
+        "value": 18.0
+      },
+      "section": "inclusion",
+      "start": 24
+    },
+    {
+      "end": 685,
+      "nct_id": "NCT03103932",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "cardiogenic shock"
+      },
+      "section": "exclusion",
+      "start": 657
+    },
+    {
+      "end": 38,
+      "nct_id": "NCT06601465",
+      "rule": {
+        "field": "age",
+        "op": ">=",
+        "unit": "years",
+        "value": 18.0
+      },
+      "section": "inclusion",
+      "start": 24
+    },
+    {
+      "end": 92,
+      "nct_id": "NCT03999138",
+      "rule": {
+        "field": "age",
+        "op": ">=",
+        "unit": "years",
+        "value": 18.0
+      },
+      "section": "inclusion",
+      "start": 23
+    }
+  ],
+  "incorrect": [],
+  "study_count": 12,
+  "source_sentence_count": 125,
+  "unparsed_sentence_count": 123,
+  "gold_rule_count": 19,
+  "predicted_rule_count": 2,
+  "method": "Held-out set: exact match on study, source offsets, section, field, operator, value, unit and qualifiers. The parser was not changed after these studies were fetched."
+}

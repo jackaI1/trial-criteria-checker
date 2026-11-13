@@ -110,7 +110,7 @@ The page shows a text box, but it's switched off. Reading free text needs an AI 
 
 ## How far it gets
 
-Short version: on 17 Montreal studies it had never seen, it made 12 rules, 10 of them right, and found 10 of the 24 rules a person would pull out. Everything else stays unknown. The rest of this section is how I got there and what it still misses.
+Short version: I scored it three times on studies it had never seen, fixing the misses in between. It found 3 of 16 rules a person would pull out on Toronto, 10 of 24 on Montreal and 2 of 19 on Ottawa, and made 2 wrong ones in all (a cohort problem, since fixed). So it's careful, but it misses most rules, mainly because every new set of trials words things differently. Everything it can't read stays unknown. The rest of this section is the detail.
 
 The five saved studies have 61 criterion lines, and 11 of them become rules. Most of the other 50 are things no simple rule covers, like "Able to provide informed consent" or "Use of an insulin pump or automated insulin delivery system". For the fictional patient that comes to 4 met, 3 not met and 54 unknown.
 
@@ -162,6 +162,16 @@ The 2 wrong ones are the same line, ">18 years of age.", in a study split into t
 
 I fixed most of these too, so Montreal is practice data now. The parser skips list markers like "(ii)", reads "Index participant", "Participants of any sex and gender" and "Males & females (inclusive of all gender identities)" as wording that covers everyone, reads "Women" as a sex limit and "ejection fraction" on its own as the left ventricle's, and drops words that don't narrow a diagnosis, like "(documented on Holter, rhythm strip, or ECG)" or "of any etiology". Permanent atrial fibrillation, rheumatic heart disease and infiltrative cardiomyopathy are in the vocabulary. It also handles the cohort problem: once a line like "REAL AF Cohort" appears, every later section is treated as cohort-specific. On Montreal it now gets 22 of 24 with no wrong rules; the two left are the "≥ 18 to < 75" line, which needs two rules on one line. The next fair score needs another city.
 
+The third fair score was Ottawa: the first four recruiting studies per condition with an Ottawa site that weren't in any earlier set (12 studies, 125 lines, [data/ottawa.json](data/ottawa.json)), labelled and committed before scoring ([data/ottawa_labels.json](data/ottawa_labels.json)). Ottawa had no new lupus or rheumatoid arthritis trials. A person would pull out 19 rules. The parser made 2, both right, and missed 17 ([reports/ottawa_metrics.json](reports/ottawa_metrics.json)):
+
+| Why it missed | Rules |
+| --- | --- |
+| Wording it hadn't seen around something it knows ("2\) Diabetes", "Diagnosed as", "Type I diabetes", "Clinical atrial fibrillation documented by", "(i.e. ...)", "; and", "Adult patients", "severe LV dysfunction (EF<50%)") | 8 |
+| Condition not in the vocabulary (diabetic ketoacidosis, tachyarrhythmia, congenital heart disease, unstable angina, cardiogenic shock) | 5 |
+| Two things on one line ("Adults (18 years or older) with type 2 diabetes", or an age plus consent or AF) | 4 |
+
+That's lower than Montreal, and it says something useful. Three rounds of fixes haven't converged, because each city brings wording the last one didn't have, and a hand-made vocabulary will always be missing conditions. Patterns are good at the part they do well, never making up a rule, but they won't reach most of the rules. The next step I'd take is letting an AI model propose each rule along with the exact text it came from, and keeping this code as the check: the quote has to be in the trial, the numbers and units have to match it, and anything that doesn't check out stays unknown. These four labelled sets are what I'd measure that against.
+
 ## How it works
 
 1. **Fetch.** [`api.py`](trial_criteria/api.py) asks the [ClinicalTrials.gov v2 API](https://clinicaltrials.gov/data-api/api) (the public service behind the website) for recruiting studies. It saves the IDs, titles, status and eligibility fields with the exact request URL and the time, and drops contact details.
@@ -177,7 +187,7 @@ I fixed most of these too, so Montreal is practice data now. The parser skips li
 
 ## Tests
 
-`python3 -m unittest discover -s tests` runs 57 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the questions and answers (an answer never overrides the record), the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the Toronto and Montreal scores so they can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code. A second job runs `node --test tests/js/*.test.mjs` (13 tests for the demo's matching logic and the typing worker, with a fake model) and `python3 scripts/build_demo.py --check`.
+`python3 -m unittest discover -s tests` runs 58 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the questions and answers (an answer never overrides the record), the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the Toronto, Montreal and Ottawa scores so they can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code. A second job runs `node --test tests/js/*.test.mjs` (13 tests for the demo's matching logic and the typing worker, with a fake model) and `python3 scripts/build_demo.py --check`.
 
 ## Limits
 

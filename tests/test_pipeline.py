@@ -129,6 +129,13 @@ class ReportTests(unittest.TestCase):
         # Held out for the second score (10 correct, 2 wrong, 14 missed). I then fixed those misses.
         self.assertEqual((result['true_positives'], result['false_positives'], result['false_negatives']), (22, 0, 2))
 
+    def test_ottawa_held_out_score(self):
+        from trial_criteria.benchmark import benchmark
+        result = benchmark(json.loads(Path('data/ottawa.json').read_text()),
+                           json.loads(Path('data/ottawa_labels.json').read_text()))
+        self.assertEqual((result['study_count'], result['gold_rule_count']), (12, 19))
+        self.assertEqual((result['true_positives'], result['false_positives'], result['false_negatives']), (2, 0, 17))
+
     def test_empty_benchmark_renders_undefined_metrics(self):
         report = {'warning':'Fictional', 'retrieved_at':'saved', 'counts':{}, 'patient':{'fictional':True},
                   'studies':[], 'benchmark':dict(score([],[]),study_count=0)}
