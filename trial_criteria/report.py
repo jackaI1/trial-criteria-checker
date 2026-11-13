@@ -3,6 +3,7 @@ import html
 import json
 import re
 from collections import Counter
+from .answers import apply_answers
 from .evaluate import evaluate
 from .match import condition_matches, open_questions, structured_rows
 from .parser import parse_criteria
@@ -52,13 +53,21 @@ def build_report(snapshot, patient, provenance=None):
                 retrieved_at=snapshot['retrieved_at'], requests=snapshot.get('requests', []), warning=WARNING)
 
 
-def build_match_report(snapshot, patient, provenance=None):
+def build_match_report(snapshot, patient, provenance=None, answers=None):
     """Check a patient only against studies whose MeSH conditions include one of their diagnoses.
 
     Studies are listed with the fewest not-met lines first, then the most met lines.
-    That ordering is for reading, not a ranking of eligibility.
+    That ordering is for reading, not a ranking of eligibility. With answers, the
+    report is for the record plus the answers, and keeps the counts from before.
     """
     _check_fictional(patient)
+    if answers is not None:
+        before = build_match_report(snapshot, patient, provenance)
+        patient, notes = apply_answers(patient, answers)
+        after = build_match_report(snapshot, patient, provenance)
+        after['answers'] = dict(notes, before=dict(counts=before['counts'], structured_counts=before['structured_counts'],
+                                                     open_questions=len([q for q in before['open_questions'] if q['answerable']])))
+        return after
     diagnoses = patient.get('diagnoses') if isinstance(patient.get('diagnoses'), list) else []
     studies = []
     for study in snapshot['studies']:
@@ -138,7 +147,21 @@ def _summary_lines(report):
                      f"{search['matched_studies']} list one of the patient's diagnoses ({diagnoses}) in their MeSH conditions.")
     lines.append('Structured age and sex fields: ' + describe_counts(report.get('structured_counts', {})) + '.')
     lines.append('Eligibility text lines: ' + describe_counts(report['counts']) + '. These are not a trial eligibility decision.')
+    if report.get('answers'):
+        before = report['answers']['before']['counts']
+        settled = before.get('unknown', 0) - report['counts'].get('unknown', 0)
+        lines.append(f"With the answers below added to the record, {settled} more text {'line is' if settled == 1 else 'lines are'} settled "
+                     f"(before: {describe_counts(before)}).")
     return lines
+
+
+def _question_lines(report):
+    """(answerable, measured by the study) as plain strings."""
+    def text(q):
+        where = f"{q['lines']} {'line' if q['lines'] == 1 else 'lines'} in {len(q['studies'])} {'study' if len(q['studies']) == 1 else 'studies'}"
+        return f"{q['question']} ({where})"
+    qs = report.get('open_questions') or []
+    return [text(q) for q in qs if q['answerable']], [text(q) for q in qs if not q['answerable']]
 
 
 def render_html(report):
@@ -164,10 +187,16 @@ def render_html(report):
                       + esc(', '.join(m['mesh_term'] for m in s['matched_on']))+'</td><td>'+esc(_sites(s))+'</td><td>'
                       + esc(describe_counts(s['structured_counts']))+'</td><td>'+esc(describe_counts(s['counts']))+'</td></tr>']
         parts += ['</tbody></table></div>']
-        if report.get('open_questions'):
-            parts += ['<h2>What would settle more lines</h2><p>These parsed lines are unknown only because the record is missing something:</p><ul>']
-            parts += ['<li>'+esc(q['question'])+' ('+str(q['lines'])+' '+('line' if q['lines'] == 1 else 'lines')+')</li>' for q in report['open_questions']]
-            parts += ['</ul>']
+        ask, measured = _question_lines(report)
+        if ask:
+            parts += ['<h2>Questions that would settle more lines</h2><p>These parsed lines are unknown only because the record is missing something the patient could answer:</p><ul>']
+            parts += ['<li>'+esc(q)+'</li>' for q in ask] + ['</ul>']
+        if measured:
+            parts += ['<h2>Measured by the study</h2><ul>'] + ['<li>'+esc(q)+'</li>' for q in measured] + ['</ul>']
+        if report.get('answers'):
+            parts += ['<h2>Answers added</h2><ul>'] + ['<li>'+esc(n)+'</li>' for n in report['answers']['used']] + ['</ul>']
+            if report['answers']['skipped']:
+                parts += ['<p>Not used:</p><ul>'] + ['<li>'+esc(n)+'</li>' for n in report['answers']['skipped']] + ['</ul>']
     if 'benchmark' in report:
         b = report['benchmark']
         pct = lambda v: 'undefined' if v is None else f'{v:.1%}'
@@ -211,10 +240,17 @@ def render_markdown(report):
                       + ' | '+esc(', '.join(m['mesh_term'] for m in s['matched_on']))+' | '+esc(_sites(s))
                       + ' | '+esc(describe_counts(s['structured_counts']))+' | '+esc(describe_counts(s['counts']))+' |']
         parts += ['']
-        if report.get('open_questions'):
-            parts += ['## What would settle more lines', '', 'These parsed lines are unknown only because the record is missing something:', '']
-            parts += ['- '+esc(q['question'])+' ('+str(q['lines'])+' '+('line' if q['lines'] == 1 else 'lines')+')' for q in report['open_questions']]
-            parts += ['']
+        ask, measured = _question_lines(report)
+        if ask:
+            parts += ['## Questions that would settle more lines', '',
+                      'These parsed lines are unknown only because the record is missing something the patient could answer:', '']
+            parts += ['- '+esc(q) for q in ask] + ['']
+        if measured:
+            parts += ['## Measured by the study', ''] + ['- '+esc(q) for q in measured] + ['']
+        if report.get('answers'):
+            parts += ['## Answers added', ''] + ['- '+esc(n) for n in report['answers']['used']] + ['']
+            if report['answers']['skipped']:
+                parts += ['Not used:', ''] + ['- '+esc(n) for n in report['answers']['skipped']] + ['']
     if 'benchmark' in report:
         b = report['benchmark']
         pct = lambda v: 'undefined' if v is None else f'{v:.1%}'

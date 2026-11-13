@@ -1403,12 +1403,27 @@
   },
   "open_questions": [
     {
-      "question": "bmi result taken at screening",
-      "lines": 2
+      "key": "diagnosis:type 1 diabetes",
+      "field": "diagnosis",
+      "value": "type 1 diabetes",
+      "answerable": true,
+      "question": "Have you been diagnosed with type 1 diabetes?",
+      "lines": 1,
+      "studies": [
+        "NCT07776509"
+      ]
     },
     {
-      "question": "Do they have type 1 diabetes?",
-      "lines": 1
+      "key": "bmi@screening",
+      "field": "bmi",
+      "value": "screening",
+      "answerable": false,
+      "question": "BMI at screening. The study measures this itself.",
+      "lines": 2,
+      "studies": [
+        "NCT07662213",
+        "NCT07664553"
+      ]
     }
   ],
   "retrieved_at": "2026-11-13T07:47:33.686939+00:00",

@@ -44,6 +44,11 @@ def main():
         nearby = build_match_report(vancouver,record,notes)
         base = 'reports/vancouver/'+bundle.stem
         outputs.update({base+'.json':dump(nearby), base+'.html':render_html(nearby), base+'.md':render_markdown(nearby)})
+        answers = Path('examples/answers')/bundle.name
+        if answers.exists():
+            answered = build_match_report(vancouver,record,notes,read(answers))
+            base += '-with-answers'
+            outputs.update({base+'.json':dump(answered), base+'.html':render_html(answered), base+'.md':render_markdown(answered)})
     for name, content in outputs.items():
         if args.check:
             if not Path(name).exists() or Path(name).read_text(encoding='utf-8') != content:

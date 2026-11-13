@@ -27,10 +27,17 @@ def evaluate(row, patient):
     value = patient.get(field)
     if field == 'diagnosis':
         terms = patient.get('diagnoses')
+        ruled_out = patient.get('ruled_out', [])
         if not isinstance(terms, list) or any(not isinstance(t, str) for t in terms):
             return result('unknown', 'No valid diagnosis term list')
+        if not isinstance(ruled_out, list) or any(not isinstance(t, str) for t in ruled_out):
+            return result('unknown', 'No valid ruled-out list')
+        said_no = {t.lower().strip() for t in ruled_out}
         matched = rule['value'] in {t.lower().strip() for t in terms}
-        if not matched and patient.get('diagnoses_complete') is not True:
+        if matched and rule['value'] in said_no:
+            return result('unknown', 'Diagnosis is both listed and ruled out')
+        # A diagnosis the patient has said they don't have is evidence of absence for that one term only.
+        if not matched and rule['value'] not in said_no and patient.get('diagnoses_complete') is not True:
             return result('unknown', 'Missing diagnosis is not evidence of absence')
     elif field == 'sex':
         if not isinstance(value, str) or value.lower() not in ('male', 'female'):
@@ -70,7 +77,8 @@ def evaluate(row, patient):
             matched = value == threshold
     acceptable = matched if row['section'] == 'inclusion' else not matched
     if field == 'diagnosis':
-        evidence = 'diagnosis listed' if matched else 'not in a diagnosis list marked complete'
+        evidence = ('diagnosis listed' if matched else 'patient said they do not have it'
+                    if rule['value'] in said_no else 'not in a diagnosis list marked complete')
     elif field == 'sex':
         evidence = 'sex is ' + value.lower()
     elif field in LAB_UNITS:
