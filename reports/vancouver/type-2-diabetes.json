@@ -100,6 +100,224 @@
   },
   "studies": [
     {
+      "nct_id": "NCT07784270",
+      "title": "A Study to Evaluate Effect of AZD6234 in Adult Participants With Type 2 Diabetes Mellitus and Obesity or Overweight",
+      "url": "https://clinicaltrials.gov/study/NCT07784270",
+      "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 18 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 58, which matches the rule"
+        }
+      ],
+      "criteria": [
+        {
+          "sentence": "Males \\& females (inclusive of all gender identities) age ≥18 years",
+          "start": 23,
+          "end": 90,
+          "section": "inclusion",
+          "context": "Males \\& females (inclusive of all gender identities) age ≥18 years",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "parse_reason": "Supported complete criterion",
+          "status": "met",
+          "evaluation_reason": "age 58, which matches the rule"
+        },
+        {
+          "sentence": "BMI ≥27 kg/m2",
+          "start": 93,
+          "end": 106,
+          "section": "inclusion",
+          "context": "BMI ≥27 kg/m2",
+          "rule": {
+            "field": "bmi",
+            "op": ">=",
+            "value": 27.0,
+            "unit": "kg/m2"
+          },
+          "parse_reason": "Supported complete criterion",
+          "status": "met",
+          "evaluation_reason": "bmi 31.4 kg/m2, which matches the rule"
+        },
+        {
+          "sentence": "Diagnosed with T2DM ≥90 days prior to Screening",
+          "start": 109,
+          "end": 156,
+          "section": "inclusion",
+          "context": "Diagnosed with T2DM ≥90 days prior to Screening",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "HbA1c value at Screening of ≥6.0% (42 mmol/mol) and ≤10% (86 mmol/mol) managed with diet and exercise alone or with a stable dose of any oral glycaemic-lowering agent (as per local labelling)",
+          "start": 159,
+          "end": 350,
+          "section": "inclusion",
+          "context": "HbA1c value at Screening of ≥6.0% (42 mmol/mol) and ≤10% (86 mmol/mol) managed with diet and exercise alone or with a stable dose of any oral glycaemic-lowering agent (as per local labelling)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Stable body weight (≤5% body weight change) for at least 3 months prior to Randomisation",
+          "start": 353,
+          "end": 441,
+          "section": "inclusion",
+          "context": "Stable body weight (≤5% body weight change) for at least 3 months prior to Randomisation",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "History of at least one self-reported unsuccessful attempt to lose body weight in lifetime",
+          "start": 444,
+          "end": 534,
+          "section": "inclusion",
+          "context": "History of at least one self-reported unsuccessful attempt to lose body weight in lifetime",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Obesity primarily caused by other endocrine disorders",
+          "start": 559,
+          "end": 612,
+          "section": "exclusion",
+          "context": "Obesity primarily caused by other endocrine disorders",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Type 1 diabetes mellitus (or any other diabetes mellitus that is not clearly Type 2 diabetes), OR have history of ketoacidosis or hyperosmolar coma/state within 3 months prior to Screening",
+          "start": 615,
+          "end": 803,
+          "section": "exclusion",
+          "context": "Type 1 diabetes mellitus (or any other diabetes mellitus that is not clearly Type 2 diabetes), OR have history of ketoacidosis or hyperosmolar coma/state within 3 months prior to Screening",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Significant hepatobiliary disease and/or any of the following results at Screening:",
+          "start": 806,
+          "end": 889,
+          "section": "exclusion",
+          "context": "Significant hepatobiliary disease and/or any of the following results at Screening:\n\n  * ALT ≥ 3.0 X ULN\n  * AST ≥ 3.0 X ULN\n  * TBL \\> 1.5 X ULN (except for cases of known Gilbert's Syndrome)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "ALT ≥ 3.0 X ULN",
+          "start": 895,
+          "end": 910,
+          "section": "exclusion",
+          "context": "ALT ≥ 3.0 X ULN",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "AST ≥ 3.0 X ULN",
+          "start": 915,
+          "end": 930,
+          "section": "exclusion",
+          "context": "AST ≥ 3.0 X ULN",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "TBL \\> 1.5 X ULN (except for cases of known Gilbert's Syndrome)",
+          "start": 935,
+          "end": 998,
+          "section": "exclusion",
+          "context": "TBL \\> 1.5 X ULN (except for cases of known Gilbert's Syndrome)",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Has received treatment with a GLP-1 receptor agonist or GLP-1 containing medication for any indication within 3 months before Randomisation",
+          "start": 1001,
+          "end": 1140,
+          "section": "exclusion",
+          "context": "Has received treatment with a GLP-1 receptor agonist or GLP-1 containing medication for any indication within 3 months before Randomisation",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Use of insulin therapy for T2DM within 3 months prior to screening",
+          "start": 1143,
+          "end": 1209,
+          "section": "exclusion",
+          "context": "Use of insulin therapy for T2DM within 3 months prior to screening",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        }
+      ],
+      "missing_criteria": false,
+      "sites": [
+        {
+          "facility": "Research Site",
+          "city": "Vancouver",
+          "state": "British Columbia",
+          "country": "Canada",
+          "status": "RECRUITING"
+        }
+      ],
+      "matched_on": [
+        {
+          "diagnosis": "type 2 diabetes",
+          "mesh_id": "D003924",
+          "mesh_term": "Diabetes Mellitus, Type 2"
+        }
+      ],
+      "counts": {
+        "met": 2,
+        "not met": 0,
+        "unknown": 12
+      },
+      "structured_counts": {
+        "met": 1,
+        "not met": 0,
+        "unknown": 0
+      }
+    },
+    {
       "nct_id": "NCT07351058",
       "title": "A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight and Type 2 Diabetes",
       "url": "https://clinicaltrials.gov/study/NCT07351058",
@@ -746,219 +964,6 @@
       }
     },
     {
-      "nct_id": "NCT07784270",
-      "title": "A Study to Evaluate Effect of AZD6234 in Adult Participants With Type 2 Diabetes Mellitus and Obesity or Overweight",
-      "url": "https://clinicaltrials.gov/study/NCT07784270",
-      "status": "RECRUITING",
-      "structured": [
-        {
-          "sentence": "minimumAge: 18 Years",
-          "start": null,
-          "end": null,
-          "section": "inclusion",
-          "context": "Structured field minimumAge",
-          "rule": {
-            "field": "age",
-            "op": ">=",
-            "value": 18.0,
-            "unit": "years"
-          },
-          "source": "structured",
-          "parse_reason": "Structured registry field",
-          "status": "met",
-          "evaluation_reason": "age 58, which matches the rule"
-        }
-      ],
-      "criteria": [
-        {
-          "sentence": "Males \\& females (inclusive of all gender identities) age ≥18 years",
-          "start": 23,
-          "end": 90,
-          "section": "inclusion",
-          "context": "Males \\& females (inclusive of all gender identities) age ≥18 years",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "BMI ≥27 kg/m2",
-          "start": 93,
-          "end": 106,
-          "section": "inclusion",
-          "context": "BMI ≥27 kg/m2",
-          "rule": {
-            "field": "bmi",
-            "op": ">=",
-            "value": 27.0,
-            "unit": "kg/m2"
-          },
-          "parse_reason": "Supported complete criterion",
-          "status": "met",
-          "evaluation_reason": "bmi 31.4 kg/m2, which matches the rule"
-        },
-        {
-          "sentence": "Diagnosed with T2DM ≥90 days prior to Screening",
-          "start": 109,
-          "end": 156,
-          "section": "inclusion",
-          "context": "Diagnosed with T2DM ≥90 days prior to Screening",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "HbA1c value at Screening of ≥6.0% (42 mmol/mol) and ≤10% (86 mmol/mol) managed with diet and exercise alone or with a stable dose of any oral glycaemic-lowering agent (as per local labelling)",
-          "start": 159,
-          "end": 350,
-          "section": "inclusion",
-          "context": "HbA1c value at Screening of ≥6.0% (42 mmol/mol) and ≤10% (86 mmol/mol) managed with diet and exercise alone or with a stable dose of any oral glycaemic-lowering agent (as per local labelling)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Stable body weight (≤5% body weight change) for at least 3 months prior to Randomisation",
-          "start": 353,
-          "end": 441,
-          "section": "inclusion",
-          "context": "Stable body weight (≤5% body weight change) for at least 3 months prior to Randomisation",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "History of at least one self-reported unsuccessful attempt to lose body weight in lifetime",
-          "start": 444,
-          "end": 534,
-          "section": "inclusion",
-          "context": "History of at least one self-reported unsuccessful attempt to lose body weight in lifetime",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Obesity primarily caused by other endocrine disorders",
-          "start": 559,
-          "end": 612,
-          "section": "exclusion",
-          "context": "Obesity primarily caused by other endocrine disorders",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Type 1 diabetes mellitus (or any other diabetes mellitus that is not clearly Type 2 diabetes), OR have history of ketoacidosis or hyperosmolar coma/state within 3 months prior to Screening",
-          "start": 615,
-          "end": 803,
-          "section": "exclusion",
-          "context": "Type 1 diabetes mellitus (or any other diabetes mellitus that is not clearly Type 2 diabetes), OR have history of ketoacidosis or hyperosmolar coma/state within 3 months prior to Screening",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Significant hepatobiliary disease and/or any of the following results at Screening:",
-          "start": 806,
-          "end": 889,
-          "section": "exclusion",
-          "context": "Significant hepatobiliary disease and/or any of the following results at Screening:\n\n  * ALT ≥ 3.0 X ULN\n  * AST ≥ 3.0 X ULN\n  * TBL \\> 1.5 X ULN (except for cases of known Gilbert's Syndrome)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "ALT ≥ 3.0 X ULN",
-          "start": 895,
-          "end": 910,
-          "section": "exclusion",
-          "context": "ALT ≥ 3.0 X ULN",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "AST ≥ 3.0 X ULN",
-          "start": 915,
-          "end": 930,
-          "section": "exclusion",
-          "context": "AST ≥ 3.0 X ULN",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "TBL \\> 1.5 X ULN (except for cases of known Gilbert's Syndrome)",
-          "start": 935,
-          "end": 998,
-          "section": "exclusion",
-          "context": "TBL \\> 1.5 X ULN (except for cases of known Gilbert's Syndrome)",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Has received treatment with a GLP-1 receptor agonist or GLP-1 containing medication for any indication within 3 months before Randomisation",
-          "start": 1001,
-          "end": 1140,
-          "section": "exclusion",
-          "context": "Has received treatment with a GLP-1 receptor agonist or GLP-1 containing medication for any indication within 3 months before Randomisation",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        },
-        {
-          "sentence": "Use of insulin therapy for T2DM within 3 months prior to screening",
-          "start": 1143,
-          "end": 1209,
-          "section": "exclusion",
-          "context": "Use of insulin therapy for T2DM within 3 months prior to screening",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
-        }
-      ],
-      "missing_criteria": false,
-      "sites": [
-        {
-          "facility": "Research Site",
-          "city": "Vancouver",
-          "state": "British Columbia",
-          "country": "Canada",
-          "status": "RECRUITING"
-        }
-      ],
-      "matched_on": [
-        {
-          "diagnosis": "type 2 diabetes",
-          "mesh_id": "D003924",
-          "mesh_term": "Diabetes Mellitus, Type 2"
-        }
-      ],
-      "counts": {
-        "met": 1,
-        "not met": 0,
-        "unknown": 13
-      },
-      "structured_counts": {
-        "met": 1,
-        "not met": 0,
-        "unknown": 0
-      }
-    },
-    {
       "nct_id": "NCT07776509",
       "title": "A Study to Evaluate Effect of AZD6234 as an Adjunct to Incretin-based Therapies in Adult Participants With Obesity or Overweight With Weight-related Comorbidity With or Without Type 2 Diabetes Mellitus",
       "url": "https://clinicaltrials.gov/study/NCT07776509",
@@ -989,10 +994,15 @@
           "end": 90,
           "section": "inclusion",
           "context": "Males \\& females (inclusive of all gender identities) age ≥18 years",
-          "rule": null,
-          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
-          "status": "unknown",
-          "evaluation_reason": "No supported complete rule"
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 18.0,
+            "unit": "years"
+          },
+          "parse_reason": "Supported complete criterion",
+          "status": "met",
+          "evaluation_reason": "age 58, which matches the rule"
         },
         {
           "sentence": "BMI ≥ 30 kg/m2 OR BMI ≥ 27 kg/m2 with at least one of the following weight-related comorbidities (treated or untreated): hypertension, dyslipidaemia, obstructive sleep apnoea, cardiovascular disease, heart failure, chronic kidney disease, metabolic dysfunction associated steatotic liver disease, osteoarthritis of the knee, or stress urinary incontinence",
@@ -1172,9 +1182,9 @@
         }
       ],
       "counts": {
-        "met": 0,
+        "met": 1,
         "not met": 0,
-        "unknown": 15
+        "unknown": 14
       },
       "structured_counts": {
         "met": 1,
@@ -1392,9 +1402,9 @@
     }
   ],
   "counts": {
-    "met": 4,
+    "met": 6,
     "not met": 0,
-    "unknown": 80
+    "unknown": 78
   },
   "structured_counts": {
     "met": 6,

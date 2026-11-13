@@ -58,7 +58,7 @@ def main():
             Path(name).write_text(content,encoding='utf-8')
     print(json.dumps({k:metrics[k] for k in ('study_count','source_sentence_count','gold_rule_count',
           'true_positives','false_positives','false_negatives','precision','recall')},indent=2))
-    print('Montreal (held out): '+json.dumps({k:montreal[k] for k in ('study_count','gold_rule_count','true_positives','false_positives','false_negatives')}))
+    print('Montreal: '+json.dumps({k:montreal[k] for k in ('study_count','gold_rule_count','true_positives','false_positives','false_negatives')}))
     print('Toronto: '+json.dumps({k:heldout[k] for k in ('study_count','gold_rule_count','true_positives','false_positives','false_negatives')}))
     print('Fictional outcomes: '+json.dumps(report['counts']))
     print('Saved outputs '+('match' if args.check else 'rebuilt'))

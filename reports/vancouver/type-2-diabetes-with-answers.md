@@ -8,9 +8,9 @@ Saved snapshot: 27 recruiting studies with a recruiting site in this city (16 mo
 
 Structured age and sex fields: 6 met, 0 not met, 0 unknown.
 
-Eligibility text lines: 5 met, 0 not met, 79 unknown. These are not a trial eligibility decision.
+Eligibility text lines: 7 met, 0 not met, 77 unknown. These are not a trial eligibility decision.
 
-With the answers below added to the record, 1 more text line is settled (before: 4 met, 0 not met, 80 unknown).
+With the answers below added to the record, 1 more text line is settled (before: 6 met, 0 not met, 78 unknown).
 
 ## Fictional input
 
@@ -75,11 +75,11 @@ Skipped:
 
 | Study | Matched on | Recruiting sites here | Structured fields | Text lines |
 | --- | --- | --- | --- | --- |
+| [NCT07776509](https://clinicaltrials.gov/study/NCT07776509): A Study to Evaluate Effect of AZD6234 as an Adjunct to Incretin-based Therapies in Adult Participants With Obesity or Overweight With Weight-related Comorbidity With or Without Type 2 Diabetes Mellitus | Diabetes Mellitus, Type 2 | Research Site, Vancouver | 1 met, 0 not met, 0 unknown | 2 met, 0 not met, 13 unknown |
+| [NCT07784270](https://clinicaltrials.gov/study/NCT07784270): A Study to Evaluate Effect of AZD6234 in Adult Participants With Type 2 Diabetes Mellitus and Obesity or Overweight | Diabetes Mellitus, Type 2 | Research Site, Vancouver | 1 met, 0 not met, 0 unknown | 2 met, 0 not met, 12 unknown |
 | [NCT07351058](https://clinicaltrials.gov/study/NCT07351058): A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight and Type 2 Diabetes | Diabetes Mellitus, Type 2 | TGElliott Inc. dba BC Diabetes, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 15 unknown |
 | [NCT07662213](https://clinicaltrials.gov/study/NCT07662213): A Study to Find Out if the Study Drug Elecoglipron Helps Adults With Type 2 Diabetes Mellitus by Comparing it With Semaglutide, a Medicine Already Used to Treat Type 2 Diabetes Mellitus | Diabetes Mellitus, Type 2 | Research Site, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 12 unknown |
 | [NCT07664553](https://clinicaltrials.gov/study/NCT07664553): A Phase III Study to Investigate the Efficacy and Safety of Elecoglipron Compared With Placebo in Adults With Type 2 Diabetes Mellitus on Background Insulin | Diabetes Mellitus, Type 2 | Research Site, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 11 unknown |
-| [NCT07776509](https://clinicaltrials.gov/study/NCT07776509): A Study to Evaluate Effect of AZD6234 as an Adjunct to Incretin-based Therapies in Adult Participants With Obesity or Overweight With Weight-related Comorbidity With or Without Type 2 Diabetes Mellitus | Diabetes Mellitus, Type 2 | Research Site, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 14 unknown |
-| [NCT07784270](https://clinicaltrials.gov/study/NCT07784270): A Study to Evaluate Effect of AZD6234 in Adult Participants With Type 2 Diabetes Mellitus and Obesity or Overweight | Diabetes Mellitus, Type 2 | Research Site, Vancouver | 1 met, 0 not met, 0 unknown | 1 met, 0 not met, 13 unknown |
 | [NCT07866066](https://clinicaltrials.gov/study/NCT07866066): Maridebart Cafraglutide Versus Semaglutide in Participants With Type 2 Diabetes | Diabetes Mellitus, Type 2 | Dr T G Elliott Incorporated - BC Diabetes, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 14 unknown |
 
 ## Measured by the study
@@ -93,6 +93,51 @@ Skipped:
 Not used:
 
 - age: the record already says 58
+
+## [NCT07776509](https://clinicaltrials.gov/study/NCT07776509): A Study to Evaluate Effect of AZD6234 as an Adjunct to Incretin-based Therapies in Adult Participants With Obesity or Overweight With Weight-related Comorbidity With or Without Type 2 Diabetes Mellitus
+
+Saved status: RECRUITING.
+
+| Source | Rule | Result |
+| --- | --- | --- |
+| minimumAge: 18 Years <br><sub>structured registry field</sub> | age &gt;= 18 years | **met**: age 58, which matches the rule |
+| Males \&amp; females (inclusive of all gender identities) age ≥18 years <br><sub>inclusion, characters 23:90</sub> | age &gt;= 18 years | **met**: age 58, which matches the rule |
+| BMI ≥ 30 kg/m2 OR BMI ≥ 27 kg/m2 with at least one of the following weight-related comorbidities (treated or untreated): hypertension, dyslipidaemia, obstructive sleep apnoea, cardiovascular disease, heart failure, chronic kidney disease, metabolic dysfunction associated steatotic liver disease, osteoarthritis of the knee, or stress urinary incontinence <br><sub>inclusion, characters 93:448</sub> | no rule | **unknown**: No supported complete rule |
+| For participants with T2DM only: <br><sub>inclusion, characters 451:483</sub> | no rule | **unknown**: No supported complete rule |
+| Diagnosed with T2DM ≥ 90 days prior to Screening <br><sub>inclusion, characters 489:537</sub> | no rule | **unknown**: No supported complete rule |
+| HbA1c value at Screening of ≥6.0% (42 mmol/mol) and ≤9.0% (75 mmol/mol) managed with diet and exercise alone or with a stable dose of any oral glycaemic-lowering agent and/or incretin-based medication <br><sub>inclusion, characters 542:742</sub> | no rule | **unknown**: No supported complete rule |
+| Receiving a stable dose of incretin- based medications at a dose level that is sufficient for chronic weight management for at least 3 months prior to Screening and Randomisation. <br><sub>inclusion, characters 745:924</sub> | no rule | **unknown**: No supported complete rule |
+| Stable body weight (≤ 3% body weight change) for at least 3 months prior to Randomisation <br><sub>inclusion, characters 927:1016</sub> | no rule | **unknown**: No supported complete rule |
+| History of at least one self-reported unsuccessful attempt to lose body weight in their lifetime <br><sub>inclusion, characters 1019:1115</sub> | no rule | **unknown**: No supported complete rule |
+| Obesity primarily caused by other endocrine disorders <br><sub>exclusion, characters 1140:1193</sub> | no rule | **unknown**: No supported complete rule |
+| Type 1 diabetes mellitus <br><sub>exclusion, characters 1196:1220</sub> | diagnosis contains type 1 diabetes | **met**: patient said they do not have it, which does not match the rule. This is an exclusion, so the result is flipped |
+| Significant hepatobiliary disease and/or any of the following results at Screening: <br><sub>exclusion, characters 1223:1306</sub> | no rule | **unknown**: No supported complete rule |
+| ALT ≥ 3.0 × ULN <br><sub>exclusion, characters 1312:1327</sub> | no rule | **unknown**: No supported complete rule |
+| AST ≥ 3.0 × ULN <br><sub>exclusion, characters 1332:1347</sub> | no rule | **unknown**: No supported complete rule |
+| TBL \&gt; 1.5 × ULN (except for cases of known Gilbert's Syndrome) <br><sub>exclusion, characters 1352:1415</sub> | no rule | **unknown**: No supported complete rule |
+| Use of insulin therapy for T2DM within 3 months prior to screening <br><sub>exclusion, characters 1418:1484</sub> | no rule | **unknown**: No supported complete rule |
+
+## [NCT07784270](https://clinicaltrials.gov/study/NCT07784270): A Study to Evaluate Effect of AZD6234 in Adult Participants With Type 2 Diabetes Mellitus and Obesity or Overweight
+
+Saved status: RECRUITING.
+
+| Source | Rule | Result |
+| --- | --- | --- |
+| minimumAge: 18 Years <br><sub>structured registry field</sub> | age &gt;= 18 years | **met**: age 58, which matches the rule |
+| Males \&amp; females (inclusive of all gender identities) age ≥18 years <br><sub>inclusion, characters 23:90</sub> | age &gt;= 18 years | **met**: age 58, which matches the rule |
+| BMI ≥27 kg/m2 <br><sub>inclusion, characters 93:106</sub> | bmi &gt;= 27 kg/m2 | **met**: bmi 31.4 kg/m2, which matches the rule |
+| Diagnosed with T2DM ≥90 days prior to Screening <br><sub>inclusion, characters 109:156</sub> | no rule | **unknown**: No supported complete rule |
+| HbA1c value at Screening of ≥6.0% (42 mmol/mol) and ≤10% (86 mmol/mol) managed with diet and exercise alone or with a stable dose of any oral glycaemic-lowering agent (as per local labelling) <br><sub>inclusion, characters 159:350</sub> | no rule | **unknown**: No supported complete rule |
+| Stable body weight (≤5% body weight change) for at least 3 months prior to Randomisation <br><sub>inclusion, characters 353:441</sub> | no rule | **unknown**: No supported complete rule |
+| History of at least one self-reported unsuccessful attempt to lose body weight in lifetime <br><sub>inclusion, characters 444:534</sub> | no rule | **unknown**: No supported complete rule |
+| Obesity primarily caused by other endocrine disorders <br><sub>exclusion, characters 559:612</sub> | no rule | **unknown**: No supported complete rule |
+| Type 1 diabetes mellitus (or any other diabetes mellitus that is not clearly Type 2 diabetes), OR have history of ketoacidosis or hyperosmolar coma/state within 3 months prior to Screening <br><sub>exclusion, characters 615:803</sub> | no rule | **unknown**: No supported complete rule |
+| Significant hepatobiliary disease and/or any of the following results at Screening: <br><sub>exclusion, characters 806:889</sub> | no rule | **unknown**: No supported complete rule |
+| ALT ≥ 3.0 X ULN <br><sub>exclusion, characters 895:910</sub> | no rule | **unknown**: No supported complete rule |
+| AST ≥ 3.0 X ULN <br><sub>exclusion, characters 915:930</sub> | no rule | **unknown**: No supported complete rule |
+| TBL \&gt; 1.5 X ULN (except for cases of known Gilbert's Syndrome) <br><sub>exclusion, characters 935:998</sub> | no rule | **unknown**: No supported complete rule |
+| Has received treatment with a GLP-1 receptor agonist or GLP-1 containing medication for any indication within 3 months before Randomisation <br><sub>exclusion, characters 1001:1140</sub> | no rule | **unknown**: No supported complete rule |
+| Use of insulin therapy for T2DM within 3 months prior to screening <br><sub>exclusion, characters 1143:1209</sub> | no rule | **unknown**: No supported complete rule |
 
 ## [NCT07351058](https://clinicaltrials.gov/study/NCT07351058): A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight and Type 2 Diabetes
 
@@ -158,51 +203,6 @@ Saved status: RECRUITING.
 | History of acute or chronic pancreatitis. <br><sub>exclusion, characters 930:971</sub> | no rule | **unknown**: No supported complete rule |
 | Severe congestive heart failure (NYHA IV) <br><sub>exclusion, characters 974:1015</sub> | no rule | **unknown**: No supported complete rule |
 | History/family history of medullary thyroid cancer or multiple endocrine neoplasia type 2 <br><sub>exclusion, characters 1018:1107</sub> | no rule | **unknown**: No supported complete rule |
-
-## [NCT07776509](https://clinicaltrials.gov/study/NCT07776509): A Study to Evaluate Effect of AZD6234 as an Adjunct to Incretin-based Therapies in Adult Participants With Obesity or Overweight With Weight-related Comorbidity With or Without Type 2 Diabetes Mellitus
-
-Saved status: RECRUITING.
-
-| Source | Rule | Result |
-| --- | --- | --- |
-| minimumAge: 18 Years <br><sub>structured registry field</sub> | age &gt;= 18 years | **met**: age 58, which matches the rule |
-| Males \&amp; females (inclusive of all gender identities) age ≥18 years <br><sub>inclusion, characters 23:90</sub> | no rule | **unknown**: No supported complete rule |
-| BMI ≥ 30 kg/m2 OR BMI ≥ 27 kg/m2 with at least one of the following weight-related comorbidities (treated or untreated): hypertension, dyslipidaemia, obstructive sleep apnoea, cardiovascular disease, heart failure, chronic kidney disease, metabolic dysfunction associated steatotic liver disease, osteoarthritis of the knee, or stress urinary incontinence <br><sub>inclusion, characters 93:448</sub> | no rule | **unknown**: No supported complete rule |
-| For participants with T2DM only: <br><sub>inclusion, characters 451:483</sub> | no rule | **unknown**: No supported complete rule |
-| Diagnosed with T2DM ≥ 90 days prior to Screening <br><sub>inclusion, characters 489:537</sub> | no rule | **unknown**: No supported complete rule |
-| HbA1c value at Screening of ≥6.0% (42 mmol/mol) and ≤9.0% (75 mmol/mol) managed with diet and exercise alone or with a stable dose of any oral glycaemic-lowering agent and/or incretin-based medication <br><sub>inclusion, characters 542:742</sub> | no rule | **unknown**: No supported complete rule |
-| Receiving a stable dose of incretin- based medications at a dose level that is sufficient for chronic weight management for at least 3 months prior to Screening and Randomisation. <br><sub>inclusion, characters 745:924</sub> | no rule | **unknown**: No supported complete rule |
-| Stable body weight (≤ 3% body weight change) for at least 3 months prior to Randomisation <br><sub>inclusion, characters 927:1016</sub> | no rule | **unknown**: No supported complete rule |
-| History of at least one self-reported unsuccessful attempt to lose body weight in their lifetime <br><sub>inclusion, characters 1019:1115</sub> | no rule | **unknown**: No supported complete rule |
-| Obesity primarily caused by other endocrine disorders <br><sub>exclusion, characters 1140:1193</sub> | no rule | **unknown**: No supported complete rule |
-| Type 1 diabetes mellitus <br><sub>exclusion, characters 1196:1220</sub> | diagnosis contains type 1 diabetes | **met**: patient said they do not have it, which does not match the rule. This is an exclusion, so the result is flipped |
-| Significant hepatobiliary disease and/or any of the following results at Screening: <br><sub>exclusion, characters 1223:1306</sub> | no rule | **unknown**: No supported complete rule |
-| ALT ≥ 3.0 × ULN <br><sub>exclusion, characters 1312:1327</sub> | no rule | **unknown**: No supported complete rule |
-| AST ≥ 3.0 × ULN <br><sub>exclusion, characters 1332:1347</sub> | no rule | **unknown**: No supported complete rule |
-| TBL \&gt; 1.5 × ULN (except for cases of known Gilbert's Syndrome) <br><sub>exclusion, characters 1352:1415</sub> | no rule | **unknown**: No supported complete rule |
-| Use of insulin therapy for T2DM within 3 months prior to screening <br><sub>exclusion, characters 1418:1484</sub> | no rule | **unknown**: No supported complete rule |
-
-## [NCT07784270](https://clinicaltrials.gov/study/NCT07784270): A Study to Evaluate Effect of AZD6234 in Adult Participants With Type 2 Diabetes Mellitus and Obesity or Overweight
-
-Saved status: RECRUITING.
-
-| Source | Rule | Result |
-| --- | --- | --- |
-| minimumAge: 18 Years <br><sub>structured registry field</sub> | age &gt;= 18 years | **met**: age 58, which matches the rule |
-| Males \&amp; females (inclusive of all gender identities) age ≥18 years <br><sub>inclusion, characters 23:90</sub> | no rule | **unknown**: No supported complete rule |
-| BMI ≥27 kg/m2 <br><sub>inclusion, characters 93:106</sub> | bmi &gt;= 27 kg/m2 | **met**: bmi 31.4 kg/m2, which matches the rule |
-| Diagnosed with T2DM ≥90 days prior to Screening <br><sub>inclusion, characters 109:156</sub> | no rule | **unknown**: No supported complete rule |
-| HbA1c value at Screening of ≥6.0% (42 mmol/mol) and ≤10% (86 mmol/mol) managed with diet and exercise alone or with a stable dose of any oral glycaemic-lowering agent (as per local labelling) <br><sub>inclusion, characters 159:350</sub> | no rule | **unknown**: No supported complete rule |
-| Stable body weight (≤5% body weight change) for at least 3 months prior to Randomisation <br><sub>inclusion, characters 353:441</sub> | no rule | **unknown**: No supported complete rule |
-| History of at least one self-reported unsuccessful attempt to lose body weight in lifetime <br><sub>inclusion, characters 444:534</sub> | no rule | **unknown**: No supported complete rule |
-| Obesity primarily caused by other endocrine disorders <br><sub>exclusion, characters 559:612</sub> | no rule | **unknown**: No supported complete rule |
-| Type 1 diabetes mellitus (or any other diabetes mellitus that is not clearly Type 2 diabetes), OR have history of ketoacidosis or hyperosmolar coma/state within 3 months prior to Screening <br><sub>exclusion, characters 615:803</sub> | no rule | **unknown**: No supported complete rule |
-| Significant hepatobiliary disease and/or any of the following results at Screening: <br><sub>exclusion, characters 806:889</sub> | no rule | **unknown**: No supported complete rule |
-| ALT ≥ 3.0 X ULN <br><sub>exclusion, characters 895:910</sub> | no rule | **unknown**: No supported complete rule |
-| AST ≥ 3.0 X ULN <br><sub>exclusion, characters 915:930</sub> | no rule | **unknown**: No supported complete rule |
-| TBL \&gt; 1.5 X ULN (except for cases of known Gilbert's Syndrome) <br><sub>exclusion, characters 935:998</sub> | no rule | **unknown**: No supported complete rule |
-| Has received treatment with a GLP-1 receptor agonist or GLP-1 containing medication for any indication within 3 months before Randomisation <br><sub>exclusion, characters 1001:1140</sub> | no rule | **unknown**: No supported complete rule |
-| Use of insulin therapy for T2DM within 3 months prior to screening <br><sub>exclusion, characters 1143:1209</sub> | no rule | **unknown**: No supported complete rule |
 
 ## [NCT07866066](https://clinicaltrials.gov/study/NCT07866066): Maridebart Cafraglutide Versus Semaglutide in Participants With Type 2 Diabetes
 
