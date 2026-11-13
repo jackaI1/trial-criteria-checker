@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trial finder demo · Jack Lai</title>
+<meta name="description" content="A demo that finds clinical trials recruiting in Vancouver by asking only the questions that matter, and shows which of each trial's requirements you meet.">
+<link rel="preload" href="fonts/atkinson-hyperlegible-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/atkinson-hyperlegible-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span><strong>Trial finder</strong><span class="by">A demo by Jack Lai</span></span>
+  </div>
+  <nav class="links">
+    <a href="https://github.com/jackaI1/trial-criteria-checker">Code on GitHub</a>
+    <a href="/projects/">My projects</a>
+    <button type="button" class="link-button" id="restart">Start over</button>
+  </nav>
+</header>
+
+<main class="layout">
+  <section class="talk" id="talk" aria-label="Conversation">
+    <ol class="thread" id="thread" aria-live="polite"></ol>
+    <div class="composer" id="composer">
+      <div class="choices" id="choices" role="group" aria-label="Answers"></div>
+      <form class="typebox" id="typebox">
+        <label for="say" class="visually-hidden">Describe yourself</label>
+        <textarea id="say" rows="1" disabled placeholder="Typing is off in this demo. Pick an answer above."></textarea>
+        <button type="submit" disabled>Send</button>
+      </form>
+      <p class="typenote" id="typenote">In the full version, an AI model reads what you type and pulls out the facts trials care about. It's switched off here so the demo stays free to run. <a href="https://github.com/jackaI1/trial-criteria-checker#turning-on-typing">How to turn it on</a></p>
+    </div>
+  </section>
+
+  <section class="results" id="results" hidden aria-label="Your matches"></section>
+
+  <aside class="panel" id="panel" aria-label="What I know so far">
+    <details class="panel-fold" id="panel-fold" open>
+      <summary><span>What I know so far</span><span class="count" id="known-count">0</span></summary>
+      <dl class="facts" id="facts"><div class="empty">Nothing yet. Answers and file details show up here, with where each one came from.</div></dl>
+    </details>
+    <div class="narrow" id="narrow" hidden>
+      <p class="narrow-text" id="narrow-text"></p>
+      <div class="tubes" id="tubes" aria-hidden="true"></div>
+    </div>
+    <p class="privacy"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 8V6a4 4 0 1 1 8 0v2h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h1Zm2 0h4V6a2 2 0 1 0-4 0v2Z"/></svg>
+      <span>Everything stays in this browser tab. Nothing is sent, saved or tracked, and closing the tab erases it.</span></p>
+    <p class="fine">A demo with real trials from ClinicalTrials.gov (<span id="retrieved"></span>). It isn't medical advice, and only a trial's own team can say whether you can join.</p>
+  </aside>
+</main>
+
+<dialog class="handoff" id="handoff" aria-labelledby="handoff-title"></dialog>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

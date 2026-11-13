@@ -1,0 +1,9 @@
+{
+  "name": "trial-finder-ai",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-24",
+  "compatibility_flags": ["nodejs_compat"],
+  // ANTHROPIC_API_KEY is a secret: wrangler secret put ANTHROPIC_API_KEY
+  "vars": { "ALLOWED_ORIGIN": "https://jacklai.ca", "MODEL": "claude-opus-5-5" },
+  "observability": { "enabled": false }
+}
