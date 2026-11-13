@@ -570,19 +570,23 @@ export const DATA = {
    "label": "Diabetic eye treatment"
   },
   "weight_stable": {
-   "ask": "Has your weight stayed about the same (within 3 kg) for the last 3 months?",
+   "ask": "How much has your weight changed in the last 3 months, up or down?",
    "type": "choice",
    "options": [
     {
-     "label": "Yes",
-     "value": "yes"
+     "label": "Less than 3 kg",
+     "value": "under3"
     },
     {
-     "label": "No",
-     "value": "no"
+     "label": "3 to 5 kg",
+     "value": "3to5"
+    },
+    {
+     "label": "More than 5 kg",
+     "value": "over5"
     }
    ],
-   "label": "Steady weight"
+   "label": "Weight change in 3 months"
   },
   "weight_attempt": {
    "ask": "Have you ever tried to lose weight with diet or exercise and it didn't work?",
@@ -698,7 +702,7 @@ export const DATA = {
    "label": "AF began during surgery or illness"
   },
   "anticoag": {
-   "ask": "Have you taken a blood thinner like apixaban (Eliquis), rivaroxaban (Xarelto), edoxaban or warfarin for at least 3 months?",
+   "ask": "Are you taking a blood thinner like apixaban (Eliquis), rivaroxaban (Xarelto), edoxaban or warfarin, and have you been for at least 3 months?",
    "type": "choice",
    "options": [
     {
@@ -710,7 +714,7 @@ export const DATA = {
      "value": "no"
     }
    ],
-   "label": "Blood thinner 3+ months"
+   "label": "Blood thinner for 3+ months"
   },
   "antiarrhythmic": {
    "ask": "Do you take a heart rhythm medicine like amiodarone, flecainide, propafenone, sotalol or dronedarone?",
@@ -856,6 +860,186 @@ export const DATA = {
    "label": "Pregnant or planning"
   }
  },
+ "phrases": {
+  "years_dx": {
+   "topic": "how long you've had it",
+   "v": "you've had it for {v}"
+  },
+  "area": {
+   "topic": "where you live",
+   "v": "you live in {v}"
+  },
+  "age": {
+   "topic": "your age",
+   "v": "you're {v}"
+  },
+  "hba1c": {
+   "topic": "your HbA1c",
+   "v": "your HbA1c is {v}"
+  },
+  "bmi": {
+   "topic": "your BMI",
+   "v": "your BMI is {v}"
+  },
+  "lvef": {
+   "topic": "your ejection fraction",
+   "v": "your ejection fraction is {v}"
+  },
+  "egfr": {
+   "topic": "your eGFR",
+   "v": "your eGFR is {v}"
+  },
+  "nyha": {
+   "topic": "how much heart failure limits you",
+   "v": {
+    "1": "heart failure doesn't limit you",
+    "2": "ordinary activity like stairs leaves you breathless or tired",
+    "3": "even light activity leaves you breathless",
+    "4": "you're breathless even at rest"
+   }
+  },
+  "treatment_stable": {
+   "topic": "whether your diabetes treatment has changed lately",
+   "yes": "your diabetes treatment hasn't changed in 3 months",
+   "no": "your diabetes treatment changed in the last 3 months"
+  },
+  "insulin": {
+   "topic": "whether you use insulin",
+   "yes": "you use insulin",
+   "no": "you don't use insulin"
+  },
+  "metformin_1500": {
+   "topic": "your metformin dose",
+   "yes": "you take at least 1,500 mg of metformin a day",
+   "no": "you take less than 1,500 mg of metformin a day, or none"
+  },
+  "glp1": {
+   "topic": "whether you've taken a GLP-1 medicine",
+   "now": "you take a GLP-1 medicine now",
+   "recent": "you stopped a GLP-1 medicine in the last 6 months",
+   "no": "you haven't taken a GLP-1 medicine in the last 6 months"
+  },
+  "t1d_dka": {
+   "topic": "whether you've had type 1 diabetes, another kind of diabetes or DKA",
+   "yes": "you've had type 1 diabetes, another kind of diabetes or DKA",
+   "no": "you haven't had type 1 diabetes, another kind of diabetes or DKA"
+  },
+  "pancreatitis": {
+   "topic": "whether you've had pancreatitis",
+   "yes": "you've had pancreatitis",
+   "no": "you've never had pancreatitis"
+  },
+  "severe_hypo": {
+   "topic": "whether you've had severe low blood sugar",
+   "yes": "you've had a severe low, or have trouble noticing lows",
+   "no": "you haven't had a severe low in 6 months and you notice your lows"
+  },
+  "mtc_men2": {
+   "topic": "whether you or a relative have had medullary thyroid cancer or MEN2",
+   "yes": "you or a close relative have had medullary thyroid cancer or MEN2",
+   "no": "neither you nor a close relative has had medullary thyroid cancer or MEN2"
+  },
+  "eye_treatment": {
+   "topic": "whether you're being treated for diabetic eye problems",
+   "yes": "you're being treated, or about to be treated, for diabetic eye problems",
+   "no": "you're not being treated for diabetic eye problems, and none is planned"
+  },
+  "weight_stable": {
+   "topic": "how much your weight has changed",
+   "under3": "your weight changed by less than 3 kg in the last 3 months",
+   "3to5": "your weight changed by 3 to 5 kg in the last 3 months",
+   "over5": "your weight changed by more than 5 kg in the last 3 months"
+  },
+  "weight_attempt": {
+   "topic": "whether you've tried to lose weight",
+   "yes": "you've tried to lose weight without success",
+   "no": "you haven't tried to lose weight with diet or exercise"
+  },
+  "obesity_surgery": {
+   "topic": "whether you've had weight-loss surgery",
+   "yes": "you've had, or plan, weight-loss surgery",
+   "no": "you haven't had weight-loss surgery and aren't planning it"
+  },
+  "recent_cv": {
+   "topic": "whether you've had a recent heart attack or stroke",
+   "yes": "you've had a heart attack, stroke or similar in the last 3 months",
+   "no": "you haven't had a heart attack, stroke or similar in the last 3 months"
+  },
+  "hf_dx": {
+   "topic": "whether you have heart failure",
+   "yes": "you have heart failure",
+   "no": "you don't have heart failure"
+  },
+  "has_af": {
+   "topic": "whether you have atrial fibrillation",
+   "yes": "you have atrial fibrillation",
+   "no": "you don't have atrial fibrillation"
+  },
+  "af_type": {
+   "topic": "what kind of AF you have",
+   "paroxysmal": "your AF comes and goes within a week",
+   "persistent": "your AF episodes last longer than a week",
+   "longstanding": "your AF has been constant for over a year",
+   "permanent": "your AF is permanent"
+  },
+  "af_stress": {
+   "topic": "how your AF started",
+   "yes": "your AF started during a recent operation or hospital stay",
+   "no": "your AF didn't start during a recent operation or hospital stay"
+  },
+  "anticoag": {
+   "topic": "whether you take a blood thinner",
+   "yes": "you've been taking a blood thinner for at least 3 months",
+   "no": "you're not taking a blood thinner, or started less than 3 months ago"
+  },
+  "antiarrhythmic": {
+   "topic": "whether you take a heart rhythm medicine",
+   "yes": "you take a heart rhythm medicine",
+   "no": "you don't take a heart rhythm medicine"
+  },
+  "prior_ablation": {
+   "topic": "whether you've had an AF ablation",
+   "yes": "you've had an AF ablation",
+   "no": "you haven't had an AF ablation"
+  },
+  "device": {
+   "topic": "whether you have a heart device",
+   "yes": "you have a pacemaker, defibrillator or implanted heart monitor",
+   "no": "you don't have a pacemaker, defibrillator or implanted heart monitor"
+  },
+  "hf_hosp": {
+   "topic": "your last hospital stay for heart failure",
+   "now": "you're in hospital for heart failure now, or left in the last 30 days",
+   "1-3m": "your last heart failure hospital stay was 1 to 3 months ago",
+   "3-12m": "your last heart failure hospital stay was 3 to 12 months ago",
+   "none": "you haven't been in hospital for heart failure in the last year"
+  },
+  "loop_diuretic": {
+   "topic": "whether you take a daily water pill",
+   "yes": "you take a water pill every day",
+   "no": "you don't take a daily water pill"
+  },
+  "mra": {
+   "topic": "whether you take spironolactone or eplerenone",
+   "yes": "you take spironolactone or eplerenone",
+   "no": "you don't take spironolactone or eplerenone"
+  },
+  "dialysis": {
+   "topic": "whether you're on dialysis",
+   "yes": "you're on dialysis",
+   "no": "you're not on dialysis"
+  },
+  "transplant": {
+   "topic": "whether you've had an organ transplant",
+   "yes": "you've had an organ transplant",
+   "no": "you haven't had an organ transplant"
+  },
+  "pregnant": {
+   "topic": "whether you're pregnant or planning a pregnancy",
+   "yes": "you're pregnant, breastfeeding or planning a pregnancy",
+   "no": "you're not pregnant, breastfeeding or planning a pregnancy"
+  }
+ },
  "priority": [
   "age",
   "hba1c",
@@ -899,6 +1083,7 @@ export const DATA = {
    ],
    "name": "Family doctor letter",
    "file": "family-doctor-letter.pdf",
+   "says": "Your family doctor's letter says",
    "lines": [
     "Re: 58-year-old woman, type 2 diabetes since 2020.",
     "Metformin 1,000 mg twice daily, unchanged since 2024. No insulin or GLP-1 medicines.",
@@ -922,7 +1107,7 @@ export const DATA = {
      "lo": 31.4,
      "hi": 31.4
     },
-    "weight_stable": "yes",
+    "weight_stable": "under3",
     "pancreatitis": "no"
    }
   },
@@ -935,6 +1120,7 @@ export const DATA = {
    ],
    "name": "Blood test results",
    "file": "blood-tests-oct-2026.pdf",
+   "says": "Your blood test results show",
    "lines": [
     "Collected Oct 2, 2026.",
     "HbA1c 8.1%",
@@ -961,6 +1147,7 @@ export const DATA = {
    ],
    "name": "Cardiology clinic note",
    "file": "cardiology-note.pdf",
+   "says": "Your cardiology note says",
    "lines": [
     "69-year-old man. Persistent atrial fibrillation since 2023.",
     "Heart failure with reduced ejection fraction. Echo, Aug 2026: EF 35%.",
@@ -992,6 +1179,7 @@ export const DATA = {
    ],
    "name": "Rheumatology clinic note",
    "file": "rheumatology-note.pdf",
+   "says": "Your rheumatology note says",
    "lines": [
     "34-year-old woman with systemic lupus erythematosus since 2019.",
     "Joint pain and rash this year. Hydroxychloroquine 200 mg twice daily.",
@@ -1039,7 +1227,8 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
@@ -1049,7 +1238,8 @@ export const DATA = {
       "years_dx",
       ">=",
       0.25
-     ]
+     ],
+     "rule": "You need to have had it for at least 3 months."
     },
     {
      "kind": "need",
@@ -1059,7 +1249,8 @@ export const DATA = {
       "treatment_stable",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if your diabetes treatment hasn't changed in 3 months."
     },
     {
      "kind": "need",
@@ -1072,13 +1263,15 @@ export const DATA = {
        7,
        10.5
       ]
-     ]
+     ],
+     "rule": "Your HbA1c needs to be between 7% and 10.5%."
     },
     {
      "kind": "need",
      "text": "A higher risk of heart problems, such as heart or artery disease, a past stroke, or two or more risk factors",
      "quote": "Increased risk of cardiovascular (CV) events defined by ≥1 of: documented coronary heart disease, peripheral arterial disease, ischemic cerebrovascular disease, or heart failure (NYHA II-III); or ≥2 CV risk factors",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
@@ -1088,7 +1281,8 @@ export const DATA = {
       "bmi",
       ">=",
       23
-     ]
+     ],
+     "rule": "Your BMI needs to be at least 23."
     },
     {
      "kind": "need",
@@ -1096,9 +1290,12 @@ export const DATA = {
      "quote": "Stable body weight (self-reported or documented) for 90 days prior to screening",
      "test": [
       "weight_stable",
-      "is",
-      "yes"
-     ]
+      "map",
+      {
+       "under3": true
+      }
+     ],
+     "rule": "Your weight needs to have stayed steady for the last 90 days. A change of 3 kg or more is for the study team to judge."
     },
     {
      "kind": "cant",
@@ -1108,7 +1305,8 @@ export const DATA = {
       "t1d_dka",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had type 1 diabetes, another kind of diabetes or DKA."
     },
     {
      "kind": "cant",
@@ -1118,7 +1316,8 @@ export const DATA = {
       "eye_treatment",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you're being treated, or about to be treated, for diabetic eye problems."
     },
     {
      "kind": "cant",
@@ -1126,25 +1325,30 @@ export const DATA = {
      "quote": "Have had more than one episode of severe hypoglycemia within 180 days prior to screening or has a history of hypoglycemia unawareness or poor recognition of hypoglycemic symptoms",
      "test": [
       "severe_hypo",
-      "is",
-      "no"
-     ]
+      "map",
+      {
+       "no": true
+      }
+     ],
+     "rule": "You can't take part if you've had more than one severe low in 6 months, or have trouble noticing lows."
     },
     {
      "kind": "cant",
      "text": "A significant stomach or upper-gut condition, or medicine that slows digestion",
      "quote": "Clinically significant condition affecting the upper Gastrointestinal (GI) tract or chronic use of any medication that affects gastric motility or gastric emptying",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
-     "text": "Past pancreatitis",
+     "text": "Having had pancreatitis",
      "quote": "History of acute or chronic pancreatitis",
      "test": [
       "pancreatitis",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had pancreatitis."
     },
     {
      "kind": "cant",
@@ -1164,7 +1368,8 @@ export const DATA = {
         3
        ]
       ]
-     ]
+     ],
+     "rule": "You can't take part if you have the most severe class of heart failure (NYHA IV)."
     },
     {
      "kind": "cant",
@@ -1174,7 +1379,8 @@ export const DATA = {
       "mtc_men2",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you or a close relative have had medullary thyroid cancer or MEN2."
     }
    ]
   },
@@ -1207,7 +1413,8 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
@@ -1217,7 +1424,8 @@ export const DATA = {
       "years_dx",
       ">=",
       0.25
-     ]
+     ],
+     "rule": "You need to have had it for at least 3 months."
     },
     {
      "kind": "need",
@@ -1237,7 +1445,8 @@ export const DATA = {
         "yes"
        ]
       ]
-     ]
+     ],
+     "rule": "You can only take part if you already use insulin and your diabetes treatment hasn't changed in 3 months."
     },
     {
      "kind": "need",
@@ -1250,7 +1459,8 @@ export const DATA = {
        7,
        10.5
       ]
-     ]
+     ],
+     "rule": "Your HbA1c needs to be between 7% and 10.5%."
     },
     {
      "kind": "need",
@@ -1260,7 +1470,8 @@ export const DATA = {
       "bmi",
       ">=",
       23
-     ]
+     ],
+     "rule": "Your BMI needs to be at least 23."
     },
     {
      "kind": "need",
@@ -1268,9 +1479,12 @@ export const DATA = {
      "quote": "Stable body weight (self-reported or documented) for 90 days prior to screening",
      "test": [
       "weight_stable",
-      "is",
-      "yes"
-     ]
+      "map",
+      {
+       "under3": true
+      }
+     ],
+     "rule": "Your weight needs to have stayed steady for the last 90 days. A change of 3 kg or more is for the study team to judge."
     },
     {
      "kind": "cant",
@@ -1280,7 +1494,8 @@ export const DATA = {
       "t1d_dka",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had type 1 diabetes, another kind of diabetes or DKA."
     },
     {
      "kind": "cant",
@@ -1290,7 +1505,8 @@ export const DATA = {
       "eye_treatment",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you're being treated, or about to be treated, for diabetic eye problems."
     },
     {
      "kind": "cant",
@@ -1298,25 +1514,30 @@ export const DATA = {
      "quote": "Have had more than one episode of severe hypoglycemia within 180 days prior to screening or has a history of hypoglycemia unawareness or poor recognition of hypoglycemic symptoms",
      "test": [
       "severe_hypo",
-      "is",
-      "no"
-     ]
+      "map",
+      {
+       "no": true
+      }
+     ],
+     "rule": "You can't take part if you've had more than one severe low in 6 months, or have trouble noticing lows."
     },
     {
      "kind": "cant",
      "text": "A significant stomach or upper-gut condition, or medicine that slows digestion",
      "quote": "Clinically significant condition affecting the upper GI tract or chronic use of any medication that affects gastric motility or gastric emptying",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
-     "text": "Past pancreatitis",
+     "text": "Having had pancreatitis",
      "quote": "History of acute or chronic pancreatitis.",
      "test": [
       "pancreatitis",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had pancreatitis."
     },
     {
      "kind": "cant",
@@ -1336,7 +1557,8 @@ export const DATA = {
         3
        ]
       ]
-     ]
+     ],
+     "rule": "You can't take part if you have the most severe class of heart failure (NYHA IV)."
     },
     {
      "kind": "cant",
@@ -1346,7 +1568,8 @@ export const DATA = {
       "mtc_men2",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you or a close relative have had medullary thyroid cancer or MEN2."
     }
    ]
   },
@@ -1379,7 +1602,8 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
@@ -1392,7 +1616,8 @@ export const DATA = {
        7.5,
        10.5
       ]
-     ]
+     ],
+     "rule": "Your HbA1c needs to be between 7.5% and 10.5%."
     },
     {
      "kind": "need",
@@ -1403,8 +1628,10 @@ export const DATA = {
       [
        [
         "metformin_1500",
-        "is",
-        "yes"
+        "map",
+        {
+         "yes": true
+        }
        ],
        [
         "treatment_stable",
@@ -1412,7 +1639,8 @@ export const DATA = {
         "yes"
        ]
       ]
-     ]
+     ],
+     "rule": "You need to take metformin, usually at least 1,500 mg a day, and your treatment can't have changed in 90 days."
     },
     {
      "kind": "need",
@@ -1422,7 +1650,8 @@ export const DATA = {
       "bmi",
       ">=",
       25
-     ]
+     ],
+     "rule": "Your BMI needs to be at least 25."
     },
     {
      "kind": "cant",
@@ -1432,7 +1661,8 @@ export const DATA = {
       "t1d_dka",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had type 1 diabetes, another kind of diabetes or DKA."
     },
     {
      "kind": "cant",
@@ -1442,13 +1672,15 @@ export const DATA = {
       "eye_treatment",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you're being treated, or about to be treated, for diabetic eye problems."
     },
     {
      "kind": "cant",
      "text": "Advanced diabetic eye disease",
      "quote": "Participants who have a diagnosis of proliferative diabetic retinopathy, diabetic maculopathy, or severe non-proliferative diabetic retinopathy.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -1458,7 +1690,8 @@ export const DATA = {
       "severe_hypo",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had a severe low, or have trouble noticing lows."
     },
     {
      "kind": "cant",
@@ -1468,7 +1701,8 @@ export const DATA = {
       "severe_hypo",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had a severe low, or have trouble noticing lows."
     },
     {
      "kind": "cant",
@@ -1476,9 +1710,12 @@ export const DATA = {
      "quote": "Self-reported change in body weight > 5% within 90 days before screening. Participants must also agree to not initiate an intensive diet or exercise program during the trial with the intent of reducing body weight, other than the lifestyle and/or dietary measures for diabetes treatment.",
      "test": [
       "weight_stable",
-      "is",
-      "yes"
-     ]
+      "map",
+      {
+       "under3": true
+      }
+     ],
+     "rule": "You can't take part if your weight changed by more than 5% in the last 90 days."
     },
     {
      "kind": "cant",
@@ -1486,9 +1723,12 @@ export const DATA = {
      "quote": "Previous or planned (during the trial) surgical, endoscopic, or device-based treatment for obesity. The following are allowed:",
      "test": [
       "obesity_surgery",
-      "is",
-      "no"
-     ]
+      "map",
+      {
+       "no": true
+      }
+     ],
+     "rule": "You can't take part if you've had or plan weight-loss surgery, apart from some procedures undone over a year ago."
     }
    ]
   },
@@ -1521,7 +1761,8 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
@@ -1531,7 +1772,8 @@ export const DATA = {
       "bmi",
       ">=",
       27
-     ]
+     ],
+     "rule": "Your BMI needs to be at least 27."
     },
     {
      "kind": "need",
@@ -1541,7 +1783,8 @@ export const DATA = {
       "years_dx",
       ">=",
       0.25
-     ]
+     ],
+     "rule": "You need to have had it for at least 3 months."
     },
     {
      "kind": "need",
@@ -1564,7 +1807,8 @@ export const DATA = {
         "yes"
        ]
       ]
-     ]
+     ],
+     "rule": "Your HbA1c needs to be between 6% and 10%, and your diabetes treatment can't have changed in 3 months."
     },
     {
      "kind": "need",
@@ -1572,9 +1816,12 @@ export const DATA = {
      "quote": "Stable body weight (≤5% body weight change) for at least 3 months prior to Randomisation",
      "test": [
       "weight_stable",
-      "is",
-      "yes"
-     ]
+      "map",
+      {
+       "under3": true
+      }
+     ],
+     "rule": "Your weight can't have changed by more than 5% in the last 3 months."
     },
     {
      "kind": "need",
@@ -1584,13 +1831,15 @@ export const DATA = {
       "weight_attempt",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if you've tried to lose weight without success."
     },
     {
      "kind": "cant",
      "text": "Obesity caused mainly by another hormone condition",
      "quote": "Obesity primarily caused by other endocrine disorders",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -1598,15 +1847,19 @@ export const DATA = {
      "quote": "Type 1 diabetes mellitus (or any other diabetes mellitus that is not clearly Type 2 diabetes), OR have history of ketoacidosis or hyperosmolar coma/state within 3 months prior to Screening",
      "test": [
       "t1d_dka",
-      "is",
-      "no"
-     ]
+      "map",
+      {
+       "no": true
+      }
+     ],
+     "rule": "You can't take part if you have type 1 or another form of diabetes, or had ketoacidosis in the last 3 months."
     },
     {
      "kind": "cant",
      "text": "Significant liver disease or high liver tests",
      "quote": "Significant hepatobiliary disease and/or any of the following results at Screening:",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -1619,7 +1872,8 @@ export const DATA = {
        "no": true,
        "now": false
       }
-     ]
+     ],
+     "rule": "You can't take part if you've taken a GLP-1 medicine in the last 3 months."
     },
     {
      "kind": "cant",
@@ -1629,7 +1883,8 @@ export const DATA = {
       "insulin",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've used insulin in the last 3 months."
     }
    ]
   },
@@ -1662,13 +1917,15 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
      "text": "Able to give yourself an injection (or have someone help)",
      "quote": "Ability and willingness to self-administer the study drug (or receive an injection from a trained individual if visually impaired or with physical limitations)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
@@ -1696,7 +1953,8 @@ export const DATA = {
         "no"
        ]
       ]
-     ]
+     ],
+     "rule": "Your HbA1c needs to be between 6.5% and 10%, you can't be on insulin, and your diabetes treatment can't have changed in 3 months."
     },
     {
      "kind": "need",
@@ -1706,7 +1964,8 @@ export const DATA = {
       "bmi",
       ">=",
       27
-     ]
+     ],
+     "rule": "Your BMI needs to be at least 27."
     },
     {
      "kind": "need",
@@ -1716,7 +1975,8 @@ export const DATA = {
       "weight_attempt",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if you've tried to lose weight without success."
     },
     {
      "kind": "cant",
@@ -1724,9 +1984,12 @@ export const DATA = {
      "quote": "History of type 1 diabetes mellitus (T1DM) or any lifetime history of ketoacidosis or history of hyperosmolar state/coma within 12 months prior to screening",
      "test": [
       "t1d_dka",
-      "is",
-      "no"
-     ]
+      "map",
+      {
+       "no": true
+      }
+     ],
+     "rule": "You can't take part if you've had type 1 diabetes or ever had ketoacidosis."
     },
     {
      "kind": "cant",
@@ -1736,13 +1999,15 @@ export const DATA = {
       "severe_hypo",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had a severe low, or have trouble noticing lows."
     },
     {
      "kind": "cant",
      "text": "Very high fasting blood sugar during screening",
      "quote": "At least 2 confirmed fasting blood glucose values >270 mg/dL (15.0 mmol/L) (on 2 non-consecutive days) during screening",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -1750,15 +2015,21 @@ export const DATA = {
      "quote": "Self-reported change in body weight >5 kg within 3 months prior to screening",
      "test": [
       "weight_stable",
-      "is",
-      "yes"
-     ]
+      "map",
+      {
+       "under3": true,
+       "3to5": true,
+       "over5": false
+      }
+     ],
+     "rule": "You can't take part if your weight changed by more than 5 kg in the last 3 months."
     },
     {
      "kind": "cant",
      "text": "Obesity caused by another hormone or genetic condition",
      "quote": "Obesity induced by other endocrinologic disorders (e.g., Cushing's syndrome) or diagnosed monogenetic or syndromic forms of obesity (e.g., melanocortin 4 receptor deficiency or Prader-Willi syndrome)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -1768,19 +2039,22 @@ export const DATA = {
       "obesity_surgery",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had, or plan, weight-loss surgery."
     },
     {
      "kind": "cant",
      "text": "A significant stomach-emptying problem",
      "quote": "Known clinically significant gastric emptying abnormality (e.g., severe gastroparesis or gastric outlet obstruction)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Poorly controlled high blood pressure",
      "quote": "Poorly controlled hypertension at screening",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -1790,7 +2064,8 @@ export const DATA = {
       "recent_cv",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had a heart attack, stroke or similar in the last 3 months."
     },
     {
      "kind": "cant",
@@ -1800,7 +2075,8 @@ export const DATA = {
       "glp1",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can only take part if you haven't taken a GLP-1 medicine in the last 6 months."
     }
    ]
   },
@@ -1833,7 +2109,8 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
@@ -1861,7 +2138,8 @@ export const DATA = {
         ]
        ]
       ]
-     ]
+     ],
+     "rule": "Your BMI needs to be at least 30, or at least 27 if you also have a weight-related condition like high blood pressure."
     },
     {
      "kind": "need",
@@ -1871,7 +2149,8 @@ export const DATA = {
       "years_dx",
       ">=",
       0.25
-     ]
+     ],
+     "rule": "You need to have had it for at least 3 months."
     },
     {
      "kind": "need",
@@ -1884,7 +2163,8 @@ export const DATA = {
        6,
        9
       ]
-     ]
+     ],
+     "rule": "Your HbA1c needs to be between 6% and 9%."
     },
     {
      "kind": "need",
@@ -1898,17 +2178,15 @@ export const DATA = {
        "recent": false,
        "no": false
       }
-     ]
+     ],
+     "rule": "You can only take part if you already take a GLP-1 type medicine, like Wegovy or Mounjaro, at a steady dose for 3 months."
     },
     {
      "kind": "need",
      "text": "Steady weight (within 3%) for 3 months",
      "quote": "Stable body weight (≤ 3% body weight change) for at least 3 months prior to Randomisation",
-     "test": [
-      "weight_stable",
-      "is",
-      "yes"
-     ]
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
@@ -1918,13 +2196,15 @@ export const DATA = {
       "weight_attempt",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if you've tried to lose weight without success."
     },
     {
      "kind": "cant",
      "text": "Obesity caused mainly by another hormone condition",
      "quote": "Obesity primarily caused by other endocrine disorders",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -1932,15 +2212,19 @@ export const DATA = {
      "quote": "Type 1 diabetes mellitus",
      "test": [
       "t1d_dka",
-      "is",
-      "no"
-     ]
+      "map",
+      {
+       "no": true
+      }
+     ],
+     "rule": "You can't take part if you have type 1 diabetes."
     },
     {
      "kind": "cant",
      "text": "Significant liver disease or high liver tests",
      "quote": "Significant hepatobiliary disease and/or any of the following results at Screening:",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -1950,7 +2234,8 @@ export const DATA = {
       "insulin",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've used insulin in the last 3 months."
     }
    ]
   },
@@ -1984,13 +2269,15 @@ export const DATA = {
       "age",
       ">",
       40
-     ]
+     ],
+     "rule": "You need to be older than 40."
     },
     {
      "kind": "need",
      "text": "At least two heart failure risk factors, such as diabetes, persistent AF, kidney disease, a past stroke or artery disease",
      "quote": "At least two additional risk factors for Heart Failure (HF):",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2000,23 +2287,26 @@ export const DATA = {
       "hf_dx",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you have heart failure."
     },
     {
      "kind": "cant",
-     "text": "Dialysis",
+     "text": "Being on dialysis",
      "quote": "Renal replacement therapy.",
      "test": [
       "dialysis",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you're on dialysis."
     },
     {
      "kind": "cant",
      "text": "Any other reason the study doctor finds you unsuitable",
      "quote": "Anyone who, in the investigator's opinion, is not suitable to participate in the trial for other reasons e.g., a diagnosis which may compromise survival over the study period.",
-     "test": null
+     "test": null,
+     "rule": null
     }
    ]
   },
@@ -2049,7 +2339,8 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
@@ -2059,25 +2350,29 @@ export const DATA = {
       "has_af",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if you have atrial fibrillation."
     },
     {
      "kind": "need",
      "text": "AF recorded on an ECG or heart monitor in the last 12 months",
      "quote": "AF (atrial fibrillation or atrial flutter) within the last 12 months (or during screening) documented by 12-lead ECG, Holter, or any other ECG recording method, as confirmed by the Investigator",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
      "text": "AF that keeps coming back, with extra risk factors or a high AF burden",
      "quote": "Meets one or more of the following criteria:",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
      "text": "On treatment to prevent stroke, if you need it",
      "quote": "On guideline-directed stroke prevention treatment, as confirmed by the Investigator",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
@@ -2087,11 +2382,12 @@ export const DATA = {
       "bmi",
       ">=",
       18
-     ]
+     ],
+     "rule": "Your BMI needs to be at least 18."
     },
     {
      "kind": "cant",
-     "text": "Permanent AF",
+     "text": "Permanent AF (AF that doctors have stopped trying to treat back to a normal rhythm)",
      "quote": "Permanent AF",
      "test": [
       "af_type",
@@ -2102,13 +2398,15 @@ export const DATA = {
        "longstanding": true,
        "permanent": false
       }
-     ]
+     ],
+     "rule": "You can't take part if your AF is permanent."
     },
     {
      "kind": "cant",
      "text": "AF from a temporary cause, like thyroid problems, infection or surgery",
      "quote": "Ongoing reversible causes of AF (e.g., hyperthyroidism, myocarditis, acute alcohol, sepsis- or infection related AF, surgery-related AF, pulmonary embolism)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2118,7 +2416,8 @@ export const DATA = {
       "antiarrhythmic",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you take a heart rhythm medicine."
     },
     {
      "kind": "cant",
@@ -2130,7 +2429,8 @@ export const DATA = {
       {
        "no": true
       }
-     ]
+     ],
+     "rule": "You can't take part if you've had an AF ablation that worked."
     },
     {
      "kind": "cant",
@@ -2140,13 +2440,15 @@ export const DATA = {
       "device",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you have a pacemaker, defibrillator or implanted heart monitor."
     },
     {
      "kind": "cant",
      "text": "Amyloid, sarcoid or hypertrophic heart muscle disease",
      "quote": "Infiltrative (e.g., amyloidosis, sarcoidosis) or hypertrophic cardiomyopathy",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2156,7 +2458,8 @@ export const DATA = {
       "lvef",
       ">",
       40
-     ]
+     ],
+     "rule": "Your ejection fraction needs to be above 40%."
     },
     {
      "kind": "cant",
@@ -2171,7 +2474,8 @@ export const DATA = {
        "1-3m": false,
        "now": false
       }
-     ]
+     ],
+     "rule": "You can't take part if your heart failure is worse right now, or you've been in hospital for it in the last 3 months."
     }
    ]
   },
@@ -2208,13 +2512,15 @@ export const DATA = {
        "longstanding": true,
        "permanent": true
       }
-     ]
+     ],
+     "rule": "You need persistent or permanent AF, or paroxysmal AF if you've had a stroke."
     },
     {
      "kind": "need",
      "text": "A high stroke risk score (CHA2DS2-VASc of 4 or more)",
      "quote": "Increased risk of stroke, defined as a CHA2DS2-VASc stroke risk score of ≥ 4. [Note: the acronym CHA2DS2-VASc stands for congestive heart failure, hypertension, age ≥75 (doubled), diabetes, stroke (doubled), vascular disease, age 65 to 74 and sex category (female).]",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
@@ -2224,35 +2530,40 @@ export const DATA = {
       "anticoag",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if you've been taking a blood thinner for at least 3 months."
     },
     {
      "kind": "cant",
-     "text": "Under 18",
+     "text": "Being under 18",
      "quote": "Age < 18 years",
      "test": [
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "cant",
      "text": "A clot in the left atrial appendage right now",
      "quote": "Current left atrial appendage thrombus",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "The left atrial appendage already closed or removed",
      "quote": "Prior left atrial appendage occlusion or removal (surgical or percutaneous)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "A past closure of a hole in the heart (ASD or PFO)",
      "quote": "Prior percutaneous atrial septal defect or patent foramen ovale closure",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2264,31 +2575,36 @@ export const DATA = {
       {
        "no": true
       }
-     ]
+     ],
+     "rule": "You can't take part if you've had an AF ablation, unless your AF came back afterwards."
     },
     {
      "kind": "cant",
      "text": "An AF ablation planned in the next 90 days",
      "quote": "Planned atrial fibrillation ablation within 90 days of enrollment",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Taking dabigatran or another direct thrombin inhibitor",
      "quote": "Individuals being treated with direct thrombin inhibitors",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Could become pregnant and not using birth control",
      "quote": "Women of childbearing potential unless they agree to employ effective birth control methods throughout the study",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Expected to live less than 2 years",
      "quote": "Anticipated life-expectancy of < 2 years",
-     "test": null
+     "test": null,
+     "rule": null
     }
    ]
   },
@@ -2326,13 +2642,15 @@ export const DATA = {
        "longstanding": false,
        "permanent": false
       }
-     ]
+     ],
+     "rule": "Your AF needs to come and go, or come in episodes, rather than be constant or permanent."
     },
     {
      "kind": "need",
      "text": "At least one rhythm medicine didn't work, wasn't tolerated or isn't wanted",
      "quote": "Refractory to at least one Class I or III antiarrhythmic drug (i.e., not effective, not tolerated, or not desired)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
@@ -2342,13 +2660,15 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
      "text": "Already planned to have this ablation",
      "quote": "Planned pulmonary vein isolation procedure with the commercially available PulseSelect™ PFA System",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2363,7 +2683,8 @@ export const DATA = {
        "longstanding": false,
        "permanent": false
       }
-     ]
+     ],
+     "rule": "You can't take part if your AF has been constant for more than 12 months."
     },
     {
      "kind": "cant",
@@ -2373,13 +2694,15 @@ export const DATA = {
       "prior_ablation",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had an AF ablation."
     },
     {
      "kind": "cant",
      "text": "Expected to live less than 3 years",
      "quote": "Patient with life expectancy < 36 months",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2389,7 +2712,8 @@ export const DATA = {
       "device",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you have a pacemaker, defibrillator or implanted heart monitor."
     }
    ]
   },
@@ -2422,13 +2746,15 @@ export const DATA = {
       "af_stress",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if your AF started during a recent operation or hospital stay."
     },
     {
      "kind": "need",
      "text": "Normal heart rhythm when you join",
      "quote": "sinus rhythm at the time of randomization;",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
@@ -2456,7 +2782,8 @@ export const DATA = {
         ]
        ]
       ]
-     ]
+     ],
+     "rule": "You need to be 75 or older, or 55 to 74 with extra heart risks that the study team checks."
     },
     {
      "kind": "cant",
@@ -2466,7 +2793,8 @@ export const DATA = {
       "af_stress",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if your AF started during a recent operation or hospital stay."
     },
     {
      "kind": "cant",
@@ -2476,43 +2804,50 @@ export const DATA = {
       "anticoag",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you already need long-term blood thinners."
     },
     {
      "kind": "cant",
      "text": "Needing two anti-platelet medicines long term",
      "quote": "ongoing need for long-term dual antiplatelet treatment;",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "A reason you can't take blood thinners",
      "quote": "contraindication to oral anticoagulation;",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Very low kidney function",
      "quote": "severe renal insufficiency (CrCl <20 ml/min);",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "A stroke in the last 14 days",
      "quote": "acute stroke in the past 14 days;",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Heart surgery in the last 35 days",
      "quote": "underwent cardiac surgery in the past 35 days;",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Past bleeding in the brain, eye or spine",
      "quote": "history of nontraumatic intracranial, intraocular, or spinal bleeding;",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2525,7 +2860,8 @@ export const DATA = {
        "no": true,
        "yes": false
       }
-     ]
+     ],
+     "rule": "You can't take part if you're pregnant, breastfeeding, or could become pregnant without birth control."
     }
    ]
   },
@@ -2561,7 +2897,8 @@ export const DATA = {
        18,
        85
       ]
-     ]
+     ],
+     "rule": "You need to be between 18 and 85."
     },
     {
      "kind": "need",
@@ -2581,7 +2918,8 @@ export const DATA = {
         0.25
        ]
       ]
-     ]
+     ],
+     "rule": "You need to have been treated for heart failure for at least 3 months."
     },
     {
      "kind": "need",
@@ -2591,7 +2929,8 @@ export const DATA = {
       "loop_diuretic",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if you take a water pill every day."
     },
     {
      "kind": "need",
@@ -2621,13 +2960,15 @@ export const DATA = {
         ]
        ]
       ]
-     ]
+     ],
+     "rule": "Your ejection fraction needs to be under 30%, or under 25% if you have AF."
     },
     {
      "kind": "need",
      "text": "A high NT-proBNP blood test",
      "quote": "Elevated N-terminal prohormone of B-type natriuretic peptide (NT-proBNP) ≥ 1000 pg/mL (BNP ≥ 300 pg/mL)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
@@ -2641,43 +2982,50 @@ export const DATA = {
        "1-3m": true,
        "3-12m": true
       }
-     ]
+     ],
+     "rule": "You need to have had a heart failure hospital stay, or a worsening, in the last 12 months."
     },
     {
      "kind": "need",
      "text": "On standard heart failure medicines for at least 30 days",
      "quote": "Are established on regional standard-of-care HF therapies for at least 30 days prior to screening",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
      "text": "Top blood pressure number 140 or lower",
      "quote": "Systolic blood pressure ≤ 140 mmHg",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "AF on the ECG while taking digoxin",
      "quote": "Have AFF on the screening ECG and are currently taking digoxin",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "A recent heart attack, heart surgery or procedure that could change your ejection fraction",
      "quote": "Have had any event or procedure that may have resulted in a change in ejection fraction, including, but not limited to, acute coronary syndrome and/or any coronary revascularization, cardiac surgery, valve surgery, any coronary revascularization, and/or cardiac resynchronization, or cardiac contractility modulation therapy within 3 months of screening",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Living in long-term care or hospice",
      "quote": "Are admitted to a long-term care facility or hospice",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "IV heart medicines, breathing support or extra oxygen very recently",
      "quote": "Are receiving intravenous inotropes or intravenous vasopressors ≤ 3 days prior to screening",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2697,7 +3045,8 @@ export const DATA = {
         "no"
        ]
       ]
-     ]
+     ],
+     "rule": "Your eGFR needs to be at least 20, and you can't be on dialysis."
     },
     {
      "kind": "cant",
@@ -2707,7 +3056,8 @@ export const DATA = {
       "transplant",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you've had an organ transplant."
     },
     {
      "kind": "cant",
@@ -2717,13 +3067,15 @@ export const DATA = {
       "pregnant",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you're pregnant, breastfeeding or planning a pregnancy."
     },
     {
      "kind": "cant",
      "text": "Cardiac amyloidosis or severe valve narrowing",
      "quote": "Have primary infiltrative cardiomyopathy (e.g. cardiac amyloidosis) or severe stenotic valvular disease",
-     "test": null
+     "test": null,
+     "rule": null
     }
    ]
   },
@@ -2756,7 +3108,8 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
@@ -2771,13 +3124,15 @@ export const DATA = {
        "3-12m": false,
        "none": false
       }
-     ]
+     ],
+     "rule": "You need to be in hospital for heart failure now, or to have left in the last 30 days."
     },
     {
      "kind": "need",
      "text": "Heart failure symptoms when you were admitted",
      "quote": "Heart failure signs and symptoms at the time of hospital admission",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
@@ -2787,13 +3142,15 @@ export const DATA = {
       "lvef",
       ">=",
       40
-     ]
+     ],
+     "rule": "Your ejection fraction needs to be at least 40%."
     },
     {
      "kind": "need",
      "text": "A high NT-proBNP or BNP blood test",
      "quote": "Elevated N-terminal pro B-type natriuretic peptide (NTproBNP) ≥500 pg/mL or B-type natriuretic peptide (BNP) ≥125 pg/mL for patients without atrial fibrillation (AF); or elevated NTproBNP ≥1500 pg/mL or BNP ≥375 pg/mL for patients with AF",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2803,13 +3160,15 @@ export const DATA = {
       "mra",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you take spironolactone or eplerenone."
     },
     {
      "kind": "cant",
      "text": "Severe high potassium on those medicines before",
      "quote": "Documented prior history of severe hyperkalemia in the setting of MRA use",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2827,31 +3186,36 @@ export const DATA = {
         "team"
        ]
       ]
-     ]
+     ],
+     "rule": "Your eGFR needs to be at least 25, and the study team also checks your potassium."
     },
     {
      "kind": "cant",
      "text": "A heart attack, heart procedure or new heart device in the last 30 days",
      "quote": "Acute myocardial infarction due to plaque rupture, coronary revascularization, valve replacement/repair, or implantation of a cardiac resynchronization therapy device within 30 days",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Severe valve disease",
      "quote": "Hemodynamically significant (severe) uncorrected primary cardiac valvular disease",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Heart muscle disease from certain specific causes",
      "quote": "Cardiomyopathy due to known acute inflammatory heart, infiltrative diseases, accumulation diseases, muscular dystrophies, cardiomyopathy with reversible causes, known hypertrophic obstructive cardiomyopathy, complex congenital heart disease, or known pericardial constriction",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Another likely cause for your symptoms",
      "quote": "Probable alternative cause of participant's heart failure symptoms",
-     "test": null
+     "test": null,
+     "rule": null
     }
    ]
   },
@@ -2884,7 +3248,8 @@ export const DATA = {
       "age",
       ">=",
       40
-     ]
+     ],
+     "rule": "You need to be at least 40."
     },
     {
      "kind": "need",
@@ -2894,31 +3259,36 @@ export const DATA = {
       "lvef",
       ">=",
       50
-     ]
+     ],
+     "rule": "Your ejection fraction needs to be at least 50%."
     },
     {
      "kind": "need",
      "text": "A worsening episode in the last year, or breathlessness with activity plus test evidence",
      "quote": "HFpEF defined as:",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
      "text": "On steady heart failure medicines for at least 30 days",
      "quote": "Patient is on stable guideline indicated HF medical therapy (Class I recommendations) for at least 30 days",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
      "text": "A resting heart rate low enough for pacing to help",
      "quote": "Patient's average heart rate on baseline ambulatory electrocardiographic monitor is at least 5 bpm lower than their calculated personalized cardiac pacing rate (e.g. if a patient's personalized cardiac pacing rate is 70 bpm and their average heart rate on the ambulatory electrocardiographic monitor is less than or equal to 65 bpm the patient is eligible)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "An ejection fraction that was once under 50%",
      "quote": "Improved or recovered EF (i.e., prior LVEF<50%)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2928,23 +3298,28 @@ export const DATA = {
       "device",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you have a pacemaker, defibrillator or implanted heart monitor."
     },
     {
      "kind": "cant",
-     "text": "Pregnant now",
+     "text": "Being pregnant now",
      "quote": "Current pregnancy (requirement for negative pregnancy test may vary by jurisdiction)",
      "test": [
       "pregnant",
-      "is",
-      "no"
-     ]
+      "map",
+      {
+       "no": true
+      }
+     ],
+     "rule": "You can't take part if you're pregnant."
     },
     {
      "kind": "cant",
      "text": "A heart attack or heart surgery in the last 3 months",
      "quote": "Acute coronary syndrome (including MI), cardiovascular surgery, or urgent percutaneous coronary intervention (PCI) within the 3 months prior to baseline visit or an elective PCI within 30 days prior to baseline visit.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2958,7 +3333,8 @@ export const DATA = {
        "3-12m": true,
        "1-3m": true
       }
-     ]
+     ],
+     "rule": "You can't take part if you're in hospital needing IV heart failure treatment right now."
     },
     {
      "kind": "cant",
@@ -2968,25 +3344,29 @@ export const DATA = {
       "bmi",
       "<=",
       45
-     ]
+     ],
+     "rule": "Your BMI needs to be at most 45."
     },
     {
      "kind": "cant",
      "text": "An AF ablation planned",
      "quote": "Planned AF ablation",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Amyloid, sarcoid or hypertrophic heart muscle disease",
      "quote": "Infiltrative cardiomyopathies (e.g., amyloidosis, sarcoidosis)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Blood pressure over 160/100 that isn't controlled",
      "quote": "Uncontrolled hypertension as defined by BP >160/100 mmHg on two measurements ≥15 minutes apart",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -2996,19 +3376,22 @@ export const DATA = {
       "egfr",
       ">=",
       30
-     ]
+     ],
+     "rule": "Your eGFR needs to be at least 30."
     },
     {
      "kind": "cant",
      "text": "Moderate-to-severe valve disease",
      "quote": "More than moderate valvular disease (e.g. exclude patients with moderate severe or severe valvular disease)",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Lung disease needing home oxygen",
      "quote": "Significant primary pulmonary disease on home oxygen",
-     "test": null
+     "test": null,
+     "rule": null
     }
    ]
   },
@@ -3041,7 +3424,8 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
@@ -3051,7 +3435,8 @@ export const DATA = {
       "hf_dx",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if you have heart failure."
     },
     {
      "kind": "need",
@@ -3061,7 +3446,8 @@ export const DATA = {
       "loop_diuretic",
       "is",
       "yes"
-     ]
+     ],
+     "rule": "You can only take part if you take a water pill every day."
     },
     {
      "kind": "need",
@@ -3082,13 +3468,15 @@ export const DATA = {
        "fraser_valley": false,
        "elsewhere": false
       }
-     ]
+     ],
+     "rule": "You need to live in the Vancouver Coastal Health or Providence area, which covers Vancouver, Richmond and the North Shore."
     },
     {
      "kind": "need",
      "text": "Fits one of the study's three groups",
      "quote": "Group-specific inclusion:",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -3098,17 +3486,19 @@ export const DATA = {
       "egfr",
       ">=",
       20
-     ]
+     ],
+     "rule": "Your eGFR needs to be at least 20."
     },
     {
      "kind": "cant",
-     "text": "Dialysis",
+     "text": "Being on dialysis",
      "quote": "Renal replacement therapy",
      "test": [
       "dialysis",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you're on dialysis."
     },
     {
      "kind": "cant",
@@ -3123,7 +3513,8 @@ export const DATA = {
        "1-3m": true,
        "now": false
       }
-     ]
+     ],
+     "rule": "You can't take part if you're unwell enough to need a hospital stay."
     }
    ]
   },
@@ -3156,7 +3547,8 @@ export const DATA = {
       "age",
       ">=",
       18
-     ]
+     ],
+     "rule": "You need to be at least 18."
     },
     {
      "kind": "need",
@@ -3166,19 +3558,22 @@ export const DATA = {
       "lvef",
       "<=",
       50
-     ]
+     ],
+     "rule": "Your ejection fraction needs to be at most 50%."
     },
     {
      "kind": "need",
      "text": "A wide QRS on your ECG, or expected to need a lot of pacing",
      "quote": "Resting QRS duration ≥130 ms as evidenced by a historical 12-lead ECG prior to enrollment OR anticipated right ventricular pacing >40% OR device in place with right ventricular pacing > 40%.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
      "text": "On standard heart failure medicines, or starting them",
      "quote": "Are optimized on HF guideline directed medical therapy according to current HF published guidelines OR patient's physician will make an effort to start all guideline-directed medical therapy and titrate doses up as permitted by the participant clinical status and co-morbidities prior to implantation procedure.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
@@ -3188,49 +3583,57 @@ export const DATA = {
       "pregnant",
       "is",
       "no"
-     ]
+     ],
+     "rule": "You can't take part if you're pregnant, breastfeeding or planning a pregnancy."
     },
     {
      "kind": "cant",
      "text": "Likely to need bypass surgery or a stent soon",
      "quote": "Participants with angiographic evidence of coronary disease who are candidates for coronary revascularization and are likely to undergo coronary artery bypass graft surgery or percutaneous coronary, intervention in the next three (3) months.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "A heart attack in the last 3 months",
      "quote": "Enzyme-positive myocardial infarction within the past three (3) months prior to enrollment.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Bypass surgery or a stent in the last 3 months",
      "quote": "Coronary artery bypass graft surgery or percutaneous coronary intervention (balloon and/or stent angioplasty) within the past three (3) months prior to enrollment.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Chagas disease, cardiac sarcoidosis or amyloidosis",
      "quote": "Participants with Chagas disease, cardiac sarcoidosis or amyloidosis.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Expected to get a heart pump (LVAD) or transplant within 6 months",
      "quote": "Expected to receive left ventricular assist device or heart transplantation within 6 months.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Severe valve disease",
      "quote": "Participants with primary severe valvular disease (e.g., aortic stenosis).",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Expected to live less than 12 months",
      "quote": "Have a life expectancy of less than 12 months.",
-     "test": null
+     "test": null,
+     "rule": null
     }
    ]
   },
@@ -3266,7 +3669,8 @@ export const DATA = {
        5,
        17.99
       ]
-     ]
+     ],
+     "rule": "You need to be between 5 and 17 years old."
     },
     {
      "kind": "need",
@@ -3276,43 +3680,50 @@ export const DATA = {
       "years_dx",
       ">=",
       0.25
-     ]
+     ],
+     "rule": "You need to have had it for at least 3 months."
     },
     {
      "kind": "need",
      "text": "Moderate to severe active lupus, scored by the study's doctors",
      "quote": "At Screening, participant must have moderate to severe active SLE disease, as adjudicated by the Central Adjudication Committee, defined as:",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "need",
      "text": "No signs of tuberculosis",
      "quote": "Participant should meet all of following tuberculosis (TB) criteria:",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
-     "text": "Anifrolumab before",
+     "text": "Having had anifrolumab before",
      "quote": "Prior use of anifrolumab.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Rituximab or a similar medicine in the last 26 weeks",
      "quote": "Prior treatment with directly acting cytotoxic B-cell depleting therapeutics (eg, rituximab) < 26 weeks prior to ICF signature.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "HIV, hepatitis B or C, or recent shingles",
      "quote": "Any positive result on screening for human immunodeficiency virus.",
-     "test": null
+     "test": null,
+     "rule": null
     },
     {
      "kind": "cant",
      "text": "Severe COVID-19 that needed a hospital stay",
      "quote": "History of severe COVID-19 infection requiring hospitalization, intensive care unit care, or assisted ventilation or any prior COVID-19 infection with unresolved sequelae. Any mild/asymptomatic COVID-19 infection (laboratory confirmed or suspected based on clinical symptoms).",
-     "test": null
+     "test": null,
+     "rule": null
     }
    ]
   }

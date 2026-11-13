@@ -166,6 +166,9 @@ button { font: inherit; color: inherit; }
 .req .why { margin: 2px 0 0; font-size: 14.5px; color: var(--ink-2); }
 .req.notmet .why { color: var(--notmet); }
 .req details { font-size: 14px; color: var(--ink-2); margin-top: 4px; }
+.linkish { background: none; border: 0; padding: 0; margin-top: 4px; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-size: 14.5px; }
+.card h3 a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--accent); }
+.card h3 a:hover { color: var(--accent); }
 .req details summary { cursor: pointer; width: fit-content; }
 .req blockquote { margin: 4px 0 0; padding-left: 10px; border-left: 3px solid var(--rule); }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
