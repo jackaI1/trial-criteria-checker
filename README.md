@@ -8,6 +8,8 @@ The part I cared about most was not guessing. If a line has an exception ("unles
 
 You can try it in your browser at **[jacklai.ca/projects/trial-finder](https://jacklai.ca/projects/trial-finder/)**. Pick a condition, add a made-up medical file, answer a few questions, and it shows the Vancouver trials you look like a fit for, with every requirement checked off or left for the study team. More on how that works [below](#the-trial-finder-demo).
 
+Working on this gave me ideas for making trial matching better for both patients and study teams. I wrote them down in [Ideas for making trial matching better](#ideas-for-making-trial-matching-better).
+
 ## What the output looks like
 
 These rows are from the [saved report](reports/fictional_patient.md). The patient is invented: 42, female, with type 2 diabetes, an HbA1c of 7.5% and a hemoglobin of 12 g/dL.
@@ -107,6 +109,30 @@ The trial rules aren't parsed automatically here. I read each trial's criteria a
 ### Turning on typing
 
 The page shows a text box, but it's switched off. Reading free text needs an AI model, and every message would cost money, so the live demo sticks to tiles. [web/trial-finder-ai](web/trial-finder-ai) has the code to switch it on: a small Cloudflare Worker that sends what someone types to Anthropic's Claude API with a JSON schema listing every fact the page knows. The model can only fill those fields or leave them empty, and anything outside the allowed answers is dropped. It takes an API key and four commands, which are in [its README](web/trial-finder-ai/README.md).
+
+## Ideas for making trial matching better
+
+Building this changed how I think about the problem. People looking for a trial and study teams looking for people already want the same thing, so most of the work is taking friction out of the way for both sides. These are the things I'd try next, roughly in order.
+
+**Let people describe themselves, then ask only what matters.** Most people know their condition but not their HbA1c. A good start lets someone type or say what they have, or upload a clinic letter or lab report. Then it asks only the questions that would change their results, each with a "how do I find this?" note. Tapping an answer stays as the backup. The demo does the asking, and the typing part is ready in [web/trial-finder-ai](web/trial-finder-ai).
+
+**Read trial rules with AI, and check them with code.** My three held-out tests showed that hand-written patterns can't keep up with how differently trials are worded. An AI model handles that wording much better, but it can be confidently wrong. The safer version has the model propose each rule along with the exact sentence it came from. Code then confirms the sentence really is in the trial and that the numbers and units match it, and a person approves each trial's rules once. One trial serves thousands of patients, so that one review is cheap.
+
+**Say who can settle each requirement.** Some lines a patient can answer, some a health record shows, and some only the study team can check at a screening visit. Showing that split tells someone how close they really are. It also keeps a trial that checks most things at screening from looking like a sure thing. The demo's match number already works this way.
+
+**Search by distance, and keep listings fresh.** People think "near me", not in city names. The registry's own location search also returns closed sites and other cities with the same name, so each listing needs checking site by site, and often.
+
+**Make the handoff easy for study teams.** A study coordinator shouldn't have to start from a blank chart. The demo's "what the study team would get" page shows the idea: what's confirmed and where it came from, what's left for screening, and how the person wants to be contacted.
+
+**Give doctors the same tool.** A doctor whose patient has run out of options doesn't have time to search dozens of listings. The same matching can start from a health record export (this project already reads FHIR), so a clinic could check trials for a patient in a few minutes and bring it up at the visit.
+
+**Help study teams write clearer criteria.** Reading these trials turned up rules that look like typos, such as a hemoglobin limit of 10 g/L that's almost certainly meant to be g/dL, and vague words like "clinically significant". A checker that flags those before a trial opens would mean fewer people screened out for reasons nobody intended.
+
+**Learn from screening results.** If study teams reported which likely matches passed screening, the match number could be tuned on real outcomes instead of only counting requirements.
+
+**Let people sort by what matters to them.** Distance, time commitment, whether there's a placebo and pay matter differently to different people. No listing in the registry says what a trial pays, so that part would have to come from the study teams.
+
+**Keep health details private.** Matching can run on the person's own device, the way the demo does, so nothing about their health leaves it until they choose to share it with a study team.
 
 ## How far it gets
 

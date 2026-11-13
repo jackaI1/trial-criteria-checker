@@ -37,7 +37,7 @@ test('the match number counts study-team lines as not confirmed', () => {
   const trial = DATA.trials.find(t => t.id === 'NCT07351058');
   const facts = { age: { lo: 58, hi: 58 }, hba1c: { lo: 8.1, hi: 8.1 }, treatment_stable: fact('yes'), insulin: fact('no'),
     bmi: { lo: 31.4, hi: 31.4 }, weight_attempt: fact('yes'), t1d_dka: fact('no'), severe_hypo: fact('no'),
-    weight_stable: fact('yes'), obesity_surgery: fact('no'), recent_cv: fact('no'), glp1: fact('no') };
+    weight_stable: fact('under3'), obesity_surgery: fact('no'), recent_cv: fact('no'), glp1: fact('no') };
   const r = assess(trial, facts);
   assert.equal(r.notmet, 0);
   assert.equal(r.met, r.canCheck);
@@ -80,5 +80,19 @@ test('every requirement quotes its source and every trial belongs to a condition
   for (const t of DATA.trials) {
     assert.ok(t.groups.every(g => DATA.conditions.some(c => c.id === g)));
     for (const r of t.reqs) assert.ok(r.quote.length > 5, `${t.id}: ${r.text}`);
+  }
+});
+
+test('every requirement a person can check has a plain sentence, and every answer has a phrase', () => {
+  for (const t of DATA.trials) {
+    for (const r of t.reqs) {
+      const checkable = JSON.stringify(r.test || []).match(/"[a-z_0-9]+","(>=|>|<=|<|between|is|map)"/);
+      if (checkable) assert.ok(r.rule && /^[A-Z].*\.$/.test(r.rule), `${t.id}: ${r.text}`);
+    }
+  }
+  for (const [key, q] of Object.entries(DATA.questions)) {
+    const p = DATA.phrases[key];
+    assert.ok(p && p.topic, key);
+    if (q.type === 'choice' && key !== 'area') for (const o of q.options) assert.ok(p[o.value], `${key}: ${o.value}`);
   }
 });

@@ -1,5 +1,5 @@
 import { DATA } from './data.js';
-import { assess, factsIn, isKnown, nextQuestion, rank, trialsFor } from './engine.js';
+import { assess, evalTest, factsIn, isKnown, nextQuestion, rank, trialsFor } from './engine.js';
 
 // Typing is off unless an AI endpoint is configured (see ai/README.md).
 // Set window.TRIAL_FINDER_AI = 'https://your-worker.example/understand' before this script loads.
@@ -14,7 +14,12 @@ const resultsEl = $('results');
 const talkEl = $('talk');
 
 let state;
+// Each conversation gets a number. "Start over" bumps it, and anything still
+// typing for the old conversation stops instead of appearing in the new one.
+let run = 0;
+class Stale extends Error {}
 function reset() {
+  run += 1;
   state = { condition: null, facts: {}, asked: [], filesAdded: [], offered: false, sort: 'fit', index: 0, busy: false };
   thread.innerHTML = '';
   choicesEl.innerHTML = '';
@@ -46,7 +51,14 @@ const fileIcon = () => {
   return svg;
 };
 
+// A message shown at once, with no typing dots (the opening line would be ready before anyone types).
+function sayNow(...parts) {
+  thread.append(el('li', { class: 'msg bot' }, el('span', { class: 'who', text: 'Trial finder' }),
+    parts.map(p => (typeof p === 'string' ? el('p', { text: p }) : p))));
+}
+
 async function say(...parts) {
+  const mine = run;
   const typing = el('li', { class: 'msg bot' }, el('span', { class: 'typing' }, el('span', { class: 'dots' }, el('i'), el('i'), el('i'))));
   const label = parts.find(p => p && p.typingLabel);
   if (label) typing.firstChild.append(label.typingLabel);
@@ -55,6 +67,7 @@ async function say(...parts) {
   const length = parts.filter(p => typeof p === 'string').join(' ').length;
   await wait(Math.min(1500, 600 + length * 9) + (label ? 700 : 0));
   typing.remove();
+  if (mine !== run) throw new Stale();
   const msg = el('li', { class: 'msg bot' }, el('span', { class: 'who', text: 'Trial finder' }),
     parts.filter(p => !(p && p.typingLabel)).map(p => (typeof p === 'string' ? el('p', { text: p }) : p)));
   thread.append(msg);
@@ -65,7 +78,10 @@ function you(content) {
   scrollDown();
 }
 function scrollDown() {
-  requestAnimationFrame(() => window.scrollTo({ top: document.body.scrollHeight, behavior: calm ? 'auto' : 'smooth' }));
+  requestAnimationFrame(() => {
+    if (!resultsEl.hidden) return;
+    window.scrollTo({ top: document.body.scrollHeight, behavior: calm ? 'auto' : 'smooth' });
+  });
 }
 function offer(options) {
   choicesEl.innerHTML = '';
@@ -75,7 +91,13 @@ function offer(options) {
       if (state.busy) return;
       state.busy = true;
       choicesEl.innerHTML = '';
-      try { await o.run(); } finally { state.busy = false; }
+      try {
+        await o.run();
+      } catch (error) {
+        if (!(error instanceof Stale)) throw error;
+      } finally {
+        state.busy = false;
+      }
     });
     choicesEl.append(b);
   }
@@ -139,7 +161,7 @@ function renderPanel() {
 // ---------- the conversation
 
 async function start() {
-  await say('Hi. I can help you find clinical trials that are recruiting in Vancouver.',
+  sayNow('Hi. I can help you find clinical trials that are recruiting in Vancouver.',
     'Tell me about yourself, and add any medical files you have. Let\'s start with your condition. What are you living with?');
   offerConditions();
 }
@@ -247,30 +269,92 @@ async function finish() {
 }
 
 // Questions for one trial's open lines, asked from its match card.
-async function askOpen(trial) {
-  const open = [...new Set(trial.reqs.flatMap(r => [...factsIn(r.test)]).filter(f => !state.facts[f] && DATA.questions[f]))];
+async function askOpen(trial, first) {
+  let open = [...new Set(trial.reqs.flatMap(r => [...factsIn(r.test)]).filter(f => !state.facts[f] && DATA.questions[f]))];
+  if (first && open.includes(first)) open = [first, ...open.filter(f => f !== first)];
   if (!open.length) { state.index = 0; return showResults(trial.id); }
   await ask(open[0], { forTrial: trial });
 }
 
-// ---------- results
+// ---------- plain sentences
 
-function evidence(req) {
-  const parts = [...factsIn(req.test)].filter(k => state.facts[k] && state.facts[k].source !== 'condition')
-    .map(k => {
-      const f = state.facts[k];
-      const from = f.source === 'You said' ? 'you said' : f.source === 'You wrote' ? 'you wrote' : 'from your ' + f.source.toLowerCase();
-      return `${factLabel(k)}: ${display(k, f)}, ${from}`;
-    });
-  return parts.join('. ');
+const join = list => (list.length < 2 ? list[0] || '' : list.slice(0, -1).join(', ') + ' and ' + list[list.length - 1]);
+const isClause = topic => /^(whether|how|what|where)\b/.test(topic);
+
+// How an answer reads in a sentence: "you're not on dialysis", "your HbA1c is 8.1%".
+function phrase(key, fact) {
+  const p = DATA.phrases[key];
+  if (!p || !isKnown(fact)) return null;
+  if (key === 'area' || (fact.value === undefined && typeof p.v === 'string')) {
+    const value = display(key, fact);
+    return p.v.replace('{v}', key === 'years_dx' ? value.charAt(0).toLowerCase() + value.slice(1) : value);
+  }
+  if (fact.value === undefined) return p.v[String(fact.lo)] ?? null;
+  return p[fact.value] ?? null;
 }
 
-const STATUS = {
-  met: { mark: '✓', why: req => evidence(req) || 'Confirmed' },
-  notmet: { mark: '✕', why: req => (evidence(req) ? evidence(req) + '. ' : '') + 'This rules the trial out for now.' },
-  ask: { mark: '?', why: () => 'A question would settle this.' },
-  team: { mark: '·', why: req => (evidence(req) ? evidence(req) + '. ' : '') + 'The study team checks this at screening.' },
-};
+function sourceLead(source) {
+  if (source === 'You said') return 'You said';
+  if (source === 'You wrote') return 'You wrote that';
+  return DATA.files.find(f => f.name === source)?.says ?? `Your ${source.toLowerCase()} says`;
+}
+
+// The facts behind a failed check, leaving out the parts that passed.
+function failing(test, out = new Set()) {
+  if (!test || test[0] === 'team') return out;
+  if (test[0] === 'all' || test[0] === 'any') {
+    for (const part of test[1]) if (evalTest(part, state.facts) === false) failing(part, out);
+    return out;
+  }
+  if (evalTest(test, state.facts) === false) out.add(test[0]);
+  return out;
+}
+
+// "You said you're not on dialysis. Your blood test results show your HbA1c is 8.1%."
+function evidence(req, only) {
+  const bySource = new Map();
+  for (const key of only || factsIn(req.test)) {
+    const fact = state.facts[key];
+    if (!fact || fact.source === 'condition') continue;
+    const words = phrase(key, fact);
+    if (!words) continue;
+    if (!bySource.has(fact.source)) bySource.set(fact.source, []);
+    bySource.get(fact.source).push(words);
+  }
+  return [...bySource.entries()].map(([source, words]) => `${sourceLead(source)} ${join(words)}.`).join(' ');
+}
+
+function topics(req, test) {
+  return [...factsIn(req.test)].filter(test).map(k => DATA.phrases[k]?.topic).filter(Boolean);
+}
+
+function explain({ req, status }) {
+  const said = evidence(req);
+  if (status === 'met') return said || 'Confirmed.';
+  if (status === 'notmet') return [evidence(req, failing(req.test)), req.rule].filter(Boolean).join(' ');
+  if (status === 'ask') {
+    const open = topics(req, k => !state.facts[k]);
+    return isClause(open[0] || '') ? `I haven't asked ${open.join(' or ')} yet.` : `I haven't asked about ${join(open)} yet.`;
+  }
+  const kept = topics(req, k => state.facts[k]?.state === 'private');
+  if (kept.length) return [`You chose not to share ${kept.join(' or ')}.`, req.rule, 'The study team will ask you about it at screening.'].filter(Boolean).join(' ');
+  const unsure = topics(req, k => state.facts[k]?.state === 'unsure');
+  if (unsure.length) {
+    const lead = isClause(unsure[0]) ? `You weren't sure ${unsure.join(' or ')}.` : `You didn't know ${join(unsure)}.`;
+    return [lead, req.rule, 'The study team can check this at screening.'].filter(Boolean).join(' ');
+  }
+  if (said) return `${said} The study team checks the rest at screening.`;
+  return 'Only the study team can check this, at your screening visit.';
+}
+
+// Why a trial is ruled out: the rule first, then what you told me.
+function reason(req) {
+  return [req.rule, evidence(req, failing(req.test))].filter(Boolean).join(' ');
+}
+
+const MARKS = { met: '✓', notmet: '✕', ask: '?', team: '·' };
+
+// ---------- results
 
 function showResults(focusId) {
   const { fits, notFits } = rank(DATA, state.facts, state.condition, state.sort);
@@ -294,10 +378,11 @@ function showResults(focusId) {
   }
   if (notFits.length) {
     resultsEl.append(el('details', { class: 'others' }, el('summary', { text: `Not a fit right now (${notFits.length})` }),
-      el('ul', {}, notFits.map(x => el('li', {}, el('a', { href: x.trial.url, text: x.trial.title }), el('br'),
-        el('span', { class: 'reason', text: 'Because of: ' + x.result.firstProblem.charAt(0).toLowerCase() + x.result.firstProblem.slice(1) }))))));
+      el('ul', {}, notFits.map(x => el('li', {}, el('a', { href: x.trial.url, target: '_blank', rel: 'noopener', text: x.trial.title }), el('br'),
+        el('span', { class: 'reason', text: reason(x.result.rows.find(r => r.status === 'notmet').req) }))))));
   }
   window.scrollTo({ top: 0, behavior: 'auto' });
+  requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'auto' }));
 }
 
 function card({ trial, result: r, km }, i, n) {
@@ -316,7 +401,7 @@ function card({ trial, result: r, km }, i, n) {
         el('button', { type: 'button', 'aria-label': 'Previous match', disabled: i === 0, onclick: () => { state.index--; showResults(); }, text: '‹' }),
         `${i + 1} of ${n}`,
         el('button', { type: 'button', 'aria-label': 'Next closest match', disabled: i === n - 1, onclick: () => { state.index++; showResults(); }, text: '›' }))),
-    el('h3', { text: trial.title }),
+    el('h3', {}, el('a', { href: trial.url, target: '_blank', rel: 'noopener', text: trial.title })),
     el('p', { class: 'site', text: `${trial.named_site ? trial.site : trial.site + ', Vancouver'}${where}` }),
     el('div', { class: 'score' },
       el('div', { class: 'big' }, String(r.percent), el('small', { text: '%' })),
@@ -337,8 +422,9 @@ function card({ trial, result: r, km }, i, n) {
     groups.map(([kind, title]) => [el('h4', { text: title }),
       el('ul', { class: 'reqs' }, r.rows.filter(x => x.req.kind === kind).map(({ req, status }) =>
         el('li', { class: 'req ' + status },
-          el('span', { class: 'ico', 'aria-label': { met: 'Met', notmet: 'Not met', ask: 'Open question', team: 'Study team checks' }[status], text: STATUS[status].mark }),
-          el('div', {}, el('p', { class: 'what', text: req.text }), el('p', { class: 'why', text: STATUS[status].why(req) }),
+          el('span', { class: 'ico', 'aria-label': { met: 'Met', notmet: 'Not met', ask: 'Open question', team: 'Study team checks' }[status], text: MARKS[status] }),
+          el('div', {}, el('p', { class: 'what', text: req.text }), el('p', { class: 'why', text: explain({ req, status }) }),
+            status === 'ask' ? el('button', { type: 'button', class: 'linkish', onclick: () => backToTalk(trial, [...factsIn(req.test)].find(k => !state.facts[k])), text: 'Answer now' }) : null,
             el('details', {}, el('summary', { text: 'The trial\'s wording' }), el('blockquote', { text: req.quote }))))))]),
     el('div', { class: 'actions' },
       el('button', { type: 'button', class: 'btn primary', onclick: () => openHandoff(trial, r), text: 'See what the study team would get' }),
@@ -346,10 +432,21 @@ function card({ trial, result: r, km }, i, n) {
       el('a', { class: 'btn', href: trial.url, target: '_blank', rel: 'noopener', text: 'Official listing' })));
 }
 
-async function backToTalk(trial) {
+async function backToTalk(trial, first) {
   resultsEl.hidden = true;
   talkEl.hidden = false;
-  await askOpen(trial);
+  try {
+    await askOpen(trial, first);
+  } catch (error) {
+    if (!(error instanceof Stale)) throw error;
+  }
+}
+
+// The same facts, written for the study team: "HbA1c: 8.1% (blood test results)".
+function teamEvidence(req) {
+  return [...factsIn(req.test)].filter(k => isKnown(state.facts[k]) && state.facts[k].source !== 'condition')
+    .map(k => `${factLabel(k)}: ${display(k, state.facts[k])} (${state.facts[k].source === 'You said' ? 'they said' : state.facts[k].source.toLowerCase()})`)
+    .join('; ');
 }
 
 function openHandoff(trial, r) {
@@ -364,9 +461,14 @@ function openHandoff(trial, r) {
     el('p', {}, `${trial.title}. ${r.met} of ${r.total} requirements confirmed, ${r.notmet} not met.`),
     about.length ? el('p', { text: about.join('. ') + '.' }) : null,
     el('h4', { text: `To check at screening (${list('team').length + list('ask').length})` }),
-    el('ul', {}, [...list('ask'), ...list('team')].map(x => el('li', { text: (x.req.kind === 'cant' ? 'Check for: ' + x.req.text.charAt(0).toLowerCase() + x.req.text.slice(1) : x.req.text) + (x.status === 'ask' ? ' (not asked yet)' : '') }))),
+    el('ul', {}, [...list('ask'), ...list('team')].map(x => {
+      const facts = [...factsIn(x.req.test)].map(k => state.facts[k]);
+      const note = x.status === 'ask' ? ' (not asked yet)' : facts.some(f => f?.state === 'private') ? ' (they chose not to share this)'
+        : facts.some(f => f?.state === 'unsure') ? ' (they weren\'t sure)' : '';
+      return el('li', { text: (x.req.kind === 'cant' ? 'Check for: ' + x.req.text.charAt(0).toLowerCase() + x.req.text.slice(1) : x.req.text) + note });
+    })),
     el('h4', { text: `Already confirmed (${list('met').length})` }),
-    el('ul', {}, list('met').map(x => el('li', { text: `${x.req.kind === 'cant' ? 'Clear of: ' + x.req.text.charAt(0).toLowerCase() + x.req.text.slice(1) : x.req.text}. ${evidence(x.req)}` })))));
+    el('ul', {}, list('met').map(x => el('li', { text: `${x.req.kind === 'cant' ? 'Clear of: ' + x.req.text.charAt(0).toLowerCase() + x.req.text.slice(1) : x.req.text}. ${teamEvidence(x.req)}` })))));
   dialog.showModal();
 }
 
@@ -396,7 +498,7 @@ if (AI_ENDPOINT) {
       }
       renderPanel();
     } catch {
-      await say('I couldn\'t read that just now. Pick an answer above instead.');
+      await say('I couldn\'t read that just now. Pick an answer above instead.').catch(() => {});
     } finally {
       state.busy = false;
     }
