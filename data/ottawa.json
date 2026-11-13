@@ -1,0 +1,648 @@
+{
+  "retrieved_at": "2026-11-13T10:12:18.156936+00:00",
+  "requests": [
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=15&query.cond=type+2+diabetes&query.locn=Ottawa",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=15&query.cond=atrial+fibrillation&query.locn=Ottawa",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=3&query.cond=atrial+fibrillation&query.locn=Ottawa&pageToken=ZVNj7o2Elu8o3lpyWN2mp7LumpOQJJxrZfan3fEfkA",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=15&query.cond=heart+failure&query.locn=Ottawa",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=6&query.cond=heart+failure&query.locn=Ottawa&pageToken=ZVNj7o2Elu8o3lpyWN2mp7LumpOQJJxsYfmh2vQbkA",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=15&query.cond=systemic+lupus+erythematosus&query.locn=Ottawa",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=15&query.cond=rheumatoid+arthritis&query.locn=Ottawa"
+  ],
+  "studies": [
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT05427084",
+          "briefTitle": "Canagliflozin Targeting Vascular Inflammation"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-05-06",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Diabetes Type 2",
+            "Coronary Artery Disease"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* 1\\) Stable CAD (over 60 days post-myocardial infarction).\n* 2\\) Diabetes\n* 3\\) given informed consent.\n\nExclusion Criteria:\n\n1. severe LV dysfunction (EF\\<50%);\n2. decompensated heart failure;\n3. active infection (e.g. pneumonia, active skin infections, and on antibiotics);\n4. active inflammatory conditions (e.g. rheumatoid arthritis, chronic inflammatory bowel disease, SLE, systemic anti-inflammatory therapy (e.g. prednisone, methotrexate));\n5. pregnancy (all women of child bearing potential will have a negative BHCG test;\n6. breastfeeding;\n7. Women of childbearing potential who refuse to use two forms of contraception (this includes at least one form of highly effective and one effective method of contraception) throughout the study OR men capable of fathering a child who refuse to use contraception.\n8. glomerular filtration rate (GFR) \\<50 ml/min/1.72m2;\n9. Use of p-glycoprotein inhibitor (e.g. cyclosporine, verapamil, or quinidine) or a strong CYP3A4 inhibitor (e.g. ritonavir, clarithromycin, or ketoconazole);\n10. Hemoglobin \\< 105(women) \\<110 (men) g/L; WBC \\< 3.0x 10(9)/L, platelet count\\< 110x 10(9)/L;\n11. Patient with a history of cirrhosis, chronic active hepatitis or severe hepatic disease or with alanine aminotransferase (ALT) levels greater than 3 times the upper limit of normal.\n12. unable to give informed consent;",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "University of Ottawa Heart Institute",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            },
+            {
+              "id": "D003324",
+              "term": "Coronary Artery Disease"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06462170",
+          "briefTitle": "Pancreatic Insulin Production Capacity (PIPC) - a Feasibility Study"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-05-06",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Type 2 Diabetes"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. Consent provided\n2. Age \\>= 18 years.\n3. Diagnosed as type 2 diabetes mellitus.\n4. Not on insulin therapy.\n\nExclusion Criteria:\n\n1. Diagnosed as another form of diabetes mellitus.\n2. Allergic to one or more ingredients in Boost meal replacement shake.\n3. Unable to fast since midnight and attend in person for the morning protocol.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "The Ottawa Hospital",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07059377",
+          "briefTitle": "Semaglutide for Smoking Cessation in Patients With Diabetes"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-08",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Diabetes Mellitus, Type 2",
+            "Nicotine Addiction",
+            "Tobacco Dependence"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Adults (18 years or older) with type 2 diabetes\n* Currently residing in Ontario\n* Smoke at least five cigarettes per day and willing to reduce or quit smoking within the next 6 months\n* Stable HbA1c ≥7.0% - 10% with no more than a 1% change over the last 3 to 6 months.\n* Have not used GLP-1 receptor agonists in the past six months.\n* Able to provide informed consent\n\nExclusion Criteria:\n\n* Pregnant or breastfeeding individuals\n* Contraindication to NRT or GLP-1 RA.\n* Current daily use of NRT or a GLP1 RA.\n* Use of bupropion, cytisine, and varenicline within the last 7 days.\n* Use of a DPP-IV inhibitor within the last 7 days.\n* Initiation of a new diabetes medication within the last 3 months.\n* As per the product monograph, participants with the following diagnoses or disorders will be excluded;\n* Personal or family history of medullary thyroid cancer\n* Personal or family history of Multiple Endocrine Neoplasia syndrome type 2\n* Diabetic ketoacidosis\n* Type I diabetes\n* Acute pancreatitis or pancreatic cancer\n* Acute, chronic or end-stage renal failure\n* Tachyarrhythmias\n* Unable to engage in follow-up for any reason (for example an acute mental illness, cognitive impairment, unable to speak English or French).\n* Other conditions deemed by the study team to interfere with participation or outcomes in the opinion of the study investigator (for example acutely unwell, life expectancy less than 1 year).",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "University of Ottawa Heart Institute",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            },
+            {
+              "id": "D014029",
+              "term": "Tobacco Use Disorder"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07094529",
+          "briefTitle": "Personalized Hypoglycemia Outpatient Treatment - a Feasibility Study"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2025-07-30",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Type 2 Diabetes (T2DM)",
+            "Hypoglycemia (Diabetic)"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* In order to be eligible to participate in this study, an individual must meet all of the following criteria:\n\n  1. Consent provided\n  2. Age \\>= 18 years.\n  3. Diagnosed as type 2 diabetes mellitus.\n  4. Type 2 diabetes medications include at least one of the following for at least one month prior to entering the study: sulfonylurea or insulin of any type.\n\nExclusion Criteria:\n\n* An individual who meets any of the following criteria will be excluded from participation in this study:\n\n  1. Diagnosed as another form of diabetes mellitus.\n  2. Has a history of hypoglycemia unawareness.\n  3. Had a hypoglycemia event, defined as capillary blood glucose \\< 3.9 mmol/L within 24 hours prior to the study visit booking time.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "The Ottawa Hospital",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D003924",
+              "term": "Diabetes Mellitus, Type 2"
+            },
+            {
+              "id": "D007003",
+              "term": "Hypoglycemia"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "type 2 diabetes"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06844227",
+          "briefTitle": "Perioperative Anticoagulant Use for Surgery Evaluation -Virtual Visit (PAUSE-Virtual)"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2025-03-10",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Atrial Fibrillation (AF)"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Age 18 years of age or older with AF/flutter (chronic, persistent, paroxysmal) that requires anticoagulation\n* Receiving warfarin, with a target international normalized ratio (INR) range of 2.0-3.0, or a DOAC, comprising one of the following regimens: apixaban, 2.5 mg or 5 mg bid; edoxaban, 30 mg or 60 mg daily; dabigatran, 110 mg or 150 mg bid; or rivaroxaban, 15 mg or 20 mg daily\n* Require an elective (planned, non-urgent) surgery or invasive medical or surgical procedure\n\nExclusion Criteria:\n\n* Indication for anticoagulation is not AF/flutter (e.g., mechanical heart valve, VTE, other)\n* Non-standard anticoagulant regimen used (e.g., warfarin INR 3-4, rivaroxaban 2.5 mg bid)\n* In DOAC users only: creatinine clearance \\<25 mL/min (that preclude DOAC use)\n* Cognitive impairment or psychiatric illness (that precludes reliable contact during follow-up)\n* Unable or unwilling to provide consent for virtual care (in-person care will be provided)\n* Previous participation in this study for an elective surgery/procedure",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years",
+          "maximumAge": "100 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "The Ottawa Hospital",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT02808260",
+          "briefTitle": "Predicting Development of SCAF in Device Patients"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-07-13",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Atrial Fibrillation"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n• Dual chamber permanent pacemaker or defibrillator implanted within previous 10 years\n\nExclusion Criteria:\n\n* Clinical atrial fibrillation documented by surface ECG (12 lead ECG, Telemetry, Holter)\n* Participants considered by the investigator to be unsuitable for the study for the following reason: life expectancy less than 2 years due to concomitant disease\n* Participants who are pregnant or breast-feeding\n* Congenital heart disease\n* Inherited arrhythmia syndrome, i.e. Brugada, long QT interval",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "University of Ottawa Heart Institute",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT03397602",
+          "briefTitle": "Exercise Training in Patients With Persistent or Permanent Atrial Fibrillation"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-03-11",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Atrial Fibrillation"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. persistent or permanent atrial fibrillation;\n2. rate controlled with a resting ventricular rate of equal to or less than 100 bpm;\n3. able to perform a symptom-limited exercise test;\n4. at least 40 years of age (i.e. participants must be 40 years or older);\n\nExclusion Criteria:\n\n1. currently participating in routine exercise training (more than two times per week);\n2. unstable angina;\n3. diagnosed severe mitral or aortic stenosis;\n4. diagnosed hypertrophic obstructive cardiomyopathy with significant obstruction;\n5. pregnant, lactating or planning to become pregnant during the study period;\n6. unable to provide written, informed consent, or\n7. unwilling or unable to return for follow up at week 12.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "40 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "University of Ottawa Heart Insititue",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            },
+            {
+              "id": "D009043",
+              "term": "Motor Activity"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT07002450",
+          "briefTitle": "Left Atrial Imaging Prior to Cardioversion: Leveraging Computed Tomography to Rule Out Thrombus in The Emergency Department (LA CLOTTED)"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-06-09",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Atrial Fibrillation (AF)",
+            "Atrial Flutter"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. Age ≥18 years old; and\n2. Primary symptomatic AF without a reversible underlying cause (e.g. sepsis, pneumonia, pulmonary embolism, hyperthyroidism)\n3. LA imaging required before cardioversion according to local clinical practice guidelines\n\nExclusion Criteria:\n\n1. Patients with an indication for emergency cardioversion (e.g. hemodynamic instability (systolic blood pressure\\<90mmHg or signs of shock), cardiac ischemia (ongoing severe chest pain or marked ST depression on ECG \\>2mm), or pulmonary edema (significant dyspnea, crackles, or hypoxia)); or\n2. Contraindication to CCT (renal insufficiency (eGFR\\< 45ml/min/1.73m2), allergy to intravenous contrast agents, pregnancy (contraindications to radiation exposure), or inability to perform 20-second breath-hold)",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "The Ottawa Hospital Civic Campus",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D001281",
+              "term": "Atrial Fibrillation"
+            },
+            {
+              "id": "D001282",
+              "term": "Atrial Flutter"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "atrial fibrillation"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06547788",
+          "briefTitle": "LEFT ATRIAL MONITORING IN PATIENTS BEFORE AND AFTER MITRAL SURGERY - LAMBDA STUDY"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-11-05",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Mitral Regurgitation",
+            "Mitral Valve Disease",
+            "Heart Failure"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Patients ≥18 years of age\n* Severe (4+) symptomatic Carpentier Type II MR due to degenerative disease\n* Planned surgical mitral valve repair\n* Right-to-left atrial pressure gradient ≥ 5 mmHg at baseline\n* Pulmonary vascular resistance ≤ 4 Wood units\n\nExclusion Criteria:\n\n* Secondary causes of MR and mixed mitral valve disease\n* Infective endocarditis within 30-days\n* Any prior mitral valve intervention\n* Need for emergency intervention or surgery\n* Left ventricular ejection fraction 2+",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "University of Ottawa Heart Institute",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D008944",
+              "term": "Mitral Valve Insufficiency"
+            },
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT03103932",
+          "briefTitle": "Biomarker Guided Discharge of Heart Failure Patients"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-05-06",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure; With Decompensation"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* Patients admitted to hospital with a primary diagnosis of acute decompensated heart failure, compatible with the modified Framingham criteria\n\nExclusion Criteria:\n\n* Patient unable to provide blood samples or cannot participate in follow-up\n* Patient with end stage organ failure\n\n  * Kidney: creatinine \\>350 μmol/L or Estimated GFR ≤15 ml/min\n  * Liver dysfunction: liver function test \\>2.5 times normal\n  * Lungs: pulmonary FEV1\\<50% predicted\n* Patient requiring intubation\n* Patient with an admission NTproBNP measurement of \\>30,000 pg/ml\n* Patient listed for heart transplant, or admitted specifically for transplant workup\n* Patient in cardiogenic shock\n* Patient with life expectancy of less than 6 months, or has major co-morbidities such as new stroke, cancer, pneumonia, or other serious life threatening illness\n* Patient with conditions that will make it difficult to discharge from hospital such as a fall or waiting for a long term care bed\n* Any other significant disease or disorder which, in the opinion of the Investigator, may either put the patient at risk because of participation in the trial, or may bias the result of the trial, or the patient's ability to participate in the trial\n* Patient who has participated in another research trial involving an investigational product in the past 30 days",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "University of Ottawa Heart Institute",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT06601465",
+          "briefTitle": "COgnitioN With VERiciGuat Evaluation in Heart Failure"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-08-25",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Heart Failure",
+            "Cognitive Impairment"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n1. Adult patients\n2. Established chronic heart failure (≥ 6 months)\n3. Mild-to-moderate cognitive impairment (as per the diagnosis of cognitive impairment or a Montreal Cognitive Assessment (MoCA) score 10-25).\n\nExclusion Criteria:\n\n1. Patients who have contraindications for sGC stimulator and vericiguat therapy (i.e. use of long-acting nitrates, other soluble guanylate cyclase stimulators (e.g., riociguat), or phosphodiesterase type 5 (PDE-5), pregnancy or breast-feeding)\n2. Unable to undergo CMR imaging or brain MRI.\n3. CMR exclusions: incompatible implantable cardiac device (ICD or CRT), uncontrolled atrial fibrillation or recurrent ventricular arrhythmias).\n4. General medical conditions: uncontrolled thyroid disorders, hepatic failure, or myocardial revascularization procedures \\[coronary angioplasty and/or surgical revascularization in the previous 3 months\\], cancer/malignancy, or with severe dementia).\n5. Patients with allergies to the study products.\n6. Patients currently hospitalized.",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "University of Ottawa",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "derivedSection": {
+        "conditionBrowseModule": {
+          "meshes": [
+            {
+              "id": "D006333",
+              "term": "Heart Failure"
+            },
+            {
+              "id": "D060825",
+              "term": "Cognitive Dysfunction"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    },
+    {
+      "protocolSection": {
+        "identificationModule": {
+          "nctId": "NCT03999138",
+          "briefTitle": "MRI Assessment of Pulmonary Edema in Acute Heart Failure"
+        },
+        "statusModule": {
+          "overallStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2026-05-08",
+            "type": "ACTUAL"
+          }
+        },
+        "conditionsModule": {
+          "conditions": [
+            "Acute Heart Failure",
+            "Pulmonary Edema With Heart Failure"
+          ]
+        },
+        "eligibilityModule": {
+          "eligibilityCriteria": "Inclusion Criteria:\n\n* 18 years of age or older and willing/able to provide informed consent\n* patients being treated for acute heart failure (including those patients with both reduced and preserved ejection fraction)\n* patients receiving medical therapy for pulmonary edema by current standard of care (including oral or IV diuretics)\n* patients identified within 48 hours of initiation of medical therapy for pulmonary edema, defined as the time of first diuretic (IV or PO) or escalation of existing diuretic therapy administered within the ED or hospital\n\nExclusion Criteria:\n\n* contraindication to MRI\n* patient too critically ill/unstable as per the clinical care team for transport to MRI scanner within the required scanning window\n* moderate to severe dementia",
+          "healthyVolunteers": false,
+          "sex": "ALL",
+          "minimumAge": "18 Years"
+        },
+        "contactsLocationsModule": {
+          "locations": [
+            {
+              "facility": "University of Ottawa Heart Institute",
+              "city": "Ottawa",
+              "state": "Ontario",
+              "country": "Canada",
+              "status": "RECRUITING"
+            }
+          ]
+        }
+      },
+      "matched_queries": [
+        "heart failure"
+      ]
+    }
+  ],
+  "source": "ClinicalTrials.gov v2 API",
+  "location": {
+    "city": "Ottawa",
+    "country": "Canada"
+  },
+  "selection": "Third held-out set. For each condition, the first 4 studies in API order with a recruiting site in Ottawa, Canada, skipping any study in studies.json, vancouver.json, toronto.json, montreal.json or the demo trials (kept or dropped). Fetched after the Montreal fixes were merged, and labelled before the parser was run on them."
+}

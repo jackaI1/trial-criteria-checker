@@ -1,0 +1,343 @@
+{
+  "annotation_method": "Third held-out set. Written by reading the full criteria of each study after the Montreal fixes were merged and before the parser was run on these studies. Only lines with a reference rule are listed; every other line is expected to stay unknown. Not clinically reviewed.",
+  "selection": "Third held-out set. For each condition, the first 4 studies in API order with a recruiting site in Ottawa, Canada, skipping any study in studies.json, vancouver.json, toronto.json, montreal.json or the demo trials (kept or dropped). Fetched after the Montreal fixes were merged, and labelled before the parser was run on them.",
+  "scope": "A line gets a reference rule only if the whole line is one of: an age limit (wording that covers everyone, with age at consent or enrollment treated as current age); a sex limit; a named condition with no duration, severity, history, timing, treatment or alternative attached; or a single limit or inclusive range on hemoglobin, platelets, ANC, creatinine, HbA1c, BMI, eGFR or LVEF with no time window, method or other measurement attached. Lines nested under another line, in an unknown section, or next to an \"or\" get no rule. Conditions outside the parser vocabulary and abbreviations still count, so they show up as misses. Cohort-specific lines count as context-dependent. When a line has a self-contained part and a qualified part, only the self-contained part gets a rule. A source unit that looks wrong (eGFR per 1.72m2) gets no rule.",
+  "method": "Held-out set: exact match on study, source offsets, section, field, operator, value, unit and qualifiers. The parser was not changed after these studies were fetched.",
+  "studies": [
+    {
+      "nct_id": "NCT05427084",
+      "annotations": [
+        {
+          "text": "2\\) Diabetes",
+          "start": 83,
+          "end": 95,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "diabetes",
+              "unit": null
+            }
+          ],
+          "note": "Named condition after a list marker."
+        },
+        {
+          "text": "severe LV dysfunction (EF\\<50%);",
+          "start": 151,
+          "end": 183,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "lvef",
+              "op": "<",
+              "value": 50.0,
+              "unit": "%"
+            }
+          ],
+          "note": "The name is defined by the EF limit, like the anemia line in the first sample."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT06462170",
+      "annotations": [
+        {
+          "text": "Age \\>= 18 years.",
+          "start": 44,
+          "end": 61,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Plain age limit."
+        },
+        {
+          "text": "Diagnosed as type 2 diabetes mellitus.",
+          "start": 65,
+          "end": 103,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "type 2 diabetes",
+              "unit": null
+            }
+          ],
+          "note": "Named condition."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT07059377",
+      "annotations": [
+        {
+          "text": "Adults (18 years or older) with type 2 diabetes",
+          "start": 23,
+          "end": 70,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            },
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "type 2 diabetes",
+              "unit": null
+            }
+          ],
+          "note": "An age limit and a named condition on one line."
+        },
+        {
+          "text": "Diabetic ketoacidosis",
+          "start": 965,
+          "end": 986,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "diabetic ketoacidosis",
+              "unit": null
+            }
+          ],
+          "note": "Named condition."
+        },
+        {
+          "text": "Type I diabetes",
+          "start": 989,
+          "end": 1004,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "type 1 diabetes",
+              "unit": null
+            }
+          ],
+          "note": "Named condition written with a Roman numeral."
+        },
+        {
+          "text": "Tachyarrhythmias",
+          "start": 1093,
+          "end": 1109,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "tachyarrhythmia",
+              "unit": null
+            }
+          ],
+          "note": "Named condition."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT07094529",
+      "annotations": []
+    },
+    {
+      "nct_id": "NCT06844227",
+      "annotations": [
+        {
+          "text": "Age 18 years of age or older with AF/flutter (chronic, persistent, paroxysmal) that requires anticoagulation",
+          "start": 23,
+          "end": 131,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "The age part is self-contained; the AF part is qualified."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT02808260",
+      "annotations": [
+        {
+          "text": "Clinical atrial fibrillation documented by surface ECG (12 lead ECG, Telemetry, Holter)",
+          "start": 132,
+          "end": 219,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "atrial fibrillation",
+              "unit": null
+            }
+          ],
+          "note": "The bracket only says how it was documented."
+        },
+        {
+          "text": "Congenital heart disease",
+          "start": 436,
+          "end": 460,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "congenital heart disease",
+              "unit": null
+            }
+          ],
+          "note": "Named condition."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT03397602",
+      "annotations": [
+        {
+          "text": "at least 40 years of age (i.e. participants must be 40 years or older);",
+          "start": 209,
+          "end": 280,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 40.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Age limit with a clarifying bracket."
+        },
+        {
+          "text": "unstable angina;",
+          "start": 394,
+          "end": 410,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "unstable angina",
+              "unit": null
+            }
+          ],
+          "note": "Named condition."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT07002450",
+      "annotations": [
+        {
+          "text": "Age ≥18 years old; and",
+          "start": 24,
+          "end": 46,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Age limit with list punctuation."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT06547788",
+      "annotations": [
+        {
+          "text": "Patients ≥18 years of age",
+          "start": 23,
+          "end": 48,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "Plain age limit."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT03103932",
+      "annotations": [
+        {
+          "text": "Patient in cardiogenic shock",
+          "start": 657,
+          "end": 685,
+          "section": "exclusion",
+          "rules": [
+            {
+              "field": "diagnosis",
+              "op": "contains",
+              "value": "cardiogenic shock",
+              "unit": null
+            }
+          ],
+          "note": "Named condition."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT06601465",
+      "annotations": [
+        {
+          "text": "Adult patients",
+          "start": 24,
+          "end": 38,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "\"Adult\" read as 18 or older, matching the registry minimum."
+        }
+      ]
+    },
+    {
+      "nct_id": "NCT03999138",
+      "annotations": [
+        {
+          "text": "18 years of age or older and willing/able to provide informed consent",
+          "start": 23,
+          "end": 92,
+          "section": "inclusion",
+          "rules": [
+            {
+              "field": "age",
+              "op": ">=",
+              "value": 18.0,
+              "unit": "years"
+            }
+          ],
+          "note": "The age part is self-contained; consent is not a rule field."
+        }
+      ]
+    }
+  ]
+}
