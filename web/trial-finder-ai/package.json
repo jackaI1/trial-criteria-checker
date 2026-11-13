@@ -1,0 +1,15 @@
+{
+  "name": "trial-finder-ai",
+  "private": true,
+  "type": "module",
+  "description": "Optional worker that turns typed descriptions into trial finder facts",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.161.0"
+  }
+}

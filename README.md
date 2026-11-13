@@ -6,6 +6,8 @@ I built this because I wanted to understand how software can tell whether a pers
 
 The part I cared about most was not guessing. If a line has an exception ("unless approved by the investigator"), a time window, a sub-list or wording the parser doesn't know, it stays unknown and the sentence is shown as is. The program also never says someone is eligible for a whole trial. It answers line by line and leaves the rest for a person to read.
 
+You can try it in your browser at **[jacklai.ca/projects/trial-finder](https://jacklai.ca/projects/trial-finder/)**. Pick a condition, add a made-up medical file, answer a few questions, and it shows the Vancouver trials you look like a fit for, with every requirement checked off or left for the study team. More on how that works [below](#the-trial-finder-demo).
+
 ## What the output looks like
 
 These rows are from the [saved report](reports/fictional_patient.md). The patient is invented: 42, female, with type 2 diabetes, an HbA1c of 7.5% and a hemoglobin of 12 g/dL.
@@ -90,6 +92,22 @@ python3 -m trial_criteria match --snapshot data/vancouver.json --patient example
 
 For the type 2 diabetes example, the report asks one question, "Have you been diagnosed with type 1 diabetes?", and lists BMI at screening as something the study measures. Adding "no" settles one more line ([reports/vancouver/type-2-diabetes-with-answers.md](reports/vancouver/type-2-diabetes-with-answers.md)). The example answers also give an age of 60 while the record says 58, so that answer isn't used. There are only a few questions because the parser still turns few lines into rules. As it reads more, the list grows on its own.
 
+## The trial finder demo
+
+The command line tool answers "which lines does this patient meet?". I wanted to see what the same idea feels like for a patient, so I built [a small web page](https://jacklai.ca/projects/trial-finder/) for 17 trials recruiting in Vancouver: 6 for type 2 diabetes, 4 for atrial fibrillation, 6 for heart failure and 1 for lupus. One heart failure screening study counts for diabetes and AF too.
+
+It starts with your condition and how long you've had it, then offers made-up medical files (a family doctor's letter, blood test results, a cardiology note) and pulls out what trials ask about. After that it asks one question at a time. Each time, it picks the question that would settle lines in the most trials that are still possible, so someone who adds a doctor's letter and a blood test gets about 4 questions instead of going through every requirement. Answers are tiles, like "7 to 7.5%", and every question has "I don't know" and "I'd rather not say", which leave that line for the study team instead of counting against you. A panel on the side shows everything it has learned and where each fact came from.
+
+The last screen shows one trial at a time with a big number: the share of the trial's whole list you've confirmed. Lines only the study team can check, like "clinically significant condition affecting the upper GI tract", count as not confirmed. So a trial that looks broad but checks a lot at screening can't look like a sure thing. Underneath is what kind of study it is (phase, placebo or not, size) and every requirement with a check, a question mark or "the study team checks this", plus the trial's exact wording. No listing in the registry says what trials pay, so it says that instead of guessing. There's also a page showing what a study team would get if you chose to share.
+
+Everything runs in the browser. Nothing is sent anywhere or saved, and the fonts are served from the same site, so the page makes no outside requests once it loads.
+
+The trial rules aren't parsed automatically here. I read each trial's criteria and wrote them as checks in [`scripts/demo_spec.py`](scripts/demo_spec.py), each with the exact text it came from. [`scripts/build_demo.py`](scripts/build_demo.py) confirms every quote really appears in that trial's text in [data/demo_trials_source.json](data/demo_trials_source.json) before it writes the page's data, and CI fails if the data file is out of date. The page itself is plain HTML, CSS and JavaScript in [web/trial-finder](web/trial-finder) with no build step, and [`engine.js`](web/trial-finder/engine.js) holds the matching logic that the JavaScript tests cover.
+
+### Turning on typing
+
+The page shows a text box, but it's switched off. Reading free text needs an AI model, and every message would cost money, so the live demo sticks to tiles. [web/trial-finder-ai](web/trial-finder-ai) has the code to switch it on: a small Cloudflare Worker that sends what someone types to Anthropic's Claude API with a JSON schema listing every fact the page knows. The model can only fill those fields or leave them empty, and anything outside the allowed answers is dropped. It takes an API key and four commands, which are in [its README](web/trial-finder-ai/README.md).
+
 ## How far it gets
 
 Short version: on 17 Montreal studies it had never seen, it made 12 rules, 10 of them right, and found 10 of the 24 rules a person would pull out. Everything else stays unknown. The rest of this section is how I got there and what it still misses.
@@ -159,7 +177,7 @@ I haven't fixed these yet. When I do, Montreal becomes practice data too, and th
 
 ## Tests
 
-`python3 -m unittest discover -s tests` runs 54 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the questions and answers (an answer never overrides the record), the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the Toronto and Montreal scores so they can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
+`python3 -m unittest discover -s tests` runs 54 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the questions and answers (an answer never overrides the record), the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the Toronto and Montreal scores so they can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code. A second job runs `node --test tests/js/*.test.mjs` (13 tests for the demo's matching logic and the typing worker, with a fake model) and `python3 scripts/build_demo.py --check`.
 
 ## Limits
 
