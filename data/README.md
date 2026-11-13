@@ -19,3 +19,7 @@ python3 -m trial_criteria fetch --ids NCT02560883 NCT05011045 NCT07807280 NCT075
 ```
 
 A refreshed record may have changed or stopped recruiting. Do not overwrite the benchmark snapshot without reviewing every label and source offset. Use `python3 scripts/reproduce.py` to rebuild outputs intentionally, and `--check` to detect drift without writing files.
+
+## Vancouver snapshot
+
+`vancouver.json` is a second, separate snapshot: recruiting studies for type 2 diabetes, atrial fibrillation, heart failure, systemic lupus erythematosus and rheumatoid arthritis that had a recruiting site in Vancouver, Canada on November 13, 2026. Besides the eligibility fields it keeps each study's condition list, its MeSH condition tags and the Vancouver sites (facility, city, province, country and site status, with no contact details). `dropped` lists the studies the API returned that had no recruiting Vancouver site. It isn't labelled, so it isn't part of the measurement above.

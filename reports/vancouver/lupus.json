@@ -1,0 +1,448 @@
+{
+  "patient": {
+    "fictional": true,
+    "source": "FHIR R4 Bundle lupus",
+    "as_of": "2026-11-13",
+    "diagnoses": [
+      "systemic lupus erythematosus"
+    ],
+    "diagnoses_complete": false,
+    "labs": {
+      "anc": {
+        "value": 1.6,
+        "unit": "10^9/L",
+        "effective": "2026-10-21T13:30:00-07:00"
+      },
+      "hemoglobin": {
+        "value": 112,
+        "unit": "g/L",
+        "effective": "2026-10-21T13:30:00-07:00"
+      },
+      "platelets": {
+        "value": 142,
+        "unit": "10^9/L",
+        "effective": "2026-10-21T13:30:00-07:00"
+      }
+    },
+    "age": 34,
+    "sex": "female"
+  },
+  "provenance": {
+    "used": [
+      {
+        "resource": "Patient/fict-sle",
+        "note": "age 34 from birthDate 1992-01-30"
+      },
+      {
+        "resource": "Patient/fict-sle",
+        "note": "sex female"
+      },
+      {
+        "resource": "Condition/fict-sle-condition-1",
+        "note": "diagnosis systemic lupus erythematosus"
+      },
+      {
+        "resource": "Observation/fict-sle-observation-3",
+        "note": "anc 1.6 10^9/L on 2026-10-21"
+      },
+      {
+        "resource": "Observation/fict-sle-observation-1",
+        "note": "hemoglobin 112 g/L on 2026-10-21"
+      },
+      {
+        "resource": "Observation/fict-sle-observation-2",
+        "note": "platelets 142 10^9/L on 2026-10-21"
+      }
+    ],
+    "skipped": [
+      {
+        "resource": "Condition/fict-sle-condition-2",
+        "note": "verification status is refuted, not confirmed"
+      },
+      {
+        "resource": "Observation/fict-sle-observation-4",
+        "note": "status is preliminary, not final"
+      }
+    ]
+  },
+  "search": {
+    "location": {
+      "city": "Vancouver",
+      "country": "Canada"
+    },
+    "saved_studies": 27,
+    "matched_studies": 1,
+    "dropped_by_location": 16,
+    "diagnoses": [
+      "systemic lupus erythematosus"
+    ]
+  },
+  "studies": [
+    {
+      "nct_id": "NCT05835310",
+      "title": "An Efficacy and Safety Study of Intravenous Anifrolumab to Treat Systemic Lupus Erythematosus in Pediatric Participants",
+      "url": "https://clinicaltrials.gov/study/NCT05835310",
+      "status": "RECRUITING",
+      "structured": [
+        {
+          "sentence": "minimumAge: 5 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field minimumAge",
+          "rule": {
+            "field": "age",
+            "op": ">=",
+            "value": 5.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "met",
+          "evaluation_reason": "age 34, which matches the rule"
+        },
+        {
+          "sentence": "maximumAge: 17 Years",
+          "start": null,
+          "end": null,
+          "section": "inclusion",
+          "context": "Structured field maximumAge",
+          "rule": {
+            "field": "age",
+            "op": "<=",
+            "value": 17.0,
+            "unit": "years"
+          },
+          "source": "structured",
+          "parse_reason": "Structured registry field",
+          "status": "not met",
+          "evaluation_reason": "age 34, which does not match the rule"
+        }
+      ],
+      "criteria": [
+        {
+          "sentence": "Participant's parent/caregiver/legally authorized representative and participant (if required per local country regulation) capable of giving signed informed consent, which includes compliance with the requirements and restrictions listed in the ICF and in this protocol.",
+          "start": 23,
+          "end": 294,
+          "section": "inclusion",
+          "context": "Participant's parent/caregiver/legally authorized representative and participant (if required per local country regulation) capable of giving signed informed consent, which includes compliance with the requirements and restrictions listed in the ICF and in this protocol. Informed assent is to be provided by the participant per local country regulation.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Informed assent is to be provided by the participant per local country regulation.",
+          "start": 295,
+          "end": 377,
+          "section": "inclusion",
+          "context": "Participant's parent/caregiver/legally authorized representative and participant (if required per local country regulation) capable of giving signed informed consent, which includes compliance with the requirements and restrictions listed in the ICF and in this protocol. Informed assent is to be provided by the participant per local country regulation.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Diagnosis of SLE according to the 2019 European League Against Rheumatism/American College of Rheumatology (EULAR/ACR) criteria for at least 3 months prior to signing the ICF.",
+          "start": 380,
+          "end": 555,
+          "section": "inclusion",
+          "context": "Diagnosis of SLE according to the 2019 European League Against Rheumatism/American College of Rheumatology (EULAR/ACR) criteria for at least 3 months prior to signing the ICF.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "At Screening, participant must have moderate to severe active SLE disease, as adjudicated by the Central Adjudication Committee, defined as:",
+          "start": 558,
+          "end": 698,
+          "section": "inclusion",
+          "context": "At Screening, participant must have moderate to severe active SLE disease, as adjudicated by the Central Adjudication Committee, defined as:\n\n  (a) SLEDAI-2K activity of: (i) ≥ 6 points with at least 4 points (≥ 4 points) coming from the following clinical components ('Clinical' SLEDAI-2K score): arthritis, myositis, rash, alopecia, mucosal ulcers, pleurisy, pericarditis, or vasculitis and excluding points attributed to a fever, SLE headache, and organic brain syndrome (ii) Clinical SLEDAI score of ≥ 4 points verified at Day 1 (b) BILAG-2004 activity of: (i) ≥ 1 BILAG A score; or (ii) ≥ 2 BILAG B scores (c) PGA score ≥ 1.0 on a 0 to 3 VAS",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "(a) SLEDAI-2K activity of: (i) ≥ 6 points with at least 4 points (≥ 4 points) coming from the following clinical components ('Clinical' SLEDAI-2K score): arthritis, myositis, rash, alopecia, mucosal ulcers, pleurisy, pericarditis, or vasculitis and excluding points attributed to a fever, SLE headache, and organic brain syndrome (ii) Clinical SLEDAI score of ≥ 4 points verified at Day 1 (b) BILAG-2004 activity of: (i) ≥ 1 BILAG A score; or (ii) ≥ 2 BILAG B scores (c) PGA score ≥ 1.0 on a 0 to 3 VAS",
+          "start": 702,
+          "end": 1204,
+          "section": "inclusion",
+          "context": "(a) SLEDAI-2K activity of: (i) ≥ 6 points with at least 4 points (≥ 4 points) coming from the following clinical components ('Clinical' SLEDAI-2K score): arthritis, myositis, rash, alopecia, mucosal ulcers, pleurisy, pericarditis, or vasculitis and excluding points attributed to a fever, SLE headache, and organic brain syndrome (ii) Clinical SLEDAI score of ≥ 4 points verified at Day 1 (b) BILAG-2004 activity of: (i) ≥ 1 BILAG A score; or (ii) ≥ 2 BILAG B scores (c) PGA score ≥ 1.0 on a 0 to 3 VAS",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Participant should meet all of following tuberculosis (TB) criteria:",
+          "start": 1207,
+          "end": 1275,
+          "section": "inclusion",
+          "context": "Participant should meet all of following tuberculosis (TB) criteria:",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "A.",
+          "start": 1277,
+          "end": 1279,
+          "section": "inclusion",
+          "context": "A. No signs or symptoms of active TB B. No medical history or past physical examinations suggestive of active TB C. No recent contact with a person with active TB or if there has been such contact, referral to a TB specialist for evaluation and initiation of treatment for latent TB, if warranted, prior to the first administration of study intervention in accordance with local SoC D. No history of latent TB without documented completion of treatment prior to initial screening visit",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "No signs or symptoms of active TB B.",
+          "start": 1280,
+          "end": 1316,
+          "section": "inclusion",
+          "context": "A. No signs or symptoms of active TB B. No medical history or past physical examinations suggestive of active TB C. No recent contact with a person with active TB or if there has been such contact, referral to a TB specialist for evaluation and initiation of treatment for latent TB, if warranted, prior to the first administration of study intervention in accordance with local SoC D. No history of latent TB without documented completion of treatment prior to initial screening visit",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "No medical history or past physical examinations suggestive of active TB C.",
+          "start": 1317,
+          "end": 1392,
+          "section": "inclusion",
+          "context": "A. No signs or symptoms of active TB B. No medical history or past physical examinations suggestive of active TB C. No recent contact with a person with active TB or if there has been such contact, referral to a TB specialist for evaluation and initiation of treatment for latent TB, if warranted, prior to the first administration of study intervention in accordance with local SoC D. No history of latent TB without documented completion of treatment prior to initial screening visit",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "No recent contact with a person with active TB or if there has been such contact, referral to a TB specialist for evaluation and initiation of treatment for latent TB, if warranted, prior to the first administration of study intervention in accordance with local SoC D.",
+          "start": 1393,
+          "end": 1662,
+          "section": "inclusion",
+          "context": "A. No signs or symptoms of active TB B. No medical history or past physical examinations suggestive of active TB C. No recent contact with a person with active TB or if there has been such contact, referral to a TB specialist for evaluation and initiation of treatment for latent TB, if warranted, prior to the first administration of study intervention in accordance with local SoC D. No history of latent TB without documented completion of treatment prior to initial screening visit",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "No history of latent TB without documented completion of treatment prior to initial screening visit",
+          "start": 1663,
+          "end": 1762,
+          "section": "inclusion",
+          "context": "A. No signs or symptoms of active TB B. No medical history or past physical examinations suggestive of active TB C. No recent contact with a person with active TB or if there has been such contact, referral to a TB specialist for evaluation and initiation of treatment for latent TB, if warranted, prior to the first administration of study intervention in accordance with local SoC D. No history of latent TB without documented completion of treatment prior to initial screening visit",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Female participants of childbearing potential must have a negative serum pregnancy test at screening and negative urine pregnancy test at randomization.",
+          "start": 1766,
+          "end": 1918,
+          "section": "inclusion",
+          "context": "Female participants of childbearing potential must have a negative serum pregnancy test at screening and negative urine pregnancy test at randomization.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Female participants of childbearing and male participants must adhere to the contraception methods.",
+          "start": 1921,
+          "end": 2020,
+          "section": "inclusion",
+          "context": "Female participants of childbearing and male participants must adhere to the contraception methods.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Known diagnosis of an IFN-mediated autoinflammatory interferonopathy.",
+          "start": 2045,
+          "end": 2114,
+          "section": "exclusion",
+          "context": "Known diagnosis of an IFN-mediated autoinflammatory interferonopathy.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "History of, or current diagnosis of, clinically significant non-SLE-related vasculitides.",
+          "start": 2117,
+          "end": 2206,
+          "section": "exclusion",
+          "context": "History of, or current diagnosis of, clinically significant non-SLE-related vasculitides.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "In participants aged 11 years and above: history or evidence of suicidal ideation.",
+          "start": 2209,
+          "end": 2291,
+          "section": "exclusion",
+          "context": "In participants aged 11 years and above: history or evidence of suicidal ideation.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "History of any non-SLE disease that has required treatment with oral or parenteral corticosteroids for more than a total of 2 weeks within the last 24 weeks prior to signing the ICF.",
+          "start": 2294,
+          "end": 2476,
+          "section": "exclusion",
+          "context": "History of any non-SLE disease that has required treatment with oral or parenteral corticosteroids for more than a total of 2 weeks within the last 24 weeks prior to signing the ICF.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Any positive result on screening for human immunodeficiency virus.",
+          "start": 2479,
+          "end": 2545,
+          "section": "exclusion",
+          "context": "Any positive result on screening for human immunodeficiency virus.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Active hepatitis B surface antigen OR hepatitis B core antibody (HBcAb), hepatitis C virus (HCV) antibody and detectable HCV ribonucleic acid (RNA) or any active or recent case of Herpes Zoster infection.",
+          "start": 2548,
+          "end": 2752,
+          "section": "exclusion",
+          "context": "Active hepatitis B surface antigen OR hepatitis B core antibody (HBcAb), hepatitis C virus (HCV) antibody and detectable HCV ribonucleic acid (RNA) or any active or recent case of Herpes Zoster infection.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Any clinical cytomegalovirus or Epstein-Barr virus infection that has not completely resolved within 12 weeks prior to signing the ICF.",
+          "start": 2755,
+          "end": 2890,
+          "section": "exclusion",
+          "context": "Any clinical cytomegalovirus or Epstein-Barr virus infection that has not completely resolved within 12 weeks prior to signing the ICF.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "History of severe COVID-19 infection requiring hospitalization, intensive care unit care, or assisted ventilation or any prior COVID-19 infection with unresolved sequelae.",
+          "start": 2893,
+          "end": 3064,
+          "section": "exclusion",
+          "context": "History of severe COVID-19 infection requiring hospitalization, intensive care unit care, or assisted ventilation or any prior COVID-19 infection with unresolved sequelae. Any mild/asymptomatic COVID-19 infection (laboratory confirmed or suspected based on clinical symptoms).",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Any mild/asymptomatic COVID-19 infection (laboratory confirmed or suspected based on clinical symptoms).",
+          "start": 3065,
+          "end": 3169,
+          "section": "exclusion",
+          "context": "History of severe COVID-19 infection requiring hospitalization, intensive care unit care, or assisted ventilation or any prior COVID-19 infection with unresolved sequelae. Any mild/asymptomatic COVID-19 infection (laboratory confirmed or suspected based on clinical symptoms).",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Prior use of anifrolumab.",
+          "start": 3172,
+          "end": 3197,
+          "section": "exclusion",
+          "context": "Prior use of anifrolumab.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Prior treatment with directly acting cytotoxic B-cell depleting therapeutics (eg, rituximab) \\< 26 weeks prior to ICF signature.",
+          "start": 3200,
+          "end": 3328,
+          "section": "exclusion",
+          "context": "Prior treatment with directly acting cytotoxic B-cell depleting therapeutics (eg, rituximab) \\< 26 weeks prior to ICF signature.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        },
+        {
+          "sentence": "Blood transfusion or receipt of blood products except albumin within 4 weeks prior to signing the ICF.",
+          "start": 3331,
+          "end": 3433,
+          "section": "exclusion",
+          "context": "Blood transfusion or receipt of blood products except albumin within 4 weeks prior to signing the ICF.",
+          "rule": null,
+          "parse_reason": "Unsupported wording or contextual, nested, compound or unknown-section criterion",
+          "status": "unknown",
+          "evaluation_reason": "No supported complete rule"
+        }
+      ],
+      "missing_criteria": false,
+      "sites": [
+        {
+          "facility": "Research Site",
+          "city": "Vancouver",
+          "state": "British Columbia",
+          "country": "Canada",
+          "status": "RECRUITING"
+        }
+      ],
+      "matched_on": [
+        {
+          "diagnosis": "systemic lupus erythematosus",
+          "mesh_id": "D008180",
+          "mesh_term": "Lupus Erythematosus, Systemic"
+        }
+      ],
+      "counts": {
+        "met": 0,
+        "not met": 0,
+        "unknown": 25
+      },
+      "structured_counts": {
+        "met": 1,
+        "not met": 1,
+        "unknown": 0
+      }
+    }
+  ],
+  "counts": {
+    "met": 0,
+    "not met": 0,
+    "unknown": 25
+  },
+  "structured_counts": {
+    "met": 1,
+    "not met": 1,
+    "unknown": 0
+  },
+  "open_questions": [],
+  "retrieved_at": "2026-11-13T07:47:33.686939+00:00",
+  "requests": [
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=type+2+diabetes&query.locn=Vancouver",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=atrial+fibrillation&query.locn=Vancouver",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=heart+failure&query.locn=Vancouver",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=systemic+lupus+erythematosus&query.locn=Vancouver",
+    "https://clinicaltrials.gov/api/v2/studies?format=json&filter.overallStatus=RECRUITING&pageSize=100&query.cond=rheumatoid+arthritis&query.locn=Vancouver"
+  ],
+  "warning": "Fictional patient demonstration. No overall eligibility decision. Unparsed criteria require human review."
+}

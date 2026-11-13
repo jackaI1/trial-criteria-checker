@@ -8,7 +8,7 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from trial_criteria.benchmark import benchmark
 from trial_criteria.fhir import bundle_to_patient
-from trial_criteria.report import build_report, render_html, render_markdown
+from trial_criteria.report import build_match_report, build_report, render_html, render_markdown
 
 # Ages in saved FHIR reports are calculated on this fixed date so rebuilds match.
 AS_OF = date(2026, 11, 13)
@@ -33,6 +33,13 @@ def main():
     outputs.update({'reports/fhir_type_2_diabetes.json':dump(fhir_report),
                     'reports/fhir_type_2_diabetes.html':render_html(fhir_report),
                     'reports/fhir_type_2_diabetes.md':render_markdown(fhir_report)})
+    # Each example patient against the saved Vancouver snapshot.
+    vancouver = read('data/vancouver.json')
+    for bundle in sorted(Path('examples/fhir').glob('*.json')):
+        record, notes = bundle_to_patient(read(bundle),AS_OF)
+        nearby = build_match_report(vancouver,record,notes)
+        base = 'reports/vancouver/'+bundle.stem
+        outputs.update({base+'.json':dump(nearby), base+'.html':render_html(nearby), base+'.md':render_markdown(nearby)})
     for name, content in outputs.items():
         if args.check:
             if not Path(name).exists() or Path(name).read_text(encoding='utf-8') != content:

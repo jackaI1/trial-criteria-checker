@@ -66,5 +66,15 @@ def evaluate(row, patient):
         else:
             matched = value == threshold
     acceptable = matched if row['section'] == 'inclusion' else not matched
-    return result('met' if acceptable else 'not met',
-                  'Compared supplied evidence; exclusion conditions are inverted')
+    if field == 'diagnosis':
+        evidence = 'diagnosis listed' if matched else 'not in a diagnosis list marked complete'
+    elif field == 'sex':
+        evidence = 'sex is ' + value.lower()
+    elif field in LAB_UNITS:
+        evidence = f"{field} {lab['value']:g} {lab['unit']}"
+    else:
+        evidence = f'{field} {value:g}'
+    reason = evidence + (', which matches the rule' if matched else ', which does not match the rule')
+    if row['section'] == 'exclusion':
+        reason += '. This is an exclusion, so the result is flipped'
+    return result('met' if acceptable else 'not met', reason)

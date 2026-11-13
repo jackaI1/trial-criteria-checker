@@ -5,10 +5,10 @@ import sys
 from datetime import date
 from pathlib import Path
 from urllib.error import URLError
-from .api import fetch_studies
+from .api import fetch_conditions, fetch_studies
 from .benchmark import benchmark
 from .fhir import bundle_to_patient
-from .report import build_report, render_html, render_markdown
+from .report import build_match_report, build_report, render_html, render_markdown
 
 
 def read(path):
@@ -33,7 +33,10 @@ def main():
     parser = argparse.ArgumentParser(description='Source-linked public trial criteria. Fictional records only.')
     sub = parser.add_subparsers(dest='command',required=True)
     fetch = sub.add_parser('fetch',help='Download recruiting records from ClinicalTrials.gov')
-    fetch.add_argument('--condition',default='')
+    fetch.add_argument('--condition',nargs='+',default=[''],
+                       help='One or more conditions; each is searched separately and the results merged')
+    fetch.add_argument('--city',help='Keep only studies with a recruiting site in this city')
+    fetch.add_argument('--country',help='With --city, the site must also be in this country')
     fetch.add_argument('--ids',nargs='+')
     fetch.add_argument('--limit',type=int,default=10)
     fetch.add_argument('--output',default='data/latest.json')
@@ -48,19 +51,38 @@ def main():
     report.add_argument('--output',default='reports/fictional_patient')
     report.add_argument('--as-of',type=date.fromisoformat,default=date.today(),
                         help='Date for calculating age from a FHIR birthDate (YYYY-MM-DD, default today)')
+    nearby = sub.add_parser('match',help='Check a patient against saved studies that list one of their diagnoses')
+    nearby.add_argument('--snapshot',required=True)
+    nearby.add_argument('--patient',required=True)
+    nearby.add_argument('--output',required=True)
+    nearby.add_argument('--as-of',type=date.fromisoformat,default=date.today())
     convert = sub.add_parser('patient',help='Show the record read from a FHIR R4 Bundle, and what was skipped')
     convert.add_argument('bundle')
     convert.add_argument('--as-of',type=date.fromisoformat,default=date.today())
     args = parser.parse_args()
     try:
         if args.command == 'fetch':
-            result = fetch_studies(args.condition,args.limit,args.ids)
+            if args.country and not args.city:
+                parser.error('--country needs --city')
+            if args.ids:
+                result = fetch_studies(args.condition[0],args.limit,args.ids,city=args.city,country=args.country)
+            else:
+                result = fetch_conditions(args.condition,args.limit,city=args.city,country=args.country)
             write(args.output,result)
-            print(f"Saved {len(result['studies'])} public recruiting records to {args.output}")
+            dropped = f", left out {len(result['dropped'])} with no recruiting site there" if 'dropped' in result else ''
+            print(f"Saved {len(result['studies'])} public recruiting records to {args.output}{dropped}")
         elif args.command == 'benchmark':
             result = benchmark(read(args.snapshot),read(args.labels))
             write(args.output,result)
             print(json.dumps({k:v for k,v in result.items() if k not in ('missed','incorrect')},indent=2))
+        elif args.command == 'match':
+            patient, provenance = load_patient(args.patient,args.as_of)
+            result = build_match_report(read(args.snapshot),patient,provenance)
+            base = Path(args.output)
+            write(base.with_suffix('.json'),result)
+            base.with_suffix('.html').write_text(render_html(result),encoding='utf-8')
+            base.with_suffix('.md').write_text(render_markdown(result),encoding='utf-8')
+            print(f"{len(result['studies'])} matching studies; text lines {json.dumps(result['counts'])}; Markdown: {base.with_suffix('.md')}")
         elif args.command == 'patient':
             record, notes = bundle_to_patient(read(args.bundle),args.as_of)
             print(json.dumps(dict(patient=record,**notes),indent=2,ensure_ascii=False))
