@@ -77,12 +77,15 @@ Skipped:
 | [NCT07776509](https://clinicaltrials.gov/study/NCT07776509): A Study to Evaluate Effect of AZD6234 as an Adjunct to Incretin-based Therapies in Adult Participants With Obesity or Overweight With Weight-related Comorbidity With or Without Type 2 Diabetes Mellitus | Diabetes Mellitus, Type 2 | Research Site, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 15 unknown |
 | [NCT07866066](https://clinicaltrials.gov/study/NCT07866066): Maridebart Cafraglutide Versus Semaglutide in Participants With Type 2 Diabetes | Diabetes Mellitus, Type 2 | Dr T G Elliott Incorporated - BC Diabetes, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 14 unknown |
 
-## What would settle more lines
+## Questions that would settle more lines
 
-These parsed lines are unknown only because the record is missing something:
+These parsed lines are unknown only because the record is missing something the patient could answer:
 
-- bmi result taken at screening (2 lines)
-- Do they have type 1 diabetes? (1 line)
+- Have you been diagnosed with type 1 diabetes? (1 line in 1 study)
+
+## Measured by the study
+
+- BMI at screening. The study measures this itself. (2 lines in 2 studies)
 
 ## [NCT07351058](https://clinicaltrials.gov/study/NCT07351058): A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight and Type 2 Diabetes
 

@@ -1,0 +1,8 @@
+{
+  "fictional": true,
+  "description": "Invented answers to the open questions for the type 2 diabetes example. The age answer disagrees with the record on purpose, to show the record wins.",
+  "answers": {
+    "not_diagnosed_with": ["type 1 diabetes"],
+    "age": 60
+  }
+}

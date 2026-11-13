@@ -61,24 +61,50 @@ def condition_matches(study, diagnoses):
             for d in diagnoses if d in DIAGNOSIS_MESH and DIAGNOSIS_MESH[d] in meshes]
 
 
+LAB_LABELS = {'hemoglobin': 'hemoglobin', 'platelets': 'platelet count', 'anc': 'absolute neutrophil count',
+              'creatinine': 'creatinine', 'hba1c': 'HbA1c', 'bmi': 'BMI', 'egfr': 'eGFR (kidney function)',
+              'lvef': 'left ventricular ejection fraction'}
+
+
 def open_question(row):
-    """What the patient could add to settle a parsed rule that is unknown only for lack of data."""
+    """A plain-language question that would settle a parsed rule which is unknown only for lack of data.
+
+    Returns None when the line is already settled, has no rule, or is unknown for another reason.
+    Lab values the study measures itself ("at screening") are returned with answerable=False.
+    """
     rule, reason = row.get('rule'), row.get('evaluation_reason', '')
     if row.get('status') != 'unknown' or not rule:
         return None
     field = rule['field']
     if reason == 'Missing diagnosis is not evidence of absence':
-        return f'Do they have {rule["value"]}?'
+        return dict(key='diagnosis:' + rule['value'], field='diagnosis', value=rule['value'], answerable=True,
+                    question=f'Have you been diagnosed with {rule["value"]}?')
+    label = LAB_LABELS.get(field, field)
     if reason == 'Required lab timepoint is missing or different':
-        return f'{field} result taken at {rule["timepoint"]}'
+        return dict(key=f'{field}@{rule["timepoint"]}', field=field, value=rule['timepoint'], answerable=False,
+                    question=f'{label[0].upper() + label[1:]} at {rule["timepoint"]}. The study measures this itself.')
     if reason in ('Missing or invalid lab observation', 'Missing or incompatible unit'):
-        return f'{field} result with a unit'
-    if reason in ('Missing or invalid numeric value', 'No supported sex value'):
-        return field
+        return dict(key='lab:' + field, field=field, value=None, answerable=True,
+                    question=f'What was your most recent {label}, with its unit and date?')
+    if reason == 'Missing or invalid numeric value' and field == 'age':
+        return dict(key='age', field='age', value=None, answerable=True, question='How old are you?')
+    if reason == 'No supported sex value':
+        return dict(key='sex', field='sex', value=None, answerable=True, question='Is your sex female or male?')
     return None
 
 
 def open_questions(studies):
-    """Count each open question over all studies, most common first."""
-    counts = Counter(q for s in studies for q in (open_question(r) for r in s['criteria']) if q)
-    return [dict(question=q, lines=n) for q, n in sorted(counts.items(), key=lambda x: (-x[1], x[0]))]
+    """Each open question once, with how many lines and studies it would settle.
+
+    Questions a patient can answer come first, then the most useful ones.
+    """
+    found = {}
+    for study in studies:
+        for row in study['criteria'] + study.get('structured', []):
+            q = open_question(row)
+            if q:
+                entry = found.setdefault(q['key'], dict(q, lines=0, studies=[]))
+                entry['lines'] += 1
+                if study['nct_id'] not in entry['studies']:
+                    entry['studies'].append(study['nct_id'])
+    return sorted(found.values(), key=lambda q: (not q['answerable'], -q['lines'], q['question']))

@@ -56,6 +56,7 @@ def main():
     nearby.add_argument('--patient',required=True)
     nearby.add_argument('--output',required=True)
     nearby.add_argument('--as-of',type=date.fromisoformat,default=date.today())
+    nearby.add_argument('--answers',help='Fictional answers to the open questions, added where the record is silent')
     convert = sub.add_parser('patient',help='Show the record read from a FHIR R4 Bundle, and what was skipped')
     convert.add_argument('bundle')
     convert.add_argument('--as-of',type=date.fromisoformat,default=date.today())
@@ -77,7 +78,8 @@ def main():
             print(json.dumps({k:v for k,v in result.items() if k not in ('missed','incorrect')},indent=2))
         elif args.command == 'match':
             patient, provenance = load_patient(args.patient,args.as_of)
-            result = build_match_report(read(args.snapshot),patient,provenance)
+            result = build_match_report(read(args.snapshot),patient,provenance,
+                                        read(args.answers) if args.answers else None)
             base = Path(args.output)
             write(base.with_suffix('.json'),result)
             base.with_suffix('.html').write_text(render_html(result),encoding='utf-8')

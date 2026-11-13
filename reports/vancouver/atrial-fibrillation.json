@@ -3410,8 +3410,15 @@
   },
   "open_questions": [
     {
-      "question": "egfr result with a unit",
-      "lines": 1
+      "key": "lab:egfr",
+      "field": "egfr",
+      "value": null,
+      "answerable": true,
+      "question": "What was your most recent eGFR (kidney function), with its unit and date?",
+      "lines": 1,
+      "studies": [
+        "NCT07369856"
+      ]
     }
   ],
   "retrieved_at": "2026-11-13T07:47:33.686939+00:00",

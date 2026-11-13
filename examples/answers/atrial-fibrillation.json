@@ -1,0 +1,9 @@
+{
+  "fictional": true,
+  "description": "Invented answer to the open question for the atrial fibrillation example.",
+  "answers": {
+    "labs": {
+      "egfr": {"value": 52, "unit": "mL/min/1.73m2", "effective": "2026-10-30"}
+    }
+  }
+}

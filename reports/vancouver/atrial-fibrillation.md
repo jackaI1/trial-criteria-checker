@@ -74,11 +74,11 @@ Skipped:
 | [NCT03968393](https://clinicaltrials.gov/study/NCT03968393): Anticoagulation for Stroke Prevention In Patients With Recent Episodes of Atrial Fibrillation Occurring Transiently With Stress | Atrial Fibrillation | Vancouver General Hospital, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 25 unknown |
 | [NCT06008197](https://clinicaltrials.gov/study/NCT06008197): A Study to Determine the Efficacy and Safety of Finerenone on Morbidity and Mortality Among Hospitalized Heart Failure Patients | Heart Failure | Vancouver, BC Investigative Site 11017, Vancouver | 1 met, 0 not met, 0 unknown | 0 met, 0 not met, 15 unknown |
 
-## What would settle more lines
+## Questions that would settle more lines
 
-These parsed lines are unknown only because the record is missing something:
+These parsed lines are unknown only because the record is missing something the patient could answer:
 
-- egfr result with a unit (1 line)
+- What was your most recent eGFR (kidney function), with its unit and date? (1 line in 1 study)
 
 ## [NCT05650658](https://clinicaltrials.gov/study/NCT05650658): Left vs Left Randomized Clinical Trial
 

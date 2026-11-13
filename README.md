@@ -78,6 +78,18 @@ It also uses the age and sex fields the registry stores apart from the text (`mi
 - [reports/vancouver/type-2-diabetes.md](reports/vancouver/type-2-diabetes.md): 6 studies
 - [reports/vancouver/lupus.md](reports/vancouver/lupus.md): 1 study
 
+## Questions that would settle more lines
+
+Some lines are unknown only because the record is missing something. If a study excludes type 1 diabetes and the record doesn't mention it, the checker can't say either way. So each match report lists the questions that would settle those lines, in plain words, with how many lines and studies each one affects. Things a patient can't answer ahead of time, like a BMI the study measures at screening, are listed separately.
+
+Answers go in a small file and only fill gaps. If an answer disagrees with the record, the record wins and the answer is listed as not used. A "no" settles only the diagnosis it was asked about.
+
+```sh
+python3 -m trial_criteria match --snapshot data/vancouver.json --patient examples/fhir/type-2-diabetes.json --as-of 2026-11-13 --answers examples/answers/type-2-diabetes.json --output reports/mine
+```
+
+For the type 2 diabetes example, the report asks one question, "Have you been diagnosed with type 1 diabetes?", and lists BMI at screening as something the study measures. Adding "no" settles one more line ([reports/vancouver/type-2-diabetes-with-answers.md](reports/vancouver/type-2-diabetes-with-answers.md)). The example answers also give an age of 60 while the record says 58, so that answer isn't used. There are only a few questions because the parser still turns few lines into rules. As it reads more, the list grows on its own.
+
 ## How far it gets
 
 Short version: on 17 Montreal studies it had never seen, it made 12 rules, 10 of them right, and found 10 of the 24 rules a person would pull out. Everything else stays unknown. The rest of this section is how I got there and what it still misses.
@@ -140,13 +152,14 @@ I haven't fixed these yet. When I do, Montreal becomes practice data too, and th
 4. **Find studies nearby (optional).** `fetch --city` keeps studies with a recruiting site in that city, and [`match.py`](trial_criteria/match.py) keeps the ones tagged with the patient's diagnoses and turns the structured age and sex fields into rules.
 5. **Read the patient.** A plain JSON record is used as is. A FHIR Bundle goes through [`fhir.py`](trial_criteria/fhir.py) first (see above).
 6. **Check.** [`evaluate.py`](trial_criteria/evaluate.py) compares each rule with the patient and returns met, not met or unknown. Lab values are converted between units with fixed factors, like g/dL to g/L, or mg/dL to µmol/L for creatinine. A missing value, an unfamiliar unit or a diagnosis that isn't confirmed stays unknown. Exclusions are flipped.
-7. **Report.** [`report.py`](trial_criteria/report.py) writes the same result as JSON, an HTML page and a Markdown page that GitHub can show.
+7. **Ask.** [`match.py`](trial_criteria/match.py) turns lines that are unknown only for missing data into plain questions, and [`answers.py`](trial_criteria/answers.py) adds answers where the record is silent.
+8. **Report.** [`report.py`](trial_criteria/report.py) writes the same result as JSON, an HTML page and a Markdown page that GitHub can show.
 
 [docs/design.md](docs/design.md) explains the choices in more detail, and [data/README.md](data/README.md) explains how I labelled the sample.
 
 ## Tests
 
-`python3 -m unittest discover -s tests` runs 48 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the Toronto and Montreal scores so they can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
+`python3 -m unittest discover -s tests` runs 54 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the questions and answers (an answer never overrides the record), the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the Toronto and Montreal scores so they can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
 
 ## Limits
 

@@ -100,12 +100,14 @@ class ConditionMatchTests(unittest.TestCase):
         self.assertEqual(report['search']['matched_studies'], 2)
         self.assertEqual(report['search']['dropped_by_location'], 1)
         self.assertEqual(report['studies'][1]['counts'], {'met': 0, 'not met': 1, 'unknown': 1})
-        self.assertEqual(open_questions(report['studies']), [
-            {'question': 'Do they have type 1 diabetes?', 'lines': 1},
-            {'question': 'hba1c result taken at screening/baseline', 'lines': 1}])
+        questions = open_questions(report['studies'])
+        self.assertEqual([(q['question'], q['answerable'], q['lines']) for q in questions], [
+            ('Have you been diagnosed with type 1 diabetes?', True, 1),
+            ('HbA1c at screening/baseline. The study measures this itself.', False, 1)])
         text = render_markdown(report)
         self.assertIn('in Vancouver, Canada', text)
-        self.assertIn('What would settle more lines', text)
+        self.assertIn('Questions that would settle more lines', text)
+        self.assertIn('Measured by the study', text)
         self.assertNotIn('NCT00000003', text)
 
 
