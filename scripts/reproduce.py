@@ -2,11 +2,16 @@
 import argparse
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from trial_criteria.benchmark import benchmark
+from trial_criteria.fhir import bundle_to_patient
 from trial_criteria.report import build_report, render_html, render_markdown
+
+# Ages in saved FHIR reports are calculated on this fixed date so rebuilds match.
+AS_OF = date(2026, 11, 13)
 
 
 def main():
@@ -23,6 +28,11 @@ def main():
                'reports/fictional_patient.json':dump(report),
                'reports/fictional_patient.html':render_html(report),
                'reports/fictional_patient.md':render_markdown(report)}
+    record, notes = bundle_to_patient(read('examples/fhir/type-2-diabetes.json'),AS_OF)
+    fhir_report = build_report(snapshot,record,notes)
+    outputs.update({'reports/fhir_type_2_diabetes.json':dump(fhir_report),
+                    'reports/fhir_type_2_diabetes.html':render_html(fhir_report),
+                    'reports/fhir_type_2_diabetes.md':render_markdown(fhir_report)})
     for name, content in outputs.items():
         if args.check:
             if not Path(name).exists() or Path(name).read_text(encoding='utf-8') != content:

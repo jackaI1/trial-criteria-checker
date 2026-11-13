@@ -1,0 +1,133 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trial criteria checker: fictional patient report</title>
+<style>body{font:17px/1.6 system-ui,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;color:#162a32;background:#fafbf9}h1,h2{line-height:1.2}table{border-collapse:collapse;width:100%;margin:1rem 0}td,th{border:1px solid #bcc9ce;padding:.65rem;text-align:left;vertical-align:top}th{background:#e6eeec}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf1f0;padding:1rem}code{white-space:pre-wrap}a{color:#075985}.unknown{color:#755200}.met{color:#11603a}.not-met{color:#9c2626}.scroll{overflow-x:auto}small{display:block}</style>
+<h1>Trial criteria checker</h1><p><strong>Fictional patient demonstration. No overall eligibility decision. Unparsed criteria require human review.</strong></p>
+<p>Saved public records retrieved 2026-11-05T06:18:19.437645+00:00. Recruitment status can change.</p>
+<p>Outcomes describe individual criteria: 4 met, 1 not met, 56 unknown. A “met” row never establishes trial eligibility.</p>
+<details><summary>Fictional input record</summary><pre>{
+  &quot;fictional&quot;: true,
+  &quot;source&quot;: &quot;FHIR R4 Bundle type-2-diabetes&quot;,
+  &quot;as_of&quot;: &quot;2026-11-13&quot;,
+  &quot;diagnoses&quot;: [
+    &quot;type 2 diabetes&quot;
+  ],
+  &quot;diagnoses_complete&quot;: false,
+  &quot;labs&quot;: {
+    &quot;creatinine&quot;: {
+      &quot;value&quot;: 88,
+      &quot;unit&quot;: &quot;umol/L&quot;,
+      &quot;effective&quot;: &quot;2026-10-02T08:40:00-07:00&quot;
+    },
+    &quot;hba1c&quot;: {
+      &quot;value&quot;: 8.1,
+      &quot;unit&quot;: &quot;%&quot;,
+      &quot;effective&quot;: &quot;2026-10-02T08:40:00-07:00&quot;
+    },
+    &quot;hemoglobin&quot;: {
+      &quot;value&quot;: 128,
+      &quot;unit&quot;: &quot;g/L&quot;,
+      &quot;effective&quot;: &quot;2026-10-02T08:40:00-07:00&quot;
+    }
+  },
+  &quot;age&quot;: 58,
+  &quot;sex&quot;: &quot;female&quot;
+}</pre></details>
+<h2>Where the patient values came from</h2><ul>
+<li>Patient/fict-t2d: age 58 from birthDate 1968-04-22</li>
+<li>Patient/fict-t2d: sex female</li>
+<li>Condition/fict-t2d-condition-1: diagnosis type 2 diabetes</li>
+<li>Observation/fict-t2d-observation-3: creatinine 88 umol/L on 2026-10-02</li>
+<li>Observation/fict-t2d-observation-2: hba1c 8.1 % on 2026-10-02</li>
+<li>Observation/fict-t2d-observation-4: hemoglobin 128 g/L on 2026-10-02</li>
+</ul><p>Skipped:</p><ul>
+<li>Condition/fict-t2d-condition-2: no mapped SNOMED CT or ICD-10-CM code</li>
+<li>Condition/fict-t2d-condition-3: verification status is provisional, not confirmed</li>
+<li>Observation/fict-t2d-observation-1: older than Observation/fict-t2d-observation-2</li>
+<li>Observation/fict-t2d-observation-5: status is entered-in-error, not final</li>
+<li>Observation/fict-t2d-observation-6: no mapped LOINC code</li>
+</ul>
+<h2><a href="https://clinicaltrials.gov/study/NCT07807280">NCT07807280</a>: C-Carbs: A CGM-guided Approach to Teaching Carb Awareness</h2>
+<p>Saved recruitment status: RECRUITING</p>
+<div class="scroll"><table><thead><tr><th>Source sentence</th><th>Structured rule</th><th>Fictional result</th></tr></thead><tbody>
+<tr><td>Adults 18 years of age or older.<small>inclusion; offsets 23:55</small></td><td><code>{&quot;field&quot;: &quot;age&quot;, &quot;op&quot;: &quot;&gt;=&quot;, &quot;value&quot;: 18.0, &quot;unit&quot;: &quot;years&quot;}</code><small>Supported complete criterion</small></td><td class="met"><strong>met</strong><small>Compared supplied evidence; exclusion conditions are inverted</small></td></tr>
+<tr><td>Diagnosis of diabetes for at least 1 year.<small>inclusion; offsets 58:100</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Currently using or willing to start using a continuous glucose monitor (CGM).<small>inclusion; offsets 103:180</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Currently using multiple daily insulin injections (MDI).<small>inclusion; offsets 183:239</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>HbA1c ≥8% at screening/baseline.<small>inclusion; offsets 242:274</small></td><td><code>{&quot;field&quot;: &quot;hba1c&quot;, &quot;op&quot;: &quot;&gt;=&quot;, &quot;value&quot;: 8.0, &quot;unit&quot;: &quot;%&quot;, &quot;timepoint&quot;: &quot;screening/baseline&quot;}</code><small>Supported complete criterion</small></td><td class="unknown"><strong>unknown</strong><small>Required lab timepoint is missing or different</small></td></tr>
+<tr><td>Does not routinely use carbohydrate counting or demonstrates poor/inconsistent carbohydrate counting for mealtime insulin dosing.<small>inclusion; offsets 277:406</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Able and willing to participate in the study visits and intervention sessions.<small>inclusion; offsets 409:487</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Able to provide informed consent.<small>inclusion; offsets 490:523</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Use of an insulin pump or automated insulin delivery system.<small>exclusion; offsets 548:608</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Significant medical, cognitive, or psychiatric condition that, in the investigator&#x27;s judgment, would interfere with participation or completion of study procedures.<small>exclusion; offsets 611:775</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Limited life expectancy that would prevent completion of the study.<small>exclusion; offsets 777:844</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Pregnancy or plans to become pregnant during the study period.<small>exclusion; offsets 848:910</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Current participation in another interventional study that could affect diabetes management or study outcomes.<small>exclusion; offsets 913:1023</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Inability/unwillingess to independently use a CGM device or administer insulin.<small>exclusion; offsets 1026:1105</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Any other condition that, in the investigator&#x27;s judgment, would make participation inappropriate or interfere with the study&#x27;s objectives.<small>exclusion; offsets 1108:1246</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+</tbody></table></div>
+<h2><a href="https://clinicaltrials.gov/study/NCT02560883">NCT02560883</a>: Hairy Cell Leukemia Patient Data Registry</h2>
+<p>Saved recruitment status: RECRUITING</p>
+<div class="scroll"><table><thead><tr><th>Source sentence</th><th>Structured rule</th><th>Fictional result</th></tr></thead><tbody>
+<tr><td>Patients with classic hairy cell leukemia<small>inclusion; offsets 14:55</small></td><td><code>{&quot;field&quot;: &quot;diagnosis&quot;, &quot;op&quot;: &quot;contains&quot;, &quot;value&quot;: &quot;classic hairy cell leukemia&quot;, &quot;unit&quot;: null}</code><small>Supported complete criterion</small></td><td class="unknown"><strong>unknown</strong><small>Missing diagnosis is not evidence of absence</small></td></tr>
+<tr><td>Patients with the variant of hairy cell leukemia.<small>inclusion; offsets 58:107</small></td><td><code>{&quot;field&quot;: &quot;diagnosis&quot;, &quot;op&quot;: &quot;contains&quot;, &quot;value&quot;: &quot;the variant of hairy cell leukemia&quot;, &quot;unit&quot;: null}</code><small>Supported complete criterion</small></td><td class="unknown"><strong>unknown</strong><small>Missing diagnosis is not evidence of absence</small></td></tr>
+<tr><td>Children are excluded from the study, since Hairy Cell Leukemia wasn&#x27;t described in children.<small>exclusion; offsets 123:216</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+</tbody></table></div>
+<h2><a href="https://clinicaltrials.gov/study/NCT07524205">NCT07524205</a>: Glucose and Activity Tracking for Sedentary Behavior Interventions in Older People With Type 2 Diabetes (TRACK T2D)</h2>
+<p>Saved recruitment status: RECRUITING</p>
+<div class="scroll"><table><thead><tr><th>Source sentence</th><th>Structured rule</th><th>Fictional result</th></tr></thead><tbody>
+<tr><td>Aged 55 years and older<small>inclusion; offsets 23:46</small></td><td><code>{&quot;field&quot;: &quot;age&quot;, &quot;op&quot;: &quot;&gt;=&quot;, &quot;value&quot;: 55.0, &quot;unit&quot;: &quot;years&quot;}</code><small>Supported complete criterion</small></td><td class="met"><strong>met</strong><small>Compared supplied evidence; exclusion conditions are inverted</small></td></tr>
+<tr><td>Self-reported T2D for ≥5 years<small>inclusion; offsets 49:79</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Speak and read English<small>inclusion; offsets 82:104</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Type 1 diabetes<small>exclusion; offsets 129:144</small></td><td><code>{&quot;field&quot;: &quot;diagnosis&quot;, &quot;op&quot;: &quot;contains&quot;, &quot;value&quot;: &quot;type 1 diabetes&quot;, &quot;unit&quot;: null}</code><small>Supported complete criterion</small></td><td class="unknown"><strong>unknown</strong><small>Missing diagnosis is not evidence of absence</small></td></tr>
+<tr><td>Use of a CGM for ≥1 month in past 1 year<small>exclusion; offsets 147:187</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Not willing to use/wear the CGM, activPAL, or Fitbit<small>exclusion; offsets 190:242</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Dementia<small>exclusion; offsets 245:253</small></td><td><code>{&quot;field&quot;: &quot;diagnosis&quot;, &quot;op&quot;: &quot;contains&quot;, &quot;value&quot;: &quot;dementia&quot;, &quot;unit&quot;: null}</code><small>Supported complete criterion</small></td><td class="unknown"><strong>unknown</strong><small>Missing diagnosis is not evidence of absence</small></td></tr>
+<tr><td>Any of the following conditions that may impact SB:<small>exclusion; offsets 256:307</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Severe pulmonary disease<small>exclusion; offsets 314:338</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Severe osteoarthritis<small>exclusion; offsets 344:365</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Class III/IV heart failure<small>exclusion; offsets 371:397</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Require wheelchair or walker<small>exclusion; offsets 403:431</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+</tbody></table></div>
+<h2><a href="https://clinicaltrials.gov/study/NCT07389005">NCT07389005</a>: Exercise, Chronotype, and Prediabetes</h2>
+<p>Saved recruitment status: RECRUITING</p>
+<div class="scroll"><table><thead><tr><th>Source sentence</th><th>Structured rule</th><th>Fictional result</th></tr></thead><tbody>
+<tr><td>Able to provide signed and dated written informed consent prior to any study specific procedures<small>inclusion; offsets 24:120</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Adult men and women aged between more than 18 and ≤ 75 years<small>inclusion; offsets 124:184</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Body mass index (BMI) of 25 - 35 kg/m2<small>inclusion; offsets 188:226</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Stable weight (no weight loss or gain \&gt; 3 kg in the past 3 months)<small>inclusion; offsets 230:297</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Pre-diabetes defined as an isolated impaired glucose tolerance or a combination of impaired glucose tolerance and impaired fasting glucose (values are based on the American Diabetes Association (ADA):<small>inclusion; offsets 301:501</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>impaired glucose tolerance (plasma glucose 140 mg/dL to 199 mg/dL, 120 minutes after consumption of 75g of glucose)<small>inclusion; offsets 509:624</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>impaired fasting glucose (fasting plasma glucose 100 mg/dL to 125 mg/dL)<small>inclusion; offsets 631:703</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Morning (Morningness-Eveningness Questionnaire \[MEQ\] score ≥ 59) or evening (MEQ score ≤ 41) chronotype<small>inclusion; offsets 707:812</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Previously diagnosed with type 2 diabetes<small>exclusion; offsets 838:879</small></td><td><code>{&quot;field&quot;: &quot;diagnosis&quot;, &quot;op&quot;: &quot;contains&quot;, &quot;value&quot;: &quot;type 2 diabetes&quot;, &quot;unit&quot;: null}</code><small>Supported complete criterion</small></td><td class="not-met"><strong>not met</strong><small>Compared supplied evidence; exclusion conditions are inverted</small></td></tr>
+<tr><td>Moderate to severe anemia (hemoglobin \&lt; 10 g/L)<small>exclusion; offsets 883:931</small></td><td><code>{&quot;field&quot;: &quot;hemoglobin&quot;, &quot;op&quot;: &quot;&lt;&quot;, &quot;value&quot;: 10.0, &quot;unit&quot;: &quot;g/L&quot;}</code><small>Supported complete criterion</small></td><td class="met"><strong>met</strong><small>Compared supplied evidence; exclusion conditions are inverted</small></td></tr>
+<tr><td>Uncontrolled hypertension<small>exclusion; offsets 935:960</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Abnormal electrocardiogram (ECG) at rest judged by the study physician<small>exclusion; offsets 964:1034</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Pregnancy or breastfeeding<small>exclusion; offsets 1038:1064</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>HIV, hepatitis B, or C infection<small>exclusion; offsets 1068:1100</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Disorders of blood clotting or wound healing<small>exclusion; offsets 1104:1148</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Positive history of venous thrombosis (contraindication for clamp)<small>exclusion; offsets 1152:1218</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Hypersensitivity to local anesthetics (contraindication for fat/muscle biopsies)<small>exclusion; offsets 1222:1302</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Night shift work in the last 3 months<small>exclusion; offsets 1307:1344</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Travel across \&gt; 1 time zone in the last 3 months<small>exclusion; offsets 1349:1398</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Participation in another clinical trials that may possibly hamper the study results<small>exclusion; offsets 1403:1486</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Engagement in structured exercise activities \&gt; 2 hours a week<small>exclusion; offsets 1491:1553</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Any acute condition, exacerbation of chronic condition, or medical history that in the investigator&#x27;s opinion would interfere with the study<small>exclusion; offsets 1558:1698</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Any contraindication for MRI scanning<small>exclusion; offsets 1703:1740</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Medication use known to hamper safety during the study procedures<small>exclusion; offsets 1745:1810</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Non-German speaking<small>exclusion; offsets 1815:1834</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+</tbody></table></div>
+<h2><a href="https://clinicaltrials.gov/study/NCT05011045">NCT05011045</a>: Neurocognitive Outcomes After Whole Brain Radiation Therapy for Hematologic Malignancies</h2>
+<p>Saved recruitment status: RECRUITING</p>
+<div class="scroll"><table><thead><tr><th>Source sentence</th><th>Structured rule</th><th>Fictional result</th></tr></thead><tbody>
+<tr><td>Age 18 years or older<small>inclusion; offsets 23:44</small></td><td><code>{&quot;field&quot;: &quot;age&quot;, &quot;op&quot;: &quot;&gt;=&quot;, &quot;value&quot;: 18.0, &quot;unit&quot;: &quot;years&quot;}</code><small>Supported complete criterion</small></td><td class="met"><strong>met</strong><small>Compared supplied evidence; exclusion conditions are inverted</small></td></tr>
+<tr><td>Treatment with radiation therapy to the brain for a hematologic malignancy (ex. primary central nervous system lymphoma \[PCNSL\], secondary central nervous system lymphoma \[SCNSL\], leukemia, myeloma)<small>inclusion; offsets 47:249</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Proficient and capable of completing tests in English<small>inclusion; offsets 252:305</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Patients with claustrophobia are eligible if the claustrophobia is managed with medication<small>inclusion; offsets 308:398</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Patients with cognitively-impairment are eligible if the impairment is managed with medication<small>inclusion; offsets 401:495</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+<tr><td>Patients who are pregnant<small>inclusion; offsets 498:523</small></td><td><code>null</code><small>Unsupported wording or contextual, nested, compound or unknown-section criterion</small></td><td class="unknown"><strong>unknown</strong><small>No supported complete rule</small></td></tr>
+</tbody></table></div>
+<h2>Source requests</h2><ul>
+<li>https://clinicaltrials.gov/api/v2/studies?format=json&amp;filter.overallStatus=RECRUITING&amp;pageSize=5&amp;filter.ids=NCT02560883%2CNCT05011045%2CNCT07807280%2CNCT07524205%2CNCT07389005</li>
+</ul></html>
