@@ -89,13 +89,13 @@ The Vancouver studies were much harder. They're mostly large drug and device tri
 - age written other ways, like "Patient is ≥ 18 years of age" or "Male or female at least 18 years of age", but only when the wording covers everyone ("Women aged 18 years or older" stays unknown, so the sex limit isn't lost)
 - ranges, like "HbA1c value of ≥ 7% to ≤ 10.5%". If a line also gives HbA1c in mmol/mol, the two numbers have to agree before the line is used.
 - BMI, eGFR (kidney function) and left ventricular ejection fraction, with timepoints like "at screening" kept on the rule
-- "Type 1 diabetes mellitus" as the full name of type 1 diabetes, but still no abbreviations like T1DM
+- "Type 1 diabetes mellitus" as the full name of type 1 diabetes
 
 I also found a way it could be wrong. When a line ends in "or", the next line is an alternative to it, not a separate requirement, so now neither one becomes a rule. The Vancouver lines give 18 rules now. That's still only 3%, but most of the rest are about treatments, history and the investigator's judgement, which a rule can't check from a record. Because I tuned on these studies too, they can't give a fair score.
 
-For a fair number I fetched a fresh set after those changes were merged: the first four recruiting studies for each condition with a site in Toronto, skipping anything I'd already seen. That's 19 studies with 290 lines ([data/heldout_toronto.json](data/heldout_toronto.json)). I read them and wrote down the rules a person would pull out before running the parser on them ([data/heldout_labels.json](data/heldout_labels.json)), and committed those labels first. There were 16.
+For a fair number I fetched a fresh set after those changes were merged: the first four recruiting studies for each condition with a site in Toronto, skipping anything I'd already seen. That's 19 studies with 290 lines ([data/toronto.json](data/toronto.json)). I read them and wrote down the rules a person would pull out before running the parser on them ([data/toronto_labels.json](data/toronto_labels.json)), and committed those labels first. There were 16.
 
-The parser made 3 rules on those studies. All 3 were right and it missed the other 13 ([reports/heldout_metrics.json](reports/heldout_metrics.json)). So it still doesn't make things up, but on new studies it finds only about one rule in five. The misses are easy to sort:
+The parser made 3 rules on those studies. All 3 were right and it missed the other 13. So it still doesn't make things up, but on new studies it finds only about one rule in five. The misses are easy to sort:
 
 | Why it missed | Lines |
 | --- | --- |
@@ -105,7 +105,15 @@ The parser made 3 rules on those studies. All 3 were right and it missed the oth
 | Condition not in its vocabulary (myocardial infarction, HFrEF) | 2 |
 | BMI "at randomization" | 1 |
 
-Each of these has a clear fix, but making them would mean tuning on the Toronto studies, so the next fair score will need another fresh set.
+Each group had a clear fix, so I made them, and that turned Toronto into a development set too:
+
+- Age "at the time of informed consent", "of signing the ICF" or "of enrollment" is read as the person's age now, since that's what a record can show.
+- "Age ≥ 18" with no unit is read as years, but only when the line starts with "Age". "Height ≥ 150" stays unknown.
+- Age limits written in words ("greater than or equal to", "older than") and in brackets ("Adult (≥ 18 to ≤ 75yrs)").
+- A short, fixed list of abbreviations (T2DM, Type 1 DM, RA, SLE, AF, HF, MI, HFrEF and a few more), used only when the abbreviation is the whole diagnosis on the line. "Heart failure (HFpEF)" stays unknown because the bracket names a different condition.
+- Myocardial infarction and heart failure with reduced ejection fraction in the vocabulary, and "at randomization" as a timepoint.
+
+It now gets all 16 Toronto rules, still with no wrong ones, but that score doesn't count because I tuned on those studies ([reports/toronto_metrics.json](reports/toronto_metrics.json)). It also picked up one more Vancouver line and nothing changed on the original five. The next fair score needs another fresh set.
 
 ## How it works
 
@@ -125,4 +133,4 @@ Each of these has a clear fix, but making them would mean tuning on the Toronto 
 
 ## Limits
 
-The diagnosis list is twelve exact terms with no synonyms, so "T2D" doesn't match "type 2 diabetes". Only eight lab tests and measurements are understood, and limits written relative to a lab's normal range ("ALT ≥ 3.0 × ULN") stay unknown. Time windows like "within 6 months of screening" stay unknown too. Inclusion lines are checked one at a time, so a study that means "A or B" shows up as two separate rows. It works on English text from one registry, with made-up patients, and it is not a screening tool.
+The diagnosis list is fourteen exact terms and a short list of abbreviations, with no synonyms, so "adult-onset diabetes" doesn't match "type 2 diabetes". Only eight lab tests and measurements are understood, and limits written relative to a lab's normal range ("ALT ≥ 3.0 × ULN") stay unknown. Time windows like "within 6 months of screening" stay unknown too. Inclusion lines are checked one at a time, so a study that means "A or B" shows up as two separate rows. It works on English text from one registry, with made-up patients, and it is not a screening tool.
