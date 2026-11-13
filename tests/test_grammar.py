@@ -95,6 +95,30 @@ class DiagnosisTests(unittest.TestCase):
                 self.assertIsNone(rule(text))
 
 
+class MontrealWordingTests(unittest.TestCase):
+    def test_lead_ins_and_list_markers(self):
+        self.assertEqual(rule('(ii) Index participant 45 years of age or older;')['value'], 45.0)
+        self.assertEqual(rule('Males \\& females (inclusive of all gender identities) age ≥18 years')['value'], 18.0)
+        self.assertEqual(rule('Participants of any sex and gender must be ≥ 40 years old at the time of signing the informed consent.')['value'], 40.0)
+        self.assertEqual(rule('(i) Index participant has T2D;')['value'], 'type 2 diabetes')
+        self.assertEqual(rule('Women'), dict(field='sex', op='==', value='female', unit=None))
+        self.assertEqual(rule('Patients with an ejection fraction of \\>35%')['field'], 'lvef')
+
+    def test_words_that_do_not_narrow_a_diagnosis(self):
+        self.assertEqual(rule('Diagnosis of atrial fibrillation (documented on Holter, rhythm strip, or ECG)')['value'], 'atrial fibrillation')
+        self.assertEqual(rule('Documented HF of any etiology')['value'], 'heart failure')
+        self.assertEqual(rule('Infiltrative cardiomyopathies')['value'], 'infiltrative cardiomyopathy')
+        for text in ['Heart failure of any severity', 'Index participant has diabetes for 5 years', '(ii) Female participants with T2D']:
+            with self.subTest(text=text):
+                self.assertIsNone(rule(text))
+
+    def test_a_cohort_heading_makes_every_later_section_cohort_specific(self):
+        text = 'REAL AF Cohort\n\nInclusion Criteria:\n\n* \\>18 years of age.\n\nExclusion Criteria:\n\n* Pregnancy\n\nCORE VA Cohort\n\nInclusion Criteria:\n\n* \\>18 years of age.'
+        self.assertTrue(all(r['rule'] is None for r in parse_criteria(text)))
+        plain = parse_criteria('Inclusion Criteria:\n\n* \\>18 years of age.')
+        self.assertIsNotNone(plain[0]['rule'])
+
+
 class AlternativeTests(unittest.TestCase):
     def test_a_line_after_or_is_an_alternative_not_a_rule(self):
         rows = parse_criteria('Inclusion Criteria:\n* BMI ≥ 30 kg/m2 or\n* BMI ≥ 27 kg/m2\n* Age ≥ 18 years')

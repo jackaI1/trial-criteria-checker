@@ -31,3 +31,7 @@ A bullet that ends in "or" makes the next bullet an alternative. Neither becomes
 ## Fixes after the first held-out score
 
 The Toronto set was held out for the first score, and I used its misses to make these changes, so it's a development set now. Age "at the time of informed consent", "of signing the ICF", "of enrollment" or "at screening" is read as the person's current age, because a record can only show age now and the difference is at most the time between consent and the check. "Age ≥ 18" with no unit is read as years only when the line starts with "Age". Abbreviations come from a fixed list in `parser.py` and only count when the abbreviation is the entire diagnosis on the line, or when it sits in brackets after the full name it abbreviates.
+
+## Fixes after the second held-out score
+
+Montreal was held out for the second score and then used for these fixes. A list marker such as "(ii)" at the start of a line is dropped. "Index participant" and "Participants of any sex and gender" count as wording that covers everyone. A bracket that only says how a diagnosis was documented, like "(documented on Holter, rhythm strip, or ECG)", and the phrase "of any etiology" are dropped, because neither narrows the condition. A non-bulleted line naming a cohort, a sub-study or a study arm makes every later section cohort-specific, even after a fresh "Inclusion Criteria:" heading, because the same line can mean different things for different cohorts.

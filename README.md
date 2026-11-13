@@ -160,7 +160,7 @@ The 2 wrong ones are the same line, ">18 years of age.", in a study split into t
 | "Women" as a sex limit | 1 |
 | "Ejection fraction" without "left ventricular" | 1 |
 
-I haven't fixed these yet. When I do, Montreal becomes practice data too, and the score after that will need a new city.
+I fixed most of these too, so Montreal is practice data now. The parser skips list markers like "(ii)", reads "Index participant", "Participants of any sex and gender" and "Males & females (inclusive of all gender identities)" as wording that covers everyone, reads "Women" as a sex limit and "ejection fraction" on its own as the left ventricle's, and drops words that don't narrow a diagnosis, like "(documented on Holter, rhythm strip, or ECG)" or "of any etiology". Permanent atrial fibrillation, rheumatic heart disease and infiltrative cardiomyopathy are in the vocabulary. It also handles the cohort problem: once a line like "REAL AF Cohort" appears, every later section is treated as cohort-specific. On Montreal it now gets 22 of 24 with no wrong rules; the two left are the "≥ 18 to < 75" line, which needs two rules on one line. The next fair score needs another city.
 
 ## How it works
 
@@ -177,7 +177,7 @@ I haven't fixed these yet. When I do, Montreal becomes practice data too, and th
 
 ## Tests
 
-`python3 -m unittest discover -s tests` runs 54 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the questions and answers (an answer never overrides the record), the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the Toronto and Montreal scores so they can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code. A second job runs `node --test tests/js/*.test.mjs` (13 tests for the demo's matching logic and the typing worker, with a fake model) and `python3 scripts/build_demo.py --check`.
+`python3 -m unittest discover -s tests` runs 57 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the questions and answers (an answer never overrides the record), the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the Toronto and Montreal scores so they can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code. A second job runs `node --test tests/js/*.test.mjs` (13 tests for the demo's matching logic and the typing worker, with a fake model) and `python3 scripts/build_demo.py --check`.
 
 ## Limits
 
