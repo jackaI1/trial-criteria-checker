@@ -99,7 +99,7 @@ For a fair number I fetched a fresh set after those changes were merged: the fir
 
 The parser made 3 rules on those studies. All 3 were right and it missed the other 13. So it still doesn't make things up, but on new studies it finds only about one rule in five. The misses are easy to sort:
 
-| Why it missed | Lines |
+| Why it missed | Rules |
 | --- | --- |
 | Age "at the time of informed consent" or "at the time of enrollment" | 4 |
 | Diagnosis written as an abbreviation (T2DM, Type 1 DM, RA) | 3 |
@@ -146,7 +146,7 @@ I haven't fixed these yet. When I do, Montreal becomes practice data too, and th
 
 ## Tests
 
-`python3 -m unittest discover -s tests` runs 48 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the held-out score so it can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
+`python3 -m unittest discover -s tests` runs 48 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the Toronto and Montreal scores so they can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
 
 ## Limits
 
