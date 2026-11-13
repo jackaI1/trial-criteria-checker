@@ -121,6 +121,13 @@ class ReportTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             benchmark(snapshot, labels)
 
+    def test_montreal_held_out_score(self):
+        from trial_criteria.benchmark import benchmark
+        result = benchmark(json.loads(Path('data/montreal.json').read_text()),
+                           json.loads(Path('data/montreal_labels.json').read_text()))
+        self.assertEqual((result['study_count'], result['gold_rule_count']), (17, 24))
+        self.assertEqual((result['true_positives'], result['false_positives'], result['false_negatives']), (10, 2, 14))
+
     def test_empty_benchmark_renders_undefined_metrics(self):
         report = {'warning':'Fictional', 'retrieved_at':'saved', 'counts':{}, 'patient':{'fictional':True},
                   'studies':[], 'benchmark':dict(score([],[]),study_count=0)}

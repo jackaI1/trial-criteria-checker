@@ -1,0 +1,246 @@
+{
+  "true_positives": 10,
+  "false_positives": 2,
+  "false_negatives": 14,
+  "precision": 0.8333333333333334,
+  "recall": 0.4166666666666667,
+  "by_field": {
+    "age": {
+      "gold": 13,
+      "predicted": 10,
+      "correct": 8,
+      "precision": 0.8,
+      "recall": 0.6153846153846154
+    },
+    "diagnosis": {
+      "gold": 7,
+      "predicted": 0,
+      "correct": 0,
+      "precision": null,
+      "recall": 0.0
+    },
+    "egfr": {
+      "gold": 1,
+      "predicted": 1,
+      "correct": 1,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "lvef": {
+      "gold": 2,
+      "predicted": 1,
+      "correct": 1,
+      "precision": 1.0,
+      "recall": 0.5
+    },
+    "sex": {
+      "gold": 1,
+      "predicted": 0,
+      "correct": 0,
+      "precision": null,
+      "recall": 0.0
+    }
+  },
+  "missed": [
+    {
+      "end": 53,
+      "nct_id": "NCT07142512",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "type 2 diabetes"
+      },
+      "section": "inclusion",
+      "start": 23
+    },
+    {
+      "end": 104,
+      "nct_id": "NCT07142512",
+      "rule": {
+        "field": "age",
+        "op": ">=",
+        "unit": "years",
+        "value": 45.0
+      },
+      "section": "inclusion",
+      "start": 56
+    },
+    {
+      "end": 90,
+      "nct_id": "NCT07784725",
+      "rule": {
+        "field": "age",
+        "op": ">=",
+        "unit": "years",
+        "value": 18.0
+      },
+      "section": "inclusion",
+      "start": 23
+    },
+    {
+      "end": 116,
+      "nct_id": "NCT07272902",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "atrial fibrillation"
+      },
+      "section": "inclusion",
+      "start": 39
+    },
+    {
+      "end": 756,
+      "nct_id": "NCT07272902",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "permanent atrial fibrillation"
+      },
+      "section": "exclusion",
+      "start": 717
+    },
+    {
+      "end": 862,
+      "nct_id": "NCT07272902",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "rheumatic heart disease"
+      },
+      "section": "exclusion",
+      "start": 839
+    },
+    {
+      "end": 1098,
+      "nct_id": "NCT07272902",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "infiltrative cardiomyopathy"
+      },
+      "section": "exclusion",
+      "start": 1069
+    },
+    {
+      "end": 85,
+      "nct_id": "NCT05015660",
+      "rule": {
+        "field": "lvef",
+        "op": ">",
+        "unit": "%",
+        "value": 35.0
+      },
+      "section": "inclusion",
+      "start": 42
+    },
+    {
+      "end": 978,
+      "nct_id": "NCT05015660",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "permanent atrial fibrillation"
+      },
+      "section": "exclusion",
+      "start": 935
+    },
+    {
+      "end": 125,
+      "nct_id": "NCT06677060",
+      "rule": {
+        "field": "age",
+        "op": ">=",
+        "unit": "years",
+        "value": 40.0
+      },
+      "section": "inclusion",
+      "start": 23
+    },
+    {
+      "end": 28,
+      "nct_id": "NCT06628973",
+      "rule": {
+        "field": "sex",
+        "op": "==",
+        "unit": null,
+        "value": "female"
+      },
+      "section": "inclusion",
+      "start": 23
+    },
+    {
+      "end": 87,
+      "nct_id": "NCT06628973",
+      "rule": {
+        "field": "diagnosis",
+        "op": "contains",
+        "unit": null,
+        "value": "heart failure"
+      },
+      "section": "inclusion",
+      "start": 58
+    },
+    {
+      "end": 58,
+      "nct_id": "NCT07085104",
+      "rule": {
+        "field": "age",
+        "op": ">=",
+        "unit": "years",
+        "value": 18.0
+      },
+      "section": "inclusion",
+      "start": 24
+    },
+    {
+      "end": 58,
+      "nct_id": "NCT07085104",
+      "rule": {
+        "field": "age",
+        "op": "<",
+        "unit": "years",
+        "value": 75.0
+      },
+      "section": "inclusion",
+      "start": 24
+    }
+  ],
+  "incorrect": [
+    {
+      "end": 275,
+      "nct_id": "NCT04088071",
+      "rule": {
+        "field": "age",
+        "op": ">",
+        "unit": "years",
+        "value": 18.0
+      },
+      "section": "inclusion",
+      "start": 257
+    },
+    {
+      "end": 1044,
+      "nct_id": "NCT04088071",
+      "rule": {
+        "field": "age",
+        "op": ">",
+        "unit": "years",
+        "value": 18.0
+      },
+      "section": "inclusion",
+      "start": 1026
+    }
+  ],
+  "study_count": 17,
+  "source_sentence_count": 294,
+  "unparsed_sentence_count": 282,
+  "gold_rule_count": 24,
+  "predicted_rule_count": 12,
+  "method": "Held-out set: exact match on study, source offsets, section, field, operator, value, unit and qualifiers. The parser was not changed after these studies were fetched."
+}
