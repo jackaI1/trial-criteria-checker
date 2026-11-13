@@ -23,3 +23,9 @@ A refreshed record may have changed or stopped recruiting. Do not overwrite the 
 ## Vancouver snapshot
 
 `vancouver.json` is a second, separate snapshot: recruiting studies for type 2 diabetes, atrial fibrillation, heart failure, systemic lupus erythematosus and rheumatoid arthritis that had a recruiting site in Vancouver, Canada on November 13, 2026. Besides the eligibility fields it keeps each study's condition list, its MeSH condition tags and the Vancouver sites (facility, city, province, country and site status, with no contact details). `dropped` lists the studies the API returned that had no recruiting Vancouver site. It isn't labelled, so it isn't part of the measurement above.
+
+## Held-out Toronto set
+
+`heldout_toronto.json` was fetched after the parser changes from the Vancouver snapshot were merged. For each of the same five conditions it keeps the first four studies in API order that had a recruiting site in Toronto, Canada, skipping any study already in `studies.json` or `vancouver.json` (kept or dropped). Rheumatoid arthritis only had three, so there are 19.
+
+`heldout_labels.json` was written by reading those studies before the parser was run on them, and committed before the score. It lists every study, and only the lines that should become a rule have annotations, so any rule the parser makes anywhere else counts as wrong. The `scope` field says exactly which lines get a rule. Abbreviations and conditions outside the parser's vocabulary are labelled anyway, so they count as misses rather than being left out of the score.

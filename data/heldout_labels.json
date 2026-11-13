@@ -4,6 +4,10 @@
   "scope": "A line gets a reference rule only if the whole line is one of: an age limit (wording that covers everyone, with age at consent or enrollment treated as current age); a sex limit; a named condition with no duration, severity, history, timing, treatment or alternative attached; or a single limit or inclusive range on hemoglobin, platelets, ANC, creatinine, HbA1c, BMI, eGFR or LVEF with no time window, method or other measurement attached. Lines nested under another line, in an unknown section, or next to an \"or\" get no rule. Conditions outside the parser vocabulary and abbreviations still count, so they show up as misses.",
   "studies": [
     {
+      "nct_id": "NCT02583061",
+      "annotations": []
+    },
+    {
       "nct_id": "NCT07017270",
       "annotations": [
         {
@@ -162,6 +166,10 @@
       ]
     },
     {
+      "nct_id": "NCT06299514",
+      "annotations": []
+    },
+    {
       "nct_id": "NCT06486636",
       "annotations": [
         {
@@ -180,6 +188,14 @@
           "note": "Age limit written in words."
         }
       ]
+    },
+    {
+      "nct_id": "NCT05511389",
+      "annotations": []
+    },
+    {
+      "nct_id": "NCT05724433",
+      "annotations": []
     },
     {
       "nct_id": "NCT07037459",
@@ -218,6 +234,14 @@
       ]
     },
     {
+      "nct_id": "NCT06424288",
+      "annotations": []
+    },
+    {
+      "nct_id": "NCT05709132",
+      "annotations": []
+    },
+    {
       "nct_id": "NCT05934149",
       "annotations": [
         {
@@ -238,6 +262,10 @@
       ]
     },
     {
+      "nct_id": "NCT06617325",
+      "annotations": []
+    },
+    {
       "nct_id": "NCT07175285",
       "annotations": [
         {
@@ -256,6 +284,10 @@
           "note": "Age at consent is treated as current age."
         }
       ]
+    },
+    {
+      "nct_id": "NCT00198068",
+      "annotations": []
     },
     {
       "nct_id": "NCT07245732",
@@ -296,6 +328,11 @@
           "note": "Exclusion age limit at enrollment."
         }
       ]
+    },
+    {
+      "nct_id": "NCT04692493",
+      "annotations": []
     }
-  ]
+  ],
+  "method": "Held-out set: exact match on study, source offsets, section, field, operator, value, unit and qualifiers. The parser was not changed after these studies were fetched."
 }

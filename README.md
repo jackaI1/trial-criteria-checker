@@ -91,7 +91,21 @@ The Vancouver studies were much harder. They're mostly large drug and device tri
 - BMI, eGFR (kidney function) and left ventricular ejection fraction, with timepoints like "at screening" kept on the rule
 - "Type 1 diabetes mellitus" as the full name of type 1 diabetes, but still no abbreviations like T1DM
 
-I also found a way it could be wrong. When a line ends in "or", the next line is an alternative to it, not a separate requirement, so now neither one becomes a rule. The Vancouver lines give 18 rules now. That's still only 3%, but most of the rest are about treatments, history and the investigator's judgement, which a rule can't check from a record. Because I tuned on these studies too, the real test is studies it has never seen, and that's what I'm measuring next.
+I also found a way it could be wrong. When a line ends in "or", the next line is an alternative to it, not a separate requirement, so now neither one becomes a rule. The Vancouver lines give 18 rules now. That's still only 3%, but most of the rest are about treatments, history and the investigator's judgement, which a rule can't check from a record. Because I tuned on these studies too, they can't give a fair score.
+
+For a fair number I fetched a fresh set after those changes were merged: the first four recruiting studies for each condition with a site in Toronto, skipping anything I'd already seen. That's 19 studies with 290 lines ([data/heldout_toronto.json](data/heldout_toronto.json)). I read them and wrote down the rules a person would pull out before running the parser on them ([data/heldout_labels.json](data/heldout_labels.json)), and committed those labels first. There were 16.
+
+The parser made 3 rules on those studies. All 3 were right and it missed the other 13 ([reports/heldout_metrics.json](reports/heldout_metrics.json)). So it still doesn't make things up, but on new studies it finds only about one rule in five. The misses are easy to sort:
+
+| Why it missed | Lines |
+| --- | --- |
+| Age "at the time of informed consent" or "at the time of enrollment" | 4 |
+| Diagnosis written as an abbreviation (T2DM, Type 1 DM, RA) | 3 |
+| Age worded in a new way ("Age ≥ 18" with no unit, "greater than or equal to", "≥ 18 to ≤ 75yrs") | 3 |
+| Condition not in its vocabulary (myocardial infarction, HFrEF) | 2 |
+| BMI "at randomization" | 1 |
+
+Each of these has a clear fix, but making them would mean tuning on the Toronto studies, so the next fair score will need another fresh set.
 
 ## How it works
 
@@ -107,7 +121,7 @@ I also found a way it could be wrong. When a line ends in "or", the next line is
 
 ## Tests
 
-`python3 -m unittest discover -s tests` runs 46 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
+`python3 -m unittest discover -s tests` runs 47 tests. They cover the parser patterns (including the new age wordings, ranges and the "or" rule) and the cases where it has to refuse, unit conversions and boundary values, the FHIR reader (birthdays, code tables, UCUM units, conflicting results), the city filter and MeSH matching, the API client against a fake server (paging, retries, and a 403 that must not be retried), HTML escaping of study text and the scoring code, including the held-out score so it can't change without me noticing. GitHub Actions runs them on Python 3.9 and 3.12 on every push. It also runs `python scripts/reproduce.py --check`, which rebuilds the saved reports and fails if they no longer match the code.
 
 ## Limits
 
